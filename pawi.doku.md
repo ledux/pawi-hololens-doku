@@ -1,8 +1,11 @@
-# Mixed Reality mit Hololens
+% Mixed Reality mit Hololens
+% Pascal Schulthess
+  Lukas Tanner
+% 30. Nov 2016
 
 \pagebreak
 
-## Selbständigkeitserklärung
+# Selbständigkeitserklärung
 
 Hiermit erkläre ich, dass ich die vorliegende Arbeit selbständig angefertigt und keine anderen als
 die angegebenen Hilfsmittel verwendet habe. Sämtliche verwendeten Textausschnitte, Zitate oder
@@ -19,7 +22,7 @@ Lukas Tanner
 
 \pagebreak
 
-## Abstract (deutsch)
+# Abstract (deutsch)
 Hololens ist eine mixed reality Brille von Microsoft, die es erlaubt, den Raum mit
 holografischen Elementen zu erweitern. Ebenso kann man damit programmatisch mit der Umgebung
 interagieren.
@@ -28,7 +31,7 @@ Dieses Dokument beschreibt erste Erfahrungen mit der dieser neuen Technologie un
 eines Frameworks, das es erlaubt, Informationen zu einem realen Objekt im Raum darstellen zu lassen.
 
 
-## Abstract (english)
+# Abstract (english)
 
 Hololens are mixed reality glasses by Microsoft. They can extend the environment with holographic
 elements and interact programmatically with the surroundings.
@@ -37,7 +40,7 @@ This document describes first steps with this new technology and the developemen
 with which you can display additional information to a real life object in the room.
 
 
-## Abkürzungen und Definitionen
+# Abkürzungen und Definitionen
 
 ----------------------------------------------------------------------------------------------------
 Begriff             Bedeutung
@@ -63,11 +66,11 @@ Bloom               Gestik bei welcher die fünf Finger einer Hand sich berühre
                     Menü/Windwos Taste genutzt.
 
 ----------------------------------------------------------------------------------------------------
-Tabelle: Definitionen
+Table: Definitionen
 
-## Ziele und erwartete Resultate
+# Ziele und erwartete Resultate
 
-### Einführung
+## Einführung
 
 In den letzten Monaten wurden von vielen Herstellern Virtual Reality Brillen auf den Markt
 gebracht, meist im Gaming Bereich. Microsoft hat mit ihrer Brille ein anderes Zielpublikum
@@ -84,7 +87,7 @@ Ziele dieses Projektes sind
 * Framework entwickeln, auf denen zukünftige Applikationen aufbauen können
 * Prototyp des Frameworks in Code umsetzen
 
-### Mögliche Anwendungsfälle
+## Mögliche Anwendungsfälle
 
 Die Hololens bietet sicherlich Einsatzmöglichkeiten im Spielebereich, wie Microsoft mit Games wie
 [RoboRaid](https://www.microsoft.com/microsoft-hololens/en-us/apps/roboraid) oder
@@ -104,12 +107,12 @@ umzusetzen.
     * (Video-)anruf vom Smartphone übernehmen
 * Zusatzinformationen zu realen Objekten darstellen
 
-### Mögliche Frameworks
+## Mögliche Frameworks
 
 Ein weiteres Ziel des Projektes ist die Entwicklung eines Frameworks, auf welchem weitere
 Applikationen aufbauen können. Dazu haben wir uns folgende Gedanken gemacht.
 
-#### Virtueller Desktop
+### Virtueller Desktop
 
 Die Hololens speichert offene Fenster im Raum für eine bestimmte Zeit. Wenn man aber den Raum
 verlässt oder die Hololens zu lange abgestellt war, verliert sie diese Informationen. Die Idee
@@ -119,7 +122,7 @@ Word-Dokument auf dem Pult geöffnet sind. Nun kann man den Raum wechseln und mu
 welches Wand 1, Wand 2 und Pult ist und die entsprechenden Applikationen werden dort wieder
 dargestellt.
 
-#### Geräteinformationen darstellen
+### Geräteinformationen darstellen
 
 Die Hololens erkennt ein Gerät und holt sich Informationen zu diesem Gerät ab, das sie dann in der
 Nähe des Geräts darstellt. Die Informationen können dynamisch sein, wie Füllstände,
@@ -133,13 +136,13 @@ Abdeckung zu entfernen, lösen sie die beleuchteten vier Schrauben mit einem Kre
 Eine weitere Anwendung dieses Frameworks wäre, dass die Informationen, die bei einem Smartphone im
 Notification Menu vorhanden sind, mit der Hololens über dem Smartphone schweben zu lassen.
 
-### Anforderungen
+## Anforderungen
 
 Nachdem erste Erfahrungen gesammelt werden konnten, wurden folgende Anforderungen an das Framework
 und die darauf zu entwickelnde Applikation gestellt.
 
 
-#### Framework (muss)
+### Framework (muss)
 
 * Erkennen und Lesen QR-Code
     * Gerätetyp (mandatory)
@@ -158,7 +161,7 @@ und die darauf zu entwickelnde Applikation gestellt.
     * Bild lokal gespeichert
 
 
-#### Framework (kann)
+### Framework (kann)
 
 * Darstellen eines Benutzerhandbuchs (pdf, analog Text Information)
     * pdf lokal gespeichert
@@ -168,11 +171,11 @@ und die darauf zu entwickelnde Applikation gestellt.
 
 
 
-## Lösungsentwicklung
+# Lösungsentwicklung
 
 Hier werden die Erfahrungen und die Schritte beschrieben, die während des Projektes gemacht wurden
 
-### Erste Schritte
+## Erste Schritte
 
 Die Hololens ist als Stand-alone Gerät konzipiert. Sie benötigt keine externen Geräte um zu
 funktionieren. Das heisst, die Applikationen werden direkt in der Brille ausgeführt und die
@@ -205,7 +208,7 @@ tippen um ein Klick auszulösen.
 Dies funktioniert sehr gut und recht intuitiv.
 
 
-#### Demoapplikationen
+### Demoapplikationen
 
 Zu Demonstrationszwecken hat Microsoft bereits einige Applikationen entwickeln lassen. Davon möchten
 wir zwei Spiele hervorheben.
@@ -223,7 +226,7 @@ wir zwei Spiele hervorheben.
     haptisches Feedback.
 
 
-#### Tutorials
+### Tutorials
 
 Microsoft stellt viele [Tutorials](https://developer.microsoft.com/en-us/windows/holographic/academy)
 zur Verfügung, die es dem Entwickler erleichtern soll, den Einstieg in die neue Denke der Hololens
@@ -246,7 +249,7 @@ die Tiefe erkennen. Dieses Scannen geschieht automatisch, jedoch kann der Entwic
 Informationen arbeiten und darauf reagieren.
 
 
-### Entwicklung "Gerätestatus"
+## Entwicklung "Gerätestatus"
 
 Für die Demonstration des Frameworks haben wir uns für einen Laptop als Gerät entschieden. Der ist
 mobil und kann ebenfalls als Webserver dienen. Somit ist kein dediziertes Demogerät und zusätzliche
@@ -261,7 +264,7 @@ Webschnittstelle und QR-Code erhalten werden.
 - Vektor für die relative Position der Quelle zum Gerät
 
 
-#### Workflow
+### Workflow
 
 Ein Gerät, das mit zusätzlichen Informationen muss sich einmalig bei der Hololens anmelden. Dies
 geschieht über einen QR-Code, der mit der Applikation auf der Hololens gescannt werden muss. Mit den
@@ -272,7 +275,7 @@ Wenn sich die Daten dynamisch ändern können (wie Füllstand oder Temperatur od
 holt sich die Hololens periodisch die aktualisierten Daten und stellt sie erneut dar. Wenn es sich
 um statische Daten handelt, fällt dies natürlich weg.
 
-#### Datenquelle
+### Datenquelle
 
 Als dynamische Datenquelle haben wir uns für eine REST-Schnittstelle entschieden. Sie
 
@@ -280,7 +283,7 @@ Als dynamische Datenquelle haben wir uns für eine REST-Schnittstelle entschiede
 
 
 
-## Schlussfolgerungen und Ausblick
+# Schlussfolgerungen und Ausblick
 
 _--> Notizen TODO: ausformulieren_
 
@@ -291,5 +294,5 @@ _--> Notizen TODO: ausformulieren_
 - Update interval im QR-Code
 - Ob statisch oder dynamische Daten im QR-Code
 
-## Lessons learned
+# Lessons learned
 
