@@ -95,6 +95,17 @@ Bloom               Gestik bei welcher die fünf Finger einer Hand sich berühre
 ----------------------------------------------------------------------------------------------------
 Table: Definitionen
 
+----------------------------------------------------------------------------------------------------
+Abkürzung           Bedeutung
+-----------------   ---------------------------------------------------------------
+API                 Application Program Interface, Schnittstelle von Computerprogrammen für
+                    Computerprogramme
+
+ReST                Representational State Transfer, Konzept für APIs über http(s)
+
+----------------------------------------------------------------------------------------------------
+Table: Abkürzungen
+
 # Ziele und erwartete Resultate
 
 ## Einführung
@@ -302,15 +313,25 @@ Wenn sich die Daten dynamisch ändern können (wie Füllstand oder Temperatur od
 holt sich die Hololens periodisch die aktualisierten Daten und stellt sie erneut dar. Wenn es sich
 um statische Daten handelt, fällt dies natürlich weg.
 
+### QR-Code
+
+Der QR-Code ist sozusagen der Einstiegspunkt für die Applikation. Darauf ist die Datenquelle
+vermerkt, wo sich die Applikation die Informationen für das entsprechende Gerät abholen kann. In
+unserem Fall ist dies eine URL zu einer ReST-Schnittstelle.
+
+Je nach Version ist die Kapazität auf einem QR-Code sehr limitiert[^qr-capacity].
+
+[^qr-capacity]:[Kapazitäten von QR-Codes](http://www.qrcode.com/en/about/version.html)
+
 ### Datenquelle
 
-Als dynamische Datenquelle haben wir uns für eine REST-Schnittstelle entschieden[^source]. Sie liefert für
+Als dynamische Datenquelle haben wir uns für eine ReST-Schnittstelle entschieden[^source]. Sie liefert für
 vier verschiedene Geräte unterschiedliche Daten, die in etwa so aussehen.
 
 ```json
 {
     "displayData":"Dynamic data about the device",
-    "deviceDescription":"Static description of the Device",
+    "deviceDescription":"Static description of the device",
     "positionToSource":{
         "xValue":3.5,
         "yValue":4,
@@ -336,19 +357,41 @@ vier verschiedene Geräte unterschiedliche Daten, die in etwa so aussehen.
 Positionen gibt es eine logische Verbindung, die visuell dargestellt wird.
 
 
-
 [^source]:[Source on GitHub](https://github.com/ledux/pawi-hololens-dummyapi.git)
 
 
 
 # Schlussfolgerungen und Ausblick
 
+Da diese Arbeit nur ein Prototyp ist und höchstens als proof of concept gelten kann, gibt es
+einiges, das wir ausgespart haben.
+
+## Sicherheit
+
+Die Informationen, die die Hololens über die Geräte darstellt, sind potentiell kritisch und dürfen
+nicht in jedem Fall frei verfügbar sein. In unserem Szenario haben wir diesen Aspekt völlig
+ausgeklammert. Aber grundsätzlich muss es möglich sein, dass sich die Hololens an der Datenquelle
+identifizieren muss, bevor sie Daten erhält. Hier sind folgende Szenarien möglich:
+
+- Es können die Credentials im QR-Code selber untergebracht werden. Damit hat aber jeder, der Zugang
+zum QR-Code hat automatisch Zugang zu den Daten.
+- Die Hololens wird bei der Datenquelle registriert und die die Credentials auf der Hololens selber
+installiert (z.B. Username/Password oder Zertifikat)
+- fixes Pairing bei Bluetooth
+
+## Art der Datenquelle
+
+Es ist denkbar, dass auch andere Datenquellen als eine Webschnittstelle zum Einsatz kommen können.
+Gerade wenn es sich um technische Geräte handelt (und nicht um z.B Bilder, Skulpturen,
+Gebäudeteile) und man sich sowieso in der unmittelbaren Umgebung aufhält, liegt der Einsatz von
+bluetooth auf der Hand.
+
+Diese Art und Weise, wie die Applikation zu seinen Daten kommt, müsste auch noch im QR-Code
+untergebracht werden.
+
+
 _--> Notizen TODO: ausformulieren_
 
-- Über die Sicherheit der REST-Schnittstelle haben wir noch keine Gedanken gemacht
-- Verschiedene Datenquellen für die Informationen im QR-Code unterbringen
-    - http
-    - bluetooth
 - Update interval im QR-Code
 - Ob statisch oder dynamische Daten im QR-Code
 
