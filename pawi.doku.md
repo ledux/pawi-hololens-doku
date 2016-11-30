@@ -1,6 +1,7 @@
 % Mixed Reality mit Hololens
 % Pascal Schulthess
   Lukas Tanner
+  Dozent: Tim Weingärtner
 % 30. Nov 2016
 
 \pagebreak
@@ -9,7 +10,7 @@
 
 Hiermit erkläre ich, dass ich die vorliegende Arbeit selbständig angefertigt und keine anderen als
 die angegebenen Hilfsmittel verwendet habe. Sämtliche verwendeten Textausschnitte, Zitate oder
-Inhalte anderer Verfasser wurden ausdrücklich als solche gekennzeichnet
+Inhalte anderer Verfasser wurden ausdrücklich als solche gekennzeichnet.
 
 
 Pascal Schulthess
@@ -22,12 +23,38 @@ Lukas Tanner
 
 \pagebreak
 
+# Inhalt
+
+- [Selbständigkeitserklärung](#section-id-9)
+- [Inhalt](#section-id-26)
+- [Abstract (deutsch)](#section-id-31)
+- [Abstract (english)](#section-id-40)
+- [Abkürzungen und Definitionen](#section-id-49)
+- [Ziele und erwartete Resultate](#section-id-77)
+  - [Einführung](#section-id-79)
+  - [Mögliche Anwendungsfälle](#section-id-96)
+  - [Mögliche Frameworks](#section-id-116)
+    - [Virtueller Desktop](#section-id-121)
+    - [Geräteinformationen darstellen](#section-id-131)
+  - [Anforderungen](#section-id-145)
+    - [Framework (muss)](#section-id-151)
+    - [Framework (kann)](#section-id-170)
+- [Lösungsentwicklung](#section-id-180)
+  - [Erste Schritte](#section-id-184)
+    - [Demoapplikationen](#section-id-217)
+    - [Tutorials](#section-id-235)
+  - [Entwicklung Gerätestatus](#section-id-258)
+    - [Workflow](#section-id-273)
+    - [Datenquelle](#section-id-284)
+- [Schlussfolgerungen und Ausblick](#section-id-292)
+- [Lessons learned](#section-id-303)
+
 # Abstract (deutsch)
 Hololens ist eine mixed reality Brille von Microsoft, die es erlaubt, den Raum mit
 holografischen Elementen zu erweitern. Ebenso kann man damit programmatisch mit der Umgebung
 interagieren.
 
-Dieses Dokument beschreibt erste Erfahrungen mit der dieser neuen Technologie und die Entwicklung
+Dieses Dokument beschreibt erste Erfahrungen mit dieser neuen Technologie und die Entwicklung
 eines Frameworks, das es erlaubt, Informationen zu einem realen Objekt im Raum darstellen zu lassen.
 
 
@@ -44,7 +71,7 @@ with which you can display additional information to a real life object in the r
 
 ----------------------------------------------------------------------------------------------------
 Begriff             Bedeutung
--------             ----------------------------------------------------------------------
+-----------------   ---------------------------------------------------------------
 Virtual Reality     Künstliche Welt, in der sich eine Person wie in der realen Welt bewegen kann.
                     Die reale Welt wird komplett mit einer künstlichen ersetzt.
 
