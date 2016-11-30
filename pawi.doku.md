@@ -20,7 +20,7 @@ Lukas Tanner
 \pagebreak
 
 ## Abstract (deutsch)
-Hololens ist eine mixed reality Brille von Microsoft, die es erlaubt, die Umgebung mit
+Hololens ist eine mixed reality Brille von Microsoft, die es erlaubt, den Raum mit
 holografischen Elementen zu erweitern. Ebenso kann man damit programmatisch mit der Umgebung
 interagieren.
 
@@ -28,10 +28,42 @@ Dieses Dokument beschreibt erste Erfahrungen mit der dieser neuen Technologie un
 eines Frameworks, das es erlaubt, Informationen zu einem realen Objekt im Raum darstellen zu lassen.
 
 
-
 ## Abstract (english)
 
+Hololens are mixed reality glasses by Microsoft. They can extend the environment with holographic
+elements and interact programmatically with the surroundings.
+
+This document describes first steps with this new technology and the developement of a framework
+with which you can display additional information to a real life object in the room.
+
+
 ## Abkürzungen und Definitionen
+
+----------------------------------------------------------------------------------------------------
+Begriff             Bedeutung
+-------             ----------------------------------------------------------------------
+Virtual Reality     Künstliche Welt, in der sich eine Person wie in der realen Welt bewegen kann.
+                    Die reale Welt wird komplett mit einer künstlichen ersetzt.
+
+Augmented Reality   Die Realität wird durch zusätzliche virtuelle Elemente angereichert und erhält
+                    so einen Mehrwert. Im Gegensatz zur virtual reality nimmt man hier die reale
+                    Welt immer noch wahr.
+
+Mixed Reality       Wird äquivalent zu "Augemented Reality" verwendet.
+
+Tap                 Gestik bei welcher der Zeigefinger auf den Daumen tippt. Damit wird eine Aktion
+                    ausgelöst (entspricht einem Mausklick).
+
+Press               Gestik bei welcher ein Tap durchgeführt wird, die Finger jedoch geschlossen
+                    bleiben. Damit kann etwas "festgehalten" werden und mit einer Handbewegung ein
+                    Objekt manipuliert werden (Verschieben, Navigieren, Scrollen etc.).
+
+Bloom               Gestik bei welcher die fünf Finger einer Hand sich berühren und nach oben
+                    zeigen um danach die Finger zu spreizen (wie eine Blüte öffnen). Wird als
+                    Menü/Windwos Taste genutzt.
+
+----------------------------------------------------------------------------------------------------
+Tabelle: Definitionen
 
 ## Ziele und erwartete Resultate
 
