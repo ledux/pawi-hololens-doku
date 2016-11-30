@@ -304,9 +304,40 @@ um statische Daten handelt, fällt dies natürlich weg.
 
 ### Datenquelle
 
-Als dynamische Datenquelle haben wir uns für eine REST-Schnittstelle entschieden. Sie
+Als dynamische Datenquelle haben wir uns für eine REST-Schnittstelle entschieden[^source]. Sie liefert für
+vier verschiedene Geräte unterschiedliche Daten, die in etwa so aussehen.
 
-[https://github.com/ledux/pawi-hololens-dummyapi.git]
+```json
+{
+    "displayData":"Dynamic data about the device",
+    "deviceDescription":"Static description of the Device",
+    "positionToSource":{
+        "xValue":3.5,
+        "yValue":4,
+        "zValue":8.35
+    },
+    "positionToDevice":{
+        "xValue":3.5,
+        "yValue":4,
+        "zValue":8.35
+    },
+}
+```
+
+`displayData` ist die Information, an der man interessiert ist. Hier kann der Füllstand,
+    Fehlermeldungen etc. stehen.
+
+`deviceDescription` ist die Bezeichnung des Teils des überwachten Geräts, z.B. "Einschaltknopf",
+    "Wassertank"
+
+`positionToSource` ist die relative Position zum Teil, wo die Information dargestellt werden soll.
+
+`positionToDevice` ist die relative Position des Teil zum Gerät selber. Zwischen den beiden
+Positionen gibt es eine logische Verbindung, die visuell dargestellt wird.
+
+
+
+[^source]:[Source on GitHub](https://github.com/ledux/pawi-hololens-dummyapi.git)
 
 
 
