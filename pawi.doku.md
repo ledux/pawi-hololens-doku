@@ -1,8 +1,33 @@
 # Mixed Reality mit Hololens
 
+\pagebreak
+
 ## Selbständigkeitserklärung
 
+Hiermit erkläre ich, dass ich die vorliegende Arbeit selbständig angefertigt und keine anderen als
+die angegebenen Hilfsmittel verwendet habe. Sämtliche verwendeten Textausschnitte, Zitate oder
+Inhalte anderer Verfasser wurden ausdrücklich als solche gekennzeichnet
+
+
+Pascal Schulthess
+
+---
+
+Lukas Tanner
+
+---
+
+\pagebreak
+
 ## Abstract (deutsch)
+Hololens ist eine mixed reality Brille von Microsoft, die es erlaubt, die Umgebung mit
+holografischen Elementen zu erweitern. Ebenso kann man damit programmatisch mit der Umgebung
+interagieren.
+
+Dieses Dokument beschreibt erste Erfahrungen mit der dieser neuen Technologie und die Entwicklung
+eines Frameworks, das es erlaubt, Informationen zu einem realen Objekt im Raum darstellen zu lassen.
+
+
 
 ## Abstract (english)
 
