@@ -73,7 +73,7 @@ Damit wäre es denkbar, dass ganze Vorgänge Schritt für Schritt beschrieben we
 Hololens auf dem Gerät die Teile hervorheben, die gerade bearbeitet werden müssen (z.B. "Um die
 Abdeckung zu entfernen, lösen sie die beleuchteten vier Schrauben mit einem Kreuz-Schraubenzieher")
 
-Eine weitere Anwendung dieses Frameworks wäre dass die Informationen, die bei einem Smartphone im
+Eine weitere Anwendung dieses Frameworks wäre, dass die Informationen, die bei einem Smartphone im
 Notification Menu vorhanden sind, mit der Hololens über dem Smartphone schweben zu lassen.
 
 ### Anforderungen
@@ -108,18 +108,6 @@ und die darauf zu entwickelnde Applikation gestellt.
 * Ein-/Ausblenden von Informationen mittels holografischem Menus
 * Es kann entschieden werden, ob die Informationen am realen Gerät oder am Hologramm dargestellt
   wird
-
-Für die Demonstration des Frameworks haben wir uns für einen Laptop als Gerät entschieden. Der ist
-mobil und kann ebenfalls als Webserver dienen. Somit ist kein dediziertes Demogerät und zusätzliche
-Infrastruktur notwendig.
-
-Für die Darstellung der Informationen werden folgende Daten benötigt, die wir über die
-Webschnittstelle und QR-Code erhalten werden.
-
-- Information die dargestellt werden soll
-- Bezeichner der Quelle
-- Vektor für die relative Position der Information zur Quelle
-- Vektor für die relative Position der Quelle zum Gerät
 
 
 
@@ -201,7 +189,50 @@ die Tiefe erkennen. Dieses Scannen geschieht automatisch, jedoch kann der Entwic
 Informationen arbeiten und darauf reagieren.
 
 
+### Entwicklung "Gerätestatus"
+
+Für die Demonstration des Frameworks haben wir uns für einen Laptop als Gerät entschieden. Der ist
+mobil und kann ebenfalls als Webserver dienen. Somit ist kein dediziertes Demogerät und zusätzliche
+Infrastruktur notwendig.
+
+Für die Darstellung der Informationen werden folgende Daten benötigt, die wir über die
+Webschnittstelle und QR-Code erhalten werden.
+
+- Information die dargestellt werden soll
+- Bezeichner der Quelle
+- Vektor für die relative Position der Information zur Quelle
+- Vektor für die relative Position der Quelle zum Gerät
+
+
+#### Workflow
+
+Ein Gerät, das mit zusätzlichen Informationen muss sich einmalig bei der Hololens anmelden. Dies
+geschieht über einen QR-Code, der mit der Applikation auf der Hololens gescannt werden muss. Mit den
+Informationen konfiguriert die Hololens das Gerät, indem es sich merkt, wo es steht und wo es die
+zusätzlichen Daten abholen kann.
+
+Wenn sich die Daten dynamisch ändern können (wie Füllstand oder Temperatur oder ähnliches),
+holt sich die Hololens periodisch die aktualisierten Daten und stellt sie erneut dar. Wenn es sich
+um statische Daten handelt, fällt dies natürlich weg.
+
+#### Datenquelle
+
+Als dynamische Datenquelle haben wir uns für eine REST-Schnittstelle entschieden. Sie
+
+[https://github.com/ledux/pawi-hololens-dummyapi.git]
+
+
+
 ## Schlussfolgerungen und Ausblick
+
+_--> Notizen TODO: ausformulieren_
+
+- Über die Sicherheit der REST-Schnittstelle haben wir noch keine Gedanken gemacht
+- Verschiedene Datenquellen für die Informationen im QR-Code unterbringen
+    - http
+    - bluetooth
+- Update interval im QR-Code
+- Ob statisch oder dynamische Daten im QR-Code
 
 ## Lessons learned
 
