@@ -23,31 +23,6 @@ Lukas Tanner
 
 \pagebreak
 
-# Inhalt
-
-- [Selbständigkeitserklärung](#section-id-9)
-- [Inhalt](#section-id-26)
-- [Abstract (deutsch)](#section-id-31)
-- [Abstract (english)](#section-id-40)
-- [Abkürzungen und Definitionen](#section-id-49)
-- [Ziele und erwartete Resultate](#section-id-77)
-  - [Einführung](#section-id-79)
-  - [Mögliche Anwendungsfälle](#section-id-96)
-  - [Mögliche Frameworks](#section-id-116)
-    - [Virtueller Desktop](#section-id-121)
-    - [Geräteinformationen darstellen](#section-id-131)
-  - [Anforderungen](#section-id-145)
-    - [Framework (muss)](#section-id-151)
-    - [Framework (kann)](#section-id-170)
-- [Lösungsentwicklung](#section-id-180)
-  - [Erste Schritte](#section-id-184)
-    - [Demoapplikationen](#section-id-217)
-    - [Tutorials](#section-id-235)
-  - [Entwicklung Gerätestatus](#section-id-258)
-    - [Workflow](#section-id-273)
-    - [Datenquelle](#section-id-284)
-- [Schlussfolgerungen und Ausblick](#section-id-292)
-- [Lessons learned](#section-id-303)
 
 # Abstract (deutsch)
 Hololens ist eine mixed reality Brille von Microsoft, die es erlaubt, den Raum mit
@@ -65,6 +40,33 @@ elements and interact programmatically with the surroundings.
 
 This document describes first steps with this new technology and the developement of a framework
 with which you can display additional information to a real life object in the room.
+
+
+# Inhalt
+
+- [Selbständigkeitserklärung](#section-id-9)
+- [Inhalt](#section-id-26)
+- [Abstract (deutsch)](#section-id-31)
+- [Abstract (english)](#section-id-40)
+- [Abkürzungen und Definitionen](#section-id-49)
+- [Ziele und erwartete Resultate](#section-id-77)
+    - [Einführung](#section-id-79)
+    - [Mögliche Anwendungsfälle](#section-id-96)
+    - [Mögliche Frameworks](#section-id-116)
+        - [Virtueller Desktop](#section-id-121)
+        - [Geräteinformationen darstellen](#section-id-131)
+    - [Anforderungen](#section-id-145)
+      - [Framework (muss)](#section-id-151)
+      - [Framework (kann)](#section-id-170)
+- [Lösungsentwicklung](#section-id-180)
+    - [Erste Schritte](#section-id-184)
+        - [Demoapplikationen](#section-id-217)
+        - [Tutorials](#section-id-235)
+    - [Entwicklung Gerätestatus](#section-id-258)
+        - [Workflow](#section-id-273)
+        - [Datenquelle](#section-id-284)
+- [Schlussfolgerungen und Ausblick](#section-id-292)
+- [Lessons learned](#section-id-303)
 
 
 # Abkürzungen und Definitionen
@@ -96,7 +98,7 @@ Bloom               Gestik bei welcher die fünf Finger einer Hand sich berühre
 Table: Definitionen
 
 ----------------------------------------------------------------------------------------------------
-Abkürzung           Bedeutung
+**Abkürzung**       **Bedeutung**
 -----------------   ---------------------------------------------------------------
 API                 Application Program Interface, Schnittstelle von Computerprogrammen für
                     Computerprogramme
@@ -132,7 +134,7 @@ Die Hololens bietet sicherlich Einsatzmöglichkeiten im Spielebereich, wie Micro
 [Fragments](https://www.microsoft.com/microsoft-hololens/en-us/apps/fragments) bereits gezeigt haben.
 
 Aber sie wurde für Geschäftslösungen entwickelt und dort will sie Microsoft auch positionieren.
-Dabei gibt es bereits eine
+Dazu gibt es bereits eine
 [Sketchup Adaption](https://www.microsoft.com/en-us/store/p/sketchup-viewer/9nblggh4338q#),
 mit welcher mehrere Personen am selben 3D-Modell arbeiten können
 
@@ -164,7 +166,7 @@ dargestellt.
 
 Die Hololens erkennt ein Gerät und holt sich Informationen zu diesem Gerät ab, das sie dann in der
 Nähe des Geräts darstellt. Die Informationen können dynamisch sein, wie Füllstände,
-Geschwindigkeiten, Temperaturen, Druck, Leistung etc oder auch statische wie Spezifikationen
+Geschwindigkeiten, Temperaturen, Druck, Leistung etc. oder auch statische wie Spezifikationen
 oder Anleitungen.
 
 Damit wäre es denkbar, dass ganze Vorgänge Schritt für Schritt beschrieben werden. Dabei könnte die
@@ -257,7 +259,7 @@ wir zwei Spiele hervorheben.
    Obwohl sich der Spieler in der realen Umgebung bewegt und diese auch wahrnimmt, so ist er dennoch
    in der Virtualität gefangen und kümmert sich kaum um die Umgebung.
 
-2. **Jenga**: Dies ist ein Spiel, bei welchem Holzblöcke zu einem Turm geschichtet werden (je drei
+1. **Jenga**: Dies ist ein Spiel, bei welchem Holzblöcke zu einem Turm geschichtet werden (je drei
     pro Etage) und die Spieler nacheinander einen Holzblock entfernen und oben auf den Turm legen
     müssen. Dieses Spiel wurde ebenfalls für die Hololens adaptiert. Hier zeigen sich jedoch die
     Limitationen der Virtualität. Man kann zwar die Blöcke mit Gesten bewegen aber es fehlt ein
