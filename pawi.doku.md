@@ -94,6 +94,9 @@ Bloom               Gestik bei welcher die fünf Finger einer Hand sich berühre
                     zeigen um danach die Finger zu spreizen (wie eine Blüte öffnen). Wird als
                     Menü/Windwos Taste genutzt.
 
+Gaze                der Blick; wo der Benutzer hinschaut und was die Hololens dort identifiziert.
+                    Das kann sowohl ein reales Objekt sein wie auch ein Hologramm.
+
 ----------------------------------------------------------------------------------------------------
 Table: Definitionen
 
@@ -238,14 +241,20 @@ ersten Verwenden gibt es ein Tutorial, das dem Träger erklärt, wie mit dem neu
 interagiert wird. Als Pointer gibt es im Zentrum des Sichtfelds einen Punkt, Gaze genannt. Mit
 diesem Pointer zielt man auf die Objekte, mit welchen man interagieren will.
 
-Als Eingabegerät dient die Hand. Sie erkennt zwei Gesten. Einerseits kann man das Start Menü
+Als Eingabegerät dient die Hand. Sie erkennt drei Gesten. Einerseits kann man das Start Menü
 aufrufen, indem man die fünf Finger nach oben zusammenhält und danach öffnet wie eine Blume.
 Andererseits gibt es den bekannten Klickevent. Für diesen hält man den Zeigefinger wie ermahnend vor
 das Gesicht. Der Cursor im Blickfeld ändert daraufhin sein Aussehen um dem Benutzer zu
 signalisieren, dass der Finger erkannt wurde. Nun kann der Träger mit dem Zeigefinger auf den Daumen
 tippen um ein Klick auszulösen.
 
-Dies funktioniert sehr gut und recht intuitiv.
+Lässt man den Zeigefinger und den Daumen nach dem Tippen zusammen, kann man damit Hologramme
+festhalten. Damit kann man je nach Kontext das Hologramm im Raum verschieben oder durch einen langen
+Text scrollen.
+
+Dies funktioniert sehr gut und recht intuitiv, solange man sich auf den Cursor konzentriert. Der
+verändert sich im Aussehen, je nach dem, mit was die Blickrichtung  kollidiert und ob der
+Zeigefinger für den Klick erkannt wurde.
 
 
 ### Demoapplikationen
@@ -263,7 +272,8 @@ wir zwei Spiele hervorheben.
     pro Etage) und die Spieler nacheinander einen Holzblock entfernen und oben auf den Turm legen
     müssen. Dieses Spiel wurde ebenfalls für die Hololens adaptiert. Hier zeigen sich jedoch die
     Limitationen der Virtualität. Man kann zwar die Blöcke mit Gesten bewegen aber es fehlt ein
-    haptisches Feedback.
+    haptisches Feedback. Dadurch wird es schwierig, die Blöcke im  richtigen Winkel aus dem Turm zu
+    ziehen.
 
 
 ### Tutorials
@@ -390,7 +400,6 @@ bluetooth auf der Hand.
 
 Diese Art und Weise, wie die Applikation zu seinen Daten kommt, müsste auch noch im QR-Code
 untergebracht werden.
-
 
 _--> Notizen TODO: ausformulieren_
 
