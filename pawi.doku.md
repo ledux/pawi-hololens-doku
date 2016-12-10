@@ -449,6 +449,38 @@ Positionen gibt es eine logische Verbindung, die visuell dargestellt wird.
 
 [^source]:[Source on GitHub](https://github.com/ledux/pawi-hololens-dummyapi.git)
 
+### Tips und Stoplersteine bei der Entwicklung
+Während der Entwicklung sind wir auf einige Probleme gestossen welche wir in diesem Abschnitt zusammen mit den allfälligen Lösungen auflisten.
+
+**Setup der Entwicklungsumgebung**
+Um für die Hololens zu Entwickeln wird ein Windows 10 Pro, Enterprise oder Education Computer mit aktiviertem Hyper-V benötigt. Das SDK supportet offiziell auch die Betriebssysteme ab Windows 7, jedoch nicht alle benötigten Tools.
+[^setup]:[Installationsanleitung](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools)
+
+**Einschränkungen des Hololens Betriebssystems**
+Obwohl die Hololens selbst ein Computer ist, bietet das WindowsHolographic nicht die gewohnten Funktionalitäten. Es gibt keine CommandLine, kein TaskManager und auch keinen Explorer. Apps welche man auf dem Desktop (genannt Shell) plaziert hat sind gestartet. Um den Prozess zu beenden muss das Icon, welches 2D oder 3D sein kann, entfernt werden. 
+
+**Hololens auf sich Anpassen**
+Durch das Gewicht von 579 Gramm loht es sich Zeit zu nehmen beim Anpassen. Es befinden sich zwei unterschiedliche Nose Pads und ein einstellbarer Overhead Strap im Lieferumfang. Diese sowie der Clicker Kontroller ermöglichen die längere Nutzung ohne Kopfschmerzen.
+
+**Einrichten der Hololens für die Entwicklung**
+Um mit den Entwicklungstools auf die Hololens zugreifen zu können muss der Debug Mode aktiviert werden. Microsoft hat die Anleitung dazu auf der Seite [^enable-dev-mode]:[Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/Using_Visual_Studio.html#enabling_developer_mode) versteckt. Die IP-Addresse der Hololens kann man über Settings->Network&Internet->Advanced options auslesen.
+
+**Konfiguration eines neuen Projektes**
+Ein Projekt mit Unity muss spezifisch für die Hololens angepasst werden. Das 
+[^create-project]:[Microsoft Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100) enthällt die nötigen Konfigurationen.
+
+**Weiss und Schwarz**
+Die Farben Weiss und Schwarz haben jeweils ihre eigenen Probleme. Da die Hololens nur additiv RGB Farben darstellen kann ist Schwarz die gänzlich Transparent. Dadurch kann man nicht beeinflussen was der Benutzer sieht. Im gegensatz dazu hat Weiss das Problem dass die Hololens RGB in 3 separaten Schichten darstellt und diese nicht immer perfekt übereinander Liegen. Dadurch sieht man z.B. bei einem weit entfernten Weissen Punkt stattdessen drei leicht versetzte Punkte in rot, grün und blau.
+
+
+
+
+
+
+
+
+
+
 
 
 # Schlussfolgerungen und Ausblick
@@ -459,7 +491,7 @@ einiges, das wir ausgespart haben.
 ## Sicherheit
 
 Die Informationen, die die Hololens über die Geräte darstellt, sind potentiell kritisch und dürfen
-nicht in jedem Fall frei verfügbar sein. In unserem Szenario haben wir diesen Aspekt völlig
+nicht in jedem Fall frei verfügbar sein. In unserem Szenario haben wir diesen Aspekt vollständig
 ausgeklammert. Aber grundsätzlich muss es möglich sein, dass sich die Hololens an der Datenquelle
 identifizieren muss, bevor sie Daten erhält. Hier sind folgende Szenarien möglich:
 
