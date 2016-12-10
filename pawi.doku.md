@@ -467,11 +467,64 @@ Um mit den Entwicklungstools auf die Hololens zugreifen zu können muss der Debu
 
 **Konfiguration eines neuen Projektes**
 Ein Projekt mit Unity muss spezifisch für die Hololens angepasst werden. Das 
-[^create-project]:[Microsoft Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100) enthällt die nötigen Konfigurationen.
+[^create-project]:[Microsoft Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100) enthällt die nötigen Konfigurationen. Der Unity Editor ermöglicht es vieles ausserhalb der Hololens und dessen Emulators zu testen. Viele der Skripte wie ManualCameraControl, GestureManager und KeywordManager bieten die möglichkeit einen alternativen Input per Tastatur zu definieren.
+
+**Holographic Academy**
+In 9 Tutorials werden die wichtigsten Elemente für die Entwicklung beigebracht. [^holographic-academy]:[Microsoft Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy) 
+
+****
 
 **Weiss und Schwarz**
 Die Farben Weiss und Schwarz haben jeweils ihre eigenen Probleme. Da die Hololens nur additiv RGB Farben darstellen kann ist Schwarz die gänzlich Transparent. Dadurch kann man nicht beeinflussen was der Benutzer sieht. Im gegensatz dazu hat Weiss das Problem dass die Hololens RGB in 3 separaten Schichten darstellt und diese nicht immer perfekt übereinander Liegen. Dadurch sieht man z.B. bei einem weit entfernten Weissen Punkt stattdessen drei leicht versetzte Punkte in rot, grün und blau.
 
+**Update nicht blockieren**
+Die Update Methode wird jedes Frame aufgerufen und ist somit nur für nicht blockierende Aufgaben geeignet. Die Methode InvokeRepeating von MonoBehaviour bietet die Möglichkeit für zyklische Methodenaufrufe. 
+```
+// Aufruf alle 3 Sekunden nach initialem warten von 2 Sekunden
+void Start () {
+	InvokeRepeating("DoSomething", 2, 3);
+}  
+void DoSomething(){
+	//xyz
+}
+```
+Eine weitere Möglichkeit ist eine Coroutine aufzurufen. Dies ist eine Methode welche pro Frame einen bestimmten Bereich durchführt und dann die Ausführung pausiert.
+```
+void Update() {
+    if (Input.GetKeyDown("f")) {
+        StartCoroutine("Fade");
+    }
+}
+
+IEnumerator Fade()
+{
+	for (float f = 1f; f >= 0; f -= 0.1f) {
+        Color c = renderer.material.color;
+        c.a = f;
+        renderer.material.color = c;
+        yield return null;
+    }
+}
+```
+Wenn Update aufgerufen wird, startet die Coroutine Fade und läuft durch bis zum ersten yield return. Im folgenden Frame fährt die Ausführung in der Methode nach dem yield weiter. Weitere Informationen zum Beispiel findet man in der [^coroutines]:[Unity Dokumentation](https://docs.unity3d.com/Manual/Coroutines.html). 
+Eine Coroutine wurde auch im Script DeviceBehaviour benutzt für den asynchronen HTTP Request.
+```
+void UpdateText() {
+	StartCoroutine(GetInformationFromUrl());
+}
+
+IEnumerator GetInformationFromUrl()
+{
+	// Erstellung des HTTP Requests mittels der URL
+	UnityWebRequest www = UnityWebRequest.Get(DeviceInformationUrl);
+	// Asynchroner aufruf des Requestes
+	yield return www.Send();
+	// Behandlung der Antwort
+	Debug.Log(www.downloadHandler.text);
+}
+```
+
+**sdds**
 
 
 
