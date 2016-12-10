@@ -299,7 +299,7 @@ die Tiefe erkennen. Dieses Scannen geschieht automatisch, jedoch kann der Entwic
 Informationen arbeiten und darauf reagieren.
 
 
-## Entwicklung "Gerätestatus"
+## Entwicklung "Gerätestatus" Framework
 
 Für die Demonstration des Frameworks haben wir uns für einen Laptop als Gerät entschieden. Der ist
 mobil und kann ebenfalls als Webserver dienen. Somit ist kein dediziertes Demogerät und zusätzliche
@@ -308,11 +308,10 @@ Infrastruktur notwendig.
 Für die Darstellung der Informationen werden folgende Daten benötigt, die wir über die
 Webschnittstelle und QR-Code erhalten werden.
 
-- Information die dargestellt werden soll
+- Textinformation die dargestellt werden soll
 - Bezeichner der Quelle
-- Vektor für die relative Position der Information zur Quelle
+- Vektor für die relative Position der Information zum Gerät
 - Vektor für die relative Position der Quelle zum Gerät
-
 
 ### Workflow
 
@@ -324,6 +323,43 @@ zusätzlichen Daten abholen kann.
 Wenn sich die Daten dynamisch ändern können (wie Füllstand oder Temperatur oder ähnliches),
 holt sich die Hololens periodisch die aktualisierten Daten und stellt sie erneut dar. Wenn es sich
 um statische Daten handelt, fällt dies natürlich weg.
+
+### Aufbau des Frameworks
+Das Framework besteht aus einem UnityPackage und einer Anleitung wie die einzelnen Komponenten genutzt werden sollen. Zusätzlich wird das Microsoft HoloToolkit UnityPackage benötigt. Dieses ist verfügbar unter [^holotoolkit-unity]:[HoloToolkit-Unity](https://github.com/Microsoft/HoloToolkit-Unity) und enthällt ein Readme.md mit der Installationsanleitung. 
+
+#### Die Assets
+Als Assets werden alle Dateien bezeichnet welche in einer Unity App benutzt werden. 
+- 3D-Modelle:	Unity-Objekte mit Meshes, Positionierung, Collider und Materialien.
+- Scripts:		C# Klassen welche Unity-Objekten angehängt werden können. (Javascript ist auch möglich)
+- Materialien:	Oberfläche welche mittels Texturen und Shader auf 3D-Modelle angewendet wird.
+- Prefabs:		Eine Gruppierung von Assets welche zur Laufzeit instanziert werden kann.
+- Weiter gibt es Bilder, Sprites, Audio, Lichtquellen, Physikmaterialien und Animationen
+
+Im erstellten Framework befinden sich hauptsächlich Scripts und Prefabs.
+**DeviceManager.cs**
+Der DeviceManager behandelt die Erstellung und das Entfernen von Geräten. ????????????
+
+**DeviceBehaviour.cs**
+Jedes Gerät wird durch das DeviceBehaviour Script gesteuert. Es enthällt alle offline Informationen zum Gerät und die URL zur Webschnittstelle. In regelmässigen Abständen, konfigurierbar durch 'PollRateInSec' werden die Informationen abgefragt und dargestellt. 
+ 
+**Device Prefab**
+Für jedes neue Gerät muss ein Device Prefab erstellt werden. Es enthällt das 3D-Modell, den Collider und das DeviceBehaviour Skript mit der gewünschten Konfiguration aus DeviceName, DeviceInformationUrl und PollRateInSec. Weiter müssen die TextInformationPrefab und ImageInformationPrefab sowie die Materialien (Normal und Selektiert) für die 3D-Linien gesetzt werden.
+
+**InformationBaseScript.cs**
+Um Informationen wie Text oder Bild sinnvoll darzustellen, wird dynamisch eine "3D-Linie" von einem Ort des Gerätes (Anker) zum Ort an welchem die Information dargestellt wird (Ziel) erzeugt. Diese "3D-Linie" besteht aus einer Kugel beim Anker, einem langen Zilinder als Verbindung und einem breiten Zilinder als Podest für die Information. Es ermöglicht die Information mit der Press-Gestik zu verschieben und wechselt das Material der "3D-Linie" falls die Information fokussiert wird.
+
+**TextInformation.cs**
+Diese Ableitung des InformationBaseScript ermöglicht es Text mittels SetText darzustellen.
+
+**TextInformation Prefab**
+Damit der Benutzer den Text sehen kann sind in diesem Prefab nebst dem TextInformation Scripts mehrere Assets nötig. Ein Billboard Script, aus dem HoloToolkit, richtet das Objekt relativ zum Blickwinkel der Kamera aus. Ein BoxCollider wird verwendet damit registriert werden kann ob der Benutzer das Objekt fokussiert. Der Kollider passt sich mittels dem InformationBaseScript dem Inhalt des Prefabs an. Auch die Unity Scripts HorizontalLayerGroup und ContentSizeFitter werden benötigt damit sich die Grösse dynamisch dem Inhalt anpasst. Hierarchisch enthällt das Prefab die Unity UI Objekte Canvas, Panel und Text. Das Panel besitzt ein Image Script ohne Bild aber mit der Farbe blau um einen Hintergrund für den Text zu haben. Ein Padding im HorizontalLayerGroup des Panels erleichter die Lesbarkeit des Textes. Auf der untersten Ebene befindet sich das Text Objekt welches vom TextInformation Script aktualisiert wird.
+
+**ImageInformation.cs**
+Vergleichbar mit dem TextInformation Script wird stattdessen ein Bild durch SetImage gesetzt. Zusätzlich wird die Grösse des Prefabs der Grösse des Bildes Angepasst. Dies war nötig da der ContentSizeFitter nicht wie bei dem Text objekt funktioniert hat.
+
+**ImageInformation Prefab**
+Dieses Prefab gleicht dem TextInformation Prefab bis auf zwei Änderungen. Der ContentSizeFitter wird nicht verwendet und es wird das Text Objekt mit RawImage ersetzt. 
+
 
 ### QR-Code
 
@@ -345,7 +381,7 @@ vier verschiedene Geräte unterschiedliche Daten, die in etwa so aussehen.
     "displayData":"Dynamic data about the device",
     "deviceDescription":"Static description of the device",
     "positionToSource":{
-        "xValue":3.5,
+        "xValue":3.5, 
         "yValue":4,
         "zValue":8.35
     },
