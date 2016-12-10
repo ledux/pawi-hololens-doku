@@ -360,6 +360,48 @@ Vergleichbar mit dem TextInformation Script wird stattdessen ein Bild durch SetI
 **ImageInformation Prefab**
 Dieses Prefab gleicht dem TextInformation Prefab bis auf zwei Änderungen. Der ContentSizeFitter wird nicht verwendet und es wird das Text Objekt mit RawImage ersetzt. 
 
+#### Konfiguration
+Die oben genannten Assets müssen in einer Unity Scene konfiguriert werden. Die minimale Hierarchie besteht aus den folgenden Assets:
+
+- MainCamera
+-- ManualCameraControl (Script)
+- Managers
+-- GazeManager (Script)
+-- GestureManager (Script)
+-- DeviceManager (Script)
+-- KeywordManager (Script)
+- EventSystem
+- Cursor
+-- CursorManager (Script)
+-- CursorOnHolograms
+-- CursorOffHolograms
+- DiractionalLight
+- SpatialMapping
+--SpatialMappingObserver (Script)
+--SpatialMappingManager (Script)
+--ObjectSurfaceObserver (Script)
+
+**MainCamera**
+Unter HoloToolkit/Utilities/Prefabs/Main Camera.prefab befindet sich die Hololens komatible Kamera. Um im Unity Editor die Kamera zu steuern gibt es das HoloToolkit/Utilities/Scripts/ManualCameraControl.cs Script.
+
+**Managers**
+Das mittels CreateEmpty ertellte GameObjekt wird benutzt um generelle Manager Skripte anzuhängen. 
+Der HoloToolkit/Input/Scripts/GazeManager.cs steuert die Gaze Gestik, welche zum Fokussieren von Objekten benutzt wird. Mit StabilizationPlane und GazeStabilization wird der Gaze, equivalent zur Maus auf einem PC, stabilisiert. Dies ist nützlich, da eine Maus auf dem Tisch stabiler ist als die Kopfbewegungen eines Menschen.
+Mittels des HoloToolkit/Input/Scripts/GestureManagers.cs werden die Meldungen OnSelect, OnPressed und OnReleased an fokussierte Objekte gesendet. Falls das fokussierte Objekt eine dieser Methoden implementiert wird sie ausgeführt. Zusätzlich bietet der Manager verschiedene Events bezüglich Manipulation, z.B. ManipulationStartet, und Properties wie das FocusedObject an.
+Um die Spracherkennung zu nutzen wurde ein HoloToolkit/Input/Scripts/KeywordManager.cs kreiert. Das Property KeywordsAndResponses beinhaltet gesprochene Worte (Keyword) und den dazugehörigen Methodenaufruf auf ein Gameobjekt. Als Beispiel wird bei "remove all" die Methode RemoveDevices() auf dem DeviceManager Script ausgeführt. Das Keyword sollte aus mehr als einem Wort bestehen und anderen Keywords nicht zu sehr gleichen.
+
+**EventSystem** ????Nur mit interaktiven ui elementen nötig?????????
+?????????''
+
+**Cursor**
+Das HoloToolkit/Input/Prefab/Cursor.prefab ist die Darstellung des Cursors. Es können zwei verschiedene Modelle angegeben werden. Ein normales Modell und eines für den Fall dass etwas fokussiert ist. Zudem kann eine Distanz zwischen Fokussierungspunkt und Cursor konfiguriert werden. Falls es ein GazeManager gibt, in unserem Fall im Managers Objekt, wird der Cursor automatisch positioniert.
+
+**DirectionalLight**
+Das DirectionalLight von Unity ist nicht nötig, lässt die Hologramme aber natürlicher aussehen. Es können auch andere Lichtquellen benutzt werden, da jedoch die Umgebung in welcher die Hololens eingesetzt wird nicht bekannt ist, empfhlen wir eine weit entfernte Lichtquelle.
+
+**SpacialMapping**
+Damit die Umgebung wahrgenommen werden kann wird das HoloToolkit/SpatialMapping/Prefabs/SpatialMapping.prefab genutzt. Mit dem SpatialMappingObserver kann die Auflösung und Aktualisierungszeit konfiguriert werden. Der SpatialMappingManager kann die Umrisse der Strukturen darstellen, dies wird nicht genutzt in der Demo Applikation, da es von dem Gerät ablenken würde. ObjectSurfaceObserver???????????
+
 
 ### QR-Code
 
