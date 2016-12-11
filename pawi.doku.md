@@ -524,13 +524,96 @@ IEnumerator GetInformationFromUrl()
 }
 ```
 
-**sdds**
+**JSON Serialisieren**
+Unity bietet mit der UnityEngine.JsonUtility eine einfache Möglichkeit mit JSON Objekten umzugehen. Den Aufbau der Daten kann als Klasse oder Struct definiert werden. Falls man Klassen verwendet können jedoch Probleme mit Hierarchischer Serialisierung auftauchen.
+```
+[System.Serializable]
+public struct JsonInput
+{
+    [System.Serializable]
+    public struct JsonInfo
+    {
+        [System.Serializable]
+        public struct JsonVector
+        {
+            public float x;
+            public float y;
+            public float z;
+        }
 
+        public string descriptor;
+        public string text;
 
+        public JsonVector anchor;
+        public JsonVector target;
+    }
 
+    public JsonInfo[] information;
+}
+```
+Die Serialisierung ist mit einer Zeile möglich.
+```
+var input = JsonUtility.FromJson<JsonInput>(jsonString);
+```
 
+**Dynamisch Formen erstellen**
+Es gibt vordefinierte [^primitive-objects]:[primitive Formen](https://docs.unity3d.com/Manual/PrimitiveObjects.html) wie Würfel und Kugel welche einfach erstellt werden können.
+```
+// Erstellung des GameObjects
+var Cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+// Positionierung relativ zum parent ermöglichen
+Cylinder.transform.parent = this.gameObject.gameObject.transform;
+// Position setzen
+Cylinder.transform.position = new Vector3(2f, 1f, 4f);
+// Grösse verändern
+Cylinder.transform.localScale = new Vector3(50f, 5f, 50f);
+// Das material setzen
+Cylinder.GetComponent<Renderer>().material = SomeMaterial;
+// 
 
+//Das Objekt muss selbst wieder zerstört werden
+void OnDestroy() {
+	Destroy(Cylinder);
+}
+```
 
+**3D-Modell Dateiformate**
+Unity kann folgende Formate nativ importieren: .fbx, .dae, .3ds, .dxf und .obj [^3d-formats]:[Unity 3D Formate](https://docs.unity3d.com/Manual/3D-formats.html)
+Maschienenbauer in der Industrie nutzen jedoch andere Dateiformate wie .step und .stl, da die exakte Form in ihrem Bereich eine Grössere Bedeutung hat als die Texturen und Animationen. Mittels Konverter, z.B. [^3d-converter]:[Spin 3D Converter Software](http://www.nchsoftware.com/3dconverter/), können .stl in .obj konvertiert werden. Das Problem an .stl ist jedoch, dass es keine Materialinformationen beinhaltet.
+
+**Shader auf der Hololens**
+Damit ein Shader auch auf der Hololens funktioniert muss er in Unity unter Edit/Project Settings/Graphics/Always Included Shaders aufgeführt werden. Nicht funktionierende Shader werden Pink dargestellt.
+
+**Probleme mit 2D Linien**
+Mit dem LineRenderer können 2D Linien in der 3D Umgebung dargestellt werden. Vielen Materialien haben Probleme die Linie zu färben. Der Particles/Additive Shader funktioniert ist jedoch nicht deckend. Die Linie hat eine definierte Breite und richtet sich der Kamera aus. Falls sie mehr als 2 Punkte verbindet, ist diese Breite im 3 dimensionalen Raum und aus der Sicht der Kamera nicht mehr konstant. Statt 2D Lienien wird im erstellten Framework mit 3D Zilinder gearbeitet. Dies vermeidet einen Stilbruch zwischen 2D und 3D.
+```
+LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
+lineRenderer.SetColors(Color.red, Color.red);
+lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
+lineRenderer.SetWidth(0.01f, 0.01f);
+
+// Eckpunkte setzen 
+// GetLineCorners erzeugt die Koordinaten 
+Vector3[] linePoints = this.GetLineCorners();
+lineRenderer.SetVertexCount(linePoints.Length);
+lineRenderer.SetPositions(linePoints);
+```
+
+**Spline Bewegung**
+Falls sich ein Objekt einer stetigen Linie folgen soll, gibt es ein Spline Controller Skript von der [^spline]:[UnifyCommunity](http://wiki.unity3d.com/index.php/Main_Page). Dieses Skript wurde ausprobiert, wird jedoch im Framework und in der Demo App nicht verwendet. Kind Objekte eines GameObjects geben die Fixpunkte an, welche besucht werden.
+
+**Raycast**
+Ein Raycast erkennt die erste Kollision von einem Punkt und einer Richtung aus. Ein Beispiel dazu ist die Gaze Gestik. Von der Kamera aus wird ein Raycast gesendet und Liefert das Objekt und die Position. Es ist möglich ein bestimmtes Objekt als Ziel zu wählen. Im nachfolgenden Beispiel möchte man herausfinden ob sich das Objekt über einem bestimmten anderen Zielobjekt befindet.
+```
+// Raycast nach unten
+var rayOrigin = new Ray(transform.position, Vector3.down);
+RaycastHit hit;
+// True wenn der Raycast den targetCollider innerhalb von der Distanz 2 trifft.
+if (targetCollider.Raycast(rayOrigin, out hit, 2f))
+{
+	var position = hit.point;
+}
+```
 
 
 
