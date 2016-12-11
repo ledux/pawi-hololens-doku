@@ -557,7 +557,7 @@ var input = JsonUtility.FromJson<JsonInput>(jsonString);
 ```
 
 **Dynamisch Formen erstellen**
-Es gibt vordefinierte [^primitive-objects]:[primitive Formen](https://docs.unity3d.com/Manual/PrimitiveObjects.html) wie Würfel und Kugel welche einfach erstellt werden können.
+Es gibt vordefinierte [^primitive-objects]:[primitive Formen](https://docs.unity3d.com/Manual/PrimitiveObjects.html) wie Würfel und Kugel welche einfach erstellt werden können. Im erstellten Framework bestehen die Verbindungen aus langen  schmalen Zilindern.
 ```
 // Erstellung des GameObjects
 var Cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
@@ -575,6 +575,12 @@ Cylinder.GetComponent<Renderer>().material = SomeMaterial;
 void OnDestroy() {
 	Destroy(Cylinder);
 }
+```
+
+**Rotation nach anderem Objekt ausrichten**
+Um die oben erwähnten Zilinder-Verbindungen zu realisieren, wird der Zilinder zuerst zwischen Start und Ziel positioniert. Die Roation des Zilinders kann mit der Methode LookAt einfach gesetzt werden.
+```
+Cylinder.transform.LookAt(connectionSource.transform.position, Vector3.up);
 ```
 
 **3D-Modell Dateiformate**
@@ -615,9 +621,43 @@ if (targetCollider.Raycast(rayOrigin, out hit, 2f))
 }
 ```
 
+**Manipulations Gestik**
+Das Verschieben von Objekten kann wie folgt gelöst werden. Beim OnPressed Methodenaufruf wird die aktuelle Position gespeichert und ein Flag gesetzt. Die OnReleased Methode wird nicht benötigt, da der Benutzer sehr wahrscheinlich das Objekt nicht mehr fokussiert hat, wenn er die Gestik beendet. Stattdesen wird das Flag bei den Events ManipulationCanceled und ManipulationCompleted zurückgesetzt. Dies ist unabhängig davon wie die Gestik beendet wird.
+```
+private bool isPressed = false;
+private Vector3 previousPosition;
 
+void Start()
+{
+	GestureManager.Instance.ManipulationCanceled += this.ResetIsPressed;
+	GestureManager.Instance.ManipulationCompleted += this.ResetIsPressed;
+}
 
+private void ResetIsPressed()
+{
+	this.isPressed = false;
+}
 
+void OnPressed()
+{
+	this.previousPosition = this.gameObject.transform.position;
+	this.isPressed = true;
+}
+
+void Update()
+{
+	if (this.isPressed && GestureManager.Instance.ManipulationInProgress)
+	{
+		this.gameObject.transform.position = this.previousPosition + GestureManager.Instance.ManipulationOffset;
+	}
+}
+
+void OnDestroy()
+{
+	GestureManager.Instance.ManipulationCanceled -= this.ResetIsPressed;
+	GestureManager.Instance.ManipulationCompleted -= this.ResetIsPressed;
+}
+```
 
 # Schlussfolgerungen und Ausblick
 
