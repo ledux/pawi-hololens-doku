@@ -362,7 +362,51 @@ Turm schon gefährlich wackelt. Und es ist oft nicht ersichtlich, in welche Rich
 muss. Es ist grundsätzlich gewöhnungsbedürftig, Hologramme festzuhalten und zu verschieben wegen der
 fehlenden Haptik.
 
+#### Fragments
 
+Fragments ist ein Mystery Game für die Hololens. Man schlüpft in die Rolle eines Detektivs, der
+Hinweise sammeln muss um einem Kindsentführer auf die Schliche zu kommen. Die Entwickler haben hier
+sämtliche Möglichkeiten der Hololens ausgelotet, die möglich sind:
+
+- Interaktion mit holografischen Personen
+  - adaptieren ihr Verhalten anhand der Ausrichtung des Spielers im Raum
+- Anpassung des Spielfelds an die reale Umgebung
+  - holografische Personen passen sich der Umgebung an
+- Raumklang
+- Gestensteuerung
+- Sprachsteuerung
+
+Auch in diesem Spiel wird man zuerst aufgefordert, die Umgebung zu scannen, damit die Applikation
+weiss, wo sie Hologramme platzieren kann, damit der Spieler damit interagieren kann. Das gewählte
+Zimmer war zuerst zu klein, also mussten wir noch Teile des Flurs dazu nehmen. Das führte z.B. dazu, dass
+die Karte im Zimmer am Schrank hing, man aber für die Interaktion mit dem Terminal in den Flur gehen
+musste. Dieses Bewusstsein der Applikation über die räumlichen Begebenheiten sind beeindruckend.
+
+Der Spieler wird Teil eines Ermittlerteams, das beauftragt wird ein entführtes Kind zu finden und
+einen Mord aufzuklären. Dabei wird er an verschiedene Schauplätze geführt um Hinweisen nachzugehen.
+Hier ziehen die Entwickler alle Register. Es geht darum, sich einen Überblick über die Situation zu
+verschaffen, also einen Schritt zurück zu machen und von weitem zu schauen. Dann muss man aber auch
+Teile der Szenerie genauer anschauen und sogar Objekte aufheben, um sie zu untersuchen.
+
+Es gibt auch Situationen, bei denen muss man sich auf sein Gehör verlassen und einem Geräusch
+folgen und wenn man die Quelle gefunden hat, muss man es identifizieren. Das sind grandiose
+Beispiele, wie realistisch die beiden kleinen Lautsprecher über den Ohren die Illusion erzeugen
+können, der Ton käme von einem entfernten Ort im Raum.
+
+Die gewonnenen Erkenntnisse können dann in einem Terminal eingegeben und Schlussfolgerungen
+gezogen werden, die das Gebiet, wo man suchen muss, eingrenzen. Dabei helfen die anderen Mitglieder
+des Ermittlerteams. Das sind lebensgrosse Figuren, die mit dem Spieler sprechen und auf sein
+Verhalten reagieren. So weisen sie z.B. den Spieler darauf hin, dass er zur Seite gehen soll,
+wenn er  einer Figur im Weg steht oder setzen sich sogar mal auf ein Sofa, um mit dem Spieler zu
+plaudern.
+
+Es ist ein ganz neues Spielerlebnis, wenn man sich mit gleichgrossen Non-Player Characters in einer
+Umgebung, die man aus dem täglichen Leben kennt, auseinander setzt. Da schaut man auch gerne über
+die noch hölzernen Bewegungen und die kaum vorhandene Mimik hinweg.
+
+Ein weiteres Problem ist das Licht.
+
+komplexe Raumaufteilung schwierig
 
 ### Tutorials
 
@@ -413,43 +457,71 @@ holt sich die Hololens periodisch die aktualisierten Daten und stellt sie erneut
 um statische Daten handelt, fällt dies natürlich weg.
 
 ### Aufbau des Frameworks
-Das Framework besteht aus einem UnityPackage und einer Anleitung wie die einzelnen Komponenten genutzt werden sollen. Zusätzlich wird das Microsoft HoloToolkit UnityPackage benötigt. Dieses ist verfügbar unter [^holotoolkit-unity]:[HoloToolkit-Unity](https://github.com/Microsoft/HoloToolkit-Unity) und enthällt ein Readme.md mit der Installationsanleitung.
+Das Framework besteht aus einem UnityPackage und einer Anleitung wie die einzelnen Komponenten
+genutzt werden sollen. Zusätzlich wird das Microsoft HoloToolkit UnityPackage benötigt. Dieses ist
+[auf GitHub verfügbar](https://github.com/Microsoft/HoloToolkit-Unity) und enthält ein Readme
+mit der Installationsanleitung.
+
 
 #### Die Assets
-Als Assets werden alle Dateien bezeichnet welche in einer Unity App benutzt werden.
-- 3D-Modelle:	Unity-Objekte mit Meshes, Positionierung, Collider und Materialien.
-- Scripts:		C# Klassen welche Unity-Objekten angehängt werden können. (Javascript ist auch möglich)
-- Materialien:	Oberfläche welche mittels Texturen und Shader auf 3D-Modelle angewendet wird.
-- Prefabs:		Eine Gruppierung von Assets welche zur Laufzeit instanziert werden kann.
+Als Assets werden alle Dateien bezeichnet, welche in einer Unity App benutzt werden.
+
+- **3D-Modelle:** Unity-Objekte mit Meshes, Positionierung, Collider und Materialien.
+- **Scripts:** C# Klassen welche Unity-Objekten angehängt werden können. (Javascript ist auch möglich)
+- **Materialien:** Oberfläche welche mittels Texturen und Shader auf 3D-Modelle angewendet wird.
+- **Prefabs:** Eine Gruppierung von Assets welche zur Laufzeit instanziert werden kann.
 - Weiter gibt es Bilder, Sprites, Audio, Lichtquellen, Physikmaterialien und Animationen
 
 Im erstellten Framework befinden sich hauptsächlich Scripts und Prefabs.
+
 **DeviceManager.cs**
 Der DeviceManager behandelt die Erstellung und das Entfernen von Geräten. ????????????
 
 **DeviceBehaviour.cs**
-Jedes Gerät wird durch das DeviceBehaviour Script gesteuert. Es enthällt alle offline Informationen zum Gerät und die URL zur Webschnittstelle. In regelmässigen Abständen, konfigurierbar durch 'PollRateInSec' werden die Informationen abgefragt und dargestellt.
+Jedes Gerät wird durch das DeviceBehaviour Script gesteuert. Es enthält alle offline
+Informationen zum Gerät und die URL zur Webschnittstelle. In regelmässigen Abständen,
+konfigurierbar durch 'PollRateInSec' werden die Informationen abgefragt und dargestellt.
 
 **Device Prefab**
-Für jedes neue Gerät muss ein Device Prefab erstellt werden. Es enthällt das 3D-Modell, den Collider und das DeviceBehaviour Skript mit der gewünschten Konfiguration aus DeviceName, DeviceInformationUrl und PollRateInSec. Weiter müssen die TextInformationPrefab und ImageInformationPrefab sowie die Materialien (Normal und Selektiert) für die 3D-Linien gesetzt werden.
+Für jedes neue Gerät muss ein Device Prefab erstellt werden. Es enthällt das 3D-Modell, den
+Collider und das DeviceBehaviour Skript mit der gewünschten Konfiguration aus
+DeviceName, DeviceInformationUrl und PollRateInSec. Weiter müssen die TextInformationPrefab und
+ImageInformationPrefab sowie die Materialien (Normal und Selektiert) für die 3D-Linien gesetzt werden.
 
 **InformationBaseScript.cs**
-Um Informationen wie Text oder Bild sinnvoll darzustellen, wird dynamisch eine "3D-Linie" von einem Ort des Gerätes (Anker) zum Ort an welchem die Information dargestellt wird (Ziel) erzeugt. Diese "3D-Linie" besteht aus einer Kugel beim Anker, einem langen Zilinder als Verbindung und einem breiten Zilinder als Podest für die Information. Es ermöglicht die Information mit der Press-Gestik zu verschieben und wechselt das Material der "3D-Linie" falls die Information fokussiert wird.
+Um Informationen wie Text oder Bild sinnvoll darzustellen, wird dynamisch eine "3D-Linie" von
+einem Ort des Gerätes (Anker) zum Ort an welchem die Information dargestellt wird (Ziel) erzeugt.
+Diese "3D-Linie" besteht aus einer Kugel beim Anker, einem langen Zilinder als Verbindung und
+einem breiten Zilinder als Podest für die Information. Es ermöglicht die Information mit der
+Press-Gestik zu verschieben und wechselt das Material der "3D-Linie" falls die Information fokussiert wird.
+
 
 **TextInformation.cs**
+
 Diese Ableitung des InformationBaseScript ermöglicht es Text mittels SetText darzustellen.
 
 **TextInformation Prefab**
-Damit der Benutzer den Text sehen kann sind in diesem Prefab nebst dem TextInformation Scripts mehrere Assets nötig. Ein Billboard Script, aus dem HoloToolkit, richtet das Objekt relativ zum Blickwinkel der Kamera aus. Ein BoxCollider wird verwendet damit registriert werden kann ob der Benutzer das Objekt fokussiert. Der Kollider passt sich mittels dem InformationBaseScript dem Inhalt des Prefabs an. Auch die Unity Scripts HorizontalLayerGroup und ContentSizeFitter werden benötigt damit sich die Grösse dynamisch dem Inhalt anpasst. Hierarchisch enthällt das Prefab die Unity UI Objekte Canvas, Panel und Text. Das Panel besitzt ein Image Script ohne Bild aber mit der Farbe blau um einen Hintergrund für den Text zu haben. Ein Padding im HorizontalLayerGroup des Panels erleichter die Lesbarkeit des Textes. Auf der untersten Ebene befindet sich das Text Objekt welches vom TextInformation Script aktualisiert wird.
-
-**ImageInformation.cs**
-Vergleichbar mit dem TextInformation Script wird stattdessen ein Bild durch SetImage gesetzt. Zusätzlich wird die Grösse des Prefabs der Grösse des Bildes Angepasst. Dies war nötig da der ContentSizeFitter nicht wie bei dem Text objekt funktioniert hat.
+Damit der Benutzer den Text sehen kann sind in diesem Prefab nebst dem TextInformation Scripts
+mehrere Assets nötig. Ein Billboard Script, aus dem HoloToolkit, richtet das Objekt relativ zum Blickwinkel der Kamera aus.
+Ein BoxCollider wird verwendet damit registriert werden kann ob der Benutzer das Objekt
+fokussiert. Der Kollider passt sich mittels dem InformationBaseScript dem Inhalt des Prefabs an.
+Auch die Unity Scripts HorizontalLayerGroup und ContentSizeFitter werden benötigt damit sich die
+Grösse dynamisch dem Inhalt anpasst. Hierarchisch enthällt das Prefab die Unity UI Objekte Canvas,
+Panel und Text. Das Panel besitzt ein Image Script ohne Bild aber mit der Farbe blau um einen
+Hintergrund für den Text zu haben. Ein Padding im HorizontalLayerGroup des Panels erleichter die
+Lesbarkeit des Textes. Auf der untersten Ebene befindet sich das Text Objekt welches vom
+TextInformation Script aktualisiert wird. **ImageInformation.cs**
+Vergleichbar mit dem TextInformation Script wird stattdessen ein Bild durch SetImage gesetzt.
+Zusätzlich wird die Grösse des Prefabs der Grösse des Bildes Angepasst. Dies war nötig da der
+ContentSizeFitter nicht wie bei dem Text objekt funktioniert hat.
 
 **ImageInformation Prefab**
-Dieses Prefab gleicht dem TextInformation Prefab bis auf zwei Änderungen. Der ContentSizeFitter wird nicht verwendet und es wird das Text Objekt mit RawImage ersetzt.
+Dieses Prefab gleicht dem TextInformation Prefab bis auf zwei Änderungen. Der ContentSizeFitter
+wird nicht verwendet und es wird das Text Objekt mit RawImage ersetzt.
 
 #### Konfiguration
-Die oben genannten Assets müssen in einer Unity Scene konfiguriert werden. Die minimale Hierarchie besteht aus den folgenden Assets:
+Die oben genannten Assets müssen in einer Unity Scene konfiguriert werden. Die minimale Hierarchie
+besteht aus den folgenden Assets:
 
 - MainCamera
 -- ManualCameraControl (Script)
@@ -470,25 +542,47 @@ Die oben genannten Assets müssen in einer Unity Scene konfiguriert werden. Die 
 --ObjectSurfaceObserver (Script)
 
 **MainCamera**
-Unter HoloToolkit/Utilities/Prefabs/Main Camera.prefab befindet sich die Hololens komatible Kamera. Um im Unity Editor die Kamera zu steuern gibt es das HoloToolkit/Utilities/Scripts/ManualCameraControl.cs Script.
+Unter HoloToolkit/Utilities/Prefabs/Main Camera.prefab befindet sich die Hololens komatible
+Kamera. Um im Unity Editor die Kamera zu steuern gibt es das
+HoloToolkit/Utilities/Scripts/ManualCameraControl.cs Script.
 
 **Managers**
 Das mittels CreateEmpty ertellte GameObjekt wird benutzt um generelle Manager Skripte anzuhängen.
-Der HoloToolkit/Input/Scripts/GazeManager.cs steuert die Gaze Gestik, welche zum Fokussieren von Objekten benutzt wird. Mit StabilizationPlane und GazeStabilization wird der Gaze, equivalent zur Maus auf einem PC, stabilisiert. Dies ist nützlich, da eine Maus auf dem Tisch stabiler ist als die Kopfbewegungen eines Menschen.
-Mittels des HoloToolkit/Input/Scripts/GestureManagers.cs werden die Meldungen OnSelect, OnPressed und OnReleased an fokussierte Objekte gesendet. Falls das fokussierte Objekt eine dieser Methoden implementiert wird sie ausgeführt. Zusätzlich bietet der Manager verschiedene Events bezüglich Manipulation, z.B. ManipulationStartet, und Properties wie das FocusedObject an.
-Um die Spracherkennung zu nutzen wurde ein HoloToolkit/Input/Scripts/KeywordManager.cs kreiert. Das Property KeywordsAndResponses beinhaltet gesprochene Worte (Keyword) und den dazugehörigen Methodenaufruf auf ein Gameobjekt. Als Beispiel wird bei "remove all" die Methode RemoveDevices() auf dem DeviceManager Script ausgeführt. Das Keyword sollte aus mehr als einem Wort bestehen und anderen Keywords nicht zu sehr gleichen.
+Der HoloToolkit/Input/Scripts/GazeManager.cs steuert die Gaze Gestik, welche zum Fokussieren von
+Objekten benutzt wird. Mit StabilizationPlane und GazeStabilization wird der Gaze, equivalent zur
+Maus auf einem PC, stabilisiert. Dies ist nützlich, da eine Maus auf dem Tisch stabiler ist als
+die Kopfbewegungen eines Menschen.
+Mittels des HoloToolkit/Input/Scripts/GestureManagers.cs werden die Meldungen OnSelect, OnPressed
+und OnReleased an fokussierte Objekte gesendet. Falls das fokussierte Objekt eine dieser Methoden
+implementiert wird sie ausgeführt. Zusätzlich bietet der Manager verschiedene Events bezüglich
+Manipulation, z.B. ManipulationStartet, und Properties wie das FocusedObject an.
+Um die Spracherkennung zu nutzen wurde ein HoloToolkit/Input/Scripts/KeywordManager.cs kreiert.
+Das Property KeywordsAndResponses beinhaltet gesprochene Worte (Keyword) und den dazugehörigen
+Methodenaufruf auf ein Gameobjekt. Als Beispiel wird bei "remove all" die Methode RemoveDevices()
+auf dem DeviceManager Script ausgeführt. Das Keyword sollte aus mehr als einem Wort bestehen und
+anderen Keywords nicht zu sehr gleichen.
 
 **EventSystem** ????Nur mit interaktiven ui elementen nötig?????????
 ?????????''
 
 **Cursor**
-Das HoloToolkit/Input/Prefab/Cursor.prefab ist die Darstellung des Cursors. Es können zwei verschiedene Modelle angegeben werden. Ein normales Modell und eines für den Fall dass etwas fokussiert ist. Zudem kann eine Distanz zwischen Fokussierungspunkt und Cursor konfiguriert werden. Falls es ein GazeManager gibt, in unserem Fall im Managers Objekt, wird der Cursor automatisch positioniert.
+Das HoloToolkit/Input/Prefab/Cursor.prefab ist die Darstellung des Cursors. Es können zwei
+verschiedene Modelle angegeben werden. Ein normales Modell und eines für den Fall dass etwas
+fokussiert ist. Zudem kann eine Distanz zwischen Fokussierungspunkt und Cursor konfiguriert
+werden. Falls es ein GazeManager gibt, in unserem Fall im Managers Objekt, wird der Cursor
+automatisch positioniert.
 
 **DirectionalLight**
-Das DirectionalLight von Unity ist nicht nötig, lässt die Hologramme aber natürlicher aussehen. Es können auch andere Lichtquellen benutzt werden, da jedoch die Umgebung in welcher die Hololens eingesetzt wird nicht bekannt ist, empfhlen wir eine weit entfernte Lichtquelle.
+Das DirectionalLight von Unity ist nicht nötig, lässt die Hologramme aber natürlicher aussehen. Es
+können auch andere Lichtquellen benutzt werden, da jedoch die Umgebung in welcher die Hololens
+eingesetzt wird nicht bekannt ist, empfhlen wir eine weit entfernte Lichtquelle.
 
 **SpacialMapping**
-Damit die Umgebung wahrgenommen werden kann wird das HoloToolkit/SpatialMapping/Prefabs/SpatialMapping.prefab genutzt. Mit dem SpatialMappingObserver kann die Auflösung und Aktualisierungszeit konfiguriert werden. Der SpatialMappingManager kann die Umrisse der Strukturen darstellen, dies wird nicht genutzt in der Demo Applikation, da es von dem Gerät ablenken würde. ObjectSurfaceObserver???????????
+Damit die Umgebung wahrgenommen werden kann wird das
+HoloToolkit/SpatialMapping/Prefabs/SpatialMapping.prefab genutzt. Mit dem SpatialMappingObserver
+kann die Auflösung und Aktualisierungszeit konfiguriert werden. Der SpatialMappingManager kann die
+Umrisse der Strukturen darstellen, dies wird nicht genutzt in der Demo Applikation, da es von dem
+Gerät ablenken würde. ObjectSurfaceObserver???????????
 
 
 ### QR-Code
