@@ -118,7 +118,7 @@ Table: Abkürzungen
 ## Einführung
 
 In den letzten Monaten wurden von vielen Herstellern Virtual Reality Brillen auf den Markt
-gebracht, meist im Gaming Bereich. Microsoft hat mit ihrer Brille ein anderes Zielpublikum
+gebracht, meist im Gaming Bereich. Microsoft hat mit ihrer Mixed Reality Brille ein anderes Zielpublikum
 und andere Anwendungsbereiche im Fokus. Mit der Hololens wird die Umwelt, in welcher sich der Träger
 befindet, mit zusätzlichen virtuellen Elementen ergänzt.
 
@@ -165,7 +165,7 @@ dieses Frameworks ist, Informationen zu speichern, welche Applikation wo geöffn
 möglich, zu definieren dass ein pdf an einer Wand, Outlook an einer anderen, OneNote und ein
 Word-Dokument auf dem Pult geöffnet sind. Nun kann man den Raum wechseln und muss nun definieren,
 welches Wand 1, Wand 2 und Pult ist und die entsprechenden Applikationen werden dort wieder
-dargestellt.
+hergestellt.
 
 ### Geräteinformationen darstellen
 
@@ -193,7 +193,7 @@ und die darauf zu entwickelnde Applikation gestellt.
     * Gerätetyp (mandatory)
     * Geräteid (mandatory)
     * Verbindungsinformationen (IP) (mandatory)
-    * statische Zusatzinformationen zum Geräte (optional beliebige Anzahl)
+    * statische Zusatzinformationen zum Gerät (optional beliebige Anzahl)
 * Falls definiert, darstellen eines 3-D-Modells des Gerätetyps.
     * Modell lokal gespeichert
 * minimalste Webschnittstelle für Geräteinformationen
@@ -234,7 +234,7 @@ Die Vorteile davon sind:
 Es gibt auch Nachteile:
 
 * Die Brille wiegt schwer nach ein paar Stunden, weil sowohl Rechner, Display als auch Batterie drin
-untergebracht ist.
+untergebracht sind.
 * Die Laufzeit ist limitiert durch die Batterie.
 * Die Displays, auf welchen die Hologramme angezeigt werden können, ist klein.
 
@@ -248,9 +248,9 @@ aufrufen, indem man die fünf Finger nach oben zusammenhält und danach öffnet 
 Andererseits gibt es den bekannten Klickevent. Für diesen hält man den Zeigefinger wie ermahnend vor
 das Gesicht. Der Cursor im Blickfeld ändert daraufhin sein Aussehen um dem Benutzer zu
 signalisieren, dass der Finger erkannt wurde. Nun kann der Träger mit dem Zeigefinger auf den Daumen
-tippen um ein Klick auszulösen.
+tippen um einen Klick auszulösen.
 
-Lässt man den Zeigefinger und den Daumen nach dem Tippen zusammen, kann man damit Hologramme
+Lässt man den Zeigefinger und den Daumen nach dem Tippen zusammen, kann man Hologramme
 festhalten. Damit kann man je nach Kontext das Hologramm im Raum verschieben oder durch einen langen
 Text scrollen.
 
@@ -261,7 +261,7 @@ Zeigefinger für den Klick erkannt wurde.
 Der Cursor bewegt sich anhand der Hololens, also so wie sich auch der Kopf bewegt. Dies ist dann
 problematisch, wenn man den Cursor etwas weiter entfernt oder sehr genau platzieren will. Jede
 kleinste Bewegung des Kopfs resultiert in einer Verschiebung des Cursors. Vor allem beim Benutzen
-der holographischen Tastatur kann dies ein Problem sein. Eine deutliche Verbesserung für eine
+der holografischen Tastatur kann dies ein Problem sein. Eine deutliche Verbesserung für eine
 nächste Version der HL wäre unserer Meinung nach, wenn sich der Cursor nach dem Blick richten würde,
 also nach den Augen und nicht nur den Kopf.
 
@@ -275,8 +275,8 @@ hier folgende Erweiterungen:
 ### Demoapplikationen
 
 Um eine Applikation starten zu können, geht man, wie unter Windows üblich, ins Startmenu. In der
-Hololens öffnet  man es mittels der Bloom-Geste. Es gibt z.B. den unter Windows 8 eingeführten App-Shop,
-den Webbrowser Edge, die Systemsteuerungen, eine Bibliothek für Hologramme.
+Hololens öffnet  man es mittels der Bloom-Geste. Es gibt z.B. den unter Windows 8 eingeführten
+App-Store den Webbrowser Edge, die Systemsteuerungen, eine Bibliothek für Hologramme.
 Dies sind alles Applikationen, die in einem Fenster laufen und nicht die ganze Umgebung einnehmen.
 
 Die Fenster selber sind nicht flach wie auf einem Desktop, sondern haben eine Tiefe von ca. 2 cm.
@@ -284,7 +284,7 @@ Der Benutzer kann nun diese Fenster irgendwo im Raum platzieren. Dazu greift er 
 mittels der Press-Geste und kann es nun im Raum verschieben und zwar in allen 3 Richtungen des
 Raums. Er muss nur darauf achten, dass die Hand nicht aus dem Wahrnehmungsbereich der HL kommt.
 
-Es wird dabei versucht das Fenster an den realen Begebenheiten auszurichten. Mit anderen Worten,
+Die Hololens versucht dabei das Fenster an den realen Begebenheiten auszurichten. Mit anderen Worten,
 wenn das Fenster in die Nähe einer Wand kommt, richtet es sich automatisch so aus, dass
 es wie ein Bild an der Wand hängt.
 
@@ -306,12 +306,12 @@ bis der Applikation klar ist, wo sie sich befinden. Danach kann das Spiel auch s
 
 Als erstes wird der Spieler von einem schwebenden Roboter informiert, dass man Angriffe von
 feindlichen Robotern abwehren muss. Dazu muss man sie mit dem Cursor anvisieren und mittels
-Tap-Geste kann man eine Waffe abfeuern.
+Tap-Geste abschiessen.
 
 Die feindlichen Roboter kommen aus einer Landungsbrücke eines Raumschiffes, welche durch die Wand
-des Raumes bricht und sich mittels dreien Arme fest krallt. Wenn man daneben schiesst, reisst man
+des Raumes bricht und sich mittels dreier Arme fest krallt. Wenn man daneben schiesst, reisst man
 ebenfalls Löcher in die Wand. Dies sind tolle Beispiele, wie man die reale Welt mit der
-holografischen verschmelzt. Auch wenn man den Hologramme anmerkt, dass sie künstlich sind und dass
+holografischen verschmelzt. Auch wenn man den Hologrammen anmerkt, dass sie künstlich sind und dass
 die Wand nicht wirklich beschädigt ist, so sind die Effekte dennoch beeindruckend und der Spieler
 findet sich in einer Zwischenwelt wieder.
 
@@ -326,12 +326,12 @@ Sprachkommando den Röntgenblick aktivieren. Damit kann man eine begrenzte Zeit 
 schauen. Danach dauert es eine Weile, bis die Fähigkeit wieder vorhanden ist.
 
 Die Roboter schiessen natürlich zurück. Der Spieler wehrt diese Angriffe ab, indem er den Schüssen
-ausweicht. Dies geschieht natürlich, indem er sich im Raum bewegt. Dies führt dazu, dass der Spieler
+ausweicht. Dies geschieht, indem er sich im Raum bewegt. Dies führt dazu, dass der Spieler
 rasche Ausfallschritte nach rechts oder links macht oder sich urplötzlich duckt. Im Verlauf des
 Spiels gibt es immer mehr Roboter, die gleichzeitig auf den Spieler schiessen. Dann kann der
 Spieler durch die Ausweichmanöver auch mal ausser Atem geraten.
 
-Auch hier zeigt sich jedoch die Probleme, die sich ergeben, dass der Fokus an die Blickrichtung der
+Hier zeigen sich jedoch die Probleme, die sich ergeben, dass der Fokus an die Blickrichtung der
 Hololens und nicht die der Augen gebunden ist. In der Hitze des Gefechts und mit vielen Robotern und
 Schüssen im Blickfeld verliert man oft den Cursor aus den Augen. Und der zielt dann am Roboter
 vorbei.
@@ -345,14 +345,14 @@ Es ist auch vorgekommen, dass wir mit dem Finger für den Tap gezielt hatten, st
 Bei Jenga werden 54 Holzblöcke, die dreimal so lang wie breit sind, aufeinander geschichtet, so dass
 ein Turm mit quadratischer Grundfläche entsteht. Die einzelnen Schichten bestehen dabei aus je drei
 Blöcken, die kreuzweise geschichtet werden. Ziel ist es, einzelne Blöcke aus dem Turm zu nehmen und
-ihn oben auf den Turm zu legen, ohne dass dieser einstürzt.
+sie oben auf den Turm zu legen, ohne dass dieser einstürzt.
 
 Jenga wurde für die Hololens adaptiert und kann über den Windows Store installiert werden.
 
 Dieses Spiel ist ein gutes Beispiel, wo die Limitationen der Hololens und ihrer Hologrammen liegen.
 Man kann die Blöcke relativ einfach fassen und bewegen, aber es gibt kein haptisches Feedback. Bei
 der realen Version gibt es bei den Blöcken  minimale Abweichungen der Dimensionen, so dass der
-Spieler testen kann, ob sich ein Block einfach bewegen lässt oder nicht. Er merkt auch, wenn der den
+Spieler testen kann, ob sich ein Block einfach bewegen lässt oder nicht. Er merkt auch, wenn er den
 Block schräg bewegt, da sich der Block verkantet und deshalb schwerer zu bewegen ist. Zudem kann der
 Spieler auch zwei Hände benutzen, was vor allem beim Zurücklegen auf den Turm hilft.
 
@@ -369,9 +369,9 @@ Hinweise sammeln muss um einem Kindsentführer auf die Schliche zu kommen. Die E
 sämtliche Möglichkeiten der Hololens ausgelotet, die möglich sind:
 
 - Interaktion mit holografischen Personen
-  - adaptieren ihr Verhalten anhand der Ausrichtung des Spielers im Raum
+    - adaptieren ihr Verhalten anhand der Ausrichtung des Spielers im Raum
 - Anpassung des Spielfelds an die reale Umgebung
-  - holografische Personen passen sich der Umgebung an
+    - holografische Personen passen sich der Umgebung an
 - Raumklang
 - Gestensteuerung
 - Sprachsteuerung
@@ -389,7 +389,7 @@ verschaffen, also einen Schritt zurück zu machen und von weitem zu schauen. Dan
 Teile der Szenerie genauer anschauen und sogar Objekte aufheben, um sie zu untersuchen.
 
 Es gibt auch Situationen, bei denen muss man sich auf sein Gehör verlassen und einem Geräusch
-folgen und wenn man die Quelle gefunden hat, muss man es identifizieren. Das sind grandiose
+folgen muss. Wenn man die Quelle dann gefunden hat, muss man es identifizieren. Das sind grandiose
 Beispiele, wie realistisch die beiden kleinen Lautsprecher über den Ohren die Illusion erzeugen
 können, der Ton käme von einem entfernten Ort im Raum.
 
@@ -397,7 +397,7 @@ Die gewonnenen Erkenntnisse können dann in einem Terminal eingegeben und Schlus
 gezogen werden, die das Gebiet, wo man suchen muss, eingrenzen. Dabei helfen die anderen Mitglieder
 des Ermittlerteams. Das sind lebensgrosse Figuren, die mit dem Spieler sprechen und auf sein
 Verhalten reagieren. So weisen sie z.B. den Spieler darauf hin, dass er zur Seite gehen soll,
-wenn er  einer Figur im Weg steht oder setzen sich sogar mal auf ein Sofa, um mit dem Spieler zu
+wenn er  einer Figur im Weg steht oder setzen sich sogar mal auf das Sofa des Spielers, um mit ihm zu
 plaudern.
 
 Es ist ein ganz neues Spielerlebnis, wenn man sich mit gleichgrossen Non-Player Characters in einer
