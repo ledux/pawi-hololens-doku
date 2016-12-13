@@ -340,12 +340,28 @@ Es ist auch vorgekommen, dass wir mit dem Finger für den Tap gezielt hatten, st
 
 <!--TODO: Fazit-->
 
-1. **Jenga**: Dies ist ein Spiel, bei welchem Holzblöcke zu einem Turm geschichtet werden (je drei
-    pro Etage) und die Spieler nacheinander einen Holzblock entfernen und oben auf den Turm legen
-    müssen. Dieses Spiel wurde ebenfalls für die Hololens adaptiert. Hier zeigen sich jedoch die
-    Limitationen der Virtualität. Man kann zwar die Blöcke mit Gesten bewegen aber es fehlt ein
-    haptisches Feedback. Dadurch wird es schwierig, die Blöcke im  richtigen Winkel aus dem Turm zu
-    ziehen.
+#### Jenga
+
+Bei Jenga werden 54 Holzblöcke, die dreimal so lang wie breit sind, aufeinander geschichtet, so dass
+ein Turm mit quadratischer Grundfläche entsteht. Die einzelnen Schichten bestehen dabei aus je drei
+Blöcken, die kreuzweise geschichtet werden. Ziel ist es, einzelne Blöcke aus dem Turm zu nehmen und
+ihn oben auf den Turm zu legen, ohne dass dieser einstürzt.
+
+Jenga wurde für die Hololens adaptiert und kann über den Windows Store installiert werden.
+
+Dieses Spiel ist ein gutes Beispiel, wo die Limitationen der Hololens und ihrer Hologrammen liegen.
+Man kann die Blöcke relativ einfach fassen und bewegen, aber es gibt kein haptisches Feedback. Bei
+der realen Version gibt es bei den Blöcken  minimale Abweichungen der Dimensionen, so dass der
+Spieler testen kann, ob sich ein Block einfach bewegen lässt oder nicht. Er merkt auch, wenn der den
+Block schräg bewegt, da sich der Block verkantet und deshalb schwerer zu bewegen ist. Zudem kann der
+Spieler auch zwei Hände benutzen, was vor allem beim Zurücklegen auf den Turm hilft.
+
+All dies gibt es bei der Hololens nicht. Man kann den Block nicht antippen, um zu sehen, ob er sich
+bewegt, wenn man versucht,  ihn schräg aus dem Turm zu ziehen, merkt man es meist erst, wenn der
+Turm schon gefährlich wackelt. Und es ist oft nicht ersichtlich, in welche Richtung man korrigieren
+muss. Es ist grundsätzlich gewöhnungsbedürftig, Hologramme festzuhalten und zu verschieben wegen der
+fehlenden Haptik.
+
 
 
 ### Tutorials
