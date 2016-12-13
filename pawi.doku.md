@@ -106,6 +106,8 @@ Table: Definitionen
 API                 Application Program Interface, Schnittstelle von Computerprogrammen für
                     Computerprogramme
 
+HL                  Hololens
+
 ReST                Representational State Transfer, Konzept für APIs über http(s)
 
 ----------------------------------------------------------------------------------------------------
@@ -256,17 +258,87 @@ Dies funktioniert sehr gut und recht intuitiv, solange man sich auf den Cursor k
 verändert sich im Aussehen, je nach dem, mit was die Blickrichtung  kollidiert und ob der
 Zeigefinger für den Klick erkannt wurde.
 
+Der Cursor bewegt sich anhand der Hololens, also so wie sich auch der Kopf bewegt. Dies ist dann
+problematisch, wenn man den Cursor etwas weiter entfernt oder sehr genau platzieren will. Jede
+kleinste Bewegung des Kopfs resultiert in einer Verschiebung des Cursors. Vor allem beim Benutzen
+der holographischen Tastatur kann dies ein Problem sein. Eine deutliche Verbesserung für eine
+nächste Version der HL wäre unserer Meinung nach, wenn sich der Cursor nach dem Blick richten würde,
+also nach den Augen und nicht nur den Kopf.
+
+Die Tap-Gestik kann bei längerer Arbeit ermüdend auf Hand und Arm wirken. Abhilfe schaffen können
+hier folgende Erweiterungen:
+
+- Für Texteingabe kann eine Bluetooth-Tastatur angehängt werden.
+- Die meisten Schaltflächen können auch über Sprachkommandos angesprochen werden.
+- Im Lieferumfang der HL ist ein Clicker enthalten, der den selben Event auslöst wie der Tap.
 
 ### Demoapplikationen
 
-Zu Demonstrationszwecken hat Microsoft bereits einige Applikationen entwickeln lassen. Davon möchten
-wir zwei Spiele hervorheben.
+Um eine Applikation starten zu können, geht man, wie unter Windows üblich, ins Startmenu. In der
+Hololens öffnet  man es mittels der Bloom-Geste. Es gibt z.B. den unter Windows 8 eingeführten App-Shop,
+den Webbrowser Edge, die Systemsteuerungen, eine Bibliothek für Hologramme.
+Dies sind alles Applikationen, die in einem Fenster laufen und nicht die ganze Umgebung einnehmen.
 
-1. **RoboRaid**: Dies ist ein Spiel, bei welchem Roboter ein Loch in die Wand brechen und auf den Spieler
-   schiessen. Einige krabbeln über die Wand, andere fliegen im Raum herum. Dieses Spiel zeigt schön,
-   wie man die reale Umgebung in die Applikation einbinden kann. Die Löcher in der Wand überzeugen.
-   Obwohl sich der Spieler in der realen Umgebung bewegt und diese auch wahrnimmt, so ist er dennoch
-   in der Virtualität gefangen und kümmert sich kaum um die Umgebung.
+Die Fenster selber sind nicht flach wie auf einem Desktop, sondern haben eine Tiefe von ca. 2 cm.
+Der Benutzer kann nun diese Fenster irgendwo im Raum platzieren. Dazu greift er sich das Fenster
+mittels der Press-Geste und kann es nun im Raum verschieben und zwar in allen 3 Richtungen des
+Raums. Er muss nur darauf achten, dass die Hand nicht aus dem Wahrnehmungsbereich der HL kommt.
+
+Es wird dabei versucht das Fenster an den realen Begebenheiten auszurichten. Mit anderen Worten,
+wenn das Fenster in die Nähe einer Wand kommt, richtet es sich automatisch so aus, dass
+es wie ein Bild an der Wand hängt.
+
+#### Hologramme
+
+Auf der Hololens gibt es eine Bibliothek mit vorgefertigten Hologrammen, die der Benutzer im Raum
+platzieren kann. Dies ist ein guter Einstiegspunkt, um das Konzept der Hologrammen und deren
+Platzierung im Raum kennen zu lernen.
+
+
+#### RoboRaid
+
+RoboRaid ist ein Spiel, bei welchem der Spieler Angriffe von Robotern abwehren muss. Es spielt im
+Zimmer, in welchem sich der Spieler befindet.
+
+Bevor das Spiel zum ersten Mal startet wird der Spieler aufgefordert, seine Umgebung, sprich den
+Raum, in welchem er sich befindet, zu scannen. Dazu muss er mit der Hololens die Wände anschauen,
+bis der Applikation klar ist, wo sie sich befinden. Danach kann das Spiel auch schon beginnen.
+
+Als erstes wird der Spieler von einem schwebenden Roboter informiert, dass man Angriffe von
+feindlichen Robotern abwehren muss. Dazu muss man sie mit dem Cursor anvisieren und mittels
+Tap-Geste kann man eine Waffe abfeuern.
+
+Die feindlichen Roboter kommen aus einer Landungsbrücke eines Raumschiffes, welche durch die Wand
+des Raumes bricht und sich mittels dreien Arme fest krallt. Wenn man daneben schiesst, reisst man
+ebenfalls Löcher in die Wand. Dies sind tolle Beispiele, wie man die reale Welt mit der
+holografischen verschmelzt. Auch wenn man den Hologramme anmerkt, dass sie künstlich sind und dass
+die Wand nicht wirklich beschädigt ist, so sind die Effekte dennoch beeindruckend und der Spieler
+findet sich in einer Zwischenwelt wieder.
+
+Die Angriffe laufen in verschiedenen Wellen ab. Nachdem man alle Roboter aus einer Landungsbrücke
+zerstört hat, bricht eine nächste Landungsbrücke an einem anderen Ort im Raum durch die Wand und
+die Angriffe gehen weiter.
+
+Es gibt zwei Sorten von Robotern, die den Spieler angreifen: Einerseits gibt es diejenigen, die
+im Raum schweben und diejenigen, die über die Wände krabbeln und sich auch hinter den Wänden
+verstecken können. Um sie auch hinter der Wand erreichen zu können, kann der Spieler mittels
+Sprachkommando den Röntgenblick aktivieren. Damit kann man eine begrenzte Zeit hinter die Wände
+schauen. Danach dauert es eine Weile, bis die Fähigkeit wieder vorhanden ist.
+
+Die Roboter schiessen natürlich zurück. Der Spieler wehrt diese Angriffe ab, indem er den Schüssen
+ausweicht. Dies geschieht natürlich, indem er sich im Raum bewegt. Dies führt dazu, dass der Spieler
+rasche Ausfallschritte nach rechts oder links macht oder sich urplötzlich duckt. Im Verlauf des
+Spiels gibt es immer mehr Roboter, die gleichzeitig auf den Spieler schiessen. Dann kann der
+Spieler durch die Ausweichmanöver auch mal ausser Atem geraten.
+
+Auch hier zeigt sich jedoch die Probleme, die sich ergeben, dass der Fokus an die Blickrichtung der
+Hololens und nicht die der Augen gebunden ist. In der Hitze des Gefechts und mit vielen Robotern und
+Schüssen im Blickfeld verliert man oft den Cursor aus den Augen. Und der zielt dann am Roboter
+vorbei.
+
+Es ist auch vorgekommen, dass wir mit dem Finger für den Tap gezielt hatten, statt mit dem Kopf.
+
+<!--TODO: Fazit-->
 
 1. **Jenga**: Dies ist ein Spiel, bei welchem Holzblöcke zu einem Turm geschichtet werden (je drei
     pro Etage) und die Spieler nacheinander einen Holzblock entfernen und oben auf den Turm legen
@@ -325,10 +397,10 @@ holt sich die Hololens periodisch die aktualisierten Daten und stellt sie erneut
 um statische Daten handelt, fällt dies natürlich weg.
 
 ### Aufbau des Frameworks
-Das Framework besteht aus einem UnityPackage und einer Anleitung wie die einzelnen Komponenten genutzt werden sollen. Zusätzlich wird das Microsoft HoloToolkit UnityPackage benötigt. Dieses ist verfügbar unter [^holotoolkit-unity]:[HoloToolkit-Unity](https://github.com/Microsoft/HoloToolkit-Unity) und enthällt ein Readme.md mit der Installationsanleitung. 
+Das Framework besteht aus einem UnityPackage und einer Anleitung wie die einzelnen Komponenten genutzt werden sollen. Zusätzlich wird das Microsoft HoloToolkit UnityPackage benötigt. Dieses ist verfügbar unter [^holotoolkit-unity]:[HoloToolkit-Unity](https://github.com/Microsoft/HoloToolkit-Unity) und enthällt ein Readme.md mit der Installationsanleitung.
 
 #### Die Assets
-Als Assets werden alle Dateien bezeichnet welche in einer Unity App benutzt werden. 
+Als Assets werden alle Dateien bezeichnet welche in einer Unity App benutzt werden.
 - 3D-Modelle:	Unity-Objekte mit Meshes, Positionierung, Collider und Materialien.
 - Scripts:		C# Klassen welche Unity-Objekten angehängt werden können. (Javascript ist auch möglich)
 - Materialien:	Oberfläche welche mittels Texturen und Shader auf 3D-Modelle angewendet wird.
@@ -340,8 +412,8 @@ Im erstellten Framework befinden sich hauptsächlich Scripts und Prefabs.
 Der DeviceManager behandelt die Erstellung und das Entfernen von Geräten. ????????????
 
 **DeviceBehaviour.cs**
-Jedes Gerät wird durch das DeviceBehaviour Script gesteuert. Es enthällt alle offline Informationen zum Gerät und die URL zur Webschnittstelle. In regelmässigen Abständen, konfigurierbar durch 'PollRateInSec' werden die Informationen abgefragt und dargestellt. 
- 
+Jedes Gerät wird durch das DeviceBehaviour Script gesteuert. Es enthällt alle offline Informationen zum Gerät und die URL zur Webschnittstelle. In regelmässigen Abständen, konfigurierbar durch 'PollRateInSec' werden die Informationen abgefragt und dargestellt.
+
 **Device Prefab**
 Für jedes neue Gerät muss ein Device Prefab erstellt werden. Es enthällt das 3D-Modell, den Collider und das DeviceBehaviour Skript mit der gewünschten Konfiguration aus DeviceName, DeviceInformationUrl und PollRateInSec. Weiter müssen die TextInformationPrefab und ImageInformationPrefab sowie die Materialien (Normal und Selektiert) für die 3D-Linien gesetzt werden.
 
@@ -358,7 +430,7 @@ Damit der Benutzer den Text sehen kann sind in diesem Prefab nebst dem TextInfor
 Vergleichbar mit dem TextInformation Script wird stattdessen ein Bild durch SetImage gesetzt. Zusätzlich wird die Grösse des Prefabs der Grösse des Bildes Angepasst. Dies war nötig da der ContentSizeFitter nicht wie bei dem Text objekt funktioniert hat.
 
 **ImageInformation Prefab**
-Dieses Prefab gleicht dem TextInformation Prefab bis auf zwei Änderungen. Der ContentSizeFitter wird nicht verwendet und es wird das Text Objekt mit RawImage ersetzt. 
+Dieses Prefab gleicht dem TextInformation Prefab bis auf zwei Änderungen. Der ContentSizeFitter wird nicht verwendet und es wird das Text Objekt mit RawImage ersetzt.
 
 #### Konfiguration
 Die oben genannten Assets müssen in einer Unity Scene konfiguriert werden. Die minimale Hierarchie besteht aus den folgenden Assets:
@@ -385,7 +457,7 @@ Die oben genannten Assets müssen in einer Unity Scene konfiguriert werden. Die 
 Unter HoloToolkit/Utilities/Prefabs/Main Camera.prefab befindet sich die Hololens komatible Kamera. Um im Unity Editor die Kamera zu steuern gibt es das HoloToolkit/Utilities/Scripts/ManualCameraControl.cs Script.
 
 **Managers**
-Das mittels CreateEmpty ertellte GameObjekt wird benutzt um generelle Manager Skripte anzuhängen. 
+Das mittels CreateEmpty ertellte GameObjekt wird benutzt um generelle Manager Skripte anzuhängen.
 Der HoloToolkit/Input/Scripts/GazeManager.cs steuert die Gaze Gestik, welche zum Fokussieren von Objekten benutzt wird. Mit StabilizationPlane und GazeStabilization wird der Gaze, equivalent zur Maus auf einem PC, stabilisiert. Dies ist nützlich, da eine Maus auf dem Tisch stabiler ist als die Kopfbewegungen eines Menschen.
 Mittels des HoloToolkit/Input/Scripts/GestureManagers.cs werden die Meldungen OnSelect, OnPressed und OnReleased an fokussierte Objekte gesendet. Falls das fokussierte Objekt eine dieser Methoden implementiert wird sie ausgeführt. Zusätzlich bietet der Manager verschiedene Events bezüglich Manipulation, z.B. ManipulationStartet, und Properties wie das FocusedObject an.
 Um die Spracherkennung zu nutzen wurde ein HoloToolkit/Input/Scripts/KeywordManager.cs kreiert. Das Property KeywordsAndResponses beinhaltet gesprochene Worte (Keyword) und den dazugehörigen Methodenaufruf auf ein Gameobjekt. Als Beispiel wird bei "remove all" die Methode RemoveDevices() auf dem DeviceManager Script ausgeführt. Das Keyword sollte aus mehr als einem Wort bestehen und anderen Keywords nicht zu sehr gleichen.
@@ -423,7 +495,7 @@ vier verschiedene Geräte unterschiedliche Daten, die in etwa so aussehen.
     "displayData":"Dynamic data about the device",
     "deviceDescription":"Static description of the device",
     "positionToSource":{
-        "xValue":3.5, 
+        "xValue":3.5,
         "yValue":4,
         "zValue":8.35
     },
@@ -457,7 +529,7 @@ Um für die Hololens zu Entwickeln wird ein Windows 10 Pro, Enterprise oder Educ
 [^setup]:[Installationsanleitung](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools)
 
 **Einschränkungen des Hololens Betriebssystems**
-Obwohl die Hololens selbst ein Computer ist, bietet das WindowsHolographic nicht die gewohnten Funktionalitäten. Es gibt keine CommandLine, kein TaskManager und auch keinen Explorer. Apps welche man auf dem Desktop (genannt Shell) plaziert hat sind gestartet. Um den Prozess zu beenden muss das Icon, welches 2D oder 3D sein kann, entfernt werden. 
+Obwohl die Hololens selbst ein Computer ist, bietet das WindowsHolographic nicht die gewohnten Funktionalitäten. Es gibt keine CommandLine, kein TaskManager und auch keinen Explorer. Apps welche man auf dem Desktop (genannt Shell) plaziert hat sind gestartet. Um den Prozess zu beenden muss das Icon, welches 2D oder 3D sein kann, entfernt werden.
 
 **Hololens auf sich Anpassen**
 Durch das Gewicht von 579 Gramm loht es sich Zeit zu nehmen beim Anpassen. Es befinden sich zwei unterschiedliche Nose Pads und ein einstellbarer Overhead Strap im Lieferumfang. Diese sowie der Clicker Kontroller ermöglichen die längere Nutzung ohne Kopfschmerzen.
@@ -466,11 +538,11 @@ Durch das Gewicht von 579 Gramm loht es sich Zeit zu nehmen beim Anpassen. Es be
 Um mit den Entwicklungstools auf die Hololens zugreifen zu können muss der Debug Mode aktiviert werden. Microsoft hat die Anleitung dazu auf der Seite [^enable-dev-mode]:[Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/Using_Visual_Studio.html#enabling_developer_mode) versteckt. Die IP-Addresse der Hololens kann man über Settings->Network&Internet->Advanced options auslesen.
 
 **Konfiguration eines neuen Projektes**
-Ein Projekt mit Unity muss spezifisch für die Hololens angepasst werden. Das 
+Ein Projekt mit Unity muss spezifisch für die Hololens angepasst werden. Das
 [^create-project]:[Microsoft Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100) enthällt die nötigen Konfigurationen. Der Unity Editor ermöglicht es vieles ausserhalb der Hololens und dessen Emulators zu testen. Viele der Skripte wie ManualCameraControl, GestureManager und KeywordManager bieten die möglichkeit einen alternativen Input per Tastatur zu definieren.
 
 **Holographic Academy**
-In 9 Tutorials werden die wichtigsten Elemente für die Entwicklung beigebracht. [^holographic-academy]:[Microsoft Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy) 
+In 9 Tutorials werden die wichtigsten Elemente für die Entwicklung beigebracht. [^holographic-academy]:[Microsoft Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
 
 ****
 
@@ -478,12 +550,12 @@ In 9 Tutorials werden die wichtigsten Elemente für die Entwicklung beigebracht.
 Die Farben Weiss und Schwarz haben jeweils ihre eigenen Probleme. Da die Hololens nur additiv RGB Farben darstellen kann ist Schwarz die gänzlich Transparent. Dadurch kann man nicht beeinflussen was der Benutzer sieht. Im gegensatz dazu hat Weiss das Problem dass die Hololens RGB in 3 separaten Schichten darstellt und diese nicht immer perfekt übereinander Liegen. Dadurch sieht man z.B. bei einem weit entfernten Weissen Punkt stattdessen drei leicht versetzte Punkte in rot, grün und blau.
 
 **Update nicht blockieren**
-Die Update Methode wird jedes Frame aufgerufen und ist somit nur für nicht blockierende Aufgaben geeignet. Die Methode InvokeRepeating von MonoBehaviour bietet die Möglichkeit für zyklische Methodenaufrufe. 
+Die Update Methode wird jedes Frame aufgerufen und ist somit nur für nicht blockierende Aufgaben geeignet. Die Methode InvokeRepeating von MonoBehaviour bietet die Möglichkeit für zyklische Methodenaufrufe.
 ```
 // Aufruf alle 3 Sekunden nach initialem warten von 2 Sekunden
 void Start () {
 	InvokeRepeating("DoSomething", 2, 3);
-}  
+}
 void DoSomething(){
 	//xyz
 }
@@ -506,7 +578,7 @@ IEnumerator Fade()
     }
 }
 ```
-Wenn Update aufgerufen wird, startet die Coroutine Fade und läuft durch bis zum ersten yield return. Im folgenden Frame fährt die Ausführung in der Methode nach dem yield weiter. Weitere Informationen zum Beispiel findet man in der [^coroutines]:[Unity Dokumentation](https://docs.unity3d.com/Manual/Coroutines.html). 
+Wenn Update aufgerufen wird, startet die Coroutine Fade und läuft durch bis zum ersten yield return. Im folgenden Frame fährt die Ausführung in der Methode nach dem yield weiter. Weitere Informationen zum Beispiel findet man in der [^coroutines]:[Unity Dokumentation](https://docs.unity3d.com/Manual/Coroutines.html).
 Eine Coroutine wurde auch im Script DeviceBehaviour benutzt für den asynchronen HTTP Request.
 ```
 void UpdateText() {
@@ -569,7 +641,7 @@ Cylinder.transform.position = new Vector3(2f, 1f, 4f);
 Cylinder.transform.localScale = new Vector3(50f, 5f, 50f);
 // Das material setzen
 Cylinder.GetComponent<Renderer>().material = SomeMaterial;
-// 
+//
 
 //Das Objekt muss selbst wieder zerstört werden
 void OnDestroy() {
@@ -598,8 +670,8 @@ lineRenderer.SetColors(Color.red, Color.red);
 lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
 lineRenderer.SetWidth(0.01f, 0.01f);
 
-// Eckpunkte setzen 
-// GetLineCorners erzeugt die Koordinaten 
+// Eckpunkte setzen
+// GetLineCorners erzeugt die Koordinaten
 Vector3[] linePoints = this.GetLineCorners();
 lineRenderer.SetVertexCount(linePoints.Length);
 lineRenderer.SetPositions(linePoints);
