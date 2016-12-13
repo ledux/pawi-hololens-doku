@@ -475,113 +475,118 @@ Als Assets werden alle Dateien bezeichnet, welche in einer Unity App benutzt wer
 Im erstellten Framework befinden sich hauptsächlich Scripts und Prefabs.
 
 **DeviceManager.cs**
-Der DeviceManager behandelt die Erstellung und das Entfernen von Geräten. ????????????
+Der `DeviceManager` behandelt die Erstellung und das Entfernen von Geräten. ????????????
 
 **DeviceBehaviour.cs**
-Jedes Gerät wird durch das DeviceBehaviour Script gesteuert. Es enthält alle offline
+Jedes Gerät wird durch das `DeviceBehaviour` Script gesteuert. Es enthält alle offline
 Informationen zum Gerät und die URL zur Webschnittstelle. In regelmässigen Abständen,
-konfigurierbar durch 'PollRateInSec' werden die Informationen abgefragt und dargestellt.
+konfigurierbar durch `PollRateInSec` werden die Informationen abgefragt und dargestellt.
 
 **Device Prefab**
-Für jedes neue Gerät muss ein Device Prefab erstellt werden. Es enthällt das 3D-Modell, den
-Collider und das DeviceBehaviour Skript mit der gewünschten Konfiguration aus
-DeviceName, DeviceInformationUrl und PollRateInSec. Weiter müssen die TextInformationPrefab und
-ImageInformationPrefab sowie die Materialien (Normal und Selektiert) für die 3D-Linien gesetzt werden.
+Für jedes neue Gerät muss ein Device Prefab erstellt werden. Es enthält das 3D-Modell, den
+Collider und das `DeviceBehaviour` Skript mit der gewünschten Konfiguration aus
+`DeviceName`, `DeviceInformationUrl` und `PollRateInSec`. Weiter müssen die `TextInformationPrefab` und
+`ImageInformationPrefab` sowie die Materialien (Normal und Selektiert) für die 3D-Linien gesetzt werden.
 
 **InformationBaseScript.cs**
 Um Informationen wie Text oder Bild sinnvoll darzustellen, wird dynamisch eine "3D-Linie" von
 einem Ort des Gerätes (Anker) zum Ort an welchem die Information dargestellt wird (Ziel) erzeugt.
-Diese "3D-Linie" besteht aus einer Kugel beim Anker, einem langen Zilinder als Verbindung und
-einem breiten Zilinder als Podest für die Information. Es ermöglicht die Information mit der
+Diese "3D-Linie" besteht aus einer Kugel beim Anker, einem langen Zylinder als Verbindung und
+einem breiten Zylinder als Podest für die Information. Es ermöglicht die Information mit der
 Press-Gestik zu verschieben und wechselt das Material der "3D-Linie" falls die Information fokussiert wird.
 
 
 **TextInformation.cs**
-
-Diese Ableitung des InformationBaseScript ermöglicht es Text mittels SetText darzustellen.
+Diese Ableitung des `InformationBaseScript` ermöglicht es Text mittels `SetText` darzustellen.
 
 **TextInformation Prefab**
-Damit der Benutzer den Text sehen kann sind in diesem Prefab nebst dem TextInformation Scripts
+Damit der Benutzer den Text sehen kann sind in diesem Prefab nebst dem `TextInformation` Scripts
 mehrere Assets nötig. Ein Billboard Script, aus dem HoloToolkit, richtet das Objekt relativ zum Blickwinkel der Kamera aus.
-Ein BoxCollider wird verwendet damit registriert werden kann ob der Benutzer das Objekt
-fokussiert. Der Kollider passt sich mittels dem InformationBaseScript dem Inhalt des Prefabs an.
-Auch die Unity Scripts HorizontalLayerGroup und ContentSizeFitter werden benötigt damit sich die
-Grösse dynamisch dem Inhalt anpasst. Hierarchisch enthällt das Prefab die Unity UI Objekte Canvas,
+
+Ein `BoxCollider` wird verwendet damit registriert werden kann, ob der Benutzer das Objekt
+fokussiert. Der Collider passt sich mittels dem `InformationBaseScript` dem Inhalt des Prefabs an.
+Auch die Unity Scripts `HorizontalLayerGroup` und `ContentSizeFitter` werden benötigt damit sich die
+Grösse dynamisch dem Inhalt anpasst. Hierarchisch enthält das Prefab die Unity UI Objekte Canvas,
 Panel und Text. Das Panel besitzt ein Image Script ohne Bild aber mit der Farbe blau um einen
-Hintergrund für den Text zu haben. Ein Padding im HorizontalLayerGroup des Panels erleichter die
-Lesbarkeit des Textes. Auf der untersten Ebene befindet sich das Text Objekt welches vom
-TextInformation Script aktualisiert wird. **ImageInformation.cs**
-Vergleichbar mit dem TextInformation Script wird stattdessen ein Bild durch SetImage gesetzt.
-Zusätzlich wird die Grösse des Prefabs der Grösse des Bildes Angepasst. Dies war nötig da der
-ContentSizeFitter nicht wie bei dem Text objekt funktioniert hat.
+Hintergrund für den Text zu haben. Ein Padding im  `HorizontalLayerGroup` des Panels erleichtert die
+Lesbarkeit des Textes. Auf der untersten Ebene befindet sich das Textobjekt,  welches vom
+`TextInformation` Script aktualisiert wird.
+
+**ImageInformation.cs**
+Vergleichbar mit dem `TextInformation` Script wird stattdessen ein Bild durch `SetImage` gesetzt.
+Zusätzlich wird die Grösse des Prefabs der Grösse des Bildes angepasst. Dies war nötig da der
+`ContentSizeFitter` nicht wie bei dem Textobjekt funktioniert hat.
 
 **ImageInformation Prefab**
-Dieses Prefab gleicht dem TextInformation Prefab bis auf zwei Änderungen. Der ContentSizeFitter
-wird nicht verwendet und es wird das Text Objekt mit RawImage ersetzt.
+Dieses Prefab gleicht dem `TextInformation` Prefab bis auf zwei Änderungen. Der `ContentSizeFitter`
+wird nicht verwendet und es wird das Text Objekt mit `RawImage` ersetzt.
 
 #### Konfiguration
 Die oben genannten Assets müssen in einer Unity Scene konfiguriert werden. Die minimale Hierarchie
 besteht aus den folgenden Assets:
 
 - MainCamera
--- ManualCameraControl (Script)
+    - ManualCameraControl (Script)
 - Managers
--- GazeManager (Script)
--- GestureManager (Script)
--- DeviceManager (Script)
--- KeywordManager (Script)
+    - GazeManager (Script)
+    - GestureManager (Script)
+    - DeviceManager (Script)
+    - KeywordManager (Script)
 - EventSystem
 - Cursor
--- CursorManager (Script)
--- CursorOnHolograms
--- CursorOffHolograms
+    - CursorManager (Script)
+    - CursorOnHolograms
+    - CursorOffHolograms
 - DiractionalLight
 - SpatialMapping
---SpatialMappingObserver (Script)
---SpatialMappingManager (Script)
---ObjectSurfaceObserver (Script)
+    - SpatialMappingObserver (Script)
+    - SpatialMappingManager (Script)
+    - ObjectSurfaceObserver (Script)
 
 **MainCamera**
-Unter HoloToolkit/Utilities/Prefabs/Main Camera.prefab befindet sich die Hololens komatible
-Kamera. Um im Unity Editor die Kamera zu steuern gibt es das
-HoloToolkit/Utilities/Scripts/ManualCameraControl.cs Script.
+Unter `HoloToolkit/Utilities/Prefabs/Main Camera.prefab` befindet sich die hololens-kompatible
+Kamera. Um im Unity Editor die Kamera zu steuern, gibt es das Script
+`HoloToolkit/Utilities/Scripts/ManualCameraControl.cs`.
 
 **Managers**
-Das mittels CreateEmpty ertellte GameObjekt wird benutzt um generelle Manager Skripte anzuhängen.
-Der HoloToolkit/Input/Scripts/GazeManager.cs steuert die Gaze Gestik, welche zum Fokussieren von
-Objekten benutzt wird. Mit StabilizationPlane und GazeStabilization wird der Gaze, equivalent zur
+Das mittels `CreateEmpty` erstellte Gameobjekt wird benutzt um generelle Manager Skripte anzuhängen.
+Der `HoloToolkit/Input/Scripts/GazeManager.cs` steuert die Gaze Gestik, welche zum Fokussieren von
+Objekten benutzt wird. Mit `StabilizationPlane` und `GazeStabilization` wird der Gaze, equivalent zur
 Maus auf einem PC, stabilisiert. Dies ist nützlich, da eine Maus auf dem Tisch stabiler ist als
 die Kopfbewegungen eines Menschen.
-Mittels des HoloToolkit/Input/Scripts/GestureManagers.cs werden die Meldungen OnSelect, OnPressed
-und OnReleased an fokussierte Objekte gesendet. Falls das fokussierte Objekt eine dieser Methoden
-implementiert wird sie ausgeführt. Zusätzlich bietet der Manager verschiedene Events bezüglich
-Manipulation, z.B. ManipulationStartet, und Properties wie das FocusedObject an.
-Um die Spracherkennung zu nutzen wurde ein HoloToolkit/Input/Scripts/KeywordManager.cs kreiert.
-Das Property KeywordsAndResponses beinhaltet gesprochene Worte (Keyword) und den dazugehörigen
-Methodenaufruf auf ein Gameobjekt. Als Beispiel wird bei "remove all" die Methode RemoveDevices()
-auf dem DeviceManager Script ausgeführt. Das Keyword sollte aus mehr als einem Wort bestehen und
-anderen Keywords nicht zu sehr gleichen.
+Mittels des `HoloToolkit/Input/Scripts/GestureManagers.cs` werden die Meldungen `OnSelect`, `OnPressed`
+und `OnReleased` an fokussierte Objekte gesendet. Falls das fokussierte Objekt eine dieser Methoden
+implementiert hat, wird sie ausgeführt. Zusätzlich bietet der Manager verschiedene Events bezüglich
+Manipulation, z.B. `ManipulationStartet`, und Properties wie das `FocusedObject` an.
+
+Um die Spracherkennung zu nutzen, wurde ein
+`HoloToolkit/Input/Scripts/KeywordManager.cs` kreiert.
+Das Property `KeywordsAndResponses` beinhaltet gesprochene Worte (Keyword) und den dazugehörigen
+Methodenaufruf auf ein Gameobjekt. Als Beispiel wird bei "remove all" die Methode `RemoveDevices()`
+auf dem `DeviceManager` Script ausgeführt. Das Keyword sollte aus mehr als einem Wort bestehen und
+anderen Keywords nicht zu sehr gleichen. Dies erhöht die Chance, dass die Hololens den richtigen
+Befehl erkennt.
 
 **EventSystem** ????Nur mit interaktiven ui elementen nötig?????????
 ?????????''
 
 **Cursor**
-Das HoloToolkit/Input/Prefab/Cursor.prefab ist die Darstellung des Cursors. Es können zwei
+Das `HoloToolkit/Input/Prefab/Cursor.prefab` ist die Darstellung des Cursors. Es können zwei
 verschiedene Modelle angegeben werden. Ein normales Modell und eines für den Fall dass etwas
 fokussiert ist. Zudem kann eine Distanz zwischen Fokussierungspunkt und Cursor konfiguriert
-werden. Falls es ein GazeManager gibt, in unserem Fall im Managers Objekt, wird der Cursor
+werden. Falls es einen `GazeManager` gibt, in unserem Fall im Managers Objekt, wird der Cursor
 automatisch positioniert.
 
 **DirectionalLight**
-Das DirectionalLight von Unity ist nicht nötig, lässt die Hologramme aber natürlicher aussehen. Es
+Das `DirectionalLight` von Unity ist nicht nötig, lässt die Hologramme aber natürlicher aussehen. Es
 können auch andere Lichtquellen benutzt werden, da jedoch die Umgebung in welcher die Hololens
-eingesetzt wird nicht bekannt ist, empfhlen wir eine weit entfernte Lichtquelle.
+eingesetzt wird nicht bekannt ist, empfehlen wir eine weit entfernte Lichtquelle.
 
 **SpacialMapping**
-Damit die Umgebung wahrgenommen werden kann wird das
-HoloToolkit/SpatialMapping/Prefabs/SpatialMapping.prefab genutzt. Mit dem SpatialMappingObserver
-kann die Auflösung und Aktualisierungszeit konfiguriert werden. Der SpatialMappingManager kann die
-Umrisse der Strukturen darstellen, dies wird nicht genutzt in der Demo Applikation, da es von dem
+Damit die Umgebung wahrgenommen werden kann, wird das
+`HoloToolkit/SpatialMapping/Prefabs/SpatialMapping.prefab` genutzt. Mit dem `SpatialMappingObserver`
+kann die Auflösung und Aktualisierungszeit konfiguriert werden. Der `SpatialMappingManager` kann die
+Umrisse der Strukturen darstellen. Dies wird in der Demo Applikation nicht genutzt, da es vom
 Gerät ablenken würde. ObjectSurfaceObserver???????????
 
 
@@ -631,48 +636,89 @@ Positionen gibt es eine logische Verbindung, die visuell dargestellt wird.
 
 [^source]:[Source on GitHub](https://github.com/ledux/pawi-hololens-dummyapi.git)
 
-### Tips und Stoplersteine bei der Entwicklung
-Während der Entwicklung sind wir auf einige Probleme gestossen welche wir in diesem Abschnitt zusammen mit den allfälligen Lösungen auflisten.
+### Tipps und Stolpersteine bei der Entwicklung
+
+Während der Entwicklung sind wir auf einige Probleme gestossen, welche wir in diesem Abschnitt
+zusammen mit den allfälligen Lösungen auflisten.
 
 **Setup der Entwicklungsumgebung**
-Um für die Hololens zu Entwickeln wird ein Windows 10 Pro, Enterprise oder Education Computer mit aktiviertem Hyper-V benötigt. Das SDK supportet offiziell auch die Betriebssysteme ab Windows 7, jedoch nicht alle benötigten Tools.
-[^setup]:[Installationsanleitung](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools)
+
+Um für die Hololens zu entwickeln wird ein Windows 10 Pro, Enterprise oder Education Computer mit
+aktiviertem Hyper-V benötigt. Das SDK unterstützt offiziell auch die Betriebssysteme ab Windows 7,
+jedoch nicht alle benötigten Tools.
+
+[Installationsanleitung](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools)
 
 **Einschränkungen des Hololens Betriebssystems**
-Obwohl die Hololens selbst ein Computer ist, bietet das WindowsHolographic nicht die gewohnten Funktionalitäten. Es gibt keine CommandLine, kein TaskManager und auch keinen Explorer. Apps welche man auf dem Desktop (genannt Shell) plaziert hat sind gestartet. Um den Prozess zu beenden muss das Icon, welches 2D oder 3D sein kann, entfernt werden.
+
+Obwohl die Hololens selbst ein Computer ist, bietet das WindowsHolographic nicht die gewohnten
+Funktionalitäten. Es gibt keine CommandLine, keinen TaskManager und auch keinen Windows Explorer.
+Apps,  welche man auf dem Desktop (genannt Shell) platziert hat, sind gestartet. Um den Prozess zu beenden
+muss das Icon, welches 2D oder 3D sein kann, entfernt werden.
 
 **Hololens auf sich Anpassen**
-Durch das Gewicht von 579 Gramm loht es sich Zeit zu nehmen beim Anpassen. Es befinden sich zwei unterschiedliche Nose Pads und ein einstellbarer Overhead Strap im Lieferumfang. Diese sowie der Clicker Kontroller ermöglichen die längere Nutzung ohne Kopfschmerzen.
+
+Mit einem Gewicht von immerhin 579 Gramm ist die Hololens nicht gerade leicht. Wenn man sich aber
+etwas Zeit nimmt, um die Hololens an den eigenen Kopf anzupassen, ist dennoch ein grosser
+Tragekomfort gewährleistet. Dazu gehört die Wahl des geeigneteren der beiden Stegstützen, auf
+welchen die Hololens auf der Nase getragen wird und der Verwendung des Overhead Straps.
+
 
 **Einrichten der Hololens für die Entwicklung**
-Um mit den Entwicklungstools auf die Hololens zugreifen zu können muss der Debug Mode aktiviert werden. Microsoft hat die Anleitung dazu auf der Seite [^enable-dev-mode]:[Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/Using_Visual_Studio.html#enabling_developer_mode) versteckt. Die IP-Addresse der Hololens kann man über Settings->Network&Internet->Advanced options auslesen.
+
+Um mit den Entwicklungstools auf die Hololens zugreifen zu können, muss der Debug Mode aktiviert
+werden. Microsoft hat die Anleitung dazu auf der Seite
+[Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/Using_Visual_Studio.html#enabling_developer_mode)
+versteckt. Die IP-Adresse der Hololens kann man über `Settings->Network&Internet->Advanced options` auslesen.
 
 **Konfiguration eines neuen Projektes**
-Ein Projekt mit Unity muss spezifisch für die Hololens angepasst werden. Das
-[^create-project]:[Microsoft Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100) enthällt die nötigen Konfigurationen. Der Unity Editor ermöglicht es vieles ausserhalb der Hololens und dessen Emulators zu testen. Viele der Skripte wie ManualCameraControl, GestureManager und KeywordManager bieten die möglichkeit einen alternativen Input per Tastatur zu definieren.
+
+Ein Projekt mit Unity muss spezifisch für die Hololens angepasst werden. Das Tutorial
+[Microsoft Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100)
+enthält die nötigen Konfigurationen. Der Unity Editor ermöglicht es vieles ausserhalb der Hololens
+und dessen Emulators zu testen. Viele der Skripte wie `ManualCameraControl`, `GestureManager` und
+`KeywordManager` bieten die Möglichkeit einen alternativen Input per Tastatur zu definieren.
 
 **Holographic Academy**
-In 9 Tutorials werden die wichtigsten Elemente für die Entwicklung beigebracht. [^holographic-academy]:[Microsoft Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
 
-****
+In 9 Tutorials werden die wichtigsten Elemente für die Entwicklung beigebracht.
+[Microsoft Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
+
+---
 
 **Weiss und Schwarz**
-Die Farben Weiss und Schwarz haben jeweils ihre eigenen Probleme. Da die Hololens nur additiv RGB Farben darstellen kann ist Schwarz die gänzlich Transparent. Dadurch kann man nicht beeinflussen was der Benutzer sieht. Im gegensatz dazu hat Weiss das Problem dass die Hololens RGB in 3 separaten Schichten darstellt und diese nicht immer perfekt übereinander Liegen. Dadurch sieht man z.B. bei einem weit entfernten Weissen Punkt stattdessen drei leicht versetzte Punkte in rot, grün und blau.
+
+Die Farben Weiss und Schwarz haben jeweils ihre eigenen Probleme. Da die Hololens nur additiv RGB
+Farben darstellen kann ist Schwarz die gänzlich Transparent. Dadurch kann man nicht beeinflussen
+was der Benutzer sieht. Im gegensatz dazu hat Weiss das Problem dass die Hololens RGB in 3
+separaten Schichten darstellt und diese nicht immer perfekt übereinander Liegen. Dadurch sieht man
+z.B. bei einem weit entfernten Weissen Punkt stattdessen drei leicht versetzte Punkte in rot, grün und blau.
 
 **Update nicht blockieren**
-Die Update Methode wird jedes Frame aufgerufen und ist somit nur für nicht blockierende Aufgaben geeignet. Die Methode InvokeRepeating von MonoBehaviour bietet die Möglichkeit für zyklische Methodenaufrufe.
-```
+
+Die Update Methode wird jedes Frame aufgerufen und ist somit nur für nicht blockierende Aufgaben
+geeignet. Die Methode InvokeRepeating von MonoBehaviour bietet die Möglichkeit für zyklische
+Methodenaufrufe.
+
+```cs
 // Aufruf alle 3 Sekunden nach initialem warten von 2 Sekunden
-void Start () {
-	InvokeRepeating("DoSomething", 2, 3);
+void Start ()
+{
+    InvokeRepeating("DoSomething", 2, 3);
 }
-void DoSomething(){
-	//xyz
+
+void DoSomething()
+{
+    //xyz
 }
 ```
-Eine weitere Möglichkeit ist eine Coroutine aufzurufen. Dies ist eine Methode welche pro Frame einen bestimmten Bereich durchführt und dann die Ausführung pausiert.
-```
-void Update() {
+
+Eine weitere Möglichkeit ist eine Coroutine aufzurufen. Dies ist eine Methode welche pro Frame
+einen bestimmten Bereich durchführt und dann die Ausführung pausiert.
+
+```cs
+void Update()
+{
     if (Input.GetKeyDown("f")) {
         StartCoroutine("Fade");
     }
@@ -680,7 +726,8 @@ void Update() {
 
 IEnumerator Fade()
 {
-	for (float f = 1f; f >= 0; f -= 0.1f) {
+    for (float f = 1f; f >= 0; f -= 0.1f)
+    {
         Color c = renderer.material.color;
         c.a = f;
         renderer.material.color = c;
@@ -688,27 +735,37 @@ IEnumerator Fade()
     }
 }
 ```
-Wenn Update aufgerufen wird, startet die Coroutine Fade und läuft durch bis zum ersten yield return. Im folgenden Frame fährt die Ausführung in der Methode nach dem yield weiter. Weitere Informationen zum Beispiel findet man in der [^coroutines]:[Unity Dokumentation](https://docs.unity3d.com/Manual/Coroutines.html).
-Eine Coroutine wurde auch im Script DeviceBehaviour benutzt für den asynchronen HTTP Request.
-```
-void UpdateText() {
-	StartCoroutine(GetInformationFromUrl());
+
+Wenn Update aufgerufen wird, startet die Coroutine Fade und läuft durch bis zum ersten yield
+return. Im folgenden Frame fährt die Ausführung in der Methode nach dem yield weiter. Weitere
+Informationen zum Beispiel findet man in der
+[Unity Dokumentation](https://docs.unity3d.com/Manual/Coroutines.html).
+
+Eine Coroutine wurde auch im Script `DeviceBehaviour` benutzt für den asynchronen HTTP Request.
+
+```cs
+void UpdateText()
+{
+    StartCoroutine(GetInformationFromUrl());
 }
 
 IEnumerator GetInformationFromUrl()
 {
-	// Erstellung des HTTP Requests mittels der URL
-	UnityWebRequest www = UnityWebRequest.Get(DeviceInformationUrl);
-	// Asynchroner aufruf des Requestes
-	yield return www.Send();
-	// Behandlung der Antwort
-	Debug.Log(www.downloadHandler.text);
+    // Erstellung des HTTP Requests mittels der URL
+    UnityWebRequest www = UnityWebRequest.Get(DeviceInformationUrl);
+    // Asynchroner aufruf des Requestes
+    yield return www.Send();
+    // Behandlung der Antwort
+    Debug.Log(www.downloadHandler.text);
 }
 ```
 
 **JSON Serialisieren**
-Unity bietet mit der UnityEngine.JsonUtility eine einfache Möglichkeit mit JSON Objekten umzugehen. Den Aufbau der Daten kann als Klasse oder Struct definiert werden. Falls man Klassen verwendet können jedoch Probleme mit Hierarchischer Serialisierung auftauchen.
-```
+Unity bietet mit der UnityEngine.JsonUtility eine einfache Möglichkeit mit JSON Objekten
+umzugehen. Den Aufbau der Daten kann als Klasse oder Struct definiert werden. Falls man Klassen
+verwendet können jedoch Probleme mit Hierarchischer Serialisierung auftauchen.
+
+```cs
 [System.Serializable]
 public struct JsonInput
 {
@@ -733,14 +790,20 @@ public struct JsonInput
     public JsonInfo[] information;
 }
 ```
+
 Die Serialisierung ist mit einer Zeile möglich.
-```
+
+```cs
 var input = JsonUtility.FromJson<JsonInput>(jsonString);
 ```
 
 **Dynamisch Formen erstellen**
-Es gibt vordefinierte [^primitive-objects]:[primitive Formen](https://docs.unity3d.com/Manual/PrimitiveObjects.html) wie Würfel und Kugel welche einfach erstellt werden können. Im erstellten Framework bestehen die Verbindungen aus langen  schmalen Zilindern.
-```
+
+Es gibt vordefinierte [primitive Formen](https://docs.unity3d.com/Manual/PrimitiveObjects.html)
+wie Würfel und Kugel welche einfach erstellt werden können. Im erstellten Framework bestehen die
+Verbindungen aus langen  schmalen Zylindern.
+
+```cs
 // Erstellung des GameObjects
 var Cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
 // Positionierung relativ zum parent ermöglichen
@@ -754,27 +817,49 @@ Cylinder.GetComponent<Renderer>().material = SomeMaterial;
 //
 
 //Das Objekt muss selbst wieder zerstört werden
-void OnDestroy() {
-	Destroy(Cylinder);
+void OnDestroy()
+{
+    Destroy(Cylinder);
 }
 ```
 
 **Rotation nach anderem Objekt ausrichten**
-Um die oben erwähnten Zilinder-Verbindungen zu realisieren, wird der Zilinder zuerst zwischen Start und Ziel positioniert. Die Roation des Zilinders kann mit der Methode LookAt einfach gesetzt werden.
-```
+
+Um die oben erwähnten Zylinder-Verbindungen zu realisieren, wird der Zylinder zuerst zwischen
+Start und Ziel positioniert. Die Rotation des Zylinders kann mit der Methode `LookAt` einfach gesetzt
+werden.
+
+```cs
 Cylinder.transform.LookAt(connectionSource.transform.position, Vector3.up);
 ```
 
 **3D-Modell Dateiformate**
-Unity kann folgende Formate nativ importieren: .fbx, .dae, .3ds, .dxf und .obj [^3d-formats]:[Unity 3D Formate](https://docs.unity3d.com/Manual/3D-formats.html)
-Maschienenbauer in der Industrie nutzen jedoch andere Dateiformate wie .step und .stl, da die exakte Form in ihrem Bereich eine Grössere Bedeutung hat als die Texturen und Animationen. Mittels Konverter, z.B. [^3d-converter]:[Spin 3D Converter Software](http://www.nchsoftware.com/3dconverter/), können .stl in .obj konvertiert werden. Das Problem an .stl ist jedoch, dass es keine Materialinformationen beinhaltet.
+
+Unity kann folgende Formate nativ importieren: `.fbx, .dae, .3ds, .dxf` und `.obj` [^3d-formats]
+Maschinenbauer in der Industrie nutzen jedoch andere Dateiformate wie `.step` und `.stl`, da die
+exakte Form in ihrem Bereich eine grössere Bedeutung hat als die Texturen und Animationen. Mittels
+Konverter, wie dem [Spin 3D Converter Software](http://www.nchsoftware.com/3dconverter/),
+können `.stl` in `.obj` konvertiert werden. Das Problem an `.stl` ist jedoch, dass es keine
+Materialinformationen beinhaltet.
+
+[^3d-formats]:[Unity 3D Formate](https://docs.unity3d.com/Manual/3D-formats.html)
 
 **Shader auf der Hololens**
-Damit ein Shader auch auf der Hololens funktioniert muss er in Unity unter Edit/Project Settings/Graphics/Always Included Shaders aufgeführt werden. Nicht funktionierende Shader werden Pink dargestellt.
+
+Damit ein Shader auch auf der Hololens funktioniert muss er in Unity unter
+`Edit/Project Settings/Graphics/Always Included Shaders` aufgeführt werden. Nicht funktionierende
+Shader werden Pink dargestellt.
 
 **Probleme mit 2D Linien**
-Mit dem LineRenderer können 2D Linien in der 3D Umgebung dargestellt werden. Vielen Materialien haben Probleme die Linie zu färben. Der Particles/Additive Shader funktioniert ist jedoch nicht deckend. Die Linie hat eine definierte Breite und richtet sich der Kamera aus. Falls sie mehr als 2 Punkte verbindet, ist diese Breite im 3 dimensionalen Raum und aus der Sicht der Kamera nicht mehr konstant. Statt 2D Lienien wird im erstellten Framework mit 3D Zilinder gearbeitet. Dies vermeidet einen Stilbruch zwischen 2D und 3D.
-```
+
+Mit dem `LineRenderer` können 2D Linien in der 3D Umgebung dargestellt werden. Vielen Materialien
+haben Probleme die Linie zu färben. Der `Particles/Additive Shader` funktioniert, ist jedoch nicht
+deckend. Die Linie hat eine definierte Breite und richtet sich nach der Kamera aus. Falls sie mehr als
+2 Punkte verbindet, ist diese Breite im  dreidimensionalen Raum und aus der Sicht der Kamera nicht
+mehr konstant. Statt 2D Linien wird im erstellten Framework mit 3D Zylinder gearbeitet. Dies
+vermeidet einen Stilbruch zwischen 2D und 3D.
+
+```cs
 LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
 lineRenderer.SetColors(Color.red, Color.red);
 lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
@@ -788,56 +873,72 @@ lineRenderer.SetPositions(linePoints);
 ```
 
 **Spline Bewegung**
-Falls sich ein Objekt einer stetigen Linie folgen soll, gibt es ein Spline Controller Skript von der [^spline]:[UnifyCommunity](http://wiki.unity3d.com/index.php/Main_Page). Dieses Skript wurde ausprobiert, wird jedoch im Framework und in der Demo App nicht verwendet. Kind Objekte eines GameObjects geben die Fixpunkte an, welche besucht werden.
+
+Falls sich ein Objekt einer stetigen Linie folgen soll, gibt es ein Spline Controller Skript von
+der [Unity Community](http://wiki.unity3d.com/index.php/Main_Page). Dieses Skript wurde
+ausprobiert, wird jedoch im Framework und in der Demo App nicht verwendet. Kind Objekte eines
+GameObjects geben die Fixpunkte an, welche besucht werden.
 
 **Raycast**
-Ein Raycast erkennt die erste Kollision von einem Punkt und einer Richtung aus. Ein Beispiel dazu ist die Gaze Gestik. Von der Kamera aus wird ein Raycast gesendet und Liefert das Objekt und die Position. Es ist möglich ein bestimmtes Objekt als Ziel zu wählen. Im nachfolgenden Beispiel möchte man herausfinden ob sich das Objekt über einem bestimmten anderen Zielobjekt befindet.
-```
+
+Ein Raycast erkennt die erste Kollision von einem Punkt und einer Richtung aus. Ein Beispiel dazu
+ist die Gaze Gestik. Von der Kamera aus wird ein Raycast gesendet und liefert das Objekt und die
+Position. Es ist möglich ein bestimmtes Objekt als Ziel zu wählen. Im nachfolgenden Beispiel
+möchte man herausfinden ob sich das Objekt über einem bestimmten anderen Zielobjekt befindet.
+
+```cs
 // Raycast nach unten
 var rayOrigin = new Ray(transform.position, Vector3.down);
 RaycastHit hit;
-// True wenn der Raycast den targetCollider innerhalb von der Distanz 2 trifft.
+// True wenn der Raycast den targetCollider innerhalb von
+// der Distanz 2 trifft.
 if (targetCollider.Raycast(rayOrigin, out hit, 2f))
 {
-	var position = hit.point;
+    var position = hit.point;
 }
 ```
 
 **Manipulations Gestik**
-Das Verschieben von Objekten kann wie folgt gelöst werden. Beim OnPressed Methodenaufruf wird die aktuelle Position gespeichert und ein Flag gesetzt. Die OnReleased Methode wird nicht benötigt, da der Benutzer sehr wahrscheinlich das Objekt nicht mehr fokussiert hat, wenn er die Gestik beendet. Stattdesen wird das Flag bei den Events ManipulationCanceled und ManipulationCompleted zurückgesetzt. Dies ist unabhängig davon wie die Gestik beendet wird.
-```
+
+Das Verschieben von Objekten kann wie folgt gelöst werden. Beim `OnPressed` Methodenaufruf wird die
+aktuelle Position gespeichert und ein Flag gesetzt. Die `OnReleased` Methode wird nicht benötigt, da
+der Benutzer sehr wahrscheinlich das Objekt nicht mehr fokussiert hat, wenn er die Gestik beendet.
+Stattdessen wird das Flag bei den Events `ManipulationCanceled` und `ManipulationCompleted`
+zurückgesetzt. Dies ist unabhängig davon wie die Gestik beendet wird.
+
+```cs
 private bool isPressed = false;
 private Vector3 previousPosition;
 
 void Start()
 {
-	GestureManager.Instance.ManipulationCanceled += this.ResetIsPressed;
-	GestureManager.Instance.ManipulationCompleted += this.ResetIsPressed;
+    GestureManager.Instance.ManipulationCanceled += this.ResetIsPressed;
+    GestureManager.Instance.ManipulationCompleted += this.ResetIsPressed;
 }
 
 private void ResetIsPressed()
 {
-	this.isPressed = false;
+    this.isPressed = false;
 }
 
 void OnPressed()
 {
-	this.previousPosition = this.gameObject.transform.position;
-	this.isPressed = true;
+    this.previousPosition = this.gameObject.transform.position;
+    this.isPressed = true;
 }
 
 void Update()
 {
-	if (this.isPressed && GestureManager.Instance.ManipulationInProgress)
-	{
-		this.gameObject.transform.position = this.previousPosition + GestureManager.Instance.ManipulationOffset;
-	}
+    if (this.isPressed && GestureManager.Instance.ManipulationInProgress)
+    {
+        this.gameObject.transform.position = this.previousPosition + GestureManager.Instance.ManipulationOffset;
+    }
 }
 
 void OnDestroy()
 {
-	GestureManager.Instance.ManipulationCanceled -= this.ResetIsPressed;
-	GestureManager.Instance.ManipulationCompleted -= this.ResetIsPressed;
+    GestureManager.Instance.ManipulationCanceled -= this.ResetIsPressed;
+    GestureManager.Instance.ManipulationCompleted -= this.ResetIsPressed;
 }
 ```
 
@@ -864,7 +965,7 @@ installiert (z.B. Username/Password oder Zertifikat)
 Es ist denkbar, dass auch andere Datenquellen als eine Webschnittstelle zum Einsatz kommen können.
 Gerade wenn es sich um technische Geräte handelt (und nicht um z.B Bilder, Skulpturen,
 Gebäudeteile) und man sich sowieso in der unmittelbaren Umgebung aufhält, liegt der Einsatz von
-bluetooth auf der Hand.
+Bluetooth auf der Hand.
 
 Diese Art und Weise, wie die Applikation zu seinen Daten kommt, müsste auch noch im QR-Code
 untergebracht werden.
