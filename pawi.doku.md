@@ -404,8 +404,14 @@ Es ist ein ganz neues Spielerlebnis, wenn man sich mit gleichgrossen Non-Player 
 Umgebung, die man aus dem täglichen Leben kennt, auseinander setzt. Da schaut man auch gerne über
 die noch hölzernen Bewegungen und die kaum vorhandene Mimik hinweg.
 
-Ein weiteres Problem ist das Licht.
+Ein weiteres Problem kann das reale Licht im Raum darstellen. Wenn die realen Lichtverhältnisse nicht
+den in der Virtualität vorgesehenen entsprechen, kann es dazuführen, dass man wichtige Details nur
+sehr schwer sieht. Es kann vorkommen, dass die Lampe im Raum blendet oder das Hologramm für dunkle
+Verhältnisse zu hell und deshalb zu transparent dargestellt wird.
 
+Wenn der Raum zu verwinkelt ist oder die Wände keine regelmässigen Oberflächen haben, hat auch die
+Hololens Mühe mit der Raumaufteilung. Ein Teil des Spielfelds war mal teilweise in einem Schrank und
+in der Wand, so dass die Interaktion mit den Hologrammen sehr schwierig war.
 komplexe Raumaufteilung schwierig
 
 ### Tutorials
@@ -602,11 +608,12 @@ Gerät ablenken würde. ObjectSurfaceObserver???????????
 
 ### QR-Code
 
-Der QR-Code ist sozusagen der Einstiegspunkt für die Applikation. Darauf ist die Datenquelle
-vermerkt, wo sich die Applikation die Informationen für das entsprechende Gerät abholen kann. In
-unserem Fall ist dies eine URL zu einer ReST-Schnittstelle.
+Der QR-Code ist sozusagen der Einstiegspunkt für die Applikation. Darauf ist die Id des Geräts und
+die Datenquelle vermerkt, wo sich die Applikation die Informationen für das entsprechende Gerät
+abholen kann.
 
 Je nach Version ist die Kapazität auf einem QR-Code sehr limitiert[^qr-capacity].
+
 
 [^qr-capacity]:[Kapazitäten von QR-Codes](http://www.qrcode.com/en/about/version.html)
 
