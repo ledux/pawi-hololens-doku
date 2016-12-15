@@ -641,9 +641,10 @@ Gerät ablenken würde.
 
 #### Neues Gerät hinzufügen
 Nachdem man das Framework eingerichtet hat kann man die Geräte definieren. Dazu importiert man das
-3D-Objekt. Das Hauptobjekt muss alle Skallierungs- und Rotationswerte auf 0 gesetzt haben. Die falls das
-3D-Modell nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist muss es in einem Kindobjekt des
-Prefab angepasst werden. 
+3D-Objekt in Unity, indem die gewünschte Datai in das Projekt/Assets Fenster gezogen wird. Das 
+Hauptobjekt muss alle Skallierungs- und Rotationswerte auf 0 gesetzt haben. Die falls das 3D-Modell 
+nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist muss es in einem Kindobjekt des Prefab 
+angepasst werden. 
 
 Das Hauptobjekt benötigt einen `BoxCollider` welcher das gesammte Objekt umfasst. Der Eckpunkt mit den 
 kleinsten X, Y und Z Werten bildet den Ursprung für die Koordinaten der Informationen.
@@ -651,8 +652,8 @@ kleinsten X, Y und Z Werten bildet den Ursprung für die Koordinaten der Informa
 Mit dem `DeviceBehavior` Script werden alle nötigen Funktionalitäten dem Modell hinzugefügt. Für alle
 Geräte sind die Prefabs `Textinformation`, `ImageInformation`, `InformationSelection` sowie die Materialien 
 `ConnectionMaterial` und `ConnectionWhenSelected` nötig. Spezifisch für das Modell sind der Name, die URL 
-von welcher die `TextInformationen` kommen, die Abfragerate sowie die `ImageInformationen`. Statt über die 
-Webschnittstelle werden die Bilder im Unity konfiguriert. Nebst dem Bild als Textur werden equivalente
+von welcher die `TextInformationen` kommen, die Abfragerate sowie die `ImageInformationen`. Die Bilder werden 
+direkt im Unity statt über die Webschnittstelle konfiguriert. Nebst dem Bild als Textur werden equivalente
 Informationen wie bei `TextInformation` benötigt.
 
 Das sich nun in der Hierarchy befindete GameObject muss als Prefab gespeichert werden. Im Project
@@ -664,7 +665,8 @@ Der `DeviceManager` benötigt dieses Prefab und ein Name um es zu instanzieren. 
 mit einem neuen Keyword ergänzt werden welches `DeviceManager.CreateDevice` mit dem Namen aufruft.
 
 Dies sind alle benötigten Schritte in Unity um ein neues Gerät hinzuzufügen. Was noch fehlt ist die 
-Konfiguration oder Implementation einer Webschnittstelle und der Textinformationen.
+Konfiguration oder Implementation einer Webschnittstelle und der Textinformationen. Das Kapitel Datenquelle
+ beschreibt die Daten und ihre Struktur.
 
 ### QR-Code
 
@@ -686,7 +688,6 @@ Der Prozess um mit der Hololens Kamera ein Bild aufzunehmen ist ein vierstufiger
 einzelnen Schritten jeweils mit Callback-Functions arbeitet.
 
 ```cs
-
 public class QrCam : MonoBehaviour
 {
     private PhotoCapture _photoCapture;
@@ -742,7 +743,6 @@ public class QrCam : MonoBehaviour
         Debug.Log(qrValue.Text);
     }
 }
-
 ```
 
 Je nach Version ist die Kapazität auf einem QR-Code sehr limitiert[^qr-capacity].
@@ -787,36 +787,56 @@ kopierten wir die ZXing Library in den `Assets/Plugin` Ordner. Doch
 ### Datenquelle
 
 Als dynamische Datenquelle haben wir uns für eine ReST-Schnittstelle entschieden[^source]. Sie liefert für
-vier verschiedene Geräte unterschiedliche Daten, die in etwa so aussehen.
+vier verschiedene Geräte unterschiedliche Daten, die so aufgebaut sind.
 
 ```json
 {
-    "displayData":"Dynamic data about the device",
-    "deviceDescription":"Static description of the device",
-    "positionToSource":{
-        "xValue":3.5,
-        "yValue":4,
-        "zValue":8.35
-    },
-    "positionToDevice":{
-        "xValue":3.5,
-        "yValue":4,
-        "zValue":8.35
-    },
+	"information":[
+	{
+		"description":"Static description of the device",
+		"text":"Dynamic data about the device",
+		"anchor":{
+			"x":0.5,
+			"y":0.4,
+			"z":0
+		},
+		"target":{
+			"x":0.9,
+			"y":1,
+			"z":0.5
+		},
+	},
+	{
+		"description":"Static description of the device",
+		"text":"Dynamic data about the device",
+		"anchor":{
+			"x":0,
+			"y":0.1,
+			"z":0
+		},
+		"target":{
+			"x":1,
+			"y":1.3,
+			"z":2.3
+		},
+	}]
 }
 ```
+`information` ist die Liste von Informationen welche separat daragestellt werden.
 
-`displayData` ist die Information, an der man interessiert ist. Hier kann der Füllstand,
-    Fehlermeldungen etc. stehen.
+`description` ist die Bezeichnung des Teils des überwachten Geräts, z.B. "Einschaltknopf", 
+"Wassertank"
+	
+`text` ist die Information, an der man interessiert ist. Hier kann der Füllstand, 
+Fehlermeldungen etc. stehen.
 
-`deviceDescription` ist die Bezeichnung des Teils des überwachten Geräts, z.B. "Einschaltknopf",
-    "Wassertank"
-
-`positionToSource` ist die relative Position zum Teil, wo die Information dargestellt werden soll.
-
-`positionToDevice` ist die relative Position des Teil zum Gerät selber. Zwischen den beiden
+`anchor` ist die relative Position zum Ort am Gerät selber. Zwischen den beiden
 Positionen gibt es eine logische Verbindung, die visuell dargestellt wird.
 
+`target` ist die relative Position wo die Information dargestellt werden soll.
+
+Die Positionen sind relativ zum Eckpunkt rechts hinten unten in Meter. X ist die Distanz nach 
+rechts, Y nach oben und Z nach vorne.
 
 [^source]:[Source on GitHub](https://github.com/ledux/pawi-hololens-dummyapi.git)
 
