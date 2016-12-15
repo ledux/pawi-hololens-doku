@@ -1012,6 +1012,12 @@ void OnDestroy()
 }
 ```
 
+### 3rd Party Libraries
+
+Um in einem Unity Projekt bereits kompilierte Libraries (sprich .dll) zu verwenden, müssen die DLLs
+einfach in den Ordner `Assets/Plugins` kopiert. Der Unity Editor registriert die Änderungen und
+kompiliert das Projekt neu.
+
 # Schlussfolgerungen und Ausblick
 
 Da diese Arbeit nur ein Prototyp ist und höchstens als proof of concept gelten kann, gibt es
