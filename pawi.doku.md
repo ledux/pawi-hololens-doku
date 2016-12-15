@@ -524,9 +524,6 @@ Für jedes neue Gerät muss ein Device Prefab erstellt werden. Es enthält das 3
 Collider und das `DeviceBehavior` Skript mit der gewünschten Konfiguration aus
 `DeviceName`, `DeviceInformationUrl` und `PollRateInSec`. Weiter müssen die `TextInformationPrefab` und
 `ImageInformationPrefab` sowie die Materialien (Normal und Selektiert) für die 3D-Linien gesetzt werden.
-Das Hauptobjekt im Prefab muss alle Skallierungs- und Rotationswerte auf 0 gesetzt haben. Die falls das
-3D-Modell nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist muss es in einem Kindobjekt des
-Prefab angepasst werden.
 
 **InformationBaseScript.cs**
 Um Informationen wie Text oder Bild sinnvoll darzustellen, wird dynamisch eine "3D-Linie" von
@@ -612,8 +609,7 @@ und `OnReleased` an fokussierte Objekte gesendet. Falls das fokussierte Objekt e
 implementiert hat, wird sie ausgeführt. Zusätzlich bietet der Manager verschiedene Events bezüglich
 Manipulation, z.B. `ManipulationStartet`, und Properties wie das `FocusedObject` an.
 
-Um die Spracherkennung zu nutzen, wurde ein
-`HoloToolkit/Input/Scripts/KeywordManager.cs` kreiert.
+Um die Spracherkennung zu nutzen, wurde ein `HoloToolkit/Input/Scripts/KeywordManager.cs` kreiert.
 Das Property `KeywordsAndResponses` beinhaltet gesprochene Worte (Keyword) und den dazugehörigen
 Methodenaufruf auf ein Gameobjekt. Als Beispiel wird bei "remove all" die Methode `RemoveDevices()`
 auf dem `DeviceManager` Script ausgeführt. Das Keyword sollte aus mehr als einem Wort bestehen und
@@ -643,6 +639,32 @@ kann die Auflösung und Aktualisierungszeit konfiguriert werden. Der `SpatialMap
 Umrisse der Strukturen darstellen. Dies wird in der Demo Applikation nicht genutzt, da es vom
 Gerät ablenken würde.
 
+#### Neues Gerät hinzufügen
+Nachdem man das Framework eingerichtet hat kann man die Geräte definieren. Dazu importiert man das
+3D-Objekt. Das Hauptobjekt muss alle Skallierungs- und Rotationswerte auf 0 gesetzt haben. Die falls das
+3D-Modell nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist muss es in einem Kindobjekt des
+Prefab angepasst werden. 
+
+Das Hauptobjekt benötigt einen `BoxCollider` welcher das gesammte Objekt umfasst. Der Eckpunkt mit den 
+kleinsten X, Y und Z Werten bildet den Ursprung für die Koordinaten der Informationen.
+
+Mit dem `DeviceBehavior` Script werden alle nötigen Funktionalitäten dem Modell hinzugefügt. Für alle
+Geräte sind die Prefabs `Textinformation`, `ImageInformation`, `InformationSelection` sowie die Materialien 
+`ConnectionMaterial` und `ConnectionWhenSelected` nötig. Spezifisch für das Modell sind der Name, die URL 
+von welcher die `TextInformationen` kommen, die Abfragerate sowie die `ImageInformationen`. Statt über die 
+Webschnittstelle werden die Bilder im Unity konfiguriert. Nebst dem Bild als Textur werden equivalente
+Informationen wie bei `TextInformation` benötigt.
+
+Das sich nun in der Hierarchy befindete GameObject muss als Prefab gespeichert werden. Im Project
+Fenster unter den Assets Ordner führe Rechtsklick > Create > Prefab aus. Das GameObject muss als
+nächstes auf das neu erstellte Prefab gezogen werden. Das GameObject im Hierarchy Fenster ist nicht
+mehr benötigt.
+
+Der `DeviceManager` benötigt dieses Prefab und ein Name um es zu instanzieren. Der `KeywordManager` kann
+mit einem neuen Keyword ergänzt werden welches `DeviceManager.CreateDevice` mit dem Namen aufruft.
+
+Dies sind alle benötigten Schritte in Unity um ein neues Gerät hinzuzufügen. Was noch fehlt ist die 
+Konfiguration oder Implementation einer Webschnittstelle und der Textinformationen.
 
 ### QR-Code
 
@@ -1019,6 +1041,18 @@ können `.stl` in `.obj` konvertiert werden. Das Problem an `.stl` ist jedoch, d
 Materialinformationen beinhaltet.
 
 [^3d-formats]:[Unity 3D Formate](https://docs.unity3d.com/Manual/3D-formats.html)
+
+Selbst Modelle welche nicht für die Industrie erstellt wurden können Probleme bereiten. Ein 
+Demoobjekt, eine Kaffemaschiene, wurde vom Dozenten zur Verfügung gestellt. Die 2 Formate .obj und
+.max sind vorhanden. Das .obj kann von Unity importiert werden, jedoch die dazugehörige .mtl Datei
+nicht. Dadurch sind alle Materialien gleichfarbig, siehe ImageInformation Prefab Abbildung. Wir
+konnten keinen Konverter finden welcher .obj zusammen mit .mtl in ein Importierbares Format wandeln
+kann. Ein Online-Konverter erlaubte .mtl Files, konnte die Grösse der .obj Datei jedoch nicht
+verarbeiten. Beim importieren des zweiten Formates .max erschien eine Fehlermeldungen, da Unity
+3D-Studio Max nich auf dem Rechner finden konnte. Da es ein proprietäres Format is wird die
+Konverierung an das proprietäre Program übergeben. Somit ist von der Kaffemaschiene nur das 3D-Modell
+ohne Farben in der Demo des Frameworks. Die einzelnen Materialien müssten manuell eingefärbt werden
+oder jemand mit einem 3D-Studio Max konvertiert da .max in ein .fbx.
 
 ### Shader auf der Hololens
 
