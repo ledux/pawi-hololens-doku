@@ -749,11 +749,8 @@ Unity Editor diese Assemblies, die über `add reference` oder NuGet hinzugefügt
 Damit konnte man das Projekt nicht mehr kompilieren.
 
 Damit der  Unity Editor fremde Assemblies findet und sie in den Build-Pfad aufnimmt, müssen sie im
-`Assets`-Ordner oder einem Unterordner sein.
-
-
-Dazu
-kopierten wir die ZXing Library in den `Assets/Plugin` Ordner. Doch
+`Assets`-Ordner sein. Leider haben wir keine Version gefunden, die so kompiliert wurde, dass sie mit
+Unity kompatibel wäre. Dies obwohl auf ihrer Seite [die Unterstützung von Unity 3d]() aufgelistet ist.
 
 
 
