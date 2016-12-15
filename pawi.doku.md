@@ -500,8 +500,8 @@ Für jedes neue Gerät muss ein Device Prefab erstellt werden. Es enthält das 3
 Collider und das `DeviceBehavior` Skript mit der gewünschten Konfiguration aus
 `DeviceName`, `DeviceInformationUrl` und `PollRateInSec`. Weiter müssen die `TextInformationPrefab` und
 `ImageInformationPrefab` sowie die Materialien (Normal und Selektiert) für die 3D-Linien gesetzt werden.
-Das Hauptobjekt im Prefab muss alle Skallierungs- und Rotationswerte auf 0 gesetzt haben. Die falls das 
-3D-Modell nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist muss es in einem Kindobjekt des 
+Das Hauptobjekt im Prefab muss alle Skallierungs- und Rotationswerte auf 0 gesetzt haben. Die falls das
+3D-Modell nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist muss es in einem Kindobjekt des
 Prefab angepasst werden.
 
 **InformationBaseScript.cs**
@@ -653,7 +653,7 @@ Diese Applikation wurde aber nie lauffähig auf der Hololens.
 
 <!--TODO: Pasci weiss vielleicht wieso-->
 
-Als nächstes versuchten wir, die Funktionalität in einem Unity Projekt
+Als nächstes versuchten wir, die Funktionalität in einem Unity Projekt unterzubringen.
 
 
 
@@ -693,7 +693,7 @@ Positionen gibt es eine logische Verbindung, die visuell dargestellt wird.
 
 [^source]:[Source on GitHub](https://github.com/ledux/pawi-hololens-dummyapi.git)
 
-### Tipps und Stolpersteine bei der Entwicklung
+## Tipps und Stolpersteine bei der Entwicklung
 
 Während der Entwicklung sind wir auf einige Probleme gestossen, welche wir in diesem Abschnitt
 zusammen mit den allfälligen Lösungen auflisten.
@@ -706,14 +706,14 @@ jedoch nicht alle benötigten Tools.
 
 [Installationsanleitung](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools)
 
-**Einschränkungen des Hololens Betriebssystems**
+### Einschränkungen des Hololens Betriebssystems
 
 Obwohl die Hololens selbst ein Computer ist, bietet das WindowsHolographic nicht die gewohnten
 Funktionalitäten. Es gibt keine CommandLine, keinen TaskManager und auch keinen Windows Explorer.
 Apps,  welche man auf dem Desktop (genannt Shell) platziert hat, sind gestartet. Um den Prozess zu beenden
 muss das Icon, welches 2D oder 3D sein kann, entfernt werden.
 
-**Hololens auf sich Anpassen**
+### Hololens auf sich Anpassen
 
 Mit einem Gewicht von immerhin 579 Gramm ist die Hololens nicht gerade leicht. Wenn man sich aber
 etwas Zeit nimmt, um die Hololens an den eigenen Kopf anzupassen, ist dennoch ein grosser
@@ -721,14 +721,14 @@ Tragekomfort gewährleistet. Dazu gehört die Wahl des geeigneteren der beiden S
 welchen die Hololens auf der Nase getragen wird und der Verwendung des Overhead Straps.
 
 
-**Einrichten der Hololens für die Entwicklung**
+### Einrichten der Hololens für die Entwicklung
 
 Um mit den Entwicklungstools auf die Hololens zugreifen zu können, muss der Debug Mode aktiviert
 werden. Microsoft hat die Anleitung dazu auf der Seite
 [Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/Using_Visual_Studio.html#enabling_developer_mode)
 versteckt. Die IP-Adresse der Hololens kann man über `Settings->Network&Internet->Advanced options` auslesen.
 
-**Konfiguration eines neuen Projektes**
+### Konfiguration eines neuen Projektes
 
 Ein Projekt mit Unity muss spezifisch für die Hololens angepasst werden. Das Tutorial
 [Microsoft Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100)
@@ -736,12 +736,13 @@ enthält die nötigen Konfigurationen. Der Unity Editor ermöglicht es vieles au
 und dessen Emulators zu testen. Viele der Skripte wie `ManualCameraControl`, `GestureManager` und
 `KeywordManager` bieten die Möglichkeit einen alternativen Input per Tastatur zu definieren.
 
-**Holographic Academy**
+### Holographic Academy
 
 In 9 Tutorials werden die wichtigsten Elemente für die Entwicklung beigebracht.
 [Microsoft Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
 
-**Weiss und Schwarz**
+
+### Weiss und Schwarz
 
 Die Farben Weiss und Schwarz haben jeweils ihre eigenen Probleme. Da die Hololens nur additiv RGB
 Farben darstellen kann ist Schwarz die gänzlich Transparent. Dadurch kann man nicht beeinflussen
@@ -749,7 +750,7 @@ was der Benutzer sieht. Im gegensatz dazu hat Weiss das Problem dass die Hololen
 separaten Schichten darstellt und diese nicht immer perfekt übereinander Liegen. Dadurch sieht man
 z.B. bei einem weit entfernten Weissen Punkt stattdessen drei leicht versetzte Punkte in rot, grün und blau.
 
-**Update nicht blockieren**
+### Update nicht blockieren
 
 Die Update Methode wird jedes Frame aufgerufen und ist somit nur für nicht blockierende Aufgaben
 geeignet. Die Methode InvokeRepeating von MonoBehaviour bietet die Möglichkeit für zyklische
@@ -815,7 +816,7 @@ IEnumerator GetInformationFromUrl()
 }
 ```
 
-**JSON Serialisieren**
+### JSON Serialisieren
 Unity bietet mit der UnityEngine.JsonUtility eine einfache Möglichkeit mit JSON Objekten
 umzugehen. Den Aufbau der Daten kann als Klasse oder Struct definiert werden. Falls man Klassen
 verwendet können jedoch Probleme mit Hierarchischer Serialisierung auftauchen.
@@ -852,7 +853,7 @@ Die Serialisierung ist mit einer Zeile möglich.
 var input = JsonUtility.FromJson<JsonInput>(jsonString);
 ```
 
-**Dynamisch Formen erstellen**
+### Dynamisch Formen erstellen
 
 Es gibt vordefinierte [primitive Formen](https://docs.unity3d.com/Manual/PrimitiveObjects.html)
 wie Würfel und Kugel welche einfach erstellt werden können. Im erstellten Framework bestehen die
@@ -878,7 +879,7 @@ void OnDestroy()
 }
 ```
 
-**Hierarchie beachten**
+### Hierarchie beachten
 
 Jedes GameObject befindet sich in einer Hierarchie. Die Methode `.transform.SetParent()` kann das Elternobjekt verändert werden. Wird das Elternobjekt positioniert oder verschoben beeinflusst dies auch die Position der Kinder. Die `transform` Variable jedes GameObjects besitzt die absolute Position `position` sowie auch die lokale Position `localPosition`. Meistens ist es sinnvoll die Hierarchien zu bilden und mit den lokalen Werten zu arbeiten. Ansonsten werden relative Positionierungen und Bewegungen schnell unübersichtlich und kompliziert.
 
@@ -890,7 +891,7 @@ boxColliderSize = boxColliderSize / 2;
 ```
 Es gibt eine weitere Möglichkeit die Grösse eines Collider, Renderer oder Mesh auszulesen. Mit der 'bounds' Variable erhällt man Zugriff auf das Zenturm, die Grösse und weiteren Werten. Diese Werte sind relativ zum Koordinatensystem der Welt, somit verändert sich die Breite eines Objektes durch die Rotation. Im Framework war jedoch die Distanz im lokalen Koordinatensystem gesucht.
 
-**Rotation nach anderem Objekt ausrichten**
+### Rotation nach anderem Objekt ausrichten
 
 Um die oben erwähnten Zylinder-Verbindungen zu realisieren, wird der Zylinder zuerst zwischen
 Start und Ziel positioniert. Die Rotation des Zylinders kann mit der Methode `LookAt` einfach gesetzt
@@ -900,7 +901,7 @@ werden.
 Cylinder.transform.LookAt(connectionSource.transform.position, Vector3.up);
 ```
 
-**3D-Modell Dateiformate**
+### 3D-Modell Dateiformate
 
 Unity kann folgende Formate nativ importieren: `.fbx, .dae, .3ds, .dxf` und `.obj` [^3d-formats]
 Maschinenbauer in der Industrie nutzen jedoch andere Dateiformate wie `.step` und `.stl`, da die
@@ -911,13 +912,13 @@ Materialinformationen beinhaltet.
 
 [^3d-formats]:[Unity 3D Formate](https://docs.unity3d.com/Manual/3D-formats.html)
 
-**Shader auf der Hololens**
+### Shader auf der Hololens
 
 Damit ein Shader auch auf der Hololens funktioniert muss er in Unity unter
 `Edit/Project Settings/Graphics/Always Included Shaders` aufgeführt werden. Nicht funktionierende
 Shader werden Pink dargestellt.
 
-**Probleme mit 2D Linien**
+### Probleme mit 2D Linien
 
 Mit dem `LineRenderer` können 2D Linien in der 3D Umgebung dargestellt werden. Vielen Materialien
 haben Probleme die Linie zu färben. Der `Particles/Additive Shader` funktioniert, ist jedoch nicht
@@ -939,14 +940,14 @@ lineRenderer.SetVertexCount(linePoints.Length);
 lineRenderer.SetPositions(linePoints);
 ```
 
-**Spline Bewegung**
+### Spline Bewegung
 
 Falls sich ein Objekt einer stetigen Linie folgen soll, gibt es ein Spline Controller Skript von
 der [Unity Community](http://wiki.unity3d.com/index.php/Main_Page). Dieses Skript wurde
 ausprobiert, wird jedoch im Framework und in der Demo App nicht verwendet. Kind Objekte eines
 GameObjects geben die Fixpunkte an, welche besucht werden.
 
-**Raycast**
+### Raycast
 
 Ein Raycast erkennt die erste Kollision von einem Punkt und einer Richtung aus. Ein Beispiel dazu
 ist die Gaze Gestik. Von der Kamera aus wird ein Raycast gesendet und liefert das Objekt und die
@@ -965,7 +966,7 @@ if (targetCollider.Raycast(rayOrigin, out hit, 2f))
 }
 ```
 
-**Manipulations Gestik**
+### Manipulations Gestik
 
 Das Verschieben von Objekten kann wie folgt gelöst werden. Beim `OnPressed` Methodenaufruf wird die
 aktuelle Position gespeichert und ein Flag gesetzt. Die `OnReleased` Methode wird nicht benötigt, da
