@@ -666,10 +666,10 @@ Gerät ablenken würde.
 
 #### Neues Gerät hinzufügen
 Nachdem man das Framework eingerichtet hat kann man die Geräte definieren. Dazu importiert man das
-3D-Objekt in Unity, indem die gewünschte Datai in das Projekt/Assets Fenster gezogen wird. Das 
-Hauptobjekt muss alle Skallierungs- und Rotationswerte auf 0 gesetzt haben. Die falls das 3D-Modell 
-nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist muss es in einem Kindobjekt des Prefab 
-angepasst werden. 
+3D-Objekt in Unity, indem die gewünschte Datai in das Projekt/Assets Fenster gezogen wird. Das
+Hauptobjekt muss alle Skallierungs- und Rotationswerte auf 0 gesetzt haben. Die falls das 3D-Modell
+nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist muss es in einem Kindobjekt des Prefab
+angepasst werden.
 
 Das Hauptobjekt benötigt einen `BoxCollider` welcher das gesammte Objekt umfasst. Der Eckpunkt mit den
 kleinsten X, Y und Z Werten bildet den Ursprung für die Koordinaten der Informationen.
@@ -689,7 +689,7 @@ mehr benötigt.
 Der `DeviceManager` benötigt dieses Prefab und ein Name um es zu instanzieren. Der `KeywordManager` kann
 mit einem neuen Keyword ergänzt werden welches `DeviceManager.CreateDevice` mit dem Namen aufruft.
 
-Dies sind alle benötigten Schritte in Unity um ein neues Gerät hinzuzufügen. Was noch fehlt ist die 
+Dies sind alle benötigten Schritte in Unity um ein neues Gerät hinzuzufügen. Was noch fehlt ist die
 Konfiguration oder Implementation einer Webschnittstelle und der Textinformationen. Das Kapitel Datenquelle
  beschreibt die Daten und ihre Struktur.
 
@@ -824,43 +824,44 @@ vier verschiedene Geräte unterschiedliche Daten, die so aufgebaut sind.
 
 ```json
 {
-	"information":[
-	{
-		"description":"Static description of the device",
-		"text":"Dynamic data about the device",
-		"anchor":{
-			"x":0.5,
-			"y":0.4,
-			"z":0
-		},
-		"target":{
-			"x":0.9,
-			"y":1,
-			"z":0.5
-		},
-	},
-	{
-		"description":"Static description of the device",
-		"text":"Dynamic data about the device",
-		"anchor":{
-			"x":0,
-			"y":0.1,
-			"z":0
-		},
-		"target":{
-			"x":1,
-			"y":1.3,
-			"z":2.3
-		},
-	}]
+    information":[
+    {
+        "description":"Static description of the device",
+        "text":"Dynamic data about the device",
+        "anchor":{
+            "x":0.5,
+            "y":0.4,
+            "z":0
+        },
+        "target":{
+            "x":0.9,
+            "y":1,
+            "z":0.5
+        },
+    },
+    {
+        "description":"Static description of the device",
+        "text":"Dynamic data about the device",
+        "anchor":{
+            "x":0,
+            "y":0.1,
+            "z":0
+        },
+        "target":{
+            "x":1,
+            "y":1.3,
+            "z":2.3
+        },
+    }]
 }
 ```
+
 `information` ist die Liste von Informationen welche separat daragestellt werden.
 
-`description` ist die Bezeichnung des Teils des überwachten Geräts, z.B. "Einschaltknopf", 
+`description` ist die Bezeichnung des Teils des überwachten Geräts, z.B. "Einschaltknopf",
 "Wassertank"
-	
-`text` ist die Information, an der man interessiert ist. Hier kann der Füllstand, 
+
+`text` ist die Information, an der man interessiert ist. Hier kann der Füllstand,
 Fehlermeldungen etc. stehen.
 
 `anchor` ist die relative Position zum Ort am Gerät selber. Zwischen den beiden
@@ -868,7 +869,7 @@ Positionen gibt es eine logische Verbindung, die visuell dargestellt wird.
 
 `target` ist die relative Position wo die Information dargestellt werden soll.
 
-Die Positionen sind relativ zum Eckpunkt rechts hinten unten in Meter. X ist die Distanz nach 
+Die Positionen sind relativ zum Eckpunkt rechts hinten unten in Meter. X ist die Distanz nach
 rechts, Y nach oben und Z nach vorne.
 
 [^source]:[Source on GitHub](https://github.com/ledux/pawi-hololens-dummyapi.git)
