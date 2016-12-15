@@ -308,6 +308,7 @@ Auf der Hololens gibt es eine Bibliothek mit vorgefertigten Hologrammen, die der
 platzieren kann. Dies ist ein guter Einstiegspunkt, um das Konzept der Hologrammen und deren
 Platzierung im Raum kennen zu lernen.
 
+![Hologramme im Raum](pics/hologramOnTable.jpg)
 
 #### RoboRaid
 
@@ -427,6 +428,22 @@ Wenn der Raum zu verwinkelt ist oder die Wände keine regelmässigen Oberfläche
 Hololens Mühe mit der Raumaufteilung. Ein Teil des Spielfelds war mal teilweise in einem Schrank und
 in der Wand, so dass die Interaktion mit den Hologrammen sehr schwierig war.
 komplexe Raumaufteilung schwierig
+
+
+#### HoloTube
+
+HoloTube ist eine inoffizielle YouTube-App für die Hololens. Man kann damit auf YouTube Videos
+suchen und abspielen.  Sie unterstützt auch die so genannten spherical videos oder 360°-Videos.
+Die Auflösung dieser Videos ist aber sehr schlecht. Dazu kommt, dass sich hier der Umstand, dass man die
+reale Umgebung sieht, nachteilig auswirkt. Gerade bei Videos möchte man ja von der Umwelt nichts
+mehr wahrnehmen. Auch die Helligkeit des Raums wirkt sich negativ auf das Erlebnis aus.
+
+Normale Videos werden in einem eigenen Fenster abgespielt. Hier ist die Qualität so wie man sie
+erwarten kann und die Transparenz wirkt hier weniger störend. Dieser Player kann in zwei
+verschiedenen Modi verwendet werden, "Locked" und "Follow me". Bei ersterem bleibt das Fenster dort,
+wo man es platziert hat, bei zweiterem bleibt es vor den Augen des Benutzers, egal wohin er den Kopf
+bewegt.
+
 
 ### Tutorials
 
