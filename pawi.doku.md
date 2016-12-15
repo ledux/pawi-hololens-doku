@@ -104,6 +104,10 @@ Game Engine         Eine Game Engine ist ein Framework für die Erstellung von V
                     Simulationen für physikalisches Verhalten, Geräusche und Musik, Animationen,
                     künstliche Intelligenz u.v.m.
 
+Shell               Der "Desktop" der Hololens; Hier können die Applikationen und Hologramme im Raum
+                    platziert werden.
+
+
 ----------------------------------------------------------------------------------------------------
 Table: Definitionen
 
@@ -116,6 +120,9 @@ API                 Application Program Interface, Schnittstelle von Computerpro
 HL                  Hololens
 
 ReST                Representational State Transfer, Konzept für APIs über http(s)
+
+VS2015              Visual Studio 2015; Entwicklungsumgebung von Microsoft, u.a.  für .NET
+                    Applikationen
 
 ----------------------------------------------------------------------------------------------------
 Table: Abkürzungen
@@ -511,8 +518,10 @@ Diese "3D-Linie" besteht aus einer Kugel beim Anker, einem langen Zylinder als V
 einem breiten Zylinder als Podest für die Information. Es ermöglicht die Information mit der
 Press-Gestik zu verschieben und wechselt das Material der "3D-Linie" falls die Information fokussiert wird.
 
-**TextInformation.cs**
+**TextInformationScript.cs**
 Diese Ableitung des `InformationBaseScript` ermöglicht es Text mittels `SetText` darzustellen.
+
+![Textinformation Prefab](pics/TextInformation.PNG)
 
 **TextInformation Prefab**
 Damit der Benutzer den Text sehen kann sind in diesem Prefab nebst dem `TextInformation` Scripts
@@ -527,10 +536,12 @@ Hintergrund für den Text zu haben. Ein Padding im  `HorizontalLayerGroup` des P
 Lesbarkeit des Textes. Auf der untersten Ebene befindet sich das Textobjekt,  welches vom
 `TextInformation` Script aktualisiert wird.
 
-**ImageInformation.cs**
+**ImageInformationScript.cs**
 Vergleichbar mit dem `TextInformation` Script wird stattdessen ein Bild durch `SetImage` gesetzt.
 Zusätzlich wird die Grösse des Prefabs der Grösse des Bildes angepasst. Dies war nötig da der
 `ContentSizeFitter` nicht wie bei dem Textobjekt funktioniert hat.
+
+![Bildinformation Prefab](pics/ImageInformation.PNG)
 
 **ImageInformation Prefab**
 Dieses Prefab gleicht dem `TextInformation` Prefab bis auf zwei Änderungen. Der `ContentSizeFitter`
@@ -540,8 +551,11 @@ wird nicht verwendet und es wird das Text Objekt mit `RawImage` ersetzt.
 Die verschiedenen Informationen werden zu Beginn nicht dargestellt. Es in einem Menu erscheint jede Information als Button. Wird der Button geklickt, verschwindet er und die Information wird dargestellt. Falls alle Informationen dargestellt werden verschwindet das Menu. Informationen auf welche gecklickt werden verschwinden und der Button im Menu erscheint erneut.
 Das Script benötigt ein `PrefabButton` und das `PanelTransform` um die Buttons dynamisch zu erstellen und positonieren. Die Methode `DeviceToEnable` registriert eine Information welche momentan Disabled ist. Sobald ein Button gedrückt wird wird er entfernt und das Event `EnableDevice` ausgelöst. `DeviceBehavior` ruft `DeviceToEnable` auf und behandelt `EnableDevice`.
 
+![InformationSelection Prefab](pics/informationSelection.PNG)
+
 **InformationSelection Prefab**
 Dem `TextInformation` Prefab sehr ähnlich, unterscheidet sich dieses nur durch die `VerticalLayerGroup` und den vordefinierten Text. Auf der Layer Group sind die Abstände zwischen den generierten Buttons und zu dem Rand definiert.
+
 
 #### Konfiguration
 Die oben genannten Assets müssen in einer Unity Scene konfiguriert werden. Die minimale Hierarchie
@@ -610,7 +624,7 @@ Damit die Umgebung wahrgenommen werden kann, wird das
 `HoloToolkit/SpatialMapping/Prefabs/SpatialMapping.prefab` genutzt. Mit dem `SpatialMappingObserver`
 kann die Auflösung und Aktualisierungszeit konfiguriert werden. Der `SpatialMappingManager` kann die
 Umrisse der Strukturen darstellen. Dies wird in der Demo Applikation nicht genutzt, da es vom
-Gerät ablenken würde. ObjectSurfaceObserver???????????
+Gerät ablenken würde.
 
 
 ### QR-Code
@@ -633,6 +647,7 @@ Der Prozess um mit der Hololens Kamera ein Bild aufzunehmen ist ein vierstufiger
 einzelnen Schritten jeweils mit Callback-Functions arbeitet.
 
 ```cs
+
 public class QrCam : MonoBehaviour
 {
     private PhotoCapture _photoCapture;
@@ -688,6 +703,7 @@ public class QrCam : MonoBehaviour
         Debug.Log(qrValue.Text);
     }
 }
+
 ```
 
 Je nach Version ist die Kapazität auf einem QR-Code sehr limitiert[^qr-capacity].
@@ -714,8 +730,15 @@ Diese Applikation wurde aber nie lauffähig auf der Hololens.
 
 <!--TODO: Pasci weiss vielleicht wieso-->
 
-Als nächstes versuchten wir, die Funktionalität in einem Unity Projekt unterzubringen. Dabei gingen
-wir erst so vor, wie wir es von klassischen .NET-Projekten
+Als nächstes versuchten wir, die Funktionalität in einem Unity Projekt unterzubringen. Wir fügten
+dem Workspace ein Script hinzu und editierten es im VS2015. Um die ZXing Referenz hinzuzufügen
+gingen wir erst so vor, wie wir es von klassischen .NET-Projekten kannten. Leider fand der
+Unity Editor diese Assemblies, die über `add reference` oder NuGet hinzugefügt wurden, nicht.
+Damit konnte man das Projekt nicht mehr kompilieren.
+
+Damit der  Unity Editor fremde Assemblies findet und sie in den Build-Pfad aufnimmt, müssen sie im
+`Assets`-Ordner oder einem Unterordner sein.
+
 
 Dazu
 kopierten wir die ZXing Library in den `Assets/Plugin` Ordner. Doch
@@ -840,7 +863,8 @@ einen bestimmten Bereich durchführt und dann die Ausführung pausiert.
 ```cs
 void Update()
 {
-    if (Input.GetKeyDown("f")) {
+    if (Input.GetKeyDown("f"))
+    {
         StartCoroutine("Fade");
     }
 }
@@ -970,7 +994,7 @@ Cylinder.transform.LookAt(connectionSource.transform.position, Vector3.up);
 
 ### 3D-Modell Dateiformate
 
-Unity kann folgende Formate nativ importieren: `.fbx, .dae, .3ds, .dxf` und `.obj` [^3d-formats]
+Unity kann folgende Formate nativ importieren: `.fbx, .dae, .3ds, .dxf` und `.obj` [^3d-formats].
 Maschinenbauer in der Industrie nutzen jedoch andere Dateiformate wie `.step` und `.stl`, da die
 exakte Form in ihrem Bereich eine grössere Bedeutung hat als die Texturen und Animationen. Mittels
 Konverter, wie dem [Spin 3D Converter Software](http://www.nchsoftware.com/3dconverter/),
@@ -981,6 +1005,8 @@ Materialinformationen beinhaltet.
 
 ### Shader auf der Hololens
 
+Jedes Material benötigt einen Shader, welcher spezifiziert, wie die Oberfläche in verschiedenen
+Situationen berechnet wird.
 Damit ein Shader auch auf der Hololens funktioniert muss er in Unity unter
 `Edit/Project Settings/Graphics/Always Included Shaders` aufgeführt werden. Nicht funktionierende
 Shader werden Pink dargestellt.
@@ -1118,3 +1144,4 @@ _--> Notizen TODO: ausformulieren_
 
 # Lessons learned
 
+NOCH OFFEN
