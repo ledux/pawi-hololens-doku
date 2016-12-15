@@ -477,16 +477,19 @@ Im erstellten Framework befinden sich hauptsächlich Scripts und Prefabs.
 **DeviceManager.cs**
 Der `DeviceManager` behandelt die Erstellung und das Entfernen von Geräten. ????????????
 
-**DeviceBehaviour.cs**
-Jedes Gerät wird durch das `DeviceBehaviour` Script gesteuert. Es enthält alle offline
+**DeviceBehavior.cs**
+Jedes Gerät wird durch das `DeviceBehavior` Script gesteuert. Es enthält alle offline
 Informationen zum Gerät und die URL zur Webschnittstelle. In regelmässigen Abständen,
 konfigurierbar durch `PollRateInSec` werden die Informationen abgefragt und dargestellt.
 
 **Device Prefab**
 Für jedes neue Gerät muss ein Device Prefab erstellt werden. Es enthält das 3D-Modell, den
-Collider und das `DeviceBehaviour` Skript mit der gewünschten Konfiguration aus
+Collider und das `DeviceBehavior` Skript mit der gewünschten Konfiguration aus
 `DeviceName`, `DeviceInformationUrl` und `PollRateInSec`. Weiter müssen die `TextInformationPrefab` und
 `ImageInformationPrefab` sowie die Materialien (Normal und Selektiert) für die 3D-Linien gesetzt werden.
+Das Hauptobjekt im Prefab muss alle Skallierungs- und Rotationswerte auf 0 gesetzt haben. Die falls das 
+3D-Modell nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist muss es in einem Kindobjekt des 
+Prefab angepasst werden.
 
 **InformationBaseScript.cs**
 Um Informationen wie Text oder Bild sinnvoll darzustellen, wird dynamisch eine "3D-Linie" von
@@ -494,7 +497,6 @@ einem Ort des Gerätes (Anker) zum Ort an welchem die Information dargestellt wi
 Diese "3D-Linie" besteht aus einer Kugel beim Anker, einem langen Zylinder als Verbindung und
 einem breiten Zylinder als Podest für die Information. Es ermöglicht die Information mit der
 Press-Gestik zu verschieben und wechselt das Material der "3D-Linie" falls die Information fokussiert wird.
-
 
 **TextInformation.cs**
 Diese Ableitung des `InformationBaseScript` ermöglicht es Text mittels `SetText` darzustellen.
@@ -520,6 +522,13 @@ Zusätzlich wird die Grösse des Prefabs der Grösse des Bildes angepasst. Dies 
 **ImageInformation Prefab**
 Dieses Prefab gleicht dem `TextInformation` Prefab bis auf zwei Änderungen. Der `ContentSizeFitter`
 wird nicht verwendet und es wird das Text Objekt mit `RawImage` ersetzt.
+
+**InformationSelectionScript.cs**
+Die verschiedenen Informationen werden zu Beginn nicht dargestellt. Es in einem Menu erscheint jede Information als Button. Wird der Button geklickt, verschwindet er und die Information wird dargestellt. Falls alle Informationen dargestellt werden verschwindet das Menu. Informationen auf welche gecklickt werden verschwinden und der Button im Menu erscheint erneut.
+Das Script benötigt ein `PrefabButton` und das `PanelTransform` um die Buttons dynamisch zu erstellen und positonieren. Die Methode `DeviceToEnable` registriert eine Information welche momentan Disabled ist. Sobald ein Button gedrückt wird wird er entfernt und das Event `EnableDevice` ausgelöst. `DeviceBehavior` ruft `DeviceToEnable` auf und behandelt `EnableDevice`.
+
+**InformationSelection Prefab**
+Dem `TextInformation` Prefab sehr ähnlich, unterscheidet sich dieses nur durch die `VerticalLayerGroup` und den vordefinierten Text. Auf der Layer Group sind die Abstände zwischen den generierten Buttons und zu dem Rand definiert.
 
 #### Konfiguration
 Die oben genannten Assets müssen in einer Unity Scene konfiguriert werden. Die minimale Hierarchie
@@ -567,8 +576,9 @@ auf dem `DeviceManager` Script ausgeführt. Das Keyword sollte aus mehr als eine
 anderen Keywords nicht zu sehr gleichen. Dies erhöht die Chance, dass die Hololens den richtigen
 Befehl erkennt.
 
-**EventSystem** ????Nur mit interaktiven ui elementen nötig?????????
-?????????''
+**EventSystem**
+Ein `EventSystem` wird benötigt falls man mit Unity-UI Elementen arbeitet. Nebst dem normalen
+`StandaloneInputModule` enthällt das Holo Toolkit ein `HoloLensInputModule`.
 
 **Cursor**
 Das `HoloToolkit/Input/Prefab/Cursor.prefab` ist die Darstellung des Cursors. Es können zwei
@@ -684,8 +694,6 @@ und dessen Emulators zu testen. Viele der Skripte wie `ManualCameraControl`, `Ge
 In 9 Tutorials werden die wichtigsten Elemente für die Entwicklung beigebracht.
 [Microsoft Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
 
----
-
 **Weiss und Schwarz**
 
 Die Farben Weiss und Schwarz haben jeweils ihre eigenen Probleme. Da die Hololens nur additiv RGB
@@ -741,7 +749,7 @@ return. Im folgenden Frame fährt die Ausführung in der Methode nach dem yield 
 Informationen zum Beispiel findet man in der
 [Unity Dokumentation](https://docs.unity3d.com/Manual/Coroutines.html).
 
-Eine Coroutine wurde auch im Script `DeviceBehaviour` benutzt für den asynchronen HTTP Request.
+Eine Coroutine wurde auch im Script `DeviceBehavior` benutzt für den asynchronen HTTP Request.
 
 ```cs
 void UpdateText()
@@ -822,6 +830,18 @@ void OnDestroy()
     Destroy(Cylinder);
 }
 ```
+
+**Hierarchie beachten**
+
+Jedes GameObject befindet sich in einer Hierarchie. Die Methode `.transform.SetParent()` kann das Elternobjekt verändert werden. Wird das Elternobjekt positioniert oder verschoben beeinflusst dies auch die Position der Kinder. Die `transform` Variable jedes GameObjects besitzt die absolute Position `position` sowie auch die lokale Position `localPosition`. Meistens ist es sinnvoll die Hierarchien zu bilden und mit den lokalen Werten zu arbeiten. Ansonsten werden relative Positionierungen und Bewegungen schnell unübersichtlich und kompliziert.
+
+**Plazierung relativ zur Ecke eines Objektes**
+Für das Geräteinformation Framework muss es möglich sein Koordinaten relativ zur Ecke eines Gerätes zu definieren. Da jedes Gerät einen `BoxCollider` besitzen muss, wird dessen Ecke als Ursprung benutzt. Die Variable `size` besitzt die Durchmesser des Collider pro Dimension. Da diese Werte unabhängig von der lokalen Skallierung sind, müssen sie skalliert werden. Als letzer Schritt werden alle Werte im Vektor halbiert.
+```cs
+boxColliderSize.Scale(Device.transform.localScale);
+boxColliderSize = boxColliderSize / 2;
+```
+Es gibt eine weitere Möglichkeit die Grösse eines Collider, Renderer oder Mesh auszulesen. Mit der 'bounds' Variable erhällt man Zugriff auf das Zenturm, die Grösse und weiteren Werten. Diese Werte sind relativ zum Koordinatensystem der Welt, somit verändert sich die Breite eines Objektes durch die Rotation. Im Framework war jedoch die Distanz im lokalen Koordinatensystem gesucht.
 
 **Rotation nach anderem Objekt ausrichten**
 
