@@ -616,15 +616,15 @@ Gerät ablenken würde.
 Nachdem man das Framework eingerichtet hat kann man die Geräte definieren. Dazu importiert man das
 3D-Objekt. Das Hauptobjekt muss alle Skallierungs- und Rotationswerte auf 0 gesetzt haben. Die falls das
 3D-Modell nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist muss es in einem Kindobjekt des
-Prefab angepasst werden. 
+Prefab angepasst werden.
 
-Das Hauptobjekt benötigt einen `BoxCollider` welcher das gesammte Objekt umfasst. Der Eckpunkt mit den 
+Das Hauptobjekt benötigt einen `BoxCollider` welcher das gesammte Objekt umfasst. Der Eckpunkt mit den
 kleinsten X, Y und Z Werten bildet den Ursprung für die Koordinaten der Informationen.
 
 Mit dem `DeviceBehavior` Script werden alle nötigen Funktionalitäten dem Modell hinzugefügt. Für alle
-Geräte sind die Prefabs `Textinformation`, `ImageInformation`, `InformationSelection` sowie die Materialien 
-`ConnectionMaterial` und `ConnectionWhenSelected` nötig. Spezifisch für das Modell sind der Name, die URL 
-von welcher die `TextInformationen` kommen, die Abfragerate sowie die `ImageInformationen`. Statt über die 
+Geräte sind die Prefabs `Textinformation`, `ImageInformation`, `InformationSelection` sowie die Materialien
+`ConnectionMaterial` und `ConnectionWhenSelected` nötig. Spezifisch für das Modell sind der Name, die URL
+von welcher die `TextInformationen` kommen, die Abfragerate sowie die `ImageInformationen`. Statt über die
 Webschnittstelle werden die Bilder im Unity konfiguriert. Nebst dem Bild als Textur werden equivalente
 Informationen wie bei `TextInformation` benötigt.
 
@@ -636,7 +636,7 @@ mehr benötigt.
 Der `DeviceManager` benötigt dieses Prefab und ein Name um es zu instanzieren. Der `KeywordManager` kann
 mit einem neuen Keyword ergänzt werden welches `DeviceManager.CreateDevice` mit dem Namen aufruft.
 
-Dies sind alle benötigten Schritte in Unity um ein neues Gerät hinzuzufügen. Was noch fehlt ist die 
+Dies sind alle benötigten Schritte in Unity um ein neues Gerät hinzuzufügen. Was noch fehlt ist die
 Konfiguration oder Implementation einer Webschnittstelle und der Textinformationen.
 
 ### QR-Code
@@ -750,7 +750,18 @@ Damit konnte man das Projekt nicht mehr kompilieren.
 
 Damit der  Unity Editor fremde Assemblies findet und sie in den Build-Pfad aufnimmt, müssen sie im
 `Assets`-Ordner sein. Leider haben wir keine Version gefunden, die so kompiliert wurde, dass sie mit
-Unity kompatibel wäre. Dies obwohl auf ihrer Seite [die Unterstützung von Unity 3d]() aufgelistet ist.
+Unity kompatibel wäre. Dies obwohl auf ihrer Seite
+[die Unterstützung von Unity 3d](https://zxingnet.codeplex.com/) aufgelistet ist.
+
+Wir haben alle [verfügbaren Libraries](https://zxingnet.codeplex.com/downloads/get/824664) versucht,
+aber keine gefunden, bei welcher Unity keinen Fehler beim Kompilieren geworfen hätte.[^next-steps]
+
+[^next-steps]:Beim Erstellen dieses Dokuments haben wir Informationen gefunden, die die nächsten
+Schritte sein könnten, dieses Problem dennoch zu lösen. Einer ist ein weiteres Assembly, das für
+Unity geeignet sein könnte, ein anderer den Source Code direkt in das Projekt zu nehmen statt
+ein  kompiliertes Assembly.
+[Das Assembly ist hier ](https://zxingnet.codeplex.com/downloads/get/824665) zu finden,
+[der Source Code hier](https://zxingnet.codeplex.com/downloads/get/824668)
 
 
 
@@ -1012,7 +1023,7 @@ Materialinformationen beinhaltet.
 
 [^3d-formats]:[Unity 3D Formate](https://docs.unity3d.com/Manual/3D-formats.html)
 
-Selbst Modelle welche nicht für die Industrie erstellt wurden können Probleme bereiten. Ein 
+Selbst Modelle welche nicht für die Industrie erstellt wurden können Probleme bereiten. Ein
 Demoobjekt, eine Kaffemaschiene, wurde vom Dozenten zur Verfügung gestellt. Die 2 Formate .obj und
 .max sind vorhanden. Das .obj kann von Unity importiert werden, jedoch die dazugehörige .mtl Datei
 nicht. Dadurch sind alle Materialien gleichfarbig, siehe ImageInformation Prefab Abbildung. Wir
