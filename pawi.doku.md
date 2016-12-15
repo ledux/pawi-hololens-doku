@@ -42,33 +42,6 @@ This document describes first steps with this new technology and the developemen
 with which you can display additional information to a real life object in the room.
 
 
-# Inhalt
-
-- [Selbständigkeitserklärung](#section-id-9)
-- [Inhalt](#section-id-26)
-- [Abstract (deutsch)](#section-id-31)
-- [Abstract (english)](#section-id-40)
-- [Abkürzungen und Definitionen](#section-id-49)
-- [Ziele und erwartete Resultate](#section-id-77)
-    - [Einführung](#section-id-79)
-    - [Mögliche Anwendungsfälle](#section-id-96)
-    - [Mögliche Frameworks](#section-id-116)
-        - [Virtueller Desktop](#section-id-121)
-        - [Geräteinformationen darstellen](#section-id-131)
-    - [Anforderungen](#section-id-145)
-      - [Framework (muss)](#section-id-151)
-      - [Framework (kann)](#section-id-170)
-- [Lösungsentwicklung](#section-id-180)
-    - [Erste Schritte](#section-id-184)
-        - [Demoapplikationen](#section-id-217)
-        - [Tutorials](#section-id-235)
-    - [Entwicklung Gerätestatus](#section-id-258)
-        - [Workflow](#section-id-273)
-        - [Datenquelle](#section-id-284)
-- [Schlussfolgerungen und Ausblick](#section-id-292)
-- [Lessons learned](#section-id-303)
-
-
 # Abkürzungen und Definitionen
 
 ----------------------------------------------------------------------------------------------------
