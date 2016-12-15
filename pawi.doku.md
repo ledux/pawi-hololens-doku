@@ -97,6 +97,13 @@ Bloom               Gestik bei welcher die fünf Finger einer Hand sich berühre
 Gaze                der Blick; wo der Benutzer hinschaut und was die Hololens dort identifiziert.
                     Das kann sowohl ein reales Objekt sein wie auch ein Hologramm.
 
+Unity               Unity ist eine Game Engine für 21 verschiedene Plattformen.
+
+Game Engine         Eine Game Engine ist ein Framework für die Erstellung von Videospielen. Es
+                    beinhaltet typischerweise Funktionalität für das Rendern von Grafiken,
+                    Simulationen für physikalisches Verhalten, Geräusche und Musik, Animationen,
+                    künstliche Intelligenz u.v.m.
+
 ----------------------------------------------------------------------------------------------------
 Table: Definitionen
 
@@ -612,10 +619,43 @@ Der QR-Code ist sozusagen der Einstiegspunkt für die Applikation. Darauf ist di
 die Datenquelle vermerkt, wo sich die Applikation die Informationen für das entsprechende Gerät
 abholen kann.
 
+Diese Informationen würden dann verwendet um das entsprechende Hologramm im Raum zu platzieren und
+die Informationen an das Objekt zu heften und regelmässig zu aktualisieren.
+
+Um Bilder mit der Kamera der  Hololens aufzunehmen gibt es das `PhotoCapture` Objekt im Namespace
+`UnityEngine.VR.WSA.WebCam`.
+
+Für die Erkennung und das Decodieren des QR-Codes haben wir uns für die
+ZXing [^zxing-library] Bibliothek entschieden. Sie unterstützt sehr viele Formate und es gibt sie
+für viele Plattformen
+
 Je nach Version ist die Kapazität auf einem QR-Code sehr limitiert[^qr-capacity].
 
-
 [^qr-capacity]:[Kapazitäten von QR-Codes](http://www.qrcode.com/en/about/version.html)
+[^zxing-library]:[Zebra Crossing Barcode Reader](https://zxingnet.codeplex.com/)
+
+Leider sind wir an der Umsetzung dieses Features gescheitert.
+
+
+#### Gründe für das Scheitern
+
+Der erste Versuch scheiterte an falschen Annahmen, wie das Teilprojekt aufgebaut sein soll. Der
+Teil, der QR-Codes liest und eine externe Datenquelle anspricht benötigt keine virtuellen Elemente.
+Er sollte nur die Kamera ansprechen und auf den erhaltenen  Bilder mittels einer Bibliothek nach einem
+QR-Code zu suchen. Wie die  gefundenen Informationen an den Teil der Applikation, der für das
+Rendering des Hologramms und der Informationen zuständig ist, gesendet wird, wollten wir in einem
+späteren Schritt lösen.
+
+So versuchten wir eine Applikation zu entwickeln, die komplett ohne Unity auskommt und nur Bilder
+von der Kamera vom  QR-Framework verarbeiten lässt. Das dies möglich sein sollte, entnahmen wir der
+Tatsache, dass es im Visual Studio 2015 ein Projekttemplate für holografische Applikationen gibt.
+Diese Applikation wurde aber nie lauffähig auf der Hololens.
+
+<!--TODO: Pasci weiss vielleicht wieso-->
+
+Als nächstes versuchten wir, die Funktionalität in einem Unity Projekt
+
+
 
 ### Datenquelle
 
