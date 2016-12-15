@@ -627,7 +627,68 @@ Um Bilder mit der Kamera der  Hololens aufzunehmen gibt es das `PhotoCapture` Ob
 
 Für die Erkennung und das Decodieren des QR-Codes haben wir uns für die
 ZXing [^zxing-library] Bibliothek entschieden. Sie unterstützt sehr viele Formate und es gibt sie
-für viele Plattformen
+für viele Plattformen.
+
+Der Prozess um mit der Hololens Kamera ein Bild aufzunehmen ist ein vierstufiger, der bei den
+einzelnen Schritten jeweils mit Callback-Functions arbeitet.
+
+```cs
+public class QrCam : MonoBehaviour
+{
+    private PhotoCapture _photoCapture;
+    private int _height;
+    private int _width;
+
+    public void Start()
+    {
+        InvokeRepeating("InitCamera", 5, 3f);
+    }
+
+    public void InitCamera()
+    {
+        PhotoCapture.CreateAsync(false, OnPhotoCaptureCreated);
+    }
+
+    private void OnPhotoCaptureCreated(PhotoCapture captureobject)
+    {
+        _photoCapture = captureobject;
+        Resolution resolution =
+            PhotoCapture.SupportedResolutions
+                .OrderByDescending(res => res.width * res.height).First();
+
+        _height = resolution.height;
+        _width = resolution.width;
+
+        var parameters = new CameraParameters
+        {
+            hologramOpacity = 0.0f,
+            cameraResolutionHeight = resolution.height,
+            cameraResolutionWidth = resolution.width,
+            pixelFormat = CapturePixelFormat.BGRA32
+        };
+
+        captureobject.StartPhotoModeAsync(parameters, false, OnPhotoModeStarted);
+    }
+
+    private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
+    {
+        _photoCapture.TakePhotoAsync(OnCapturedToMemory);
+    }
+
+    private void OnCapturedToMemory(PhotoCapture.PhotoCaptureResult result,
+            PhotoCaptureFrame photocaptureframe)
+    {
+        var bufferList = new List<byte>();
+        photocaptureframe.CopyRawImageDataIntoBuffer(bufferList);
+
+        IBarcodeReader reader = new BarcodeReader();
+        Result qrValue =
+            reader.Decode(bufferList.ToArray(), _width, _height,
+                RGBLuminanceSource.BitmapFormat.BGRA32);
+        Debug.Log(qrValue.Text);
+    }
+}
+```
 
 Je nach Version ist die Kapazität auf einem QR-Code sehr limitiert[^qr-capacity].
 
@@ -653,7 +714,11 @@ Diese Applikation wurde aber nie lauffähig auf der Hololens.
 
 <!--TODO: Pasci weiss vielleicht wieso-->
 
-Als nächstes versuchten wir, die Funktionalität in einem Unity Projekt unterzubringen.
+Als nächstes versuchten wir, die Funktionalität in einem Unity Projekt unterzubringen. Dabei gingen
+wir erst so vor, wie wir es von klassischen .NET-Projekten
+
+Dazu
+kopierten wir die ZXing Library in den `Assets/Plugin` Ordner. Doch
 
 
 
