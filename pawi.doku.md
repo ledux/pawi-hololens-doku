@@ -698,7 +698,7 @@ Positionen gibt es eine logische Verbindung, die visuell dargestellt wird.
 Während der Entwicklung sind wir auf einige Probleme gestossen, welche wir in diesem Abschnitt
 zusammen mit den allfälligen Lösungen auflisten.
 
-**Setup der Entwicklungsumgebung**
+### Setup der Entwicklungsumgebung
 
 Um für die Hololens zu entwickeln wird ein Windows 10 Pro, Enterprise oder Education Computer mit
 aktiviertem Hyper-V benötigt. Das SDK unterstützt offiziell auch die Betriebssysteme ab Windows 7,
@@ -883,7 +883,9 @@ void OnDestroy()
 
 Jedes GameObject befindet sich in einer Hierarchie. Die Methode `.transform.SetParent()` kann das Elternobjekt verändert werden. Wird das Elternobjekt positioniert oder verschoben beeinflusst dies auch die Position der Kinder. Die `transform` Variable jedes GameObjects besitzt die absolute Position `position` sowie auch die lokale Position `localPosition`. Meistens ist es sinnvoll die Hierarchien zu bilden und mit den lokalen Werten zu arbeiten. Ansonsten werden relative Positionierungen und Bewegungen schnell unübersichtlich und kompliziert.
 
-**Plazierung relativ zur Ecke eines Objektes**
+
+### Plazierung relativ zur Ecke eines Objektes
+
 Für das Geräteinformation Framework muss es möglich sein Koordinaten relativ zur Ecke eines Gerätes zu definieren. Da jedes Gerät einen `BoxCollider` besitzen muss, wird dessen Ecke als Ursprung benutzt. Die Variable `size` besitzt die Durchmesser des Collider pro Dimension. Da diese Werte unabhängig von der lokalen Skallierung sind, müssen sie skalliert werden. Als letzer Schritt werden alle Werte im Vektor halbiert.
 ```cs
 boxColliderSize.Scale(Device.transform.localScale);
