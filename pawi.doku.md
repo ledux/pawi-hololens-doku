@@ -141,7 +141,7 @@ umzusetzen.
 
 ## Mögliche Frameworks
 
-Ein weiteres Ziel des Projektes ist die Entwicklung eines Frameworks, auf welchem weitere
+Ein weiteres Ziel des Projektes ist die Entwicklung eines Frameworks, auf welchem andere
 Applikationen aufbauen können. Dazu haben wir uns folgende Gedanken gemacht.
 
 ### Virtueller Desktop
@@ -197,7 +197,7 @@ und die darauf zu entwickelnde Applikation gestellt.
 
 * Darstellen eines Benutzerhandbuchs (pdf, analog Text Information)
     * pdf lokal gespeichert
-* Ein-/Ausblenden von Informationen mittels holografischem Menus
+* Ein-/Ausblenden von Informationen mittels holografischem Menu
 * Es kann entschieden werden, ob die Informationen am realen Gerät oder am Hologramm dargestellt
   wird
 
@@ -303,6 +303,8 @@ holografischen verschmelzt. Auch wenn man den Hologrammen anmerkt, dass sie kün
 die Wand nicht wirklich beschädigt ist, so sind die Effekte dennoch beeindruckend und der Spieler
 findet sich in einer Zwischenwelt wieder.
 
+![RoboRaid: Angriff im Wohnzimmer](pics/roboRaid.jpg)
+
 Die Angriffe laufen in verschiedenen Wellen ab. Nachdem man alle Roboter aus einer Landungsbrücke
 zerstört hat, bricht eine nächste Landungsbrücke an einem anderen Ort im Raum durch die Wand und
 die Angriffe gehen weiter.
@@ -321,12 +323,14 @@ Spieler durch die Ausweichmanöver auch mal ausser Atem geraten.
 
 Hier zeigen sich jedoch die Probleme, die sich ergeben, dass der Fokus an die Blickrichtung der
 Hololens und nicht die der Augen gebunden ist. In der Hitze des Gefechts und mit vielen Robotern und
-Schüssen im Blickfeld verliert man oft den Cursor aus den Augen. Und der zielt dann am Roboter
+Schüssen im Blickfeld verliert man den Cursor oft aus den Augen. Und der zielt dann am Roboter
 vorbei.
 
 Es ist auch vorgekommen, dass wir mit dem Finger für den Tap gezielt hatten, statt mit dem Kopf.
 
-<!--TODO: Fazit-->
+<!--TODO: Fazit
+Story mode zu kurz, Continous mode wird langweilig
+-->
 
 #### Jenga
 
@@ -339,13 +343,13 @@ Jenga wurde für die Hololens adaptiert und kann über den Windows Store install
 
 Dieses Spiel ist ein gutes Beispiel, wo die Limitationen der Hololens und ihrer Hologrammen liegen.
 Man kann die Blöcke relativ einfach fassen und bewegen, aber es gibt kein haptisches Feedback. Bei
-der realen Version gibt es bei den Blöcken  minimale Abweichungen der Dimensionen, so dass der
+der realen Version gibt es bei den Blöcken  minimale Abweichungen in den Dimensionen, so dass der
 Spieler testen kann, ob sich ein Block einfach bewegen lässt oder nicht. Er merkt auch, wenn er den
 Block schräg bewegt, da sich der Block verkantet und deshalb schwerer zu bewegen ist. Zudem kann der
 Spieler auch zwei Hände benutzen, was vor allem beim Zurücklegen auf den Turm hilft.
 
-All dies gibt es bei der Hololens nicht. Man kann den Block nicht antippen, um zu sehen, ob er sich
-bewegt, wenn man versucht,  ihn schräg aus dem Turm zu ziehen, merkt man es meist erst, wenn der
+All dies funktioniert  bei der Hololens nicht. Man kann den Block nicht antippen, um zu sehen, ob er sich
+bewegt. Wenn man versucht,  ihn schräg aus dem Turm zu ziehen, merkt man es meist erst, wenn der
 Turm schon gefährlich wackelt. Und es ist oft nicht ersichtlich, in welche Richtung man korrigieren
 muss. Es ist grundsätzlich gewöhnungsbedürftig, Hologramme festzuhalten und zu verschieben wegen der
 fehlenden Haptik.
@@ -365,10 +369,10 @@ sämtliche Möglichkeiten der Hololens ausgelotet, die möglich sind:
 - Sprachsteuerung
 
 Auch in diesem Spiel wird man zuerst aufgefordert, die Umgebung zu scannen, damit die Applikation
-weiss, wo sie Hologramme platzieren kann, damit der Spieler damit interagieren kann. Das gewählte
+weiss, wo sie die Hologramme platzieren muss, damit der Spieler damit interagieren kann. Das gewählte
 Zimmer war zuerst zu klein, also mussten wir noch Teile des Flurs dazu nehmen. Das führte z.B. dazu, dass
 die Karte im Zimmer am Schrank hing, man aber für die Interaktion mit dem Terminal in den Flur gehen
-musste. Dieses Bewusstsein der Applikation über die räumlichen Begebenheiten sind beeindruckend.
+musste. Dieses Bewusstsein der Applikation über die räumlichen Begebenheiten ist beeindruckend.
 
 Der Spieler wird Teil eines Ermittlerteams, das beauftragt wird ein entführtes Kind zu finden und
 einen Mord aufzuklären. Dabei wird er an verschiedene Schauplätze geführt um Hinweisen nachzugehen.
@@ -376,10 +380,12 @@ Hier ziehen die Entwickler alle Register. Es geht darum, sich einen Überblick �
 verschaffen, also einen Schritt zurück zu machen und von weitem zu schauen. Dann muss man aber auch
 Teile der Szenerie genauer anschauen und sogar Objekte aufheben, um sie zu untersuchen.
 
-Es gibt auch Situationen, bei denen muss man sich auf sein Gehör verlassen und einem Geräusch
+Es gibt auch Situationen, bei denen man sich auf sein Gehör verlassen und einem Geräusch
 folgen muss. Wenn man die Quelle dann gefunden hat, muss man es identifizieren. Das sind grandiose
 Beispiele, wie realistisch die beiden kleinen Lautsprecher über den Ohren die Illusion erzeugen
 können, der Ton käme von einem entfernten Ort im Raum.
+
+![Ermittler bei Fragments](pics/fragments.jpg)
 
 Die gewonnenen Erkenntnisse können dann in einem Terminal eingegeben und Schlussfolgerungen
 gezogen werden, die das Gebiet, wo man suchen muss, eingrenzen. Dabei helfen die anderen Mitglieder
@@ -400,7 +406,6 @@ Verhältnisse zu hell und deshalb zu transparent dargestellt wird.
 Wenn der Raum zu verwinkelt ist oder die Wände keine regelmässigen Oberflächen haben, hat auch die
 Hololens Mühe mit der Raumaufteilung. Ein Teil des Spielfelds war mal teilweise in einem Schrank und
 in der Wand, so dass die Interaktion mit den Hologrammen sehr schwierig war.
-komplexe Raumaufteilung schwierig
 
 
 #### HoloTube
@@ -423,7 +428,7 @@ bewegt.
 Microsoft stellt viele [Tutorials](https://developer.microsoft.com/en-us/windows/holographic/academy)
 zur Verfügung, die es dem Entwickler erleichtern soll, den Einstieg in die neue Denke der Hololens
 zu erleichtern. Obwohl es Microsoft offen gelassen hat, wie die Hologramme erstellt werden, so
-haben sie sich dennoch auf [Unity](https://unity3d.com/) konzentriert.
+haben sie sich bei den Tutorials auf [Unity](https://unity3d.com/) konzentriert.
 
 Man kann die Applikationen entweder auf eine Hololens installieren oder man lässt sie in einem
 Emulator laufen. Dazu muss aber die Virtualisierung vom Prozessor unterstützt werden.
@@ -474,6 +479,7 @@ mit der Installationsanleitung.
 
 
 #### Die Assets
+
 Als Assets werden alle Dateien bezeichnet, welche in einer Unity App benutzt werden.
 
 - **3D-Modelle:** Unity-Objekte mit Meshes, Positionierung, Collider und Materialien.
@@ -485,7 +491,7 @@ Als Assets werden alle Dateien bezeichnet, welche in einer Unity App benutzt wer
 Im erstellten Framework befinden sich hauptsächlich Scripts und Prefabs.
 
 **DeviceManager.cs**
-Der `DeviceManager` behandelt die Erstellung und das Entfernen von Geräten. ????????????
+Der `DeviceManager` behandelt die Erstellung und das Entfernen von Geräten.
 
 **DeviceBehavior.cs**
 Jedes Gerät wird durch das `DeviceBehavior` Script gesteuert. Es enthält alle offline
@@ -506,12 +512,12 @@ einem breiten Zylinder als Podest für die Information. Es ermöglicht die Infor
 Press-Gestik zu verschieben und wechselt das Material der "3D-Linie" falls die Information fokussiert wird.
 
 **TextInformationScript.cs**
-Diese Ableitung des `InformationBaseScript` ermöglicht es Text mittels `SetText` darzustellen.
+Diese Ableitung des `InformationBaseScript` ermöglicht es, Text mittels `SetText` darzustellen.
 
 ![Textinformation Prefab](pics/TextInformation.PNG)
 
 **TextInformation Prefab**
-Damit der Benutzer den Text sehen kann sind in diesem Prefab nebst dem `TextInformation` Scripts
+Damit der Benutzer den Text sehen kann, sind in diesem Prefab nebst dem `TextInformation` Scripts
 mehrere Assets nötig. Ein Billboard Script, aus dem HoloToolkit, richtet das Objekt relativ zum Blickwinkel der Kamera aus.
 
 Ein `BoxCollider` wird verwendet damit registriert werden kann, ob der Benutzer das Objekt
@@ -523,22 +529,28 @@ Hintergrund für den Text zu haben. Ein Padding im  `HorizontalLayerGroup` des P
 Lesbarkeit des Textes. Auf der untersten Ebene befindet sich das Textobjekt,  welches vom
 `TextInformation` Script aktualisiert wird.
 
+![Bildinformation Prefab](pics/ImageInformation.PNG)
+
 **ImageInformationScript.cs**
 Vergleichbar mit dem `TextInformation` Script wird stattdessen ein Bild durch `SetImage` gesetzt.
 Zusätzlich wird die Grösse des Prefabs der Grösse des Bildes angepasst. Dies war nötig da der
 `ContentSizeFitter` nicht wie bei dem Textobjekt funktioniert hat.
 
-![Bildinformation Prefab](pics/ImageInformation.PNG)
-
 **ImageInformation Prefab**
 Dieses Prefab gleicht dem `TextInformation` Prefab bis auf zwei Änderungen. Der `ContentSizeFitter`
 wird nicht verwendet und es wird das Text Objekt mit `RawImage` ersetzt.
 
-**InformationSelectionScript.cs**
-Die verschiedenen Informationen werden zu Beginn nicht dargestellt. Es in einem Menu erscheint jede Information als Button. Wird der Button geklickt, verschwindet er und die Information wird dargestellt. Falls alle Informationen dargestellt werden verschwindet das Menu. Informationen auf welche gecklickt werden verschwinden und der Button im Menu erscheint erneut.
-Das Script benötigt ein `PrefabButton` und das `PanelTransform` um die Buttons dynamisch zu erstellen und positonieren. Die Methode `DeviceToEnable` registriert eine Information welche momentan Disabled ist. Sobald ein Button gedrückt wird wird er entfernt und das Event `EnableDevice` ausgelöst. `DeviceBehavior` ruft `DeviceToEnable` auf und behandelt `EnableDevice`.
-
 ![InformationSelection Prefab](pics/informationSelection.PNG)
+
+**InformationSelectionScript.cs**
+Die verschiedenen Informationen werden zu Beginn nicht dargestellt. Es in einem Menu erscheint
+jede Information als Button. Wird der Button geklickt, verschwindet er und die Information wird
+dargestellt. Falls alle Informationen dargestellt werden verschwindet das Menu. Informationen auf
+welche geklickt werden verschwinden und der Button im Menu erscheint erneut.
+Das Script benötigt ein `PrefabButton` und das `PanelTransform` um die Buttons dynamisch zu
+erstellen und positionieren. Die Methode `DeviceToEnable` registriert eine Information welche
+momentan Disabled ist. Sobald ein Button gedrückt wird wird er entfernt und das Event
+`EnableDevice` ausgelöst. `DeviceBehavior` ruft `DeviceToEnable` auf und behandelt `EnableDevice`.
 
 **InformationSelection Prefab**
 Dem `TextInformation` Prefab sehr ähnlich, unterscheidet sich dieses nur durch die `VerticalLayerGroup` und den vordefinierten Text. Auf der Layer Group sind die Abstände zwischen den generierten Buttons und zu dem Rand definiert.
@@ -560,7 +572,7 @@ besteht aus den folgenden Assets:
     - CursorManager (Script)
     - CursorOnHolograms
     - CursorOffHolograms
-- DiractionalLight
+- DirectionalLight
 - SpatialMapping
     - SpatialMappingObserver (Script)
     - SpatialMappingManager (Script)
@@ -591,7 +603,7 @@ Befehl erkennt.
 
 **EventSystem**
 Ein `EventSystem` wird benötigt falls man mit Unity-UI Elementen arbeitet. Nebst dem normalen
-`StandaloneInputModule` enthällt das Holo Toolkit ein `HoloLensInputModule`.
+`StandaloneInputModule` enthält das Holo Toolkit ein `HoloLensInputModule`.
 
 **Cursor**
 Das `HoloToolkit/Input/Prefab/Cursor.prefab` ist die Darstellung des Cursors. Es können zwei
@@ -614,11 +626,11 @@ Gerät ablenken würde.
 
 #### Neues Gerät hinzufügen
 Nachdem man das Framework eingerichtet hat kann man die Geräte definieren. Dazu importiert man das
-3D-Objekt. Das Hauptobjekt muss alle Skallierungs- und Rotationswerte auf 0 gesetzt haben. Die falls das
-3D-Modell nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist muss es in einem Kindobjekt des
+3D-Objekt. Das Hauptobjekt muss alle Skalierungs- und Rotationswerte auf 0 gesetzt haben. Falls das
+3D-Modell nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist, muss es in einem Kindobjekt des
 Prefab angepasst werden.
 
-Das Hauptobjekt benötigt einen `BoxCollider` welcher das gesammte Objekt umfasst. Der Eckpunkt mit den
+Das Hauptobjekt benötigt einen `BoxCollider` welcher das gesamte Objekt umfasst. Der Eckpunkt mit den
 kleinsten X, Y und Z Werten bildet den Ursprung für die Koordinaten der Informationen.
 
 Mit dem `DeviceBehavior` Script werden alle nötigen Funktionalitäten dem Modell hinzugefügt. Für alle
