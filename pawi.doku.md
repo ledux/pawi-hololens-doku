@@ -878,27 +878,15 @@ was der Benutzer sieht. Im gegensatz dazu hat Weiss das Problem dass die Hololen
 separaten Schichten darstellt und diese nicht immer perfekt übereinander Liegen. Dadurch sieht man
 z.B. bei einem weit entfernten Weissen Punkt stattdessen drei leicht versetzte Punkte in rot, grün und blau.
 
-### Update nicht blockieren
+### Update Methode nicht blockieren
 
-Die Update Methode wird jedes Frame aufgerufen und ist somit nur für nicht blockierende Aufgaben
-geeignet. Die Methode InvokeRepeating von MonoBehaviour bietet die Möglichkeit für zyklische
-Methodenaufrufe.
-
-```cs
-// Aufruf alle 3 Sekunden nach initialem warten von 2 Sekunden
-void Start ()
-{
-    InvokeRepeating("DoSomething", 2, 3);
-}
-
-void DoSomething()
-{
-    //xyz
-}
-```
-
-Eine weitere Möglichkeit ist eine Coroutine aufzurufen. Dies ist eine Methode welche pro Frame
-einen bestimmten Bereich durchführt und dann die Ausführung pausiert.
+Jedes von `MonoBehaviour` abgeleitete Script, was nötig ist um ein Script einem Unity Objekt anzuhängen, besitzt 
+eine Update Methode. Diese Update Methode wird jedes Frame aufgerufen und ist somit nur für nicht blockierende 
+Aufgaben geeignet. Häufig wird diese benutzt um das dazugehörige Objekt neu zu positionieren und damit eine 
+Bewegung darzustellen. Dabei muss berücksichtigt werden, dass die Update methode mit verschiedenen Frameraten 
+unterschiedlich häufig aufgerufen wird. Lange dauernde Befehle in dieser Methode beeinflussen die Framerate,
+und sollten anynchron aufgerufen werden. Coroutinen ermöglichen es eine Methode zu starten, welche pro Frame
+einen Teil ihrer Funktionalität ausführt und danach pausiert.
 
 ```cs
 void Update()
@@ -922,11 +910,19 @@ IEnumerator Fade()
 ```
 
 Wenn Update aufgerufen wird, startet die Coroutine Fade und läuft durch bis zum ersten yield
-return. Im folgenden Frame fährt die Ausführung in der Methode nach dem yield weiter. Weitere
-Informationen zum Beispiel findet man in der
+return. Im folgenden Frame fährt die Ausführung in der Methode nach dem yield weiter. Das yield 
+Konzept von C# ermöglicht es Methoden teilweise ausführen zu lassen. Beim ersten Aufruf einer
+Yield Methode wird sie bis zum ersten yield return aufgerufen und gibt den Rückgabewert zurück,
+dieser muss nicht null sein. Der Status aller Variablen der Methode wird beibehalten und beim 
+nächsten Aufruf wird die Ausführung nach dem zuletzt genutzten yield return fortgesetzt. Es können
+mehrere yield return Statements verwendet werden.
+Weitere Informationen zum Beispiel findet man in der
 [Unity Dokumentation](https://docs.unity3d.com/Manual/Coroutines.html).
 
-Eine Coroutine wurde auch im Script `DeviceBehavior` benutzt für den asynchronen HTTP Request.
+Eine Coroutine wurde auch im Script `DeviceBehavior` für den asynchronen HTTP Request benutzt. 
+Der Aufruf `www.Send();` liefert eine `AsyncOperation` zurück, was es dem StartCoroutine
+ermöglicht `GetInformationFromUrl` erst dann erneut aufzurufen, wenn die HTTP Antwort erhalten
+wurde.
 
 ```cs
 void UpdateText()
@@ -942,6 +938,23 @@ IEnumerator GetInformationFromUrl()
     yield return www.Send();
     // Behandlung der Antwort
     Debug.Log(www.downloadHandler.text);
+}
+```
+
+Um zyklische Aufrufe unabhängig von Update durchzuführen gibt es die Methode InvokeRepeating von MonoBehaviour.
+Die dauer bis zum ersten Aufruf und die Frequenz danach können in Sekunden übergeben werden. Dadurch sind die 
+Aufrufe unabhängig von der Framerate.
+
+```cs
+// Aufruf alle 3 Sekunden nach initialem warten von 2 Sekunden
+void Start ()
+{
+    InvokeRepeating("DoSomething", 2, 3);
+}
+
+void DoSomething()
+{
+    //xyz
 }
 ```
 
