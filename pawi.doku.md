@@ -873,6 +873,57 @@ rechts, Y nach oben und Z nach vorne.
 
 [^source]:[Source on GitHub](https://github.com/ledux/pawi-hololens-dummyapi.git)
 
+### Funktionsumfang und Abgleich zu den Anforderungen
+
+**Framework**
+Das Geräteinformation Framework implementiert die Pflichtanforderungen mit der Ausnahme des QR-Codes. 
+Die Problematik mit dem QR-Code wurde oben detailiert erläutert.  Mehrere 3D-Modelle von Geräten 
+können dargestellt und platziert werden. ???wie plaziert??? 
+Textinformationen werden von einer Webschnittstelle periodisch gelesen und dargestellt. Bildinformationen 
+welche sich lokal in der Applikation befinden werden dargestellt. Alle Informationen richten sich zur
+Hololens aus und sind im Raum verschiebbar. Das Sprachkommando `Remove All` entfernt alle dargestellten
+Geräte.
+
+Von den zusätzlichen Anforderungen wurde nur eine Implementiert. Einzelne Informationen können mit einem
+Menu aktiviert und deaktivier werden. Das Menu enthällt Buttons für alle deaktivierten Informationen.
+Ein Airtap auf das Gerät selbst de/aktiviert das Menu, ansonsten deaktiviert sich das Menu selbst sobald 
+alle Informationen deaktiviert sind.
+
+Das darstellen eines PDF Benutzerhandbuchs konnte nicht implementiert werden. Die Hololens erlaubt es nicht
+andere Apps in einer Holografischen App darzustellen. Dadurch wäre eine eigene PDF viewer Implementation 
+notwendig. Das Benutzerhandbuch könnte als Workaround in einzelne Bilder aufgeteilt werden. Diese Bilder 
+könnten als Bildinformation dargestellt werden. Durch das Selektionsmenu wäre es möglich nur einzelne 
+"Seiten" zu sehen. Besser wäre es eine neue Art der Informationsdarstellung welche es erlaubt zwischen mehreren
+Bilder zu wechseln. Diese wäre eine Kombination aus dem Selektionsmenu und der Bildinformation.
+
+Aus zeitlichen Gründen wurde die letzte Anforderung, das switchen der Darstellung der Informationen 
+zwischen Hologram und Gerät, nicht implementiert. Die Informationen werden immer am Hologram dargestellt.
+Die Anforderung ist abhängig von der Positionierung. Wie bereits erwähnt war die Positionierung mit vielen 
+Komplikationen verbunden und wurde erst sehr spät umgesetzt. Die Infrastruktur für dieses Feature ist jedoch
+zu grossen Teilen vorhanden. Der `BoxCollider` des Geräte Objektes muss zum Realen Gerät verschoben werden.
+Die Informationen positionieren sich relativ dazu.
+
+??????????????????webschnittstelle: framework oder demo????????????????????????????
+
+**Demo**
+Die Demo hat zwei Geräte geräte Konfiguriert, einen Laptop und eine Kaffemaschiene.
+Der Laptop stellt die folgenden Informationen dar: ?????????????????????????????????
+- Textinformation
+-- Einschaltknopf
+-- CPU Auslastung
+-- IP
+-- Zeit
+- ImageInformation
+-- ?????????Manual?????????????
+
+Die Kaffemaschiene ??????????????????????
+- TextInformation
+-- Einschaltknopf
+-- Füllstand
+- ImageInformation
+-- Logo
+-- ?????????
+
 ## Tipps und Stolpersteine bei der Entwicklung
 
 Während der Entwicklung sind wir auf einige Probleme gestossen, welche wir in diesem Abschnitt
@@ -899,7 +950,6 @@ Mit einem Gewicht von immerhin 579 Gramm ist die Hololens nicht gerade leicht. W
 etwas Zeit nimmt, um die Hololens an den eigenen Kopf anzupassen, ist dennoch ein grosser
 Tragekomfort gewährleistet. Dazu gehört die Wahl des geeigneteren der beiden Stegstützen, auf
 welchen die Hololens auf der Nase getragen wird und der Verwendung des Overhead Straps.
-
 
 ### Einrichten der Hololens für die Entwicklung
 
