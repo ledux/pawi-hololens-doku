@@ -909,20 +909,20 @@ Die Informationen positionieren sich relativ dazu.
 Die Demo hat zwei Geräte geräte Konfiguriert, einen Laptop und eine Kaffemaschiene.
 Der Laptop stellt die folgenden Informationen dar: ?????????????????????????????????
 - Textinformation
--- Einschaltknopf
--- CPU Auslastung
--- IP
--- Zeit
+	- Einschaltknopf
+	- CPU Auslastung
+	- IP
+	- Zeit
 - ImageInformation
--- ?????????Manual?????????????
+	- Manual??????????????????
 
 Die Kaffemaschiene ??????????????????????
 - TextInformation
--- Einschaltknopf
--- Füllstand
+	- Einschaltknopf
+	- Füllstand
 - ImageInformation
--- Logo
--- ?????????
+	- Logo
+	- ?????????
 
 ## Tipps und Stolpersteine bei der Entwicklung
 
@@ -1310,5 +1310,43 @@ _--> Notizen TODO: ausformulieren_
 - Ob statisch oder dynamische Daten im QR-Code
 
 # Lessons learned
+
+## Rückblick Pascal Schulthess
+
+Ein Projekt mit der HoloLens durchführen zu dürfen war eine interessante Möglichkeit eine andere 
+Seite der Programmierung kennenzulernen. Das Gerät ist meiner Meinung nach eine revolutionäre Technologie 
+welche zwar noch einige Schwächen hat, jedoch in ein paar Generationen überzeugen wird. Sobald das Display 
+genügend gross ist, ist meiner Meinung nach die grösste Schwäche gelöst.
+
+Das Spiel RoboRaid hat mich und einige Freunde von der Technologie überzeugt. Ich persönlich bin 
+anfällig auf Motion Sickness bei VR Brillen, hatte jedoch nie auch nur ein Anzeichen davon mit der HoloLens.
+Dass die Brille bequem sitzt ist fast eine Kunst für sich selbst, ist aber möglich dank der vielen 
+Einstellungsmöglichkeiten.
+
+Obwohl ich seit Jahren mit der Programmiersprache C# arbeite, ist die Kombination von Unity und C#
+sehr verschieden vom Gewohnten. Ich habe viel über Unity und die Möglichkeiten der HoloLens gelernt.
+Der Schritt von sich aufrufenden Klassen/Metoden zu hierarchischen Objekten mit Skripts bedingt 
+andere Arten von Architekturen. Ich musste realisieren dass ein Framework in dieser Umgebung weniger 
+eine eingenständige Klassenbibliotheke ist, sondern eine Kombination von verschiedenen Assets mit einer 
+Anleitung wie diese zusammen mit HoloLens Assets verwendet werden können.
+
+Der Projektablauf war meiner Meinung nach nicht optimal. Die Anfangsphase, in welcher ich die Demos, 
+Tutorials und eigene Tests durgegangen bin, verlief gut und ich lernte vieles. Ich hatte bald eine Idee 
+für ein Framework (Raumunabhängiges speichern) und eine Demo (simples Miniaturenspiel) und begann Bereiche 
+daraus auszuprobieren. Wir hätten möglichst früh alle unsere Frameworkideen auflisten und auf Herr 
+Weingärtner zugehen sollen. So hätten wir früher bemerkt dass er eine andere Frameworkidee bevorzugt. Nach 
+der Entscheidung des Frameworkes hätten wir direckt die Anforderungen zusammen mit Herr Weingärtner erarbeiten 
+sollen. Wir erstellten die Anforderungen erst später und ohne Dialog mit ihm. Die Anforderungen wurden zwar 
+von ihm akzeptiert, jedoch fühlte sich die danach folgende Implementierung nicht an als hätten wir einen 
+konkreten "Kunden". Dadurch war die Motivation tiefer was zu grossem Aufwand in den letzten drei Wochen führte.
+
+Selbst mit diesem Projektablauf habe ich sehr viel über die Technologie gelernt. Es hat mich beispielsweise 
+erstaunt wie mühsam es ist mit 3D-Modellen zu arbeiten, da die Industrie und die Modellierung für Spiele sehr 
+unterschiedliche und teilweise proprietäre Formate nutzen. Andererseits kann man, wenn man sich eingearbeitet 
+hat, mit den Prefabs, Objekten und Skripts viele interessante Konstrukte bilden. Auch die beeinflussung des 
+laufenden Programmes in Unity bietet die Möglichkeit viel schnell auszuprobieren.
+
+Falls ich in einem zukünftigen Projekt eine Applikation für AR / VR oder ein Spiel erstellen soll, werde ich 
+mich dort dank diesem Projekt schnell einarbeiten können.
 
 NOCH OFFEN
