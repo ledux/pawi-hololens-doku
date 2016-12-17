@@ -281,7 +281,7 @@ Auf der Hololens gibt es eine Bibliothek mit vorgefertigten Hologrammen, die der
 platzieren kann. Dies ist ein guter Einstiegspunkt, um das Konzept der Hologrammen und deren
 Platzierung im Raum kennen zu lernen.
 
-![Hologramme im Raum](pics/hologramOnTable.jpg)
+![Hologramm im Raum](pics/hologramOnTable.jpg)
 
 #### RoboRaid
 
@@ -440,6 +440,58 @@ im Raum her kommen.
 die Tiefe erkennen. Dieses Scannen geschieht automatisch, jedoch kann der Entwickler mit diesen
 Informationen arbeiten und darauf reagieren.
 
+## Entwicklung für die HoloLens
+
+Die [^universalWindowsPlatform]:[Universal Windows Platform]
+(https://developer.microsoft.com/en-us/windows/apps/getstarted) ist die generische Platform um 
+Applikationen auf verschiedensten Geräten zu Entwickeln. Darunter fallen Desktop, Server, Web, 
+Game, IoT sowie HoloLens Applikationen für Windows 10. Alle UWP Applikationen können auf die
+Hololens portiert werden. Diese werden jedoch in 2D Fenster als "normale" Apps gestartet. Die 
+[^windowsHolographicApis]:[Windows Holographic APIs](https://developer.microsoft.com/en-us/windows/holographic/documentation) ermöglichen es Holografisch Apps zu erstellen. Microsoft empfiehlt es mit Unity und VisualStudio zu 
+arbeiten. Es ist auch möglich eigene Engines mit [^directx]:[DirectX](https://developer.microsoft.com/en-us/windows/holographic/directx_development_overview) und C++/C# zu erstellen.
+
+### Unity
+Unity 3D wurde bekannt als eine Engine für die Spieleentwicklung. Mit dem Aufkommen von Applikationen für
+die Virtuelle und Erweiterte Realität wird sie mittlerweile auch für industrielle Applikationen verwendet.
+
+Die Entwicklung mit der Unity Engine hat einige Unterschiede zur klassichen Programmierung. Objekte werden 
+in der Welt plaziert und Skripte ihnen angehängt. Diese Scripte können in C# oder in Javascript geschrieben sein.
+
+![Unity Entwicklungsumgebung](pics/UnityBereiche.PNG)
+
+Der Editor ist in die folgenden Bereiche unterteilt:
+1) Scene / Game / Asset Store
+Der zentrale Bereich wird zur Entwicklungszeit für den Scene Fenster benutzt. Dieses enthällt die 2D oder 3D Welt 
+der aktuellen Scene. Objekte können selektiert, fokussiert und verändert werden. Unsichtbare Objekte wie Kameras 
+und Lichtquellen werden als Symbole dargestellt. 
+Oberhalb des Fensters gibt es Buttons um in den Play Mode zu wechseln. Der Play mode wird das Fenster Game aktivieren 
+und das Program gestartet. 
+Die letzte Option im zentralen Bereich ist der Asset Store. Er ermöglicht es Modelle, Texturen und weitere Assets zu 
+suchen, kaufen und herunterzuladen.
+
+2) Hierarchy 
+Der linke Bereich enthällt das Hierarchy Fenster mit allen Objekten der aktuellen Szene. Die Objekte 
+sind hierarchisch angeordnet. Sie können mit dem Create Button erstellt, per Drag and Drop verschoben 
+und gelöscht werden. Im Play Mode zeigt Hierarchy den dynamischen Status der Scene und es können 
+Änderungen ausprobiert werden. Diese Änderungen verschwinden jedoch wieder nachdem der Play Mode 
+verlassen wird. Ein Doppelklick auf ein Objekt fokussiert dieses im Scene Fenster.
+
+3) Inspector
+Die Werte von selektierten Objekten und Einstellungen können im rechten Bereich, dem Inspector, angesehen 
+und verändert werden. Bei Objekten werden nebst den Transform Einstellungen (Position, Rotation und Skallierung)
+die spezifischen Skripte mit ihren Parametern dargestellt. Neue Skripte werden per AddComponent oder Drag 
+and Drop hinzugefügt.
+
+4) Project / Console
+Unten bei Unity befindet sich entweder das Project oder das Console Fenster. Während der Entwicklung wird 
+meist das Project Fenster benutzt, es stellt die verfügbaren Assets wie z.B. 3D-Modelle dar. 
+Im Play Mode ist das Console Fenster nützlicher, es listet Fehler sowie Debugmeldungen.
+
+### VisualStudio
+
+Unity ermöglicht es ein Visual Studio Projekt zu generieren. Fast alle notwendige Konfiguration des
+VS Projektes können bereits im Unity gesetzt werden. Das VisualStudio wird verwendet um die 
+C# Skripte zu editieren und um das Programm auf die HoloLens oder den Emulator zu laden.
 
 ## Entwicklung "Gerätestatus" Framework
 
