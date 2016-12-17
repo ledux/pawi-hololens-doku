@@ -141,7 +141,7 @@ umzusetzen.
 
 ## Mögliche Frameworks
 
-Ein weiteres Ziel des Projektes ist die Entwicklung eines Frameworks, auf welchem weitere
+Ein weiteres Ziel des Projektes ist die Entwicklung eines Frameworks, auf welchem andere
 Applikationen aufbauen können. Dazu haben wir uns folgende Gedanken gemacht.
 
 ### Virtueller Desktop
@@ -197,7 +197,7 @@ und die darauf zu entwickelnde Applikation gestellt.
 
 * Darstellen eines Benutzerhandbuchs (pdf, analog Text Information)
     * pdf lokal gespeichert
-* Ein-/Ausblenden von Informationen mittels holografischem Menus
+* Ein-/Ausblenden von Informationen mittels holografischem Menu
 * Es kann entschieden werden, ob die Informationen am realen Gerät oder am Hologramm dargestellt
   wird
 
@@ -303,6 +303,8 @@ holografischen verschmelzt. Auch wenn man den Hologrammen anmerkt, dass sie kün
 die Wand nicht wirklich beschädigt ist, so sind die Effekte dennoch beeindruckend und der Spieler
 findet sich in einer Zwischenwelt wieder.
 
+![RoboRaid: Angriff im Wohnzimmer](pics/roboRaid.jpg)
+
 Die Angriffe laufen in verschiedenen Wellen ab. Nachdem man alle Roboter aus einer Landungsbrücke
 zerstört hat, bricht eine nächste Landungsbrücke an einem anderen Ort im Raum durch die Wand und
 die Angriffe gehen weiter.
@@ -321,12 +323,14 @@ Spieler durch die Ausweichmanöver auch mal ausser Atem geraten.
 
 Hier zeigen sich jedoch die Probleme, die sich ergeben, dass der Fokus an die Blickrichtung der
 Hololens und nicht die der Augen gebunden ist. In der Hitze des Gefechts und mit vielen Robotern und
-Schüssen im Blickfeld verliert man oft den Cursor aus den Augen. Und der zielt dann am Roboter
+Schüssen im Blickfeld verliert man den Cursor oft aus den Augen. Und der zielt dann am Roboter
 vorbei.
 
 Es ist auch vorgekommen, dass wir mit dem Finger für den Tap gezielt hatten, statt mit dem Kopf.
 
-<!--TODO: Fazit-->
+<!--TODO: Fazit
+Story mode zu kurz, Continous mode wird langweilig
+-->
 
 #### Jenga
 
@@ -339,13 +343,13 @@ Jenga wurde für die Hololens adaptiert und kann über den Windows Store install
 
 Dieses Spiel ist ein gutes Beispiel, wo die Limitationen der Hololens und ihrer Hologrammen liegen.
 Man kann die Blöcke relativ einfach fassen und bewegen, aber es gibt kein haptisches Feedback. Bei
-der realen Version gibt es bei den Blöcken  minimale Abweichungen der Dimensionen, so dass der
+der realen Version gibt es bei den Blöcken  minimale Abweichungen in den Dimensionen, so dass der
 Spieler testen kann, ob sich ein Block einfach bewegen lässt oder nicht. Er merkt auch, wenn er den
 Block schräg bewegt, da sich der Block verkantet und deshalb schwerer zu bewegen ist. Zudem kann der
 Spieler auch zwei Hände benutzen, was vor allem beim Zurücklegen auf den Turm hilft.
 
-All dies gibt es bei der Hololens nicht. Man kann den Block nicht antippen, um zu sehen, ob er sich
-bewegt, wenn man versucht,  ihn schräg aus dem Turm zu ziehen, merkt man es meist erst, wenn der
+All dies funktioniert  bei der Hololens nicht. Man kann den Block nicht antippen, um zu sehen, ob er sich
+bewegt. Wenn man versucht,  ihn schräg aus dem Turm zu ziehen, merkt man es meist erst, wenn der
 Turm schon gefährlich wackelt. Und es ist oft nicht ersichtlich, in welche Richtung man korrigieren
 muss. Es ist grundsätzlich gewöhnungsbedürftig, Hologramme festzuhalten und zu verschieben wegen der
 fehlenden Haptik.
@@ -365,10 +369,10 @@ sämtliche Möglichkeiten der Hololens ausgelotet, die möglich sind:
 - Sprachsteuerung
 
 Auch in diesem Spiel wird man zuerst aufgefordert, die Umgebung zu scannen, damit die Applikation
-weiss, wo sie Hologramme platzieren kann, damit der Spieler damit interagieren kann. Das gewählte
+weiss, wo sie die Hologramme platzieren muss, damit der Spieler damit interagieren kann. Das gewählte
 Zimmer war zuerst zu klein, also mussten wir noch Teile des Flurs dazu nehmen. Das führte z.B. dazu, dass
 die Karte im Zimmer am Schrank hing, man aber für die Interaktion mit dem Terminal in den Flur gehen
-musste. Dieses Bewusstsein der Applikation über die räumlichen Begebenheiten sind beeindruckend.
+musste. Dieses Bewusstsein der Applikation über die räumlichen Begebenheiten ist beeindruckend.
 
 Der Spieler wird Teil eines Ermittlerteams, das beauftragt wird ein entführtes Kind zu finden und
 einen Mord aufzuklären. Dabei wird er an verschiedene Schauplätze geführt um Hinweisen nachzugehen.
@@ -376,10 +380,12 @@ Hier ziehen die Entwickler alle Register. Es geht darum, sich einen Überblick �
 verschaffen, also einen Schritt zurück zu machen und von weitem zu schauen. Dann muss man aber auch
 Teile der Szenerie genauer anschauen und sogar Objekte aufheben, um sie zu untersuchen.
 
-Es gibt auch Situationen, bei denen muss man sich auf sein Gehör verlassen und einem Geräusch
+Es gibt auch Situationen, bei denen man sich auf sein Gehör verlassen und einem Geräusch
 folgen muss. Wenn man die Quelle dann gefunden hat, muss man es identifizieren. Das sind grandiose
 Beispiele, wie realistisch die beiden kleinen Lautsprecher über den Ohren die Illusion erzeugen
 können, der Ton käme von einem entfernten Ort im Raum.
+
+![Ermittler bei Fragments](pics/fragments.jpg)
 
 Die gewonnenen Erkenntnisse können dann in einem Terminal eingegeben und Schlussfolgerungen
 gezogen werden, die das Gebiet, wo man suchen muss, eingrenzen. Dabei helfen die anderen Mitglieder
@@ -400,7 +406,6 @@ Verhältnisse zu hell und deshalb zu transparent dargestellt wird.
 Wenn der Raum zu verwinkelt ist oder die Wände keine regelmässigen Oberflächen haben, hat auch die
 Hololens Mühe mit der Raumaufteilung. Ein Teil des Spielfelds war mal teilweise in einem Schrank und
 in der Wand, so dass die Interaktion mit den Hologrammen sehr schwierig war.
-komplexe Raumaufteilung schwierig
 
 
 #### HoloTube
@@ -423,7 +428,7 @@ bewegt.
 Microsoft stellt viele [Tutorials](https://developer.microsoft.com/en-us/windows/holographic/academy)
 zur Verfügung, die es dem Entwickler erleichtern soll, den Einstieg in die neue Denke der Hololens
 zu erleichtern. Obwohl es Microsoft offen gelassen hat, wie die Hologramme erstellt werden, so
-haben sie sich dennoch auf [Unity](https://unity3d.com/) konzentriert.
+haben sie sich bei den Tutorials auf [Unity](https://unity3d.com/) konzentriert.
 
 Man kann die Applikationen entweder auf eine Hololens installieren oder man lässt sie in einem
 Emulator laufen. Dazu muss aber die Virtualisierung vom Prozessor unterstützt werden.
@@ -443,54 +448,54 @@ Informationen arbeiten und darauf reagieren.
 ## Entwicklung für die HoloLens
 
 Die [^universalWindowsPlatform]:[Universal Windows Platform]
-(https://developer.microsoft.com/en-us/windows/apps/getstarted) ist die generische Platform um 
-Applikationen auf verschiedensten Geräten zu Entwickeln. Darunter fallen Desktop, Server, Web, 
+(https://developer.microsoft.com/en-us/windows/apps/getstarted) ist die generische Platform um
+Applikationen auf verschiedensten Geräten zu Entwickeln. Darunter fallen Desktop, Server, Web,
 Game, IoT sowie HoloLens Applikationen für Windows 10. Alle UWP Applikationen können auf die
-Hololens portiert werden. Diese werden jedoch in 2D Fenster als "normale" Apps gestartet. Die 
-[^windowsHolographicApis]:[Windows Holographic APIs](https://developer.microsoft.com/en-us/windows/holographic/documentation) ermöglichen es Holografisch Apps zu erstellen. Microsoft empfiehlt es mit Unity und VisualStudio zu 
+Hololens portiert werden. Diese werden jedoch in 2D Fenster als "normale" Apps gestartet. Die
+[^windowsHolographicApis]:[Windows Holographic APIs](https://developer.microsoft.com/en-us/windows/holographic/documentation) ermöglichen es Holografisch Apps zu erstellen. Microsoft empfiehlt es mit Unity und VisualStudio zu
 arbeiten. Es ist auch möglich eigene Engines mit [^directx]:[DirectX](https://developer.microsoft.com/en-us/windows/holographic/directx_development_overview) und C++/C# zu erstellen.
 
 ### Unity
 Unity 3D wurde bekannt als eine Engine für die Spieleentwicklung. Mit dem Aufkommen von Applikationen für
 die Virtuelle und Erweiterte Realität wird sie mittlerweile auch für industrielle Applikationen verwendet.
 
-Die Entwicklung mit der Unity Engine hat einige Unterschiede zur klassichen Programmierung. Objekte werden 
+Die Entwicklung mit der Unity Engine hat einige Unterschiede zur klassichen Programmierung. Objekte werden
 in der Welt plaziert und Skripte ihnen angehängt. Diese Scripte können in C# oder in Javascript geschrieben sein.
 
 ![Unity Entwicklungsumgebung](pics/UnityBereiche.PNG)
 
 Der Editor ist in die folgenden Bereiche unterteilt:
 1) Scene / Game / Asset Store
-Der zentrale Bereich wird zur Entwicklungszeit für den Scene Fenster benutzt. Dieses enthällt die 2D oder 3D Welt 
-der aktuellen Scene. Objekte können selektiert, fokussiert und verändert werden. Unsichtbare Objekte wie Kameras 
-und Lichtquellen werden als Symbole dargestellt. 
-Oberhalb des Fensters gibt es Buttons um in den Play Mode zu wechseln. Der Play mode wird das Fenster Game aktivieren 
-und das Program gestartet. 
-Die letzte Option im zentralen Bereich ist der Asset Store. Er ermöglicht es Modelle, Texturen und weitere Assets zu 
+Der zentrale Bereich wird zur Entwicklungszeit für den Scene Fenster benutzt. Dieses enthällt die 2D oder 3D Welt
+der aktuellen Scene. Objekte können selektiert, fokussiert und verändert werden. Unsichtbare Objekte wie Kameras
+und Lichtquellen werden als Symbole dargestellt.
+Oberhalb des Fensters gibt es Buttons um in den Play Mode zu wechseln. Der Play mode wird das Fenster Game aktivieren
+und das Program gestartet.
+Die letzte Option im zentralen Bereich ist der Asset Store. Er ermöglicht es Modelle, Texturen und weitere Assets zu
 suchen, kaufen und herunterzuladen.
 
-2) Hierarchy 
-Der linke Bereich enthällt das Hierarchy Fenster mit allen Objekten der aktuellen Szene. Die Objekte 
-sind hierarchisch angeordnet. Sie können mit dem Create Button erstellt, per Drag and Drop verschoben 
-und gelöscht werden. Im Play Mode zeigt Hierarchy den dynamischen Status der Scene und es können 
-Änderungen ausprobiert werden. Diese Änderungen verschwinden jedoch wieder nachdem der Play Mode 
+2) Hierarchy
+Der linke Bereich enthällt das Hierarchy Fenster mit allen Objekten der aktuellen Szene. Die Objekte
+sind hierarchisch angeordnet. Sie können mit dem Create Button erstellt, per Drag and Drop verschoben
+und gelöscht werden. Im Play Mode zeigt Hierarchy den dynamischen Status der Scene und es können
+Änderungen ausprobiert werden. Diese Änderungen verschwinden jedoch wieder nachdem der Play Mode
 verlassen wird. Ein Doppelklick auf ein Objekt fokussiert dieses im Scene Fenster.
 
 3) Inspector
-Die Werte von selektierten Objekten und Einstellungen können im rechten Bereich, dem Inspector, angesehen 
+Die Werte von selektierten Objekten und Einstellungen können im rechten Bereich, dem Inspector, angesehen
 und verändert werden. Bei Objekten werden nebst den Transform Einstellungen (Position, Rotation und Skallierung)
-die spezifischen Skripte mit ihren Parametern dargestellt. Neue Skripte werden per AddComponent oder Drag 
+die spezifischen Skripte mit ihren Parametern dargestellt. Neue Skripte werden per AddComponent oder Drag
 and Drop hinzugefügt.
 
 4) Project / Console
-Unten bei Unity befindet sich entweder das Project oder das Console Fenster. Während der Entwicklung wird 
-meist das Project Fenster benutzt, es stellt die verfügbaren Assets wie z.B. 3D-Modelle dar. 
+Unten bei Unity befindet sich entweder das Project oder das Console Fenster. Während der Entwicklung wird
+meist das Project Fenster benutzt, es stellt die verfügbaren Assets wie z.B. 3D-Modelle dar.
 Im Play Mode ist das Console Fenster nützlicher, es listet Fehler sowie Debugmeldungen.
 
 ### VisualStudio
 
 Unity ermöglicht es ein Visual Studio Projekt zu generieren. Fast alle notwendige Konfiguration des
-VS Projektes können bereits im Unity gesetzt werden. Das VisualStudio wird verwendet um die 
+VS Projektes können bereits im Unity gesetzt werden. Das VisualStudio wird verwendet um die
 C# Skripte zu editieren und um das Programm auf die HoloLens oder den Emulator zu laden.
 
 ## Entwicklung "Gerätestatus" Framework
@@ -526,6 +531,7 @@ mit der Installationsanleitung.
 
 
 #### Die Assets
+
 Als Assets werden alle Dateien bezeichnet, welche in einer Unity App benutzt werden.
 
 - **3D-Modelle:** Unity-Objekte mit Meshes, Positionierung, Collider und Materialien.
@@ -537,7 +543,7 @@ Als Assets werden alle Dateien bezeichnet, welche in einer Unity App benutzt wer
 Im erstellten Framework befinden sich hauptsächlich Scripts und Prefabs.
 
 **DeviceManager.cs**
-Der `DeviceManager` behandelt die Erstellung und das Entfernen von Geräten. ????????????
+Der `DeviceManager` behandelt die Erstellung und das Entfernen von Geräten.
 
 **DeviceBehavior.cs**
 Jedes Gerät wird durch das `DeviceBehavior` Script gesteuert. Es enthält alle offline
@@ -558,12 +564,12 @@ einem breiten Zylinder als Podest für die Information. Es ermöglicht die Infor
 Press-Gestik zu verschieben und wechselt das Material der "3D-Linie" falls die Information fokussiert wird.
 
 **TextInformationScript.cs**
-Diese Ableitung des `InformationBaseScript` ermöglicht es Text mittels `SetText` darzustellen.
+Diese Ableitung des `InformationBaseScript` ermöglicht es, Text mittels `SetText` darzustellen.
 
 ![Textinformation Prefab](pics/TextInformation.PNG)
 
 **TextInformation Prefab**
-Damit der Benutzer den Text sehen kann sind in diesem Prefab nebst dem `TextInformation` Scripts
+Damit der Benutzer den Text sehen kann, sind in diesem Prefab nebst dem `TextInformation` Scripts
 mehrere Assets nötig. Ein Billboard Script, aus dem HoloToolkit, richtet das Objekt relativ zum Blickwinkel der Kamera aus.
 
 Ein `BoxCollider` wird verwendet damit registriert werden kann, ob der Benutzer das Objekt
@@ -575,22 +581,28 @@ Hintergrund für den Text zu haben. Ein Padding im  `HorizontalLayerGroup` des P
 Lesbarkeit des Textes. Auf der untersten Ebene befindet sich das Textobjekt,  welches vom
 `TextInformation` Script aktualisiert wird.
 
+![Bildinformation Prefab](pics/ImageInformation.PNG)
+
 **ImageInformationScript.cs**
 Vergleichbar mit dem `TextInformation` Script wird stattdessen ein Bild durch `SetImage` gesetzt.
 Zusätzlich wird die Grösse des Prefabs der Grösse des Bildes angepasst. Dies war nötig da der
 `ContentSizeFitter` nicht wie bei dem Textobjekt funktioniert hat.
 
-![Bildinformation Prefab](pics/ImageInformation.PNG)
-
 **ImageInformation Prefab**
 Dieses Prefab gleicht dem `TextInformation` Prefab bis auf zwei Änderungen. Der `ContentSizeFitter`
 wird nicht verwendet und es wird das Text Objekt mit `RawImage` ersetzt.
 
-**InformationSelectionScript.cs**
-Die verschiedenen Informationen werden zu Beginn nicht dargestellt. Es in einem Menu erscheint jede Information als Button. Wird der Button geklickt, verschwindet er und die Information wird dargestellt. Falls alle Informationen dargestellt werden verschwindet das Menu. Informationen auf welche gecklickt werden verschwinden und der Button im Menu erscheint erneut.
-Das Script benötigt ein `PrefabButton` und das `PanelTransform` um die Buttons dynamisch zu erstellen und positonieren. Die Methode `DeviceToEnable` registriert eine Information welche momentan Disabled ist. Sobald ein Button gedrückt wird wird er entfernt und das Event `EnableDevice` ausgelöst. `DeviceBehavior` ruft `DeviceToEnable` auf und behandelt `EnableDevice`.
-
 ![InformationSelection Prefab](pics/informationSelection.PNG)
+
+**InformationSelectionScript.cs**
+Die verschiedenen Informationen werden zu Beginn nicht dargestellt. Es in einem Menu erscheint
+jede Information als Button. Wird der Button geklickt, verschwindet er und die Information wird
+dargestellt. Falls alle Informationen dargestellt werden verschwindet das Menu. Informationen auf
+welche geklickt werden verschwinden und der Button im Menu erscheint erneut.
+Das Script benötigt ein `PrefabButton` und das `PanelTransform` um die Buttons dynamisch zu
+erstellen und positionieren. Die Methode `DeviceToEnable` registriert eine Information welche
+momentan Disabled ist. Sobald ein Button gedrückt wird wird er entfernt und das Event
+`EnableDevice` ausgelöst. `DeviceBehavior` ruft `DeviceToEnable` auf und behandelt `EnableDevice`.
 
 **InformationSelection Prefab**
 Dem `TextInformation` Prefab sehr ähnlich, unterscheidet sich dieses nur durch die `VerticalLayerGroup` und den vordefinierten Text. Auf der Layer Group sind die Abstände zwischen den generierten Buttons und zu dem Rand definiert.
@@ -612,7 +624,7 @@ besteht aus den folgenden Assets:
     - CursorManager (Script)
     - CursorOnHolograms
     - CursorOffHolograms
-- DiractionalLight
+- DirectionalLight
 - SpatialMapping
     - SpatialMappingObserver (Script)
     - SpatialMappingManager (Script)
@@ -643,7 +655,7 @@ Befehl erkennt.
 
 **EventSystem**
 Ein `EventSystem` wird benötigt falls man mit Unity-UI Elementen arbeitet. Nebst dem normalen
-`StandaloneInputModule` enthällt das Holo Toolkit ein `HoloLensInputModule`.
+`StandaloneInputModule` enthält das Holo Toolkit ein `HoloLensInputModule`.
 
 **Cursor**
 Das `HoloToolkit/Input/Prefab/Cursor.prefab` ist die Darstellung des Cursors. Es können zwei
@@ -665,13 +677,14 @@ Umrisse der Strukturen darstellen. Dies wird in der Demo Applikation nicht genut
 Gerät ablenken würde.
 
 #### Neues Gerät hinzufügen
+
 Nachdem man das Framework eingerichtet hat kann man die Geräte definieren. Dazu importiert man das
 3D-Objekt in Unity, indem die gewünschte Datai in das Projekt/Assets Fenster gezogen wird. Das
-Hauptobjekt muss alle Skallierungs- und Rotationswerte auf 0 gesetzt haben. Die falls das 3D-Modell
-nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist muss es in einem Kindobjekt des Prefab
-angepasst werden.
+Das Hauptobjekt muss alle Skalierungs- und Rotationswerte auf 0 gesetzt haben. Falls das
+3D-Modell nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist, muss es in einem Kindobjekt des
+Prefab angepasst werden.
 
-Das Hauptobjekt benötigt einen `BoxCollider` welcher das gesammte Objekt umfasst. Der Eckpunkt mit den
+Das Hauptobjekt benötigt einen `BoxCollider` welcher das gesamte Objekt umfasst. Der Eckpunkt mit den
 kleinsten X, Y und Z Werten bildet den Ursprung für die Koordinaten der Informationen.
 
 Mit dem `DeviceBehavior` Script werden alle nötigen Funktionalitäten dem Modell hinzugefügt. Für alle
@@ -877,29 +890,29 @@ rechts, Y nach oben und Z nach vorne.
 ### Funktionsumfang und Abgleich zu den Anforderungen
 
 **Framework**
-Das Geräteinformation Framework implementiert die Pflichtanforderungen mit der Ausnahme des QR-Codes. 
-Die Problematik mit dem QR-Code wurde oben detailiert erläutert.  Mehrere 3D-Modelle von Geräten 
-können dargestellt und platziert werden. ???wie plaziert??? 
-Textinformationen werden von einer Webschnittstelle periodisch gelesen und dargestellt. Bildinformationen 
+Das Geräteinformation Framework implementiert die Pflichtanforderungen mit der Ausnahme des QR-Codes.
+Die Problematik mit dem QR-Code wurde oben detailiert erläutert.  Mehrere 3D-Modelle von Geräten
+können dargestellt und platziert werden. ???wie plaziert???
+Textinformationen werden von einer Webschnittstelle periodisch gelesen und dargestellt. Bildinformationen
 welche sich lokal in der Applikation befinden werden dargestellt. Alle Informationen richten sich zur
 Hololens aus und sind im Raum verschiebbar. Das Sprachkommando `Remove All` entfernt alle dargestellten
 Geräte.
 
 Von den zusätzlichen Anforderungen wurde nur eine Implementiert. Einzelne Informationen können mit einem
 Menu aktiviert und deaktivier werden. Das Menu enthällt Buttons für alle deaktivierten Informationen.
-Ein Airtap auf das Gerät selbst de/aktiviert das Menu, ansonsten deaktiviert sich das Menu selbst sobald 
+Ein Airtap auf das Gerät selbst de/aktiviert das Menu, ansonsten deaktiviert sich das Menu selbst sobald
 alle Informationen deaktiviert sind.
 
 Das darstellen eines PDF Benutzerhandbuchs konnte nicht implementiert werden. Die Hololens erlaubt es nicht
-andere Apps in einer Holografischen App darzustellen. Dadurch wäre eine eigene PDF viewer Implementation 
-notwendig. Das Benutzerhandbuch könnte als Workaround in einzelne Bilder aufgeteilt werden. Diese Bilder 
-könnten als Bildinformation dargestellt werden. Durch das Selektionsmenu wäre es möglich nur einzelne 
+andere Apps in einer Holografischen App darzustellen. Dadurch wäre eine eigene PDF viewer Implementation
+notwendig. Das Benutzerhandbuch könnte als Workaround in einzelne Bilder aufgeteilt werden. Diese Bilder
+könnten als Bildinformation dargestellt werden. Durch das Selektionsmenu wäre es möglich nur einzelne
 "Seiten" zu sehen. Besser wäre es eine neue Art der Informationsdarstellung welche es erlaubt zwischen mehreren
 Bilder zu wechseln. Diese wäre eine Kombination aus dem Selektionsmenu und der Bildinformation.
 
-Aus zeitlichen Gründen wurde die letzte Anforderung, das switchen der Darstellung der Informationen 
+Aus zeitlichen Gründen wurde die letzte Anforderung, das switchen der Darstellung der Informationen
 zwischen Hologram und Gerät, nicht implementiert. Die Informationen werden immer am Hologram dargestellt.
-Die Anforderung ist abhängig von der Positionierung. Wie bereits erwähnt war die Positionierung mit vielen 
+Die Anforderung ist abhängig von der Positionierung. Wie bereits erwähnt war die Positionierung mit vielen
 Komplikationen verbunden und wurde erst sehr spät umgesetzt. Die Infrastruktur für dieses Feature ist jedoch
 zu grossen Teilen vorhanden. Der `BoxCollider` des Geräte Objektes muss zum Realen Gerät verschoben werden.
 Die Informationen positionieren sich relativ dazu.
@@ -983,10 +996,10 @@ z.B. bei einem weit entfernten Weissen Punkt stattdessen drei leicht versetzte P
 
 ### Update Methode nicht blockieren
 
-Jedes von `MonoBehaviour` abgeleitete Script, was nötig ist um ein Script einem Unity Objekt anzuhängen, besitzt 
-eine Update Methode. Diese Update Methode wird jedes Frame aufgerufen und ist somit nur für nicht blockierende 
-Aufgaben geeignet. Häufig wird diese benutzt um das dazugehörige Objekt neu zu positionieren und damit eine 
-Bewegung darzustellen. Dabei muss berücksichtigt werden, dass die Update methode mit verschiedenen Frameraten 
+Jedes von `MonoBehaviour` abgeleitete Script, was nötig ist um ein Script einem Unity Objekt anzuhängen, besitzt
+eine Update Methode. Diese Update Methode wird jedes Frame aufgerufen und ist somit nur für nicht blockierende
+Aufgaben geeignet. Häufig wird diese benutzt um das dazugehörige Objekt neu zu positionieren und damit eine
+Bewegung darzustellen. Dabei muss berücksichtigt werden, dass die Update methode mit verschiedenen Frameraten
 unterschiedlich häufig aufgerufen wird. Lange dauernde Befehle in dieser Methode beeinflussen die Framerate,
 und sollten anynchron aufgerufen werden. Coroutinen ermöglichen es eine Methode zu starten, welche pro Frame
 einen Teil ihrer Funktionalität ausführt und danach pausiert.
@@ -1013,16 +1026,16 @@ IEnumerator Fade()
 ```
 
 Wenn Update aufgerufen wird, startet die Coroutine Fade und läuft durch bis zum ersten yield
-return. Im folgenden Frame fährt die Ausführung in der Methode nach dem yield weiter. Das yield 
+return. Im folgenden Frame fährt die Ausführung in der Methode nach dem yield weiter. Das yield
 Konzept von C# ermöglicht es Methoden teilweise ausführen zu lassen. Beim ersten Aufruf einer
 Yield Methode wird sie bis zum ersten yield return aufgerufen und gibt den Rückgabewert zurück,
-dieser muss nicht null sein. Der Status aller Variablen der Methode wird beibehalten und beim 
+dieser muss nicht null sein. Der Status aller Variablen der Methode wird beibehalten und beim
 nächsten Aufruf wird die Ausführung nach dem zuletzt genutzten yield return fortgesetzt. Es können
 mehrere yield return Statements verwendet werden.
 Weitere Informationen zum Beispiel findet man in der
 [Unity Dokumentation](https://docs.unity3d.com/Manual/Coroutines.html).
 
-Eine Coroutine wurde auch im Script `DeviceBehavior` für den asynchronen HTTP Request benutzt. 
+Eine Coroutine wurde auch im Script `DeviceBehavior` für den asynchronen HTTP Request benutzt.
 Der Aufruf `www.Send();` liefert eine `AsyncOperation` zurück, was es dem StartCoroutine
 ermöglicht `GetInformationFromUrl` erst dann erneut aufzurufen, wenn die HTTP Antwort erhalten
 wurde.
@@ -1045,7 +1058,7 @@ IEnumerator GetInformationFromUrl()
 ```
 
 Um zyklische Aufrufe unabhängig von Update durchzuführen gibt es die Methode InvokeRepeating von MonoBehaviour.
-Die dauer bis zum ersten Aufruf und die Frequenz danach können in Sekunden übergeben werden. Dadurch sind die 
+Die dauer bis zum ersten Aufruf und die Frequenz danach können in Sekunden übergeben werden. Dadurch sind die
 Aufrufe unabhängig von der Framerate.
 
 ```cs
@@ -1314,40 +1327,40 @@ _--> Notizen TODO: ausformulieren_
 
 ## Rückblick Pascal Schulthess
 
-Ein Projekt mit der HoloLens durchführen zu dürfen war eine interessante Möglichkeit eine andere 
-Seite der Programmierung kennenzulernen. Das Gerät ist meiner Meinung nach eine revolutionäre Technologie 
-welche zwar noch einige Schwächen hat, jedoch in ein paar Generationen überzeugen wird. Sobald das Display 
+Ein Projekt mit der HoloLens durchführen zu dürfen war eine interessante Möglichkeit eine andere
+Seite der Programmierung kennenzulernen. Das Gerät ist meiner Meinung nach eine revolutionäre Technologie
+welche zwar noch einige Schwächen hat, jedoch in ein paar Generationen überzeugen wird. Sobald das Display
 genügend gross ist, ist meiner Meinung nach die grösste Schwäche gelöst.
 
-Das Spiel RoboRaid hat mich und einige Freunde von der Technologie überzeugt. Ich persönlich bin 
+Das Spiel RoboRaid hat mich und einige Freunde von der Technologie überzeugt. Ich persönlich bin
 anfällig auf Motion Sickness bei VR Brillen, hatte jedoch nie auch nur ein Anzeichen davon mit der HoloLens.
-Dass die Brille bequem sitzt ist fast eine Kunst für sich selbst, ist aber möglich dank der vielen 
+Dass die Brille bequem sitzt ist fast eine Kunst für sich selbst, ist aber möglich dank der vielen
 Einstellungsmöglichkeiten.
 
 Obwohl ich seit Jahren mit der Programmiersprache C# arbeite, ist die Kombination von Unity und C#
 sehr verschieden vom Gewohnten. Ich habe viel über Unity und die Möglichkeiten der HoloLens gelernt.
-Der Schritt von sich aufrufenden Klassen/Metoden zu hierarchischen Objekten mit Skripts bedingt 
-andere Arten von Architekturen. Ich musste realisieren dass ein Framework in dieser Umgebung weniger 
-eine eingenständige Klassenbibliotheke ist, sondern eine Kombination von verschiedenen Assets mit einer 
+Der Schritt von sich aufrufenden Klassen/Metoden zu hierarchischen Objekten mit Skripts bedingt
+andere Arten von Architekturen. Ich musste realisieren dass ein Framework in dieser Umgebung weniger
+eine eingenständige Klassenbibliotheke ist, sondern eine Kombination von verschiedenen Assets mit einer
 Anleitung wie diese zusammen mit HoloLens Assets verwendet werden können.
 
-Der Projektablauf war meiner Meinung nach nicht optimal. Die Anfangsphase, in welcher ich die Demos, 
-Tutorials und eigene Tests durgegangen bin, verlief gut und ich lernte vieles. Ich hatte bald eine Idee 
-für ein Framework (Raumunabhängiges speichern) und eine Demo (simples Miniaturenspiel) und begann Bereiche 
-daraus auszuprobieren. Wir hätten möglichst früh alle unsere Frameworkideen auflisten und auf Herr 
-Weingärtner zugehen sollen. So hätten wir früher bemerkt dass er eine andere Frameworkidee bevorzugt. Nach 
-der Entscheidung des Frameworkes hätten wir direckt die Anforderungen zusammen mit Herr Weingärtner erarbeiten 
-sollen. Wir erstellten die Anforderungen erst später und ohne Dialog mit ihm. Die Anforderungen wurden zwar 
-von ihm akzeptiert, jedoch fühlte sich die danach folgende Implementierung nicht an als hätten wir einen 
+Der Projektablauf war meiner Meinung nach nicht optimal. Die Anfangsphase, in welcher ich die Demos,
+Tutorials und eigene Tests durgegangen bin, verlief gut und ich lernte vieles. Ich hatte bald eine Idee
+für ein Framework (Raumunabhängiges speichern) und eine Demo (simples Miniaturenspiel) und begann Bereiche
+daraus auszuprobieren. Wir hätten möglichst früh alle unsere Frameworkideen auflisten und auf Herr
+Weingärtner zugehen sollen. So hätten wir früher bemerkt dass er eine andere Frameworkidee bevorzugt. Nach
+der Entscheidung des Frameworkes hätten wir direckt die Anforderungen zusammen mit Herr Weingärtner erarbeiten
+sollen. Wir erstellten die Anforderungen erst später und ohne Dialog mit ihm. Die Anforderungen wurden zwar
+von ihm akzeptiert, jedoch fühlte sich die danach folgende Implementierung nicht an als hätten wir einen
 konkreten "Kunden". Dadurch war die Motivation tiefer was zu grossem Aufwand in den letzten drei Wochen führte.
 
-Selbst mit diesem Projektablauf habe ich sehr viel über die Technologie gelernt. Es hat mich beispielsweise 
-erstaunt wie mühsam es ist mit 3D-Modellen zu arbeiten, da die Industrie und die Modellierung für Spiele sehr 
-unterschiedliche und teilweise proprietäre Formate nutzen. Andererseits kann man, wenn man sich eingearbeitet 
-hat, mit den Prefabs, Objekten und Skripts viele interessante Konstrukte bilden. Auch die beeinflussung des 
+Selbst mit diesem Projektablauf habe ich sehr viel über die Technologie gelernt. Es hat mich beispielsweise
+erstaunt wie mühsam es ist mit 3D-Modellen zu arbeiten, da die Industrie und die Modellierung für Spiele sehr
+unterschiedliche und teilweise proprietäre Formate nutzen. Andererseits kann man, wenn man sich eingearbeitet
+hat, mit den Prefabs, Objekten und Skripts viele interessante Konstrukte bilden. Auch die beeinflussung des
 laufenden Programmes in Unity bietet die Möglichkeit viel schnell auszuprobieren.
 
-Falls ich in einem zukünftigen Projekt eine Applikation für AR / VR oder ein Spiel erstellen soll, werde ich 
+Falls ich in einem zukünftigen Projekt eine Applikation für AR / VR oder ein Spiel erstellen soll, werde ich
 mich dort dank diesem Projekt schnell einarbeiten können.
 
 NOCH OFFEN
