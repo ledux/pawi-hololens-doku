@@ -109,7 +109,7 @@ gebracht, meist im Gaming Bereich. Microsoft hat mit ihrer Mixed Reality Brille 
 und andere Anwendungsbereiche im Fokus. Mit der Hololens wird die Umwelt, in welcher sich der Träger
 befindet, mit zusätzlichen virtuellen Elementen ergänzt.
 
-Dank einer 3D-Kamera kann die Brille die Umgebung wahrnehmen und Objekte darin erkennen. Somit
+Dank eine Kameras und Sensoren kann die Brille die Umgebung wahrnehmen und Objekte darin erkennen. Somit
 können die virtuellen Elemente auf echte Objekte gesetzt werden und damit interagieren.
 
 Ziele dieses Projektes sind
@@ -144,9 +144,9 @@ umzusetzen.
 Ein weiteres Ziel des Projektes ist die Entwicklung eines Frameworks, auf welchem andere
 Applikationen aufbauen können. Dazu haben wir uns folgende Gedanken gemacht.
 
-### Virtueller Desktop
+### Virueller Desktop
 
-Die Hololens speichert offene Fenster im Raum für eine bestimmte Zeit. Wenn man aber den Raum
+Die HoloLens speichert offene Fenster im Raum für eine bestimmte Zeit. Wenn man aber den Raum
 verlässt oder die Hololens zu lange abgestellt war, verliert sie diese Informationen. Die Idee
 dieses Frameworks ist, Informationen zu speichern, welche Applikation wo geöffnet ist. So wäre es
 möglich, zu definieren dass ein pdf an einer Wand, Outlook an einer anderen, OneNote und ein
@@ -167,6 +167,17 @@ Abdeckung zu entfernen, lösen sie die beleuchteten vier Schrauben mit einem Kre
 
 Eine weitere Anwendung dieses Frameworks wäre, dass die Informationen, die bei einem Smartphone im
 Notification Menu vorhanden sind, mit der Hololens über dem Smartphone schweben zu lassen.
+
+### Automatische positionierung von Hologrammen im Raum
+
+Die HoloLens kann einen Raum scannen und Flächen erkennen. Ein mögliches Framework verteilt eine 
+Menge von Hologrammen an diese Flächen und speichert die Zuordnung. Dies könnte in Applikationen 
+verwendet werden welche viele Informationen zeitgleich darstellen sollen. 
+
+Ein konkreter Anwendungsfall, dessen Idee zu diesem Framework geführt hat, ist das darstellen von 
+Vocabulary "Kärtchen". Ein weiterer Anwendungsfall wäre es in einem Workshop Ideen als Hologramme 
+aufzuscheiben. Dies würde dem meist zu begränzten Platz von Whiteboards abhelfen. Hologramme haben 
+den Vorteil dass sie Zusatzinformationen, wie z.B. Verbindungen, darstellen können.
 
 ## Anforderungen
 
@@ -1289,6 +1300,9 @@ void OnDestroy()
 Um in einem Unity Projekt bereits kompilierte Libraries (sprich .dll) zu verwenden, müssen die DLLs
 einfach in den Ordner `Assets/Plugins` kopiert. Der Unity Editor registriert die Änderungen und
 kompiliert das Projekt neu.
+
+### Capabilities im VisualStudio setzen
+Damit die HoloLens auf bestimmte Funktionen wie SpacialMapping oder das Mikrofon zugreifen darf muss dies im Unity (Edit > ProjectSettings > Player > PublishingSettings > Capabilities) oder im VisualStudio (im Package.appxmanifest) gesetzt werden. Wir empfehlen es im Unity Projekt einzustellen, falls jedoch bereits ein VisualStudio Projekt generiert wurde wird die VS Konfiguration nicht mehr überschrieben, ausser man modifiziert das file UnityOverride.txt.
 
 # Schlussfolgerungen und Ausblick
 
