@@ -112,12 +112,27 @@ befindet, mit zusätzlichen virtuellen Elementen ergänzt.
 Dank eine Kameras und Sensoren kann die Brille die Umgebung wahrnehmen und Objekte darin erkennen. Somit
 können die virtuellen Elemente auf echte Objekte gesetzt werden und damit interagieren.
 
-Ziele dieses Projektes sind
+Die Aufgabestellung besteht aus drei Teilen:
+1. Die Studierenden sollen mit der Microsoft HoloLens Erfahrungen sammeln und ihre Erkenntnisse dokumentieren. 
+2. Sie sollen die Möglichkeiten und Grenzen anhand von bestehenden Demos und einer eigenen Anwendung aufzeigen. 
+3. Die Anwendung soll ein eigenes im Rahmen dieser Arbeit realisiertes Framework verwenden.
+4. Die Funktionalität des Frameworks und die Anwendung sollen mit dem Auftraggeber definiert werden.
 
-* Die Funktionsweise und Möglichkeiten der Hololens erkunden
-* Mögliche Anwendungsfälle identifizieren und evaluieren
-* Framework entwickeln, auf denen zukünftige Applikationen aufbauen können
-* Prototyp des Frameworks in Code umsetzen
+Im Anhang befindet sich das Dokument in welchem die Aufgabenstellung erhalten wurde unter dem Namen `Aufgabenstellung PAWI Informatik 2016 Schulthess Tanner.doc`
+
+In diesem Dokument sind die Ergebnisse der Aufgabestellung dokumentiert und wie folgt strukturiert. 
+
+Ziele und erwartete Resultate enhällt die Aufgabenstellung und die Erarbeitung der Anforderungen an das Framework.
+Die Kapitel Mögliche Anwendungsfälle und Mögliche Frameworks beinhalten Vorschläge aus welchen von Herr Weingärtner 
+eines ausgewählt wurde. Darauf folgen die von den Studierenden erstellten Anforderungen an dieses Framework. Zusammen 
+erfüllen diese Kapitel die Aufgabenstellung Nummer 4.
+
+Das Kapitel Lösungsentwicklung beginnt mit unsere Erfahrungen mit der HoloLens, den vorhandenen Demos und ihren Grenzen (Aufgabe 1 und 2). Danach kommt die Dokumentation des Frameworks (Aufgabe 3) sowie Tips und Stolpersteine bei der Entwicklung für die HoloLens (fortsetzung Aufgabe 1). 
+
+Schlussfolgerung und Ausblick????????????????????????
+
+Abschliessend enthällt Lessons learned die persönlichen Erkenntnisse beider Studierenden über die HoloLens sowie 
+die Projektarbeit und deren Verlauf.
 
 ## Mögliche Anwendungsfälle
 
@@ -181,9 +196,13 @@ den Vorteil dass sie Zusatzinformationen, wie z.B. Verbindungen, darstellen kön
 
 ## Anforderungen
 
-Nachdem erste Erfahrungen gesammelt werden konnten, wurden folgende Anforderungen an das Framework
-und die darauf zu entwickelnde Applikation gestellt.
-
+Nachdem die mögliche Anwendungsfälle und Demonstrationen zusammengetragen waren, wurden diese Herr 
+Weingärtner präsentiert. Herr Weingärtner entschied sich für das Framework Geräteinformationen 
+darstellen. Die Demonstration soll ein Objekt mit Zusatzinformationen darstellen. Als Objekt wurde 
+von uns ein generischer Laptop gewählt. Zusätzlich wurde uns gegen Ende des Projektes ein 3D-Modell 
+einer Kaffemaschiene, welche in der HSLU benutzt wird, zu verfügung gestellt. Die folgenden 
+Anforderungen wurden wurden von den Studenten erstellt und von Herr Weingärtner am 17. November 
+akzeptiert.
 
 ### Framework (muss)
 
@@ -931,7 +950,8 @@ Die Informationen positionieren sich relativ dazu.
 ??????????????????webschnittstelle: framework oder demo????????????????????????????
 
 **Demo**
-Die Demo hat zwei Geräte geräte Konfiguriert, einen Laptop und eine Kaffemaschiene.
+Die Demo hat zwei Geräte geräte Konfiguriert, einen [Laptop](http://tf3dm.com/search/?q=electronics+laptop+umbrella&search=Search) 
+und eine [Kaffemaschiene](https://www.cgtrader.com/3d-models/furniture/kitchen/coffee-maker-nespresso-aguila).
 Der Laptop stellt die folgenden Informationen dar: ?????????????????????????????????
 - Textinformation
 	- Einschaltknopf
