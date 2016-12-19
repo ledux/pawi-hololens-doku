@@ -113,25 +113,25 @@ Dank Kameras und Sensoren kann die Brille die Umgebung wahrnehmen und Objekte da
 können die virtuellen Elemente auf echte Objekte gesetzt werden und damit interagieren.
 
 Die Aufgabestellung besteht aus drei Teilen:
-1. Die Studierenden sollen mit der Microsoft HoloLens Erfahrungen sammeln und ihre Erkenntnisse dokumentieren. 
-2. Sie sollen die Möglichkeiten und Grenzen anhand von bestehenden Demos und einer eigenen Anwendung aufzeigen. 
+1. Die Studierenden sollen mit der Microsoft HoloLens Erfahrungen sammeln und ihre Erkenntnisse dokumentieren.
+2. Sie sollen die Möglichkeiten und Grenzen anhand von bestehenden Demos und einer eigenen Anwendung aufzeigen.
 3. Die Anwendung soll ein eigenes im Rahmen dieser Arbeit realisiertes Framework verwenden.
 4. Die Funktionalität des Frameworks und die Anwendung sollen mit dem Auftraggeber definiert werden.
 
 Im Anhang befindet sich das Dokument, in welchem die Aufgabenstellung erhalten wurde unter dem Namen `Aufgabenstellung PAWI Informatik 2016 Schulthess Tanner.doc`
 
-In diesem Dokument sind die Ergebnisse der Aufgabenstellung dokumentiert und wie folgt strukturiert. 
+In diesem Dokument sind die Ergebnisse der Aufgabenstellung dokumentiert und wie folgt strukturiert.
 
 Ziele und erwartete Resultate enhält die Aufgabenstellung und die Erarbeitung der Anforderungen an das Framework.
-Die Kapitel Mögliche Anwendungsfälle und Mögliche Frameworks beinhalten Vorschläge, aus welchen von Herrn Weingärtner 
-eines ausgewählt wurde. Darauf folgen die von den Studierenden erstellten Anforderungen an dieses Framework. Zusammen 
+Die Kapitel Mögliche Anwendungsfälle und Mögliche Frameworks beinhalten Vorschläge, aus welchen von Herrn Weingärtner
+eines ausgewählt wurde. Darauf folgen die von den Studierenden erstellten Anforderungen an dieses Framework. Zusammen
 erfüllen diese Kapitel die Aufgabenstellung Nummer 4.
 
-Das Kapitel Lösungsentwicklung beginnt mit unseren Erfahrungen mit der HoloLens, den vorhandenen Demos und ihren Grenzen (Aufgabe 1 und 2). Danach kommt die Dokumentation des Frameworks (Aufgabe 3) sowie Tipps und Stolpersteine bei der Entwicklung für die HoloLens (Fortsetzung Aufgabe 1). 
+Das Kapitel Lösungsentwicklung beginnt mit unseren Erfahrungen mit der HoloLens, den vorhandenen Demos und ihren Grenzen (Aufgabe 1 und 2). Danach kommt die Dokumentation des Frameworks (Aufgabe 3) sowie Tipps und Stolpersteine bei der Entwicklung für die HoloLens (Fortsetzung Aufgabe 1).
 
 Schlussfolgerung und Ausblick????????????????????????
 
-Abschliessend enthält Lessons learned die persönlichen Erkenntnisse beider Studierenden über die HoloLens sowie 
+Abschliessend enthält Lessons learned die persönlichen Erkenntnisse beider Studierenden über die HoloLens sowie
 die Projektarbeit und deren Verlauf.
 
 ## Mögliche Anwendungsfälle
@@ -185,23 +185,23 @@ Notification Menu vorhanden sind, mit der Hololens über dem Smartphone schweben
 
 ### Automatische Positionierung von Hologrammen im Raum
 
-Die HoloLens kann einen Raum scannen und Flächen erkennen. Ein mögliches Framework verteilt eine 
-Menge von Hologrammen an diese Flächen und speichert die Zuordnung. Dies könnte in Applikationen 
-verwendet werden, welche viele Informationen zeitgleich darstellen sollen. 
+Die HoloLens kann einen Raum scannen und Flächen erkennen. Ein mögliches Framework verteilt eine
+Menge von Hologrammen an diese Flächen und speichert die Zuordnung. Dies könnte in Applikationen
+verwendet werden, welche viele Informationen zeitgleich darstellen sollen.
 
-Ein konkreter Anwendungsfall, dessen Idee zu diesem Framework geführt hat, ist das Darstellen von 
-Vocabulary "Kärtchen". Ein weiterer Anwendungsfall wäre es in einem Workshop Ideen als Hologramme 
-aufzuschreiben. Dies würde dem meist zu begrenzten Platz von Whiteboards abhelfen. Hologramme haben 
+Ein konkreter Anwendungsfall, dessen Idee zu diesem Framework geführt hat, ist das Darstellen von
+Vocabulary "Kärtchen". Ein weiterer Anwendungsfall wäre es in einem Workshop Ideen als Hologramme
+aufzuschreiben. Dies würde dem meist zu begrenzten Platz von Whiteboards abhelfen. Hologramme haben
 den Vorteil, dass sie Zusatzinformationen, wie z.B. Verbindungen, darstellen können.
 
 ## Anforderungen
 
-Nachdem die möglichen Anwendungsfälle und Demonstrationen zusammengetragen waren, wurden diese Herrn 
-Weingärtner präsentiert. Herr Weingärtner entschied sich für das Framework Geräteinformationen 
-darstellen. Die Demonstration soll ein Objekt mit Zusatzinformationen darstellen. Als Objekt wurde 
-von uns ein generischer Laptop gewählt. Zusätzlich wurde uns gegen Ende des Projektes ein 3D-Modell 
-einer Kaffemaschine, welche in der HSLU benutzt wird, zu Verfügung gestellt. Die folgenden 
-Anforderungen wurden von den Studierenden erstellt und von Herr Weingärtner am 17. November 
+Nachdem die möglichen Anwendungsfälle und Demonstrationen zusammengetragen waren, wurden diese Herrn
+Weingärtner präsentiert. Herr Weingärtner entschied sich für das Framework Geräteinformationen
+darstellen. Die Demonstration soll ein Objekt mit Zusatzinformationen darstellen. Als Objekt wurde
+von uns ein generischer Laptop gewählt. Zusätzlich wurde uns gegen Ende des Projektes ein 3D-Modell
+einer Kaffemaschine, welche in der HSLU benutzt wird, zu Verfügung gestellt. Die folgenden
+Anforderungen wurden von den Studierenden erstellt und von Herr Weingärtner am 17. November
 akzeptiert.
 
 ### Framework (muss)
@@ -708,7 +708,7 @@ Gerät ablenken würde.
 #### Neues Gerät hinzufügen
 
 Nachdem man das Framework eingerichtet hat, kann man die Geräte definieren. Dazu importiert man das
-3D-Objekt in Unity, indem die gewünschte Datai in das Projekt/Assets Fenster gezogen wird. 
+3D-Objekt in Unity, indem die gewünschte Datai in das Projekt/Assets Fenster gezogen wird.
 Das Hauptobjekt muss alle Skalierungs- und Rotationswerte auf 0 gesetzt haben. Falls das
 3D-Modell nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist, muss es in einem Kindobjekt des
 Prefab angepasst werden.
@@ -932,7 +932,7 @@ Menü aktiviert und deaktiviert werden. Das Menü enthält Buttons für alle dea
 Ein AirTap auf das Gerät selbst de/aktiviert das Menü, ansonsten deaktiviert sich das Menü selbst, sobald
 alle Informationen deaktiviert sind.
 
-Das Darstellen eines PDF-Benutzerhandbuchs konnte nicht implementiert werden. Die Hololens erlaubt es nicht, 
+Das Darstellen eines PDF-Benutzerhandbuchs konnte nicht implementiert werden. Die Hololens erlaubt es nicht,
 andere Apps in einer holografischen App darzustellen. Dadurch wäre eine eigene PDF Viewer Implementation
 notwendig. Das Benutzerhandbuch könnte als Workaround in einzelne Bilder aufgeteilt werden. Diese Bilder
 könnten als Bildinformation dargestellt werden. Durch das Selektionsmenü wäre es möglich, nur einzelne
@@ -949,7 +949,7 @@ Die Informationen positionieren sich relativ dazu.
 ??????????????????webschnittstelle: framework oder demo????????????????????????????
 
 **Demo**
-Die Demo hat zwei Geräte konfiguriert, einen [Laptop](http://tf3dm.com/search/?q=electronics+laptop+umbrella&search=Search) 
+Die Demo hat zwei Geräte konfiguriert, einen [Laptop](http://tf3dm.com/search/?q=electronics+laptop+umbrella&search=Search)
 und eine [Kaffemaschine](https://www.cgtrader.com/3d-models/furniture/kitchen/coffee-maker-nespresso-aguila).
 Der Laptop stellt die folgenden Informationen dar: ?????????????????????????????????
 * Textinformation
@@ -985,7 +985,7 @@ jedoch nicht alle benötigten Tools.
 
 Obwohl die Hololens selbst ein Computer ist, bietet das WindowsHolographic nicht die gewohnten
 Funktionalitäten. Es gibt keine CommandLine, keinen TaskManager und auch keinen Windows Explorer.
-Apps,  welche man auf dem Desktop (genannt Shell) platziert hat, sind gestartet. Um den Prozess zu beenden, 
+Apps,  welche man auf dem Desktop (genannt Shell) platziert hat, sind gestartet. Um den Prozess zu beenden,
 muss das Icon, welches 2D oder 3D sein kann, entfernt werden.
 
 ### Hololens auf sich Anpassen
@@ -1018,10 +1018,10 @@ In neun Tutorials werden die wichtigsten Elemente für die Entwicklung beigebrac
 ### Weiss und Schwarz
 
 Die Farben Weiss und Schwarz haben jeweils ihre eigenen Probleme. Da die Hololens nur additiv RGB
-Farben darstellen kann, ist Schwarz transparent. Dadurch kann man nicht beeinflussen, was der Benutzer 
-sieht. Im Gegensatz dazu hat Weiss das Problem, dass die Hololens RGB in 3 separaten Schichten darstellt 
-und diese nicht immer perfekt übereinander liegen und teilweise schwache Farbverläufe entstehen. 
-Dadurch sieht man z.B. bei einem weit entfernten weissen Punkt stattdessen drei leicht versetzte 
+Farben darstellen kann, ist Schwarz transparent. Dadurch kann man nicht beeinflussen, was der Benutzer
+sieht. Im Gegensatz dazu hat Weiss das Problem, dass die Hololens RGB in 3 separaten Schichten darstellt
+und diese nicht immer perfekt übereinander liegen und teilweise schwache Farbverläufe entstehen.
+Dadurch sieht man z.B. bei einem weit entfernten weissen Punkt stattdessen drei leicht versetzte
 Punkte in rot, grün und blau.
 
 ### Update Methode nicht blockieren
@@ -1316,7 +1316,7 @@ void OnDestroy()
 
 ### 3rd Party Libraries
 
-Um in einem Unity Projekt bereits kompilierte Libraries (sprich .dll) zu verwenden, müssen die DLLs 
+Um in einem Unity Projekt bereits kompilierte Libraries (sprich .dll) zu verwenden, müssen die DLLs
 in den Ordner `Assets/Plugins` kopiert werden. Der Unity Editor registriert die Änderungen und
 kompiliert das Projekt neu.
 
