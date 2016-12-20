@@ -51,23 +51,23 @@ Virtual Reality     Künstliche Welt, in der sich eine Person wie in der realen 
                     Die reale Welt wird komplett mit einer künstlichen ersetzt.
 
 Augmented Reality   Die Realität wird durch zusätzliche virtuelle Elemente angereichert und erhält
-                    so einen Mehrwert. Im Gegensatz zur virtual reality nimmt man hier die reale
+                    so einen Mehrwert. Im Gegensatz zur Virtual Reality nimmt man hier die reale
                     Welt immer noch wahr.
 
-Mixed Reality       Wird äquivalent zu "Augemented Reality" verwendet.
+Mixed Reality       Wird äquivalent zu "Augmented Reality" verwendet.
 
-Tap                 Gestik bei welcher der Zeigefinger auf den Daumen tippt. Damit wird eine Aktion
+Tap                 Gestik, bei welcher der Zeigefinger auf den Daumen tippt. Damit wird eine Aktion
                     ausgelöst (entspricht einem Mausklick).
 
-Press               Gestik bei welcher ein Tap durchgeführt wird, die Finger jedoch geschlossen
+Press               Gestik, bei welcher ein Tap durchgeführt wird, die Finger jedoch geschlossen
                     bleiben. Damit kann etwas "festgehalten" werden und mit einer Handbewegung ein
-                    Objekt manipuliert werden (Verschieben, Navigieren, Scrollen etc.).
+                    Objekt manipuliert werden (verschieben, navigieren, scrollen etc.).
 
-Bloom               Gestik bei welcher die fünf Finger einer Hand sich berühren und nach oben
-                    zeigen um danach die Finger zu spreizen (wie eine Blüte öffnen). Wird als
-                    Menü/Windwos Taste genutzt.
+Bloom               Gestik, bei welcher sich die fünf Finger einer Hand berühren und nach oben
+                    zeigen, um danach die Finger zu spreizen (wie eine Blüte öffnen). Wird als
+                    Menü/Windows Taste genutzt.
 
-Gaze                der Blick; wo der Benutzer hinschaut und was die Hololens dort identifiziert.
+Gaze                Der Blick, wohin der Benutzer schaut und was die Hololens dort identifiziert.
                     Das kann sowohl ein reales Objekt sein wie auch ein Hologramm.
 
 Unity               Unity ist eine Game Engine für 21 verschiedene Plattformen.
@@ -77,7 +77,7 @@ Game Engine         Eine Game Engine ist ein Framework für die Erstellung von V
                     Simulationen für physikalisches Verhalten, Geräusche und Musik, Animationen,
                     künstliche Intelligenz u.v.m.
 
-Shell               Der "Desktop" der Hololens; Hier können die Applikationen und Hologramme im Raum
+Shell               Der "Desktop" der Hololens. Hier können die Applikationen und Hologramme im Raum
                     platziert werden.
 
 
@@ -109,7 +109,7 @@ gebracht, meist im Gaming Bereich. Microsoft hat mit ihrer Mixed Reality Brille 
 und andere Anwendungsbereiche im Fokus. Mit der Hololens wird die Umwelt, in welcher sich der Träger
 befindet, mit zusätzlichen virtuellen Elementen ergänzt.
 
-Dank eine Kameras und Sensoren kann die Brille die Umgebung wahrnehmen und Objekte darin erkennen. Somit
+Dank Kameras und Sensoren kann die Brille die Umgebung wahrnehmen und Objekte darin erkennen. Somit
 können die virtuellen Elemente auf echte Objekte gesetzt werden und damit interagieren.
 
 Die Aufgabestellung besteht aus drei Teilen:
@@ -118,32 +118,32 @@ Die Aufgabestellung besteht aus drei Teilen:
 3. Die Anwendung soll ein eigenes im Rahmen dieser Arbeit realisiertes Framework verwenden.
 4. Die Funktionalität des Frameworks und die Anwendung sollen mit dem Auftraggeber definiert werden.
 
-Im Anhang befindet sich das Dokument in welchem die Aufgabenstellung erhalten wurde unter dem Namen `Aufgabenstellung PAWI Informatik 2016 Schulthess Tanner.doc`
+Im Anhang befindet sich das Dokument, in welchem die Aufgabenstellung erhalten wurde unter dem Namen `Aufgabenstellung PAWI Informatik 2016 Schulthess Tanner.doc`
 
-In diesem Dokument sind die Ergebnisse der Aufgabestellung dokumentiert und wie folgt strukturiert. 
+In diesem Dokument sind die Ergebnisse der Aufgabenstellung dokumentiert und wie folgt strukturiert. 
 
-Ziele und erwartete Resultate enhällt die Aufgabenstellung und die Erarbeitung der Anforderungen an das Framework.
-Die Kapitel Mögliche Anwendungsfälle und Mögliche Frameworks beinhalten Vorschläge aus welchen von Herr Weingärtner 
+Ziele und erwartete Resultate enhält die Aufgabenstellung und die Erarbeitung der Anforderungen an das Framework.
+Die Kapitel Mögliche Anwendungsfälle und Mögliche Frameworks beinhalten Vorschläge, aus welchen von Herrn Weingärtner 
 eines ausgewählt wurde. Darauf folgen die von den Studierenden erstellten Anforderungen an dieses Framework. Zusammen 
 erfüllen diese Kapitel die Aufgabenstellung Nummer 4.
 
-Das Kapitel Lösungsentwicklung beginnt mit unsere Erfahrungen mit der HoloLens, den vorhandenen Demos und ihren Grenzen (Aufgabe 1 und 2). Danach kommt die Dokumentation des Frameworks (Aufgabe 3) sowie Tips und Stolpersteine bei der Entwicklung für die HoloLens (fortsetzung Aufgabe 1). 
+Das Kapitel Lösungsentwicklung beginnt mit unseren Erfahrungen mit der HoloLens, den vorhandenen Demos und ihren Grenzen (Aufgabe 1 und 2). Danach kommt die Dokumentation des Frameworks (Aufgabe 3) sowie Tipps und Stolpersteine bei der Entwicklung für die HoloLens (Fortsetzung Aufgabe 1). 
 
 Schlussfolgerung und Ausblick????????????????????????
 
-Abschliessend enthällt Lessons learned die persönlichen Erkenntnisse beider Studierenden über die HoloLens sowie 
+Abschliessend enthält Lessons learned die persönlichen Erkenntnisse beider Studierenden über die HoloLens sowie 
 die Projektarbeit und deren Verlauf.
 
 ## Mögliche Anwendungsfälle
 
 Die Hololens bietet sicherlich Einsatzmöglichkeiten im Spielebereich, wie Microsoft mit Games wie
 [RoboRaid](https://www.microsoft.com/microsoft-hololens/en-us/apps/roboraid) oder
-[Fragments](https://www.microsoft.com/microsoft-hololens/en-us/apps/fragments) bereits gezeigt haben.
+[Fragments](https://www.microsoft.com/microsoft-hololens/en-us/apps/fragments) bereits gezeigt hat.
 
 Aber sie wurde für Geschäftslösungen entwickelt und dort will sie Microsoft auch positionieren.
 Dazu gibt es bereits eine
 [Sketchup Adaption](https://www.microsoft.com/en-us/store/p/sketchup-viewer/9nblggh4338q#),
-mit welcher mehrere Personen am selben 3D-Modell arbeiten können
+mit welcher mehrere Personen am selben 3D-Modell arbeiten können.
 
 Wir haben folgende Ideen entwickelt, bei welchen wir auch die Möglichkeit sahen, etwas davon
 umzusetzen.
@@ -151,7 +151,7 @@ umzusetzen.
 * Brettspiel Simulation
 * Mit einem Smartphone koppeln
     * Auf Geodaten (und andere Sensoren) des Smartphones zugreifen
-    * (Video-)anruf vom Smartphone übernehmen
+    * (Video-)Anruf vom Smartphone übernehmen
 * Zusatzinformationen zu realen Objekten darstellen
 
 ## Mögliche Frameworks
@@ -159,12 +159,12 @@ umzusetzen.
 Ein weiteres Ziel des Projektes ist die Entwicklung eines Frameworks, auf welchem andere
 Applikationen aufbauen können. Dazu haben wir uns folgende Gedanken gemacht.
 
-### Virueller Desktop
+### Virtueller Desktop
 
 Die HoloLens speichert offene Fenster im Raum für eine bestimmte Zeit. Wenn man aber den Raum
 verlässt oder die Hololens zu lange abgestellt war, verliert sie diese Informationen. Die Idee
 dieses Frameworks ist, Informationen zu speichern, welche Applikation wo geöffnet ist. So wäre es
-möglich, zu definieren dass ein pdf an einer Wand, Outlook an einer anderen, OneNote und ein
+möglich, zu definieren, dass ein pdf an einer Wand, Outlook an einer anderen, OneNote und ein
 Word-Dokument auf dem Pult geöffnet sind. Nun kann man den Raum wechseln und muss nun definieren,
 welches Wand 1, Wand 2 und Pult ist und die entsprechenden Applikationen werden dort wieder
 hergestellt.
@@ -178,30 +178,30 @@ oder Anleitungen.
 
 Damit wäre es denkbar, dass ganze Vorgänge Schritt für Schritt beschrieben werden. Dabei könnte die
 Hololens auf dem Gerät die Teile hervorheben, die gerade bearbeitet werden müssen (z.B. "Um die
-Abdeckung zu entfernen, lösen sie die beleuchteten vier Schrauben mit einem Kreuz-Schraubenzieher")
+Abdeckung zu entfernen, lösen sie die beleuchteten vier Schrauben mit einem Kreuz-Schraubenzieher").
 
-Eine weitere Anwendung dieses Frameworks wäre, dass die Informationen, die bei einem Smartphone im
+Eine weitere Anwendung dieses Frameworks wäre, die Informationen, die bei einem Smartphone im
 Notification Menu vorhanden sind, mit der Hololens über dem Smartphone schweben zu lassen.
 
-### Automatische positionierung von Hologrammen im Raum
+### Automatische Positionierung von Hologrammen im Raum
 
 Die HoloLens kann einen Raum scannen und Flächen erkennen. Ein mögliches Framework verteilt eine 
 Menge von Hologrammen an diese Flächen und speichert die Zuordnung. Dies könnte in Applikationen 
-verwendet werden welche viele Informationen zeitgleich darstellen sollen. 
+verwendet werden, welche viele Informationen zeitgleich darstellen sollen. 
 
-Ein konkreter Anwendungsfall, dessen Idee zu diesem Framework geführt hat, ist das darstellen von 
+Ein konkreter Anwendungsfall, dessen Idee zu diesem Framework geführt hat, ist das Darstellen von 
 Vocabulary "Kärtchen". Ein weiterer Anwendungsfall wäre es in einem Workshop Ideen als Hologramme 
-aufzuscheiben. Dies würde dem meist zu begränzten Platz von Whiteboards abhelfen. Hologramme haben 
-den Vorteil dass sie Zusatzinformationen, wie z.B. Verbindungen, darstellen können.
+aufzuschreiben. Dies würde dem meist zu begrenzten Platz von Whiteboards abhelfen. Hologramme haben 
+den Vorteil, dass sie Zusatzinformationen, wie z.B. Verbindungen, darstellen können.
 
 ## Anforderungen
 
-Nachdem die mögliche Anwendungsfälle und Demonstrationen zusammengetragen waren, wurden diese Herr 
+Nachdem die möglichen Anwendungsfälle und Demonstrationen zusammengetragen waren, wurden diese Herrn 
 Weingärtner präsentiert. Herr Weingärtner entschied sich für das Framework Geräteinformationen 
 darstellen. Die Demonstration soll ein Objekt mit Zusatzinformationen darstellen. Als Objekt wurde 
 von uns ein generischer Laptop gewählt. Zusätzlich wurde uns gegen Ende des Projektes ein 3D-Modell 
-einer Kaffemaschiene, welche in der HSLU benutzt wird, zu verfügung gestellt. Die folgenden 
-Anforderungen wurden wurden von den Studenten erstellt und von Herr Weingärtner am 17. November 
+einer Kaffemaschine, welche in der HSLU benutzt wird, zu Verfügung gestellt. Die folgenden 
+Anforderungen wurden von den Studierenden erstellt und von Herr Weingärtner am 17. November 
 akzeptiert.
 
 ### Framework (muss)
@@ -211,9 +211,9 @@ akzeptiert.
     * Geräteid (mandatory)
     * Verbindungsinformationen (IP) (mandatory)
     * statische Zusatzinformationen zum Gerät (optional beliebige Anzahl)
-* Falls definiert, darstellen eines 3-D-Modells des Gerätetyps.
+* Falls definiert, Darstellen eines 3-D-Modells des Gerätetyps
     * Modell lokal gespeichert
-* minimalste Webschnittstelle für Geräteinformationen
+* Minimalste Webschnittstelle für Geräteinformationen
     * Gibt Demoinformationen zurück
     * Wird von uns über eine DotNet WebApi Applikation in einem IIS >7 realisiert
 * Ansprechen der Webschnittstelle über die Hololens
@@ -229,13 +229,11 @@ akzeptiert.
     * pdf lokal gespeichert
 * Ein-/Ausblenden von Informationen mittels holografischem Menu
 * Es kann entschieden werden, ob die Informationen am realen Gerät oder am Hologramm dargestellt
-  wird
-
-
+  werden
 
 # Lösungsentwicklung
 
-Hier werden die Erfahrungen und die Schritte beschrieben, die während des Projektes gemacht wurden
+Hier werden die Erfahrungen und die Schritte beschrieben, die während des Projektes gemacht wurden.
 
 ## Erste Schritte
 
@@ -244,16 +242,16 @@ funktionieren. Das heisst, die Applikationen werden direkt in der Brille ausgef�
 Hologramme werden auch von der Brille selber gerendert.
 Die Vorteile davon sind:
 
-* Keine zusätzlichen Kosten für weitere Geräte
-* Keine Abhängigkeiten und Inkompatibilitäten (PCs, Treiber, Grafikkarten etc.)
-* Keine Kabel die von der Brille hängen
+* Keine zusätzlichen Kosten für weitere Geräte.
+* Keine Abhängigkeiten und Inkompatibilitäten (PCs, Treiber, Grafikkarten etc.).
+* Keine Kabel die von der Brille hängen.
 
 Es gibt auch Nachteile:
 
 * Die Brille wiegt schwer nach ein paar Stunden, weil sowohl Rechner, Display als auch Batterie drin
 untergebracht sind.
 * Die Laufzeit ist limitiert durch die Batterie.
-* Die Displays, auf welchen die Hologramme angezeigt werden können, ist klein.
+* Die Displays, auf welchen die Hologramme angezeigt werden können, sind sehr klein.
 
 Die ersten Schritte als Anwender mit der Hololens waren erstaunlich einfach und intuitiv. Beim
 ersten Verwenden gibt es ein Tutorial, das dem Träger erklärt, wie mit dem neuen Interface
@@ -263,16 +261,16 @@ diesem Pointer zielt man auf die Objekte, mit welchen man interagieren will.
 Als Eingabegerät dient die Hand. Sie erkennt drei Gesten. Einerseits kann man das Start Menü
 aufrufen, indem man die fünf Finger nach oben zusammenhält und danach öffnet wie eine Blume.
 Andererseits gibt es den bekannten Klickevent. Für diesen hält man den Zeigefinger wie ermahnend vor
-das Gesicht. Der Cursor im Blickfeld ändert daraufhin sein Aussehen um dem Benutzer zu
+das Gesicht. Der Cursor im Blickfeld ändert daraufhin sein Aussehen, um dem Benutzer zu
 signalisieren, dass der Finger erkannt wurde. Nun kann der Träger mit dem Zeigefinger auf den Daumen
-tippen um einen Klick auszulösen.
+tippen, um einen Klick auszulösen.
 
 Lässt man den Zeigefinger und den Daumen nach dem Tippen zusammen, kann man Hologramme
 festhalten. Damit kann man je nach Kontext das Hologramm im Raum verschieben oder durch einen langen
 Text scrollen.
 
 Dies funktioniert sehr gut und recht intuitiv, solange man sich auf den Cursor konzentriert. Der
-verändert sich im Aussehen, je nach dem, mit was die Blickrichtung  kollidiert und ob der
+verändert sich im Aussehen, je nachdem, mit was die Blickrichtung kollidiert und ob der
 Zeigefinger für den Klick erkannt wurde.
 
 Der Cursor bewegt sich anhand der Hololens, also so wie sich auch der Kopf bewegt. Dies ist dann
@@ -280,7 +278,7 @@ problematisch, wenn man den Cursor etwas weiter entfernt oder sehr genau platzie
 kleinste Bewegung des Kopfs resultiert in einer Verschiebung des Cursors. Vor allem beim Benutzen
 der holografischen Tastatur kann dies ein Problem sein. Eine deutliche Verbesserung für eine
 nächste Version der HL wäre unserer Meinung nach, wenn sich der Cursor nach dem Blick richten würde,
-also nach den Augen und nicht nur den Kopf.
+also nach den Augen und nicht nur dem Kopf.
 
 Die Tap-Gestik kann bei längerer Arbeit ermüdend auf Hand und Arm wirken. Abhilfe schaffen können
 hier folgende Erweiterungen:
@@ -291,14 +289,14 @@ hier folgende Erweiterungen:
 
 ### Demoapplikationen
 
-Um eine Applikation starten zu können, geht man, wie unter Windows üblich, ins Startmenu. In der
+Um eine Applikation starten zu können, geht man, wie unter Windows üblich, ins Startmenü. In der
 Hololens öffnet  man es mittels der Bloom-Geste. Es gibt z.B. den unter Windows 8 eingeführten
 App-Store den Webbrowser Edge, die Systemsteuerungen, eine Bibliothek für Hologramme.
 Dies sind alles Applikationen, die in einem Fenster laufen und nicht die ganze Umgebung einnehmen.
 
 Die Fenster selber sind nicht flach wie auf einem Desktop, sondern haben eine Tiefe von ca. 2 cm.
 Der Benutzer kann nun diese Fenster irgendwo im Raum platzieren. Dazu greift er sich das Fenster
-mittels der Press-Geste und kann es nun im Raum verschieben und zwar in allen 3 Richtungen des
+mittels der Press-Geste und kann es nun im Raum verschieben und zwar in allen drei Richtungen des
 Raums. Er muss nur darauf achten, dass die Hand nicht aus dem Wahrnehmungsbereich der HL kommt.
 
 Die Hololens versucht dabei das Fenster an den realen Begebenheiten auszurichten. Mit anderen Worten,
@@ -308,7 +306,7 @@ es wie ein Bild an der Wand hängt.
 #### Hologramme
 
 Auf der Hololens gibt es eine Bibliothek mit vorgefertigten Hologrammen, die der Benutzer im Raum
-platzieren kann. Dies ist ein guter Einstiegspunkt, um das Konzept der Hologrammen und deren
+platzieren kann. Dies ist ein guter Einstiegspunkt, um das Konzept der Hologramme und deren
 Platzierung im Raum kennen zu lernen.
 
 ![Hologramm im Raum](pics/hologramOnTable.jpg)
@@ -322,12 +320,12 @@ Bevor das Spiel zum ersten Mal startet wird der Spieler aufgefordert, seine Umge
 Raum, in welchem er sich befindet, zu scannen. Dazu muss er mit der Hololens die Wände anschauen,
 bis der Applikation klar ist, wo sie sich befinden. Danach kann das Spiel auch schon beginnen.
 
-Als erstes wird der Spieler von einem schwebenden Roboter informiert, dass man Angriffe von
+Als Erstes wird der Spieler von einem schwebenden Roboter informiert, dass man Angriffe von
 feindlichen Robotern abwehren muss. Dazu muss man sie mit dem Cursor anvisieren und mittels
 Tap-Geste abschiessen.
 
 Die feindlichen Roboter kommen aus einer Landungsbrücke eines Raumschiffes, welche durch die Wand
-des Raumes bricht und sich mittels dreier Arme fest krallt. Wenn man daneben schiesst, reisst man
+des Raumes bricht und sich mittels dreier Arme festkrallt. Wenn man daneben schiesst, reisst man
 ebenfalls Löcher in die Wand. Dies sind tolle Beispiele, wie man die reale Welt mit der
 holografischen verschmelzt. Auch wenn man den Hologrammen anmerkt, dass sie künstlich sind und dass
 die Wand nicht wirklich beschädigt ist, so sind die Effekte dennoch beeindruckend und der Spieler
@@ -340,10 +338,10 @@ zerstört hat, bricht eine nächste Landungsbrücke an einem anderen Ort im Raum
 die Angriffe gehen weiter.
 
 Es gibt zwei Sorten von Robotern, die den Spieler angreifen: Einerseits gibt es diejenigen, die
-im Raum schweben und diejenigen, die über die Wände krabbeln und sich auch hinter den Wänden
+im Raum schweben und andererseits diejenigen, die über die Wände krabbeln und sich auch hinter den Wänden
 verstecken können. Um sie auch hinter der Wand erreichen zu können, kann der Spieler mittels
 Sprachkommando den Röntgenblick aktivieren. Damit kann man eine begrenzte Zeit hinter die Wände
-schauen. Danach dauert es eine Weile, bis die Fähigkeit wieder vorhanden ist.
+schauen. Danach dauert es eine Weile bis die Fähigkeit wieder vorhanden ist.
 
 Die Roboter schiessen natürlich zurück. Der Spieler wehrt diese Angriffe ab, indem er den Schüssen
 ausweicht. Dies geschieht, indem er sich im Raum bewegt. Dies führt dazu, dass der Spieler
@@ -351,7 +349,7 @@ rasche Ausfallschritte nach rechts oder links macht oder sich urplötzlich duckt
 Spiels gibt es immer mehr Roboter, die gleichzeitig auf den Spieler schiessen. Dann kann der
 Spieler durch die Ausweichmanöver auch mal ausser Atem geraten.
 
-Hier zeigen sich jedoch die Probleme, die sich ergeben, dass der Fokus an die Blickrichtung der
+Hier zeigen sich jedoch die Probleme, die sich ergeben, da der Fokus an die Blickrichtung der
 Hololens und nicht die der Augen gebunden ist. In der Hitze des Gefechts und mit vielen Robotern und
 Schüssen im Blickfeld verliert man den Cursor oft aus den Augen. Und der zielt dann am Roboter
 vorbei.
@@ -371,7 +369,7 @@ sie oben auf den Turm zu legen, ohne dass dieser einstürzt.
 
 Jenga wurde für die Hololens adaptiert und kann über den Windows Store installiert werden.
 
-Dieses Spiel ist ein gutes Beispiel, wo die Limitationen der Hololens und ihrer Hologrammen liegen.
+Dieses Spiel ist ein gutes Beispiel, wo die Limitationen der Hololens und ihrer Hologramme liegen.
 Man kann die Blöcke relativ einfach fassen und bewegen, aber es gibt kein haptisches Feedback. Bei
 der realen Version gibt es bei den Blöcken  minimale Abweichungen in den Dimensionen, so dass der
 Spieler testen kann, ob sich ein Block einfach bewegen lässt oder nicht. Er merkt auch, wenn er den
@@ -404,7 +402,7 @@ Zimmer war zuerst zu klein, also mussten wir noch Teile des Flurs dazu nehmen. D
 die Karte im Zimmer am Schrank hing, man aber für die Interaktion mit dem Terminal in den Flur gehen
 musste. Dieses Bewusstsein der Applikation über die räumlichen Begebenheiten ist beeindruckend.
 
-Der Spieler wird Teil eines Ermittlerteams, das beauftragt wird ein entführtes Kind zu finden und
+Der Spieler wird Teil eines Ermittlerteams, das beauftragt wird, ein entführtes Kind zu finden und
 einen Mord aufzuklären. Dabei wird er an verschiedene Schauplätze geführt um Hinweisen nachzugehen.
 Hier ziehen die Entwickler alle Register. Es geht darum, sich einen Überblick über die Situation zu
 verschaffen, also einen Schritt zurück zu machen und von weitem zu schauen. Dann muss man aber auch
@@ -429,7 +427,7 @@ Umgebung, die man aus dem täglichen Leben kennt, auseinander setzt. Da schaut m
 die noch hölzernen Bewegungen und die kaum vorhandene Mimik hinweg.
 
 Ein weiteres Problem kann das reale Licht im Raum darstellen. Wenn die realen Lichtverhältnisse nicht
-den in der Virtualität vorgesehenen entsprechen, kann es dazuführen, dass man wichtige Details nur
+den in der Virtualität vorgesehenen entsprechen, kann es dazu führen, dass man wichtige Details nur
 sehr schwer sieht. Es kann vorkommen, dass die Lampe im Raum blendet oder das Hologramm für dunkle
 Verhältnisse zu hell und deshalb zu transparent dargestellt wird.
 
@@ -449,44 +447,44 @@ mehr wahrnehmen. Auch die Helligkeit des Raums wirkt sich negativ auf das Erlebn
 Normale Videos werden in einem eigenen Fenster abgespielt. Hier ist die Qualität so wie man sie
 erwarten kann und die Transparenz wirkt hier weniger störend. Dieser Player kann in zwei
 verschiedenen Modi verwendet werden, "Locked" und "Follow me". Bei ersterem bleibt das Fenster dort,
-wo man es platziert hat, bei zweiterem bleibt es vor den Augen des Benutzers, egal wohin er den Kopf
+wo man es platziert hat, beim zweiten bleibt es vor den Augen des Benutzers, egal wohin er den Kopf
 bewegt.
 
 
 ### Tutorials
 
 Microsoft stellt viele [Tutorials](https://developer.microsoft.com/en-us/windows/holographic/academy)
-zur Verfügung, die es dem Entwickler erleichtern soll, den Einstieg in die neue Denke der Hololens
+zur Verfügung, die es dem Entwickler erleichtern sollen, den Einstieg in die neue Denke der Hololens
 zu erleichtern. Obwohl es Microsoft offen gelassen hat, wie die Hologramme erstellt werden, so
 haben sie sich bei den Tutorials auf [Unity](https://unity3d.com/) konzentriert.
 
 Man kann die Applikationen entweder auf eine Hololens installieren oder man lässt sie in einem
 Emulator laufen. Dazu muss aber die Virtualisierung vom Prozessor unterstützt werden.
 
-Als Einsteiger gilt es, sich mit folgenden Themen auseinander zusetzen
+Als Einsteiger gilt es, sich mit folgenden Themen auseinander zu setzen:
 
 * **Blickrichtung:** Damit wird der Cursor in der Hololens bewegt
 * **Gesten:** Das Erkennen von Bewegungen mit der Hand und darauf reagieren
 * **Stimme:** Man kann der Hololens die Befehle auch mittels Stimme übergeben
 * **Raumklang:** Die Hololens hat zwei kleine Lautsprecher, die sich über den Ohren befinden. Dank
-geschickter Modulation der Töne, kann der Eindruck erzeugt werden, dass die Geräusche von irgendwo
+geschickter Modulation der Töne kann der Eindruck erzeugt werden, dass die Geräusche von irgendwo
 im Raum her kommen.
-* **Raumerkennung:** Die Hololens kann den Raum, in welcher sie sich befindet wahrnehmen und auch
+* **Raumerkennung:** Die Hololens kann den Raum, in welchem sie sich befindet, wahrnehmen und auch
 die Tiefe erkennen. Dieses Scannen geschieht automatisch, jedoch kann der Entwickler mit diesen
 Informationen arbeiten und darauf reagieren.
 
 ## Entwicklung für die HoloLens
 
 Die [^universalWindowsPlatform]:[Universal Windows Platform]
-(https://developer.microsoft.com/en-us/windows/apps/getstarted) ist die generische Platform um
-Applikationen auf verschiedensten Geräten zu Entwickeln. Darunter fallen Desktop, Server, Web,
+(https://developer.microsoft.com/en-us/windows/apps/getstarted) ist die generische Plattform um
+Applikationen auf verschiedensten Geräten zu entwickeln. Darunter fallen Desktop, Server, Web,
 Game, IoT sowie HoloLens Applikationen für Windows 10. Alle UWP Applikationen können auf die
 Hololens portiert werden. Diese werden jedoch in 2D Fenster als "normale" Apps gestartet. Die
-[^windowsHolographicApis]:[Windows Holographic APIs](https://developer.microsoft.com/en-us/windows/holographic/documentation) ermöglichen es Holografisch Apps zu erstellen. Microsoft empfiehlt es mit Unity und VisualStudio zu
-arbeiten. Es ist auch möglich eigene Engines mit [^directx]:[DirectX](https://developer.microsoft.com/en-us/windows/holographic/directx_development_overview) und C++/C# zu erstellen.
+[^windowsHolographicApis]:[Windows Holographic APIs](https://developer.microsoft.com/en-us/windows/holographic/documentation) ermöglichen es holografische Apps zu erstellen. Microsoft empfiehlt es, mit Unity und VisualStudio zu
+arbeiten. Es ist auch möglich, eigene Engines mit [^directx]:[DirectX](https://developer.microsoft.com/en-us/windows/holographic/directx_development_overview) und C++/C# zu erstellen.
 
 ### Unity
-Unity 3D wurde bekannt als eine Engine für die Spieleentwicklung. Mit dem Aufkommen von Applikationen für
+Unity 3D wurde bekannt als eine Engine für die Spiele-Entwicklung. Mit dem Aufkommen von Applikationen für
 die Virtuelle und Erweiterte Realität wird sie mittlerweile auch für industrielle Applikationen verwendet.
 
 Die Entwicklung mit der Unity Engine hat einige Unterschiede zur klassichen Programmierung. Objekte werden
@@ -495,20 +493,21 @@ in der Welt plaziert und Skripte ihnen angehängt. Diese Scripte können in C# o
 ![Unity Entwicklungsumgebung](pics/UnityBereiche.PNG)
 
 Der Editor ist in die folgenden Bereiche unterteilt:
+
 1) Scene / Game / Asset Store
-Der zentrale Bereich wird zur Entwicklungszeit für den Scene Fenster benutzt. Dieses enthällt die 2D oder 3D Welt
+Der zentrale Bereich wird zur Entwicklungszeit für das Scene Fenster benutzt. Dieses enthält die 2D oder 3D Welt
 der aktuellen Scene. Objekte können selektiert, fokussiert und verändert werden. Unsichtbare Objekte wie Kameras
 und Lichtquellen werden als Symbole dargestellt.
-Oberhalb des Fensters gibt es Buttons um in den Play Mode zu wechseln. Der Play mode wird das Fenster Game aktivieren
-und das Program gestartet.
+Oberhalb des Fensters gibt es Buttons, um in den Play Mode zu wechseln. Der Play Mode wird das Fenster Game aktivieren
+und das Programm gestartet.
 Die letzte Option im zentralen Bereich ist der Asset Store. Er ermöglicht es Modelle, Texturen und weitere Assets zu
-suchen, kaufen und herunterzuladen.
+suchen, zu kaufen und herunterzuladen.
 
 2) Hierarchy
-Der linke Bereich enthällt das Hierarchy Fenster mit allen Objekten der aktuellen Szene. Die Objekte
+Der linke Bereich enthält das Hierarchy Fenster mit allen Objekten der aktuellen Szene. Die Objekte
 sind hierarchisch angeordnet. Sie können mit dem Create Button erstellt, per Drag and Drop verschoben
 und gelöscht werden. Im Play Mode zeigt Hierarchy den dynamischen Status der Scene und es können
-Änderungen ausprobiert werden. Diese Änderungen verschwinden jedoch wieder nachdem der Play Mode
+Änderungen ausprobiert werden. Diese Änderungen verschwinden jedoch wieder, nachdem der Play Mode
 verlassen wird. Ein Doppelklick auf ein Objekt fokussiert dieses im Scene Fenster.
 
 3) Inspector
@@ -520,12 +519,12 @@ and Drop hinzugefügt.
 4) Project / Console
 Unten bei Unity befindet sich entweder das Project oder das Console Fenster. Während der Entwicklung wird
 meist das Project Fenster benutzt, es stellt die verfügbaren Assets wie z.B. 3D-Modelle dar.
-Im Play Mode ist das Console Fenster nützlicher, es listet Fehler sowie Debugmeldungen.
+Im Play Mode ist das Console Fenster nützlicher, es listet Fehler sowie Debug Meldungen.
 
 ### VisualStudio
 
-Unity ermöglicht es ein Visual Studio Projekt zu generieren. Fast alle notwendige Konfiguration des
-VS Projektes können bereits im Unity gesetzt werden. Das VisualStudio wird verwendet um die
+Unity ermöglicht es ein Visual Studio Projekt zu generieren. Fast alle notwendigen Konfigurationen des
+VS Projektes können bereits im Unity gesetzt werden. Das VisualStudio wird verwendet, um die
 C# Skripte zu editieren und um das Programm auf die HoloLens oder den Emulator zu laden.
 
 ## Entwicklung "Gerätestatus" Framework
@@ -537,24 +536,24 @@ Infrastruktur notwendig.
 Für die Darstellung der Informationen werden folgende Daten benötigt, die wir über die
 Webschnittstelle und QR-Code erhalten werden.
 
-- Textinformation die dargestellt werden soll
+- Textinformation, die dargestellt werden soll
 - Bezeichner der Quelle
 - Vektor für die relative Position der Information zum Gerät
 - Vektor für die relative Position der Quelle zum Gerät
 
 ### Workflow
 
-Ein Gerät, das mit zusätzlichen Informationen muss sich einmalig bei der Hololens anmelden. Dies
+Ein Gerät, das sich einmalig mit zusätzlichen Informationen bei der Hololens anmelden muss. Dies
 geschieht über einen QR-Code, der mit der Applikation auf der Hololens gescannt werden muss. Mit den
 Informationen konfiguriert die Hololens das Gerät, indem es sich merkt, wo es steht und wo es die
 zusätzlichen Daten abholen kann.
 
-Wenn sich die Daten dynamisch ändern können (wie Füllstand oder Temperatur oder ähnliches),
+Wenn sich die Daten dynamisch ändern können (wie Füllstand oder Temperatur oder Ähnliches),
 holt sich die Hololens periodisch die aktualisierten Daten und stellt sie erneut dar. Wenn es sich
 um statische Daten handelt, fällt dies natürlich weg.
 
 ### Aufbau des Frameworks
-Das Framework besteht aus einem UnityPackage und einer Anleitung wie die einzelnen Komponenten
+Das Framework besteht aus einem UnityPackage und einer Anleitung, wie die einzelnen Komponenten
 genutzt werden sollen. Zusätzlich wird das Microsoft HoloToolkit UnityPackage benötigt. Dieses ist
 [auf GitHub verfügbar](https://github.com/Microsoft/HoloToolkit-Unity) und enthält ein Readme
 mit der Installationsanleitung.
@@ -565,10 +564,10 @@ mit der Installationsanleitung.
 Als Assets werden alle Dateien bezeichnet, welche in einer Unity App benutzt werden.
 
 - **3D-Modelle:** Unity-Objekte mit Meshes, Positionierung, Collider und Materialien.
-- **Scripts:** C# Klassen welche Unity-Objekten angehängt werden können. (Javascript ist auch möglich)
-- **Materialien:** Oberfläche welche mittels Texturen und Shader auf 3D-Modelle angewendet wird.
-- **Prefabs:** Eine Gruppierung von Assets welche zur Laufzeit instanziert werden kann.
-- Weiter gibt es Bilder, Sprites, Audio, Lichtquellen, Physikmaterialien und Animationen
+- **Scripts:** C# Klassen, welche Unity-Objekten angehängt werden können (Javascript ist auch möglich).
+- **Materialien:** Oberfläche, welche mittels Texturen und Shader auf 3D-Modelle angewendet wird.
+- **Prefabs:** Eine Gruppierung von Assets, welche zur Laufzeit instanziert werden kann.
+- Weiter gibt es Bilder, Sprites, Audio, Lichtquellen, Physikmaterialien und Animationen.
 
 Im erstellten Framework befinden sich hauptsächlich Scripts und Prefabs.
 
@@ -588,10 +587,10 @@ Collider und das `DeviceBehavior` Skript mit der gewünschten Konfiguration aus
 
 **InformationBaseScript.cs**
 Um Informationen wie Text oder Bild sinnvoll darzustellen, wird dynamisch eine "3D-Linie" von
-einem Ort des Gerätes (Anker) zum Ort an welchem die Information dargestellt wird (Ziel) erzeugt.
+einem Ort des Gerätes (Anker) zum Ort, an welchem die Information dargestellt wird (Ziel), erzeugt.
 Diese "3D-Linie" besteht aus einer Kugel beim Anker, einem langen Zylinder als Verbindung und
 einem breiten Zylinder als Podest für die Information. Es ermöglicht die Information mit der
-Press-Gestik zu verschieben und wechselt das Material der "3D-Linie" falls die Information fokussiert wird.
+Press-Gestik zu verschieben und wechselt das Material der "3D-Linie", falls die Information fokussiert wird.
 
 **TextInformationScript.cs**
 Diese Ableitung des `InformationBaseScript` ermöglicht es, Text mittels `SetText` darzustellen.
@@ -602,11 +601,11 @@ Diese Ableitung des `InformationBaseScript` ermöglicht es, Text mittels `SetTex
 Damit der Benutzer den Text sehen kann, sind in diesem Prefab nebst dem `TextInformation` Scripts
 mehrere Assets nötig. Ein Billboard Script, aus dem HoloToolkit, richtet das Objekt relativ zum Blickwinkel der Kamera aus.
 
-Ein `BoxCollider` wird verwendet damit registriert werden kann, ob der Benutzer das Objekt
+Ein `BoxCollider` wird verwendet, damit registriert werden kann, ob der Benutzer das Objekt
 fokussiert. Der Collider passt sich mittels dem `InformationBaseScript` dem Inhalt des Prefabs an.
-Auch die Unity Scripts `HorizontalLayerGroup` und `ContentSizeFitter` werden benötigt damit sich die
+Auch die Unity Scripts `HorizontalLayerGroup` und `ContentSizeFitter` werden benötigt, damit sich die
 Grösse dynamisch dem Inhalt anpasst. Hierarchisch enthält das Prefab die Unity UI Objekte Canvas,
-Panel und Text. Das Panel besitzt ein Image Script ohne Bild aber mit der Farbe blau um einen
+Panel und Text. Das Panel besitzt ein Image Script ohne Bild aber mit der Farbe blau, um einen
 Hintergrund für den Text zu haben. Ein Padding im  `HorizontalLayerGroup` des Panels erleichtert die
 Lesbarkeit des Textes. Auf der untersten Ebene befindet sich das Textobjekt,  welches vom
 `TextInformation` Script aktualisiert wird.
@@ -615,7 +614,7 @@ Lesbarkeit des Textes. Auf der untersten Ebene befindet sich das Textobjekt,  we
 
 **ImageInformationScript.cs**
 Vergleichbar mit dem `TextInformation` Script wird stattdessen ein Bild durch `SetImage` gesetzt.
-Zusätzlich wird die Grösse des Prefabs der Grösse des Bildes angepasst. Dies war nötig da der
+Zusätzlich wird die Grösse des Prefabs der Grösse des Bildes angepasst. Dies war nötig, da der
 `ContentSizeFitter` nicht wie bei dem Textobjekt funktioniert hat.
 
 **ImageInformation Prefab**
@@ -625,13 +624,13 @@ wird nicht verwendet und es wird das Text Objekt mit `RawImage` ersetzt.
 ![InformationSelection Prefab](pics/informationSelection.PNG)
 
 **InformationSelectionScript.cs**
-Die verschiedenen Informationen werden zu Beginn nicht dargestellt. Es in einem Menu erscheint
+Die verschiedenen Informationen werden zu Beginn nicht dargestellt. Erst in einem Menü erscheint
 jede Information als Button. Wird der Button geklickt, verschwindet er und die Information wird
-dargestellt. Falls alle Informationen dargestellt werden verschwindet das Menu. Informationen auf
-welche geklickt werden verschwinden und der Button im Menu erscheint erneut.
+dargestellt. Falls alle Informationen dargestellt werden, verschwindet das Menü. Informationen, auf
+welche geklickt werden, verschwinden und der Button im Menü erscheint erneut.
 Das Script benötigt ein `PrefabButton` und das `PanelTransform` um die Buttons dynamisch zu
-erstellen und positionieren. Die Methode `DeviceToEnable` registriert eine Information welche
-momentan Disabled ist. Sobald ein Button gedrückt wird wird er entfernt und das Event
+erstellen und zu positionieren. Die Methode `DeviceToEnable` registriert eine Information, welche
+momentan Disabled ist. Sobald ein Button gedrückt wird, wird er entfernt und das Event
 `EnableDevice` ausgelöst. `DeviceBehavior` ruft `DeviceToEnable` auf und behandelt `EnableDevice`.
 
 **InformationSelection Prefab**
@@ -666,7 +665,7 @@ Kamera. Um im Unity Editor die Kamera zu steuern, gibt es das Script
 `HoloToolkit/Utilities/Scripts/ManualCameraControl.cs`.
 
 **Managers**
-Das mittels `CreateEmpty` erstellte Gameobjekt wird benutzt um generelle Manager Skripte anzuhängen.
+Das mittels `CreateEmpty` erstellte Gameobjekt wird benutzt, um generelle Manager Skripte anzuhängen.
 Der `HoloToolkit/Input/Scripts/GazeManager.cs` steuert die Gaze Gestik, welche zum Fokussieren von
 Objekten benutzt wird. Mit `StabilizationPlane` und `GazeStabilization` wird der Gaze, equivalent zur
 Maus auf einem PC, stabilisiert. Dies ist nützlich, da eine Maus auf dem Tisch stabiler ist als
@@ -684,20 +683,20 @@ anderen Keywords nicht zu sehr gleichen. Dies erhöht die Chance, dass die Holol
 Befehl erkennt.
 
 **EventSystem**
-Ein `EventSystem` wird benötigt falls man mit Unity-UI Elementen arbeitet. Nebst dem normalen
+Ein `EventSystem` wird benötigt, falls man mit Unity-UI Elementen arbeitet. Nebst dem normalen
 `StandaloneInputModule` enthält das Holo Toolkit ein `HoloLensInputModule`.
 
 **Cursor**
 Das `HoloToolkit/Input/Prefab/Cursor.prefab` ist die Darstellung des Cursors. Es können zwei
-verschiedene Modelle angegeben werden. Ein normales Modell und eines für den Fall dass etwas
+verschiedene Modelle angegeben werden. Ein normales Modell und eines für den Fall, dass etwas
 fokussiert ist. Zudem kann eine Distanz zwischen Fokussierungspunkt und Cursor konfiguriert
 werden. Falls es einen `GazeManager` gibt, in unserem Fall im Managers Objekt, wird der Cursor
 automatisch positioniert.
 
 **DirectionalLight**
 Das `DirectionalLight` von Unity ist nicht nötig, lässt die Hologramme aber natürlicher aussehen. Es
-können auch andere Lichtquellen benutzt werden, da jedoch die Umgebung in welcher die Hololens
-eingesetzt wird nicht bekannt ist, empfehlen wir eine weit entfernte Lichtquelle.
+können auch andere Lichtquellen benutzt werden, da jedoch die Umgebung, in welcher die Hololens
+eingesetzt wird, nicht bekannt ist, empfehlen wir eine weit entfernte Lichtquelle.
 
 **SpacialMapping**
 Damit die Umgebung wahrgenommen werden kann, wird das
@@ -708,18 +707,18 @@ Gerät ablenken würde.
 
 #### Neues Gerät hinzufügen
 
-Nachdem man das Framework eingerichtet hat kann man die Geräte definieren. Dazu importiert man das
-3D-Objekt in Unity, indem die gewünschte Datai in das Projekt/Assets Fenster gezogen wird. Das
+Nachdem man das Framework eingerichtet hat, kann man die Geräte definieren. Dazu importiert man das
+3D-Objekt in Unity, indem die gewünschte Datai in das Projekt/Assets Fenster gezogen wird. 
 Das Hauptobjekt muss alle Skalierungs- und Rotationswerte auf 0 gesetzt haben. Falls das
 3D-Modell nicht in der gewünschten Grösse oder Ausrichtung vorhanden ist, muss es in einem Kindobjekt des
 Prefab angepasst werden.
 
-Das Hauptobjekt benötigt einen `BoxCollider` welcher das gesamte Objekt umfasst. Der Eckpunkt mit den
-kleinsten X, Y und Z Werten bildet den Ursprung für die Koordinaten der Informationen.
+Das Hauptobjekt benötigt einen `BoxCollider`, welcher das gesamte Objekt umfasst. Der Eckpunkt mit den
+kleinsten X; Y- und Z-Werten bildet den Ursprung für die Koordinaten der Informationen.
 
 Mit dem `DeviceBehavior` Script werden alle nötigen Funktionalitäten dem Modell hinzugefügt. Für alle
 Geräte sind die Prefabs `Textinformation`, `ImageInformation`, `InformationSelection` sowie die Materialien
-`ConnectionMaterial` und `ConnectionWhenSelected` nötig. Spezifisch für das Modell sind der Name, die URL
+`ConnectionMaterial` und `ConnectionWhenSelected` nötig. Spezifisch für das Modell sind der Name, die URL,
 von welcher die `TextInformationen` kommen, die Abfragerate sowie die `ImageInformationen`. Statt über die
 Webschnittstelle werden die Bilder im Unity konfiguriert. Nebst dem Bild als Textur werden equivalente
 Informationen wie bei `TextInformation` benötigt.
