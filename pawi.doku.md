@@ -723,28 +723,28 @@ von welcher die `TextInformationen` kommen, die Abfragerate sowie die `ImageInfo
 Webschnittstelle werden die Bilder im Unity konfiguriert. Nebst dem Bild als Textur werden equivalente
 Informationen wie bei `TextInformation` benötigt.
 
-Das sich nun in der Hierarchy befindete GameObject muss als Prefab gespeichert werden. Im Project
+Das sich nun in der Hierarchy befindende GameObject muss als Prefab gespeichert werden. Im Project
 Fenster unter den Assets Ordner führe Rechtsklick > Create > Prefab aus. Das GameObject muss als
-nächstes auf das neu erstellte Prefab gezogen werden. Das GameObject im Hierarchy Fenster ist nicht
+Nächstes auf das neu erstellte Prefab gezogen werden. Das GameObject im Hierarchy Fenster wird nicht
 mehr benötigt.
 
 Der `DeviceManager` benötigt dieses Prefab und ein Name um es zu instanzieren. Der `KeywordManager` kann
-mit einem neuen Keyword ergänzt werden welches `DeviceManager.CreateDevice` mit dem Namen aufruft.
+mit einem neuen Keyword ergänzt werden, welches `DeviceManager.CreateDevice` mit dem Namen aufruft.
 
-Dies sind alle benötigten Schritte in Unity um ein neues Gerät hinzuzufügen. Was noch fehlt ist die
+Dies sind alle benötigten Schritte in Unity, um ein neues Gerät hinzuzufügen. Was noch fehlt ist die
 Konfiguration oder Implementation einer Webschnittstelle und der Textinformationen. Das Kapitel Datenquelle
  beschreibt die Daten und ihre Struktur.
 
 ### QR-Code
 
-Der QR-Code ist sozusagen der Einstiegspunkt für die Applikation. Darauf ist die Id des Geräts und
+Der QR-Code ist sozusagen der Einstiegspunkt für die Applikation. Darauf ist die ID des Geräts und
 die Datenquelle vermerkt, wo sich die Applikation die Informationen für das entsprechende Gerät
 abholen kann.
 
-Diese Informationen würden dann verwendet um das entsprechende Hologramm im Raum zu platzieren und
+Diese Informationen würden dann verwendet, um das entsprechende Hologramm im Raum zu platzieren und
 die Informationen an das Objekt zu heften und regelmässig zu aktualisieren.
 
-Um Bilder mit der Kamera der  Hololens aufzunehmen gibt es das `PhotoCapture` Objekt im Namespace
+Um Bilder mit der Kamera der  Hololens aufzunehmen, gibt es das `PhotoCapture` Objekt im Namespace
 `UnityEngine.VR.WSA.WebCam`.
 
 Für die Erkennung und das Decodieren des QR-Codes haben wir uns für die
@@ -823,10 +823,10 @@ Leider sind wir an der Umsetzung dieses Features gescheitert.
 #### Gründe für das Scheitern
 
 Der erste Versuch scheiterte an falschen Annahmen, wie das Teilprojekt aufgebaut sein soll. Der
-Teil, der QR-Codes liest und eine externe Datenquelle anspricht benötigt keine virtuellen Elemente.
-Er sollte nur die Kamera ansprechen und auf den erhaltenen  Bilder mittels einer Bibliothek nach einem
-QR-Code zu suchen. Wie die  gefundenen Informationen an den Teil der Applikation, der für das
-Rendering des Hologramms und der Informationen zuständig ist, gesendet wird, wollten wir in einem
+Teil, der QR-Codes liest und eine externe Datenquelle anspricht, benötigt keine virtuellen Elemente.
+Er sollte nur die Kamera ansprechen und auf den erhaltenen  Bildern mittels einer Bibliothek nach einem
+QR-Code suchen. Wie die gefundenen Informationen an den Teil der Applikation, der für das
+Rendering des Hologramms und der Informationen zuständig ist, gesendet werden, wollten wir in einem
 späteren Schritt lösen.
 
 So versuchten wir eine Applikation zu entwickeln, die komplett ohne Unity auskommt und nur Bilder
@@ -836,7 +836,7 @@ Diese Applikation wurde aber nie lauffähig auf der Hololens.
 
 <!--TODO: Pasci weiss vielleicht wieso-->
 
-Als nächstes versuchten wir, die Funktionalität in einem Unity Projekt unterzubringen. Wir fügten
+Als Nächstes versuchten wir, die Funktionalität in einem Unity Projekt unterzubringen. Wir fügten
 dem Workspace ein Script hinzu und editierten es im VS2015. Um die ZXing Referenz hinzuzufügen
 gingen wir erst so vor, wie wir es von klassischen .NET-Projekten kannten. Leider fand der
 Unity Editor diese Assemblies, die über `add reference` oder NuGet hinzugefügt wurden, nicht.
@@ -898,10 +898,10 @@ vier verschiedene Geräte unterschiedliche Daten, die so aufgebaut sind.
 }
 ```
 
-`information` ist die Liste von Informationen welche separat daragestellt werden.
+`information` ist die Liste von Informationen, welche separat dargestellt werden.
 
 `description` ist die Bezeichnung des Teils des überwachten Geräts, z.B. "Einschaltknopf",
-"Wassertank"
+"Wassertank".
 
 `text` ist die Information, an der man interessiert ist. Hier kann der Füllstand,
 Fehlermeldungen etc. stehen.
@@ -909,7 +909,7 @@ Fehlermeldungen etc. stehen.
 `anchor` ist die relative Position zum Ort am Gerät selber. Zwischen den beiden
 Positionen gibt es eine logische Verbindung, die visuell dargestellt wird.
 
-`target` ist die relative Position wo die Information dargestellt werden soll.
+`target` ist die relative Position, wo die Information dargestellt werden soll.
 
 Die Positionen sind relativ zum Eckpunkt rechts hinten unten in Meter. X ist die Distanz nach
 rechts, Y nach oben und Z nach vorne.
@@ -920,53 +920,53 @@ rechts, Y nach oben und Z nach vorne.
 
 **Framework**
 Das Geräteinformation Framework implementiert die Pflichtanforderungen mit der Ausnahme des QR-Codes.
-Die Problematik mit dem QR-Code wurde oben detailiert erläutert.  Mehrere 3D-Modelle von Geräten
-können dargestellt und platziert werden. ???wie plaziert???
-Textinformationen werden von einer Webschnittstelle periodisch gelesen und dargestellt. Bildinformationen
-welche sich lokal in der Applikation befinden werden dargestellt. Alle Informationen richten sich zur
+Die Problematik mit dem QR-Code wurde oben detailliert erläutert.  Mehrere 3D-Modelle von Geräten
+können dargestellt und platziert werden. ???wie plaziert????????????????????????????????
+Textinformationen werden von einer Webschnittstelle periodisch gelesen und dargestellt. Bildinformationen,
+welche sich lokal in der Applikation befinden, werden dargestellt. Alle Informationen richten sich zur
 Hololens aus und sind im Raum verschiebbar. Das Sprachkommando `Remove All` entfernt alle dargestellten
 Geräte.
 
 Von den zusätzlichen Anforderungen wurde nur eine Implementiert. Einzelne Informationen können mit einem
-Menu aktiviert und deaktivier werden. Das Menu enthällt Buttons für alle deaktivierten Informationen.
-Ein Airtap auf das Gerät selbst de/aktiviert das Menu, ansonsten deaktiviert sich das Menu selbst sobald
+Menü aktiviert und deaktiviert werden. Das Menü enthält Buttons für alle deaktivierten Informationen.
+Ein AirTap auf das Gerät selbst de/aktiviert das Menü, ansonsten deaktiviert sich das Menü selbst, sobald
 alle Informationen deaktiviert sind.
 
-Das darstellen eines PDF Benutzerhandbuchs konnte nicht implementiert werden. Die Hololens erlaubt es nicht
-andere Apps in einer Holografischen App darzustellen. Dadurch wäre eine eigene PDF viewer Implementation
+Das Darstellen eines PDF-Benutzerhandbuchs konnte nicht implementiert werden. Die Hololens erlaubt es nicht, 
+andere Apps in einer holografischen App darzustellen. Dadurch wäre eine eigene PDF Viewer Implementation
 notwendig. Das Benutzerhandbuch könnte als Workaround in einzelne Bilder aufgeteilt werden. Diese Bilder
-könnten als Bildinformation dargestellt werden. Durch das Selektionsmenu wäre es möglich nur einzelne
-"Seiten" zu sehen. Besser wäre es eine neue Art der Informationsdarstellung welche es erlaubt zwischen mehreren
-Bilder zu wechseln. Diese wäre eine Kombination aus dem Selektionsmenu und der Bildinformation.
+könnten als Bildinformation dargestellt werden. Durch das Selektionsmenü wäre es möglich, nur einzelne
+"Seiten" zu sehen. Besser wäre, eine neue Art der Informationsdarstellung, welche es erlaubt, zwischen mehreren
+Bildern zu wechseln. Diese wäre eine Kombination aus dem Selektionsmenü und der Bildinformation.
 
-Aus zeitlichen Gründen wurde die letzte Anforderung, das switchen der Darstellung der Informationen
-zwischen Hologram und Gerät, nicht implementiert. Die Informationen werden immer am Hologram dargestellt.
+Aus zeitlichen Gründen wurde die letzte Anforderung, das Switchen der Darstellung der Informationen
+zwischen Hologramm und Gerät, nicht implementiert. Die Informationen werden immer am Hologramm dargestellt.
 Die Anforderung ist abhängig von der Positionierung. Wie bereits erwähnt war die Positionierung mit vielen
 Komplikationen verbunden und wurde erst sehr spät umgesetzt. Die Infrastruktur für dieses Feature ist jedoch
-zu grossen Teilen vorhanden. Der `BoxCollider` des Geräte Objektes muss zum Realen Gerät verschoben werden.
+zu grossen Teilen vorhanden. Der `BoxCollider` des Geräte Objektes muss zum realen Gerät verschoben werden.
 Die Informationen positionieren sich relativ dazu.
 
 ??????????????????webschnittstelle: framework oder demo????????????????????????????
 
 **Demo**
-Die Demo hat zwei Geräte geräte Konfiguriert, einen [Laptop](http://tf3dm.com/search/?q=electronics+laptop+umbrella&search=Search) 
-und eine [Kaffemaschiene](https://www.cgtrader.com/3d-models/furniture/kitchen/coffee-maker-nespresso-aguila).
+Die Demo hat zwei Geräte konfiguriert, einen [Laptop](http://tf3dm.com/search/?q=electronics+laptop+umbrella&search=Search) 
+und eine [Kaffemaschine](https://www.cgtrader.com/3d-models/furniture/kitchen/coffee-maker-nespresso-aguila).
 Der Laptop stellt die folgenden Informationen dar: ?????????????????????????????????
-- Textinformation
-	- Einschaltknopf
-	- CPU Auslastung
-	- IP
-	- Zeit
-- ImageInformation
-	- Manual??????????????????
+* Textinformation
+	* Einschaltknopf
+	* CPU Auslastung
+	* IP
+	* Zeit
+* Bildinformation
+	* Manual??????????????????
 
-Die Kaffemaschiene ??????????????????????
-- TextInformation
-	- Einschaltknopf
-	- Füllstand
-- ImageInformation
-	- Logo
-	- ?????????
+Die Kaffemaschine ??????????????????????
+* TextInformation
+	* Einschaltknopf
+	* Füllstand
+* Bildinformation
+	* Logo
+	* ?????????
 
 ## Tipps und Stolpersteine bei der Entwicklung
 
@@ -985,7 +985,7 @@ jedoch nicht alle benötigten Tools.
 
 Obwohl die Hololens selbst ein Computer ist, bietet das WindowsHolographic nicht die gewohnten
 Funktionalitäten. Es gibt keine CommandLine, keinen TaskManager und auch keinen Windows Explorer.
-Apps,  welche man auf dem Desktop (genannt Shell) platziert hat, sind gestartet. Um den Prozess zu beenden
+Apps,  welche man auf dem Desktop (genannt Shell) platziert hat, sind gestartet. Um den Prozess zu beenden, 
 muss das Icon, welches 2D oder 3D sein kann, entfernt werden.
 
 ### Hololens auf sich Anpassen
@@ -1006,32 +1006,32 @@ versteckt. Die IP-Adresse der Hololens kann man über `Settings->Network&Interne
 
 Ein Projekt mit Unity muss spezifisch für die Hololens angepasst werden. Das Tutorial
 [Microsoft Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100)
-enthält die nötigen Konfigurationen. Der Unity Editor ermöglicht es vieles ausserhalb der Hololens
+enthält die nötigen Konfigurationen. Der Unity Editor ermöglicht es, vieles ausserhalb der Hololens
 und dessen Emulators zu testen. Viele der Skripte wie `ManualCameraControl`, `GestureManager` und
-`KeywordManager` bieten die Möglichkeit einen alternativen Input per Tastatur zu definieren.
+`KeywordManager` bieten die Möglichkeit, einen alternativen Input per Tastatur zu definieren.
 
 ### Holographic Academy
 
-In 9 Tutorials werden die wichtigsten Elemente für die Entwicklung beigebracht.
+In neun Tutorials werden die wichtigsten Elemente für die Entwicklung beigebracht.
 [Microsoft Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
-
 
 ### Weiss und Schwarz
 
 Die Farben Weiss und Schwarz haben jeweils ihre eigenen Probleme. Da die Hololens nur additiv RGB
-Farben darstellen kann ist Schwarz die gänzlich Transparent. Dadurch kann man nicht beeinflussen
-was der Benutzer sieht. Im gegensatz dazu hat Weiss das Problem dass die Hololens RGB in 3
-separaten Schichten darstellt und diese nicht immer perfekt übereinander Liegen. Dadurch sieht man
-z.B. bei einem weit entfernten Weissen Punkt stattdessen drei leicht versetzte Punkte in rot, grün und blau.
+Farben darstellen kann, ist Schwarz transparent. Dadurch kann man nicht beeinflussen, was der Benutzer 
+sieht. Im Gegensatz dazu hat Weiss das Problem, dass die Hololens RGB in 3 separaten Schichten darstellt 
+und diese nicht immer perfekt übereinander liegen und teilweise schwache Farbverläufe entstehen. 
+Dadurch sieht man z.B. bei einem weit entfernten weissen Punkt stattdessen drei leicht versetzte 
+Punkte in rot, grün und blau.
 
 ### Update Methode nicht blockieren
 
 Jedes von `MonoBehaviour` abgeleitete Script, was nötig ist um ein Script einem Unity Objekt anzuhängen, besitzt
-eine Update Methode. Diese Update Methode wird jedes Frame aufgerufen und ist somit nur für nicht blockierende
-Aufgaben geeignet. Häufig wird diese benutzt um das dazugehörige Objekt neu zu positionieren und damit eine
-Bewegung darzustellen. Dabei muss berücksichtigt werden, dass die Update methode mit verschiedenen Frameraten
+eine Update Methode. Diese Update Methode wird pro Frame einmal aufgerufen und ist somit nur für nicht blockierende
+Aufgaben geeignet. Häufig wird diese benutzt, um das dazugehörige Objekt neu zu positionieren und damit eine
+Bewegung darzustellen. Dabei muss berücksichtigt werden, dass die Update Methode mit verschiedenen Frameraten
 unterschiedlich häufig aufgerufen wird. Lange dauernde Befehle in dieser Methode beeinflussen die Framerate,
-und sollten anynchron aufgerufen werden. Coroutinen ermöglichen es eine Methode zu starten, welche pro Frame
+und sollten asynchron aufgerufen werden. Coroutinen ermöglichen es, eine Methode zu starten, welche pro Frame
 einen Teil ihrer Funktionalität ausführt und danach pausiert.
 
 ```cs
@@ -1057,7 +1057,7 @@ IEnumerator Fade()
 
 Wenn Update aufgerufen wird, startet die Coroutine Fade und läuft durch bis zum ersten yield
 return. Im folgenden Frame fährt die Ausführung in der Methode nach dem yield weiter. Das yield
-Konzept von C# ermöglicht es Methoden teilweise ausführen zu lassen. Beim ersten Aufruf einer
+Konzept von C# ermöglicht es, Methoden teilweise ausführen zu lassen. Beim ersten Aufruf einer
 Yield Methode wird sie bis zum ersten yield return aufgerufen und gibt den Rückgabewert zurück,
 dieser muss nicht null sein. Der Status aller Variablen der Methode wird beibehalten und beim
 nächsten Aufruf wird die Ausführung nach dem zuletzt genutzten yield return fortgesetzt. Es können
@@ -1080,19 +1080,19 @@ IEnumerator GetInformationFromUrl()
 {
     // Erstellung des HTTP Requests mittels der URL
     UnityWebRequest www = UnityWebRequest.Get(DeviceInformationUrl);
-    // Asynchroner aufruf des Requestes
+    // Asynchroner Aufruf des Requestes
     yield return www.Send();
     // Behandlung der Antwort
     Debug.Log(www.downloadHandler.text);
 }
 ```
 
-Um zyklische Aufrufe unabhängig von Update durchzuführen gibt es die Methode InvokeRepeating von MonoBehaviour.
-Die dauer bis zum ersten Aufruf und die Frequenz danach können in Sekunden übergeben werden. Dadurch sind die
+Um zyklische Aufrufe unabhängig von Update durchzuführen, gibt es die Methode InvokeRepeating von MonoBehaviour.
+Die Dauer bis zum ersten Aufruf und die Frequenz danach können in Sekunden übergeben werden. Dadurch sind die
 Aufrufe unabhängig von der Framerate.
 
 ```cs
-// Aufruf alle 3 Sekunden nach initialem warten von 2 Sekunden
+// Aufruf alle 3 Sekunden nach initialem Warten von 2 Sekunden
 void Start ()
 {
     InvokeRepeating("DoSomething", 2, 3);
@@ -1106,8 +1106,8 @@ void DoSomething()
 
 ### JSON Serialisieren
 Unity bietet mit der UnityEngine.JsonUtility eine einfache Möglichkeit mit JSON Objekten
-umzugehen. Den Aufbau der Daten kann als Klasse oder Struct definiert werden. Falls man Klassen
-verwendet können jedoch Probleme mit Hierarchischer Serialisierung auftauchen.
+umzugehen. Der Aufbau der Daten kann als Klasse oder Struct definiert werden. Falls man Klassen
+verwendet, können jedoch Probleme mit hierarchischer Serialisierung auftauchen.
 
 ```cs
 [System.Serializable]
@@ -1156,7 +1156,7 @@ Cylinder.transform.parent = this.gameObject.gameObject.transform;
 Cylinder.transform.position = new Vector3(2f, 1f, 4f);
 // Grösse verändern
 Cylinder.transform.localScale = new Vector3(50f, 5f, 50f);
-// Das material setzen
+// Das Material setzen
 Cylinder.GetComponent<Renderer>().material = SomeMaterial;
 //
 
@@ -1169,17 +1169,17 @@ void OnDestroy()
 
 ### Hierarchie beachten
 
-Jedes GameObject befindet sich in einer Hierarchie. Die Methode `.transform.SetParent()` kann das Elternobjekt verändert werden. Wird das Elternobjekt positioniert oder verschoben beeinflusst dies auch die Position der Kinder. Die `transform` Variable jedes GameObjects besitzt die absolute Position `position` sowie auch die lokale Position `localPosition`. Meistens ist es sinnvoll die Hierarchien zu bilden und mit den lokalen Werten zu arbeiten. Ansonsten werden relative Positionierungen und Bewegungen schnell unübersichtlich und kompliziert.
+Jedes GameObject befindet sich in einer Hierarchie. Mit der Methode `.transform.SetParent()` kann das Elternobjekt verändert werden. Wird das Elternobjekt positioniert oder verschoben, beeinflusst dies auch die Position der Kinder. Die `transform` Variable jedes GameObjects besitzt die absolute Position `position` sowie auch die lokale Position `localPosition`. Meistens ist es sinnvoll, die Hierarchien zu bilden und mit den lokalen Werten zu arbeiten. Ansonsten werden relative Positionierungen und Bewegungen schnell unübersichtlich und kompliziert.
 
 
-### Plazierung relativ zur Ecke eines Objektes
+### Platzierung relativ zur Ecke eines Objektes
 
-Für das Geräteinformation Framework muss es möglich sein Koordinaten relativ zur Ecke eines Gerätes zu definieren. Da jedes Gerät einen `BoxCollider` besitzen muss, wird dessen Ecke als Ursprung benutzt. Die Variable `size` besitzt die Durchmesser des Collider pro Dimension. Da diese Werte unabhängig von der lokalen Skallierung sind, müssen sie skalliert werden. Als letzer Schritt werden alle Werte im Vektor halbiert.
+Für das Geräteinformation Framework muss es möglich sein, Koordinaten relativ zur Ecke eines Gerätes zu definieren. Da jedes Gerät einen `BoxCollider` besitzen muss, wird dessen Ecke als Ursprung benutzt. Die Variable `size` besitzt die Durchmesser des Collider pro Dimension. Da diese Werte unabhängig von der lokalen Skallierung sind, müssen sie skalliert werden. Als letzter Schritt werden alle Werte im Vektor halbiert.
 ```cs
 boxColliderSize.Scale(Device.transform.localScale);
 boxColliderSize = boxColliderSize / 2;
 ```
-Es gibt eine weitere Möglichkeit die Grösse eines Collider, Renderer oder Mesh auszulesen. Mit der 'bounds' Variable erhällt man Zugriff auf das Zenturm, die Grösse und weiteren Werten. Diese Werte sind relativ zum Koordinatensystem der Welt, somit verändert sich die Breite eines Objektes durch die Rotation. Im Framework war jedoch die Distanz im lokalen Koordinatensystem gesucht.
+Es gibt eine weitere Möglichkeit, die Grösse eines Collider, Renderer oder Mesh auszulesen. Mit der 'bounds' Variable erhält man Zugriff auf das Zentrum, die Grösse und weitere Werte. Diese Werte sind relativ zum Koordinatensystem der Welt, somit verändert sich die Breite eines Objektes durch die Rotation. Im Framework war jedoch die Distanz im lokalen Koordinatensystem gesucht.
 
 ### Rotation nach anderem Objekt ausrichten
 
@@ -1202,15 +1202,15 @@ Materialinformationen beinhaltet.
 
 [^3d-formats]:[Unity 3D Formate](https://docs.unity3d.com/Manual/3D-formats.html)
 
-Selbst Modelle welche nicht für die Industrie erstellt wurden können Probleme bereiten. Ein
-Demoobjekt, eine Kaffemaschiene, wurde vom Dozenten zur Verfügung gestellt. Die 2 Formate .obj und
+Selbst Modelle welche nicht für die Industrie erstellt wurden, können Probleme bereiten. Ein
+Demoobjekt, eine Kaffemaschine, wurde vom Dozenten zur Verfügung gestellt. Die 2 Formate .obj und
 .max sind vorhanden. Das .obj kann von Unity importiert werden, jedoch die dazugehörige .mtl Datei
 nicht. Dadurch sind alle Materialien gleichfarbig, siehe ImageInformation Prefab Abbildung. Wir
-konnten keinen Konverter finden welcher .obj zusammen mit .mtl in ein Importierbares Format wandeln
+konnten keinen Konverter finden, welcher .obj zusammen mit .mtl in ein importierbares Format wandeln
 kann. Ein Online-Konverter erlaubte .mtl Files, konnte die Grösse der .obj Datei jedoch nicht
-verarbeiten. Beim importieren des zweiten Formates .max erschien eine Fehlermeldungen, da Unity
-3D-Studio Max nich auf dem Rechner finden konnte. Da es ein proprietäres Format is wird die
-Konverierung an das proprietäre Program übergeben. Somit ist von der Kaffemaschiene nur das 3D-Modell
+verarbeiten. Beim importieren des zweiten Formates .max erschien eine Fehlermeldung, da Unity
+3D-Studio Max nicht auf dem Rechner finden konnte. Da es ein proprietäres Format ist, wird die
+Konvertierung an das proprietäre Programm übergeben. Somit ist von der Kaffemaschine nur das 3D-Modell
 ohne Farben in der Demo des Frameworks. Die einzelnen Materialien müssten manuell eingefärbt werden
 oder jemand mit einem 3D-Studio Max konvertiert da .max in ein .fbx.
 
@@ -1218,16 +1218,16 @@ oder jemand mit einem 3D-Studio Max konvertiert da .max in ein .fbx.
 
 Jedes Material benötigt einen Shader, welcher spezifiziert, wie die Oberfläche in verschiedenen
 Situationen berechnet wird.
-Damit ein Shader auch auf der Hololens funktioniert muss er in Unity unter
+Damit ein Shader auch auf der Hololens funktioniert, muss er in Unity unter
 `Edit/Project Settings/Graphics/Always Included Shaders` aufgeführt werden. Nicht funktionierende
 Shader werden Pink dargestellt.
 
 ### Probleme mit 2D Linien
 
 Mit dem `LineRenderer` können 2D Linien in der 3D Umgebung dargestellt werden. Vielen Materialien
-haben Probleme die Linie zu färben. Der `Particles/Additive Shader` funktioniert, ist jedoch nicht
+haben Probleme, die Linie zu färben. Der `Particles/Additive Shader` funktioniert, ist jedoch nicht
 deckend. Die Linie hat eine definierte Breite und richtet sich nach der Kamera aus. Falls sie mehr als
-2 Punkte verbindet, ist diese Breite im  dreidimensionalen Raum und aus der Sicht der Kamera nicht
+zwei Punkte verbindet, ist diese Breite im  dreidimensionalen Raum und aus der Sicht der Kamera nicht
 mehr konstant. Statt 2D Linien wird im erstellten Framework mit 3D Zylinder gearbeitet. Dies
 vermeidet einen Stilbruch zwischen 2D und 3D.
 
@@ -1246,7 +1246,7 @@ lineRenderer.SetPositions(linePoints);
 
 ### Spline Bewegung
 
-Falls sich ein Objekt einer stetigen Linie folgen soll, gibt es ein Spline Controller Skript von
+Falls ein Objekt einer stetigen Linie folgen soll, gibt es ein Spline Controller Skript von
 der [Unity Community](http://wiki.unity3d.com/index.php/Main_Page). Dieses Skript wurde
 ausprobiert, wird jedoch im Framework und in der Demo App nicht verwendet. Kind Objekte eines
 GameObjects geben die Fixpunkte an, welche besucht werden.
@@ -1255,8 +1255,8 @@ GameObjects geben die Fixpunkte an, welche besucht werden.
 
 Ein Raycast erkennt die erste Kollision von einem Punkt und einer Richtung aus. Ein Beispiel dazu
 ist die Gaze Gestik. Von der Kamera aus wird ein Raycast gesendet und liefert das Objekt und die
-Position. Es ist möglich ein bestimmtes Objekt als Ziel zu wählen. Im nachfolgenden Beispiel
-möchte man herausfinden ob sich das Objekt über einem bestimmten anderen Zielobjekt befindet.
+Position. Es ist möglich, ein bestimmtes Objekt als Ziel zu wählen. Im nachfolgenden Beispiel
+möchte man herausfinden, ob sich das Objekt über einem bestimmten anderen Zielobjekt befindet.
 
 ```cs
 // Raycast nach unten
@@ -1316,16 +1316,16 @@ void OnDestroy()
 
 ### 3rd Party Libraries
 
-Um in einem Unity Projekt bereits kompilierte Libraries (sprich .dll) zu verwenden, müssen die DLLs
-einfach in den Ordner `Assets/Plugins` kopiert. Der Unity Editor registriert die Änderungen und
+Um in einem Unity Projekt bereits kompilierte Libraries (sprich .dll) zu verwenden, müssen die DLLs 
+in den Ordner `Assets/Plugins` kopiert werden. Der Unity Editor registriert die Änderungen und
 kompiliert das Projekt neu.
 
 ### Capabilities im VisualStudio setzen
-Damit die HoloLens auf bestimmte Funktionen wie SpacialMapping oder das Mikrofon zugreifen darf muss dies im Unity (Edit > ProjectSettings > Player > PublishingSettings > Capabilities) oder im VisualStudio (im Package.appxmanifest) gesetzt werden. Wir empfehlen es im Unity Projekt einzustellen, falls jedoch bereits ein VisualStudio Projekt generiert wurde wird die VS Konfiguration nicht mehr überschrieben, ausser man modifiziert das file UnityOverride.txt.
+Damit die HoloLens auf bestimmte Funktionen wie SpacialMapping oder das Mikrofon zugreifen darf, muss dies im Unity (Edit > ProjectSettings > Player > PublishingSettings > Capabilities) oder im VisualStudio (im Package.appxmanifest) gesetzt werden. Wir empfehlen, es im Unity Projekt einzustellen, falls jedoch bereits ein VisualStudio Projekt generiert wurde wird die VS Konfiguration nicht mehr überschrieben, ausser man modifiziert die Datei UnityOverride.txt.
 
 # Schlussfolgerungen und Ausblick
 
-Da diese Arbeit nur ein Prototyp ist und höchstens als proof of concept gelten kann, gibt es
+Da diese Arbeit nur ein Prototyp ist und höchstens als Proof of Concept gelten kann, gibt es
 einiges, das wir ausgespart haben.
 
 ## Sicherheit
@@ -1336,10 +1336,10 @@ ausgeklammert. Aber grundsätzlich muss es möglich sein, dass sich die Hololens
 identifizieren muss, bevor sie Daten erhält. Hier sind folgende Szenarien möglich:
 
 - Es können die Credentials im QR-Code selber untergebracht werden. Damit hat aber jeder, der Zugang
-zum QR-Code hat automatisch Zugang zu den Daten.
-- Die Hololens wird bei der Datenquelle registriert und die die Credentials auf der Hololens selber
-installiert (z.B. Username/Password oder Zertifikat)
-- fixes Pairing bei Bluetooth
+zum QR-Code hat, automatisch Zugang zu den Daten.
+- Die Hololens wird bei der Datenquelle registriert und die Credentials auf der Hololens selber
+installiert (z.B. Username/Password oder Zertifikat).
+- Fixes Pairing bei Bluetooth.
 
 ## Art der Datenquelle
 
@@ -1348,7 +1348,7 @@ Gerade wenn es sich um technische Geräte handelt (und nicht um z.B Bilder, Skul
 Gebäudeteile) und man sich sowieso in der unmittelbaren Umgebung aufhält, liegt der Einsatz von
 Bluetooth auf der Hand.
 
-Diese Art und Weise, wie die Applikation zu seinen Daten kommt, müsste auch noch im QR-Code
+Diese Art und Weise, wie die Applikation zu den Daten kommt, müsste auch noch im QR-Code
 untergebracht werden.
 
 _--> Notizen TODO: ausformulieren_
@@ -1360,38 +1360,38 @@ _--> Notizen TODO: ausformulieren_
 
 ## Rückblick Pascal Schulthess
 
-Ein Projekt mit der HoloLens durchführen zu dürfen war eine interessante Möglichkeit eine andere
-Seite der Programmierung kennenzulernen. Das Gerät ist meiner Meinung nach eine revolutionäre Technologie
+Ein Projekt mit der HoloLens durchführen zu dürfen war eine interessante Möglichkeit, eine andere
+Seite der Programmierung kennenzulernen. Das Gerät ist meiner Meinung nach eine revolutionäre Technologie,
 welche zwar noch einige Schwächen hat, jedoch in ein paar Generationen überzeugen wird. Sobald das Display
 genügend gross ist, ist meiner Meinung nach die grösste Schwäche gelöst.
 
 Das Spiel RoboRaid hat mich und einige Freunde von der Technologie überzeugt. Ich persönlich bin
 anfällig auf Motion Sickness bei VR Brillen, hatte jedoch nie auch nur ein Anzeichen davon mit der HoloLens.
-Dass die Brille bequem sitzt ist fast eine Kunst für sich selbst, ist aber möglich dank der vielen
+Dass die Brille bequem sitzt ist fast eine Kunst für sich selbst, jedoch möglich dank den vielen
 Einstellungsmöglichkeiten.
 
 Obwohl ich seit Jahren mit der Programmiersprache C# arbeite, ist die Kombination von Unity und C#
 sehr verschieden vom Gewohnten. Ich habe viel über Unity und die Möglichkeiten der HoloLens gelernt.
-Der Schritt von sich aufrufenden Klassen/Metoden zu hierarchischen Objekten mit Skripts bedingt
-andere Arten von Architekturen. Ich musste realisieren dass ein Framework in dieser Umgebung weniger
-eine eingenständige Klassenbibliotheke ist, sondern eine Kombination von verschiedenen Assets mit einer
+Der Schritt von sich aufrufenden Klassen/Methoden zu hierarchischen Objekten mit Skripts bedingt
+andere Arten von Architekturen. Ich musste realisieren, dass ein Framework in dieser Umgebung weniger
+eine eigenständige Klassenbibliotheke ist, sondern eine Kombination von verschiedenen Assets mit einer
 Anleitung wie diese zusammen mit HoloLens Assets verwendet werden können.
 
 Der Projektablauf war meiner Meinung nach nicht optimal. Die Anfangsphase, in welcher ich die Demos,
-Tutorials und eigene Tests durgegangen bin, verlief gut und ich lernte vieles. Ich hatte bald eine Idee
-für ein Framework (Raumunabhängiges speichern) und eine Demo (simples Miniaturenspiel) und begann Bereiche
+Tutorials und eigene Tests durchgegangen bin, verlief gut und ich lernte vieles. Ich hatte bald eine Idee
+für ein Framework (raumunabhängiges Speichern) und eine Demo (simples Miniaturenspiel) und begann Bereiche
 daraus auszuprobieren. Wir hätten möglichst früh alle unsere Frameworkideen auflisten und auf Herr
-Weingärtner zugehen sollen. So hätten wir früher bemerkt dass er eine andere Frameworkidee bevorzugt. Nach
-der Entscheidung des Frameworkes hätten wir direckt die Anforderungen zusammen mit Herr Weingärtner erarbeiten
+Weingärtner zugehen sollen. So hätten wir früher bemerkt, dass er eine andere Frameworkidee bevorzugt. Nach
+der Entscheidung des Frameworkes hätten wir direkt die Anforderungen zusammen mit Herr Weingärtner erarbeiten
 sollen. Wir erstellten die Anforderungen erst später und ohne Dialog mit ihm. Die Anforderungen wurden zwar
-von ihm akzeptiert, jedoch fühlte sich die danach folgende Implementierung nicht an als hätten wir einen
-konkreten "Kunden". Dadurch war die Motivation tiefer was zu grossem Aufwand in den letzten drei Wochen führte.
+von ihm akzeptiert, jedoch fühlte sich die danach folgende Implementierung nicht an, als hätten wir einen
+konkreten "Kunden". Dadurch war die Motivation tiefer, was zu grossem Aufwand in den letzten drei Wochen führte.
 
 Selbst mit diesem Projektablauf habe ich sehr viel über die Technologie gelernt. Es hat mich beispielsweise
-erstaunt wie mühsam es ist mit 3D-Modellen zu arbeiten, da die Industrie und die Modellierung für Spiele sehr
-unterschiedliche und teilweise proprietäre Formate nutzen. Andererseits kann man, wenn man sich eingearbeitet
-hat, mit den Prefabs, Objekten und Skripts viele interessante Konstrukte bilden. Auch die beeinflussung des
-laufenden Programmes in Unity bietet die Möglichkeit viel schnell auszuprobieren.
+erstaunt, wie mühsam es ist, mit 3D-Modellen zu arbeiten, da die Industrie und die Modellierung für Spiele sehr
+unterschiedliche und teilweise proprietäre Formate nutzen. Anderseits kann man, wenn man sich eingearbeitet
+hat, mit den Prefabs, Objekten und Skripts viele interessante Konstrukte bilden. Auch die Beeinflussung des
+laufenden Programms in Unity bietet die Möglichkeit, viel schnell auszuprobieren.
 
 Falls ich in einem zukünftigen Projekt eine Applikation für AR / VR oder ein Spiel erstellen soll, werde ich
 mich dort dank diesem Projekt schnell einarbeiten können.
