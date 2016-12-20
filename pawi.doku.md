@@ -90,6 +90,8 @@ Table: Definitionen
 API                 Application Program Interface, Schnittstelle von Computerprogrammen für
                     Computerprogramme
 
+AR                  Augmented Reality
+
 HL                  Hololens
 
 ReST                Representational State Transfer, Konzept für APIs über http(s)
@@ -320,6 +322,13 @@ Menschen gewöhnt sind zu arbeiten. Wenn wir mit Objekten hantieren sind wir uns
 innerhalb eines halben Meters vor dem Kopf zu tun. Aber genau dort ist kann die Hololens nichts
 darstellen. Dies zwingt den Benutzer dazu, mit den Hologrammen in einer grösseren Distanz zu
 interagieren, was mindestens gewöhnungsbedürftig ist.
+
+Die Hololens wurde für den Gebrauch in Gebäuden entwickelt und eignet sich nicht, um sich damit
+draussen zu bewegen. Sie ist mit über 500 Gramm ziemlich schwer und schränkt damit die
+Bewegungsfreiheit etwas ein. Aber lang nicht so stark wie man es vermuten könnte, wenn man die
+Dimensionen sieht. Sie ist nicht so starr wie sie auf den ersten Blick wirkt und schmiegt sich
+erstaunlich bequem an den Kopf und sitzt so stabil, dass auch schnelle und ruckartige horizontale
+Bewegungen mit dem Kopf möglich sind.
 
 ### Demoapplikationen
 
@@ -1439,5 +1448,7 @@ mich dort dank diesem Projekt schnell einarbeiten können.
 
 ## Rückblick Lukas Tanner
 
-
+Microsoft hat mit der Hololens eine neue Technologie geschaffen, die hält was sie verspricht. Vor
+allem wenn man bedenkt, dass es sich dabei um die erste Generation einer AR-Brille handelt, die auch
+praktikabel ist.
 
