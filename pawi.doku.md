@@ -118,16 +118,19 @@ Die Aufgabestellung besteht aus drei Teilen:
 3. Die Anwendung soll ein eigenes im Rahmen dieser Arbeit realisiertes Framework verwenden.
 4. Die Funktionalität des Frameworks und die Anwendung sollen mit dem Auftraggeber definiert werden.
 
-Im Anhang befindet sich das Dokument, in welchem die Aufgabenstellung erhalten wurde unter dem Namen `Aufgabenstellung PAWI Informatik 2016 Schulthess Tanner.doc`
+Im Anhang befindet sich das Dokument, in welchem die Aufgabenstellung erhalten wurde unter dem
+Namen `Aufgabenstellung PAWI Informatik 2016 Schulthess Tanner.doc`
 
 In diesem Dokument sind die Ergebnisse der Aufgabenstellung dokumentiert und wie folgt strukturiert.
 
-Ziele und erwartete Resultate enhält die Aufgabenstellung und die Erarbeitung der Anforderungen an das Framework.
+Ziele und erwartete Resultate enthält die Aufgabenstellung und die Erarbeitung der Anforderungen an das Framework.
 Die Kapitel Mögliche Anwendungsfälle und Mögliche Frameworks beinhalten Vorschläge, aus welchen von Herrn Weingärtner
 eines ausgewählt wurde. Darauf folgen die von den Studierenden erstellten Anforderungen an dieses Framework. Zusammen
 erfüllen diese Kapitel die Aufgabenstellung Nummer 4.
 
-Das Kapitel Lösungsentwicklung beginnt mit unseren Erfahrungen mit der HoloLens, den vorhandenen Demos und ihren Grenzen (Aufgabe 1 und 2). Danach kommt die Dokumentation des Frameworks (Aufgabe 3) sowie Tipps und Stolpersteine bei der Entwicklung für die HoloLens (Fortsetzung Aufgabe 1).
+Das Kapitel Lösungsentwicklung beginnt mit unseren Erfahrungen mit der HoloLens, den vorhandenen
+Demos und ihren Grenzen (Aufgabe 1 und 2). Danach kommt die Dokumentation des Frameworks (Aufgabe
+3) sowie Tipps und Stolpersteine bei der Entwicklung für die HoloLens (Fortsetzung Aufgabe 1).
 
 Schlussfolgerung und Ausblick????????????????????????
 
@@ -287,6 +290,37 @@ hier folgende Erweiterungen:
 - Die meisten Schaltflächen können auch über Sprachkommandos angesprochen werden.
 - Im Lieferumfang der HL ist ein Clicker enthalten, der den selben Event auslöst wie der Tap.
 
+Die Hauptanforderung der Hololens wurde grossartig umgesetzt, die Verschmelzung der realen und der
+virtuellen Welt  ist Microsoft  sehr gut gelungen. Auch wenn sich viele Hologramme im Sichtfeld befinden
+ist die Orientierung im realen Raum immer gut. Es gibt kaum Verwechslungen zwischen der
+virtuellen und realen Welt. Die Auflösung der Hologramme ist gut, dennoch besteht nie die Gefahr,
+dass ein Hologramm als ein reales Objekt oder ein reales Objekt für ein Hologramm gehalten wird.
+Die bewusste Aufmerksamkeit des Benutzers liegt hauptsächlich auf den Hologrammen, die unbewusste
+Aufmerksamkeit im realen Raum. So kann er sich natürlich im Zimmer bewegen und dennoch fokussiert
+mit den Hologrammen interagieren.
+
+Leider sind die Displays, auf welchen die Hologramme dargestellt werden können, klein. Es wird fast
+nur das zentrale Gesichtsfeld abgedeckt. Man kann die Aufmerksamkeit des Benutzers nicht über
+Bewegungen, die im peripheren Gesichtsfeld passieren auf einen anderen Bereich im Zimmer
+lenken. Dies muss zum Beispiel über Raumklang oder andere visuelle Hinweise (wie ein Pfeil, der zum
+entsprechenden Ort zeigt) gelöst werden. Obwohl dies eher eine Anforderung  bei Spielen ist, so
+lassen sich auch Anwendungsfälle bei Business Applikationen finden. So ist es denkbar, dass ein
+Hologramm eine längere Zeit auf eine Berechnung oder auf die Antwort eines Netzwerkzugriffs warten
+muss und sich der Benutzer derweil auf einen anderen Bereich im Raum konzentriert. Hier wäre es
+praktisch, wenn der Benutzer informiert würde, sobald das Hologramm wieder bereit ist.
+
+Die kleinen Displays sind auch problematisch wenn man sich eine Übersicht verschaffen will.
+Grosse Hologramme werden an den Rändern der Displays abgeschnitten und das nimmt man wahr. Der
+Benutzer muss den Kopf bewegen, wenn er mehr sehen will.
+
+Eine andere Limitation ist die Distanz zur Hololens, in welcher Hologramme projiziert werden. Sie
+werden nur etwa eine Armlänge vor dem Gesicht noch dargestellt. Geht man näher hin, verschwinden
+sie. Dies ist deshalb problematisch weil das Hologramm genau in diesem Bereich  verschwindet, wo wir
+Menschen gewöhnt sind zu arbeiten. Wenn wir mit Objekten hantieren sind wir uns gewohnt, dies
+innerhalb eines halben Meters vor dem Kopf zu tun. Aber genau dort ist kann die Hololens nichts
+darstellen. Dies zwingt den Benutzer dazu, mit den Hologrammen in einer grösseren Distanz zu
+interagieren, was mindestens gewöhnungsbedürftig ist.
+
 ### Demoapplikationen
 
 Um eine Applikation starten zu können, geht man, wie unter Windows üblich, ins Startmenü. In der
@@ -336,6 +370,11 @@ findet sich in einer Zwischenwelt wieder.
 Die Angriffe laufen in verschiedenen Wellen ab. Nachdem man alle Roboter aus einer Landungsbrücke
 zerstört hat, bricht eine nächste Landungsbrücke an einem anderen Ort im Raum durch die Wand und
 die Angriffe gehen weiter.
+
+Da die Displays das periphere Gesichtsfeld nicht abdecken, ist es nicht möglich, die nächste Welle
+aus den Augenwinkeln wahrzunehmen und seinen Körper danach auszurichten. Die Entwickler lösten
+dieses Problem, indem sie dem Spieler einen Pfeil darstellen, der in die Richtung des nächsten
+Gegners zeigt.
 
 Es gibt zwei Sorten von Robotern, die den Spieler angreifen: Einerseits gibt es diejenigen, die
 im Raum schweben und andererseits diejenigen, die über die Wände krabbeln und sich auch hinter den Wänden
@@ -949,9 +988,11 @@ Die Informationen positionieren sich relativ dazu.
 ??????????????????webschnittstelle: framework oder demo????????????????????????????
 
 **Demo**
+
 Die Demo hat zwei Geräte konfiguriert, einen [Laptop](http://tf3dm.com/search/?q=electronics+laptop+umbrella&search=Search)
 und eine [Kaffemaschine](https://www.cgtrader.com/3d-models/furniture/kitchen/coffee-maker-nespresso-aguila).
 Der Laptop stellt die folgenden Informationen dar: ?????????????????????????????????
+
 * Textinformation
 	* Einschaltknopf
 	* CPU Auslastung
@@ -1366,15 +1407,15 @@ welche zwar noch einige Schwächen hat, jedoch in ein paar Generationen überzeu
 genügend gross ist, ist meiner Meinung nach die grösste Schwäche gelöst.
 
 Das Spiel RoboRaid hat mich und einige Freunde von der Technologie überzeugt. Ich persönlich bin
-anfällig auf Motion Sickness bei VR Brillen, hatte jedoch nie auch nur ein Anzeichen davon mit der HoloLens.
-Dass die Brille bequem sitzt ist fast eine Kunst für sich selbst, jedoch möglich dank den vielen
+anfällig auf Motion Sickness bei VR Brillen, hatte jedoch nie auch nur ein Anzeichen davon mit der Hololens.
+Dass die Brille bequem sitzt ist fast eine Kunst für sich selbst, ist aber möglich dank der vielen
 Einstellungsmöglichkeiten.
 
 Obwohl ich seit Jahren mit der Programmiersprache C# arbeite, ist die Kombination von Unity und C#
 sehr verschieden vom Gewohnten. Ich habe viel über Unity und die Möglichkeiten der HoloLens gelernt.
-Der Schritt von sich aufrufenden Klassen/Methoden zu hierarchischen Objekten mit Skripts bedingt
+Der Schritt von sich aufrufenden Klassen/Metoden zu hierarchischen Objekten mit Skripts bedingt
 andere Arten von Architekturen. Ich musste realisieren, dass ein Framework in dieser Umgebung weniger
-eine eigenständige Klassenbibliotheke ist, sondern eine Kombination von verschiedenen Assets mit einer
+eine eigenständige Klassenbibliothek ist, sondern eine Kombination von verschiedenen Assets mit einer
 Anleitung wie diese zusammen mit HoloLens Assets verwendet werden können.
 
 Der Projektablauf war meiner Meinung nach nicht optimal. Die Anfangsphase, in welcher ich die Demos,
@@ -1396,4 +1437,7 @@ laufenden Programms in Unity bietet die Möglichkeit, viel schnell auszuprobiere
 Falls ich in einem zukünftigen Projekt eine Applikation für AR / VR oder ein Spiel erstellen soll, werde ich
 mich dort dank diesem Projekt schnell einarbeiten können.
 
-NOCH OFFEN
+## Rückblick Lukas Tanner
+
+
+
