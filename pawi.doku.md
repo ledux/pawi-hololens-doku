@@ -300,18 +300,24 @@ Dieser Code muss von der Hololens erkannt und gelesen werden können.
 
 #### Darstellen eines 3-D-Modells
 
-Das reale Objekt soll mit einem Hologramm überlagern.
-
-
-Highlight important parts etc.
+Das reale Objekt soll mit einem Hologramm ergänzt werden. Damit können wichtige Teile des Geräts
+hervorgehoben oder je nach Wert in einer anderen Farbe eingefärbt werden. Es wäre denkbar, dass ein
+Elektromotor je nach Temperatur mit einer Farbe von Blau bis Rot eingefärbt wird.
 
 ### Framework (kann)
+
+Dazu haben wir noch einige Anforderungen definiert, die wir umsetzen können, wenn die Zeit dazu
+reicht oder der Aufwand nicht gross ist.
 
 * Darstellen eines Benutzerhandbuchs (pdf, analog Text Information)
     * pdf lokal gespeichert
 * Ein-/Ausblenden von Informationen mittels holografischem Menu
 * Es kann entschieden werden, ob die Informationen am realen Gerät oder am Hologramm dargestellt
   werden
+
+
+
+\pagebreak
 
 # Lösungsentwicklung
 
