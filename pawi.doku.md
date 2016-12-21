@@ -83,6 +83,8 @@ Game Engine         Eine Game Engine ist ein Framework für die Erstellung von V
 Shell               Der "Desktop" der HoloLens. Hier können die Applikationen und Hologramme im Raum
                     platziert werden.
 
+Inertiale           Beschleunigungs und Drehratensensoren zur Messung der Trägheitsnavigation
+Messeinheit
 
 ----------------------------------------------------------------------------------------------------
 Table: Definitionen
@@ -98,6 +100,9 @@ AR                  Augmented Reality
 HL                  HoloLens
 
 ReST                Representational State Transfer, Konzept für APIs über http(s)
+
+TPM                 Trusted Platform Module; Chip, der den Computer um Sicherheitsfunktionen (wie
+                    Kryptografie oder Lizenzbestimmungen) erweitert.
 
 VS2015              Visual Studio 2015; Entwicklungsumgebung von Microsoft, u.a.  für .NET
                     Applikationen
@@ -324,6 +329,68 @@ reicht oder der Aufwand nicht gross ist.
 
 Hier werden die Erfahrungen und die Schritte beschrieben, die während des Projektes gemacht wurden.
 
+## Spezifikation der HoloLens
+
+Die HoloLens besteht aus folgendermassen zusammengestellt
+
+> **Prozessoren**
+
+* Intel 32-bit Architektur mit TPM 2.0
+* von Microsoft speziell entwickelte Holographic Processing Unit (HPU) 1.0
+
+> **Memory**
+
+* 64 GB Flash
+* 2 GB RAM
+
+![Motherboard mit der HPU](pics/motherboard.jpg)
+
+> **Optik**
+
+* Transparente holografische Linsen mit Wellenleiter
+* 2 HD 16:9 Lichtmaschinen
+* automatische Kalibrierung anhand des Abstands zu den Pupillen
+* Holografische Auflösung: 2.3 M Lichtpunkte
+* Holografische Dichte: > 2.5 k Lichtpunkte pro Radiant
+
+![Transparente Displays](pics/displays.jpg)
+
+> **Sensoren**
+
+* IMU (Inertiale Messeinheit)
+* 4 umgebungsbewusste Kameras
+* 1 Tiefenkamera
+* 1 2MP Foto / HD Video Kamera
+* Mixed Reality Capture (Bilder der Umgebung inklusive der Hologramme)
+* 4 Mikrofone
+* 1 Umgebungslichtssensor
+
+> **Menschliches Verständnis**
+
+* Raumklang
+* Tracking der Blickrichtung
+* Gestenerkennung
+* Spracherkennung
+
+![Sensoren der HoloLens](pics/sensor_bar.jpg)
+
+> **Input / Output / Schnittstellen**
+
+* 2 Lautsprecher
+* Audio 3.5mm jack
+* WiFi 802.11ac
+* Micro USB 2.0
+* Bluetooth 4.1 LE
+
+> **Energieversorgung**
+
+* Akkulaufzeit
+    * 2 bis 3 Stunden Arbeitszeit
+    * bis zu 2 Wochen Standby
+    * Laden über die Micro USB Schnittstelle
+* Passivkühlung (HL läuft geräuschlos)
+
+
 ## Erste Schritte
 
 Die HoloLens ist als Stand-alone Gerät konzipiert. Sie benötigt keine externen Geräte um zu
@@ -408,7 +475,7 @@ darstellen. Dies zwingt den Benutzer dazu, mit den Hologrammen in einer grösser
 interagieren, was mindestens gewöhnungsbedürftig ist.
 
 Die HoloLens wurde für den Gebrauch in Gebäuden entwickelt und eignet sich nicht, um sich damit
-draussen zu bewegen. Sie ist mit über 500 Gramm ziemlich schwer und schränkt damit die
+draussen zu bewegen. Sie ist mit 579 Gramm ziemlich schwer und schränkt damit die
 Bewegungsfreiheit etwas ein. Aber lang nicht so stark wie man es vermuten könnte, wenn man die
 Dimensionen sieht. Sie ist nicht so starr wie sie auf den ersten Blick wirkt und schmiegt sich
 erstaunlich bequem an den Kopf und sitzt so stabil, dass auch schnelle und ruckartige horizontale
@@ -1455,7 +1522,12 @@ in den Ordner `Assets/Plugins` kopiert werden. Der Unity Editor registriert die 
 kompiliert das Projekt neu.
 
 ### Capabilities im VisualStudio setzen
-Damit die HoloLens auf bestimmte Funktionen wie SpacialMapping oder das Mikrofon zugreifen darf, muss dies im Unity (Edit > ProjectSettings > Player > PublishingSettings > Capabilities) oder im VisualStudio (im Package.appxmanifest) gesetzt werden. Wir empfehlen, es im Unity Projekt einzustellen, falls jedoch bereits ein VisualStudio Projekt generiert wurde wird die VS Konfiguration nicht mehr überschrieben, ausser man modifiziert die Datei UnityOverride.txt.
+Damit die HoloLens auf bestimmte Funktionen wie SpacialMapping oder das Mikrofon zugreifen darf,
+muss dies im Unity (Edit > ProjectSettings > Player > PublishingSettings > Capabilities)
+oder im VisualStudio (im Package.appxmanifest) gesetzt werden. Wir empfehlen, es im Unity
+Projekt einzustellen, falls jedoch bereits ein VisualStudio Projekt generiert wurde wird die
+VS Konfiguration nicht mehr überschrieben, ausser man modifiziert die Datei UnityOverride.txt.
+
 
 # Schlussfolgerungen und Ausblick
 
