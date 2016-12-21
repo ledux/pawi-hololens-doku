@@ -70,6 +70,9 @@ Bloom               Gestik, bei welcher sich die fünf Finger einer Hand berühr
 Gaze                Der Blick, wohin der Benutzer schaut und was die Hololens dort identifiziert.
                     Das kann sowohl ein reales Objekt sein wie auch ein Hologramm.
 
+Device              Ein Gerät, das technische Informationen zum seinem Zustand über die Hololens
+                    dargestellt haben will
+
 Unity               Unity ist eine Game Engine für 21 verschiedene Plattformen.
 
 Game Engine         Eine Game Engine ist ein Framework für die Erstellung von Videospielen. Es
@@ -229,6 +232,45 @@ Dies sind die Anforderungen an das Framework, die zwingend erfüllt werden müss
 * Darstellen eines Bildes (analog Text Information)
     * Bild lokal gespeichert
 
+#### Darstellen der Informationen
+
+Der Hauptnutzen des Frameworks ist das Darstellen von zusätzlichen Informationen zu einzelnen Teilen
+des Geräts. Diese Informationen müssen im Raum dargestellt und eine visuelle Verbindung zwischen dem
+Text und dem Gerät erstellt werden. Der Ort der Information und wohin sie zeigt ist Teil der Daten,
+die die Hololens über die externe Datenschnittstelle erhält.
+
+#### Webschnittstelle für Geräteinformationen
+
+Die Zusatzinformationen, die die Hololens darstellen soll, sollen dynamisch sein können. Das heisst,
+dass sie über die Zeit ändern können, wie Füllstände oder Drehzahlen. Diese Informationen können
+nicht von der Hololens selber gemessen oder berechnet werden. Sie müssen vom Gerät selber oder von
+einer dritten Stelle kommen.  Wir haben uns dabei für eine Webschnittstelle entschieden, die JSON
+zurück gibt. Eine Webschnittstelle kann Informationen zurückgeben, die statisch oder das
+Ergebnis von komplexen Berechnungen sind; die Schnittstelle kann lokal (vom Gerät selber oder im
+Intranet) oder auch über das Internet angeboten werden;
+
+Für die Demonstration des Frameworks entwickeln wir eine Webapplikation, die Pseudodaten für die
+dargestellten Geräte generiert. Dabei setzen wir auch Zufallselemente ein um dynamische
+Datenänderungen zu simulieren. Es wird auch sichergestellt, dass verschiedene Geräte
+unterschiedliche Daten erhalten. Dies wird über unterschiedliche Werte im letzten Segment
+(`deviceId`) der URL erreicht.
+
+(`http://localhost/HoloApi/api/{int:deviceId}`)
+
+Dazu soll für jedes Device Informationen über mehrerer Bestandteile zurückgegeben werden. Das heisst,
+die Schnittstelle soll eine Liste mit Datensätzen generieren und nicht nur einen einzelnen.
+
+
+#### Ansprechen der Webschnittstelle über die Hololens
+
+Das Framework soll diese Schnittstelle ansprechen und dabei für jedes Gerät eine andere URL (in der
+Demoapplikation ist nur das letzte Segment unterschiedlich) aufrufen. Die erhaltenen Daten sollen
+dann an der entsprechenden Stelle positioniert werden. Wo genau das sein soll ist Bestandteil des
+erhaltenen Datensatz.
+
+Die Schnittstelle soll regelmässig aufgerufen werden und die Daten im Hologramm aktualisiert werden.
+<!--TODO: wie oft?-->
+
 #### Erkennen und Lesen QR-Code
 
 Die Informationen, die initial benötigt werden, um ein neues Gerät zu instantiieren, wird in einem
@@ -250,11 +292,18 @@ können in jedem beliebigen Format sein, dessen Interpretation ist dann Sache de
 
 Ein Beispiel:
 
-`geraetetyp;geraeteid;https://api.example.com/device1;key1:value1|key2:value3`
+`type;id;https://localhost/HoloApi/api/2;key1:value1|key2:value3`
 
+![Beispiel eines QR-Codes](pics/qr_code.jpg)
 
 Dieser Code muss von der Hololens erkannt und gelesen werden können.
 
+#### Darstellen eines 3-D-Modells
+
+Das reale Objekt soll mit einem Hologramm überlagern.
+
+
+Highlight important parts etc.
 
 ### Framework (kann)
 
