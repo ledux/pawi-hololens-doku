@@ -205,11 +205,13 @@ Nachdem die möglichen Anwendungsfälle und Demonstrationen zusammengetragen war
 Weingärtner präsentiert. Herr Weingärtner entschied sich für das Framework Geräteinformationen
 darstellen. Die Demonstration soll ein Objekt mit Zusatzinformationen darstellen. Als Objekt wurde
 von uns ein generischer Laptop gewählt. Zusätzlich wurde uns gegen Ende des Projektes ein 3D-Modell
-einer Kaffemaschine, welche in der HSLU benutzt wird, zu Verfügung gestellt. Die folgenden
+einer Kaffeemaschine, welche in der HSLU benutzt wird, zu Verfügung gestellt. Die folgenden
 Anforderungen wurden von den Studierenden erstellt und von Herr Weingärtner am 17. November
 akzeptiert.
 
 ### Framework (muss)
+
+Dies sind die Anforderungen an das Framework, die zwingend erfüllt werden müssen, im Überblick
 
 * Erkennen und Lesen QR-Code
     * Gerätetyp (mandatory)
@@ -226,6 +228,32 @@ akzeptiert.
     * Die Informationen sollen regelmässig abgefragt und entsprechend aktualisiert werden
 * Darstellen eines Bildes (analog Text Information)
     * Bild lokal gespeichert
+
+#### Erkennen und Lesen QR-Code
+
+Die Informationen, die initial benötigt werden, um ein neues Gerät zu instantiieren, wird in einem
+QR-Code gespeichert. Darin sind folgende Informationen untergebracht.
+
+> **Gerätetyp**
+
+> **Geräte ID** Eine Identifikationsnummer, mit welcher das Modell in der Applikation hinterlegt
+  ist. Damit weiss die Hololens, welches Hologramm (Prefab) sie darstellen muss.
+
+> **Verbindungsinformationen** Hier wird die URL angegeben, wo die Informationen abgeholt werden
+  können, die zum Gerät dargestellt werden sollen.
+
+> **Zusatzinformationen** optional; zusätzliche statische Informationen, die für das Gerät wichtig
+  sind.
+
+Diese Informationen werden in einen Semikolon-getrennten String codiert. Die Zusatzinformationen
+können in jedem beliebigen Format sein, dessen Interpretation ist dann Sache des Prefabs selber.
+
+Ein Beispiel:
+
+`geraetetyp;geraeteid;https://api.example.com/device1;key1:value1|key2:value3`
+
+
+Dieser Code muss von der Hololens erkannt und gelesen werden können.
 
 
 ### Framework (kann)
@@ -260,7 +288,7 @@ untergebracht sind.
 
 Die ersten Schritte als Anwender mit der Hololens waren erstaunlich einfach und intuitiv. Beim
 ersten Verwenden gibt es ein Tutorial, das dem Träger erklärt, wie mit dem neuen Interface
-interagiert wird. Als Pointer gibt es im Zentrum des Sichtfelds einen Punkt, Gaze genannt. Mit
+interagiert wird. Als Pointer gibt es im Zentrum des Sichtfeldes einen Punkt, Gaze genannt. Mit
 diesem Pointer zielt man auf die Objekte, mit welchen man interagieren will.
 
 Als Eingabegerät dient die Hand. Sie erkennt drei Gesten. Einerseits kann man das Start Menü
