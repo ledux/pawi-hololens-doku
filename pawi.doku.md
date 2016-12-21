@@ -1,4 +1,4 @@
-% Mixed Reality mit Hololens
+% Mixed Reality mit HoloLens
 % Pascal Schulthess
   Lukas Tanner
   Dozent: Tim Weingärtner
@@ -25,7 +25,7 @@ Lukas Tanner
 
 
 # Abstract (deutsch)
-Hololens ist eine mixed reality Brille von Microsoft, die es erlaubt, den Raum mit
+HoloLens ist eine mixed reality Brille von Microsoft, die es erlaubt, den Raum mit
 holografischen Elementen zu erweitern. Ebenso kann man damit programmatisch mit der Umgebung
 interagieren.
 
@@ -35,7 +35,7 @@ eines Frameworks, das es erlaubt, Informationen zu einem realen Objekt im Raum d
 
 # Abstract (english)
 
-Hololens are mixed reality glasses by Microsoft. They can extend the environment with holographic
+HoloLens are mixed reality glasses by Microsoft. They can extend the environment with holographic
 elements and interact programmatically with the surroundings.
 
 This document describes first steps with this new technology and the developement of a framework
@@ -67,10 +67,10 @@ Bloom               Gestik, bei welcher sich die fünf Finger einer Hand berühr
                     zeigen, um danach die Finger zu spreizen (wie eine Blüte öffnen). Wird als
                     Menü/Windows Taste genutzt.
 
-Gaze                Der Blick, wohin der Benutzer schaut und was die Hololens dort identifiziert.
+Gaze                Der Blick, wohin der Benutzer schaut und was die HoloLens dort identifiziert.
                     Das kann sowohl ein reales Objekt sein wie auch ein Hologramm.
 
-Device              Ein Gerät, das technische Informationen zum seinem Zustand über die Hololens
+Device              Ein Gerät, das technische Informationen zum seinem Zustand über die HoloLens
                     dargestellt haben will
 
 Unity               Unity ist eine Game Engine für 21 verschiedene Plattformen.
@@ -80,7 +80,7 @@ Game Engine         Eine Game Engine ist ein Framework für die Erstellung von V
                     Simulationen für physikalisches Verhalten, Geräusche und Musik, Animationen,
                     künstliche Intelligenz u.v.m.
 
-Shell               Der "Desktop" der Hololens. Hier können die Applikationen und Hologramme im Raum
+Shell               Der "Desktop" der HoloLens. Hier können die Applikationen und Hologramme im Raum
                     platziert werden.
 
 
@@ -95,7 +95,7 @@ API                 Application Program Interface, Schnittstelle von Computerpro
 
 AR                  Augmented Reality
 
-HL                  Hololens
+HL                  HoloLens
 
 ReST                Representational State Transfer, Konzept für APIs über http(s)
 
@@ -111,40 +111,43 @@ Table: Abkürzungen
 
 In den letzten Monaten wurden von vielen Herstellern Virtual Reality Brillen auf den Markt
 gebracht, meist im Gaming Bereich. Microsoft hat mit ihrer Mixed Reality Brille ein anderes Zielpublikum
-und andere Anwendungsbereiche im Fokus. Mit der Hololens wird die Umwelt, in welcher sich der Träger
+und andere Anwendungsbereiche im Fokus. Mit der HoloLens wird die Umwelt, in welcher sich der Träger
 befindet, mit zusätzlichen virtuellen Elementen ergänzt.
 
 Dank Kameras und Sensoren kann die Brille die Umgebung wahrnehmen und Objekte darin erkennen. Somit
 können die virtuellen Elemente auf echte Objekte gesetzt werden und damit interagieren.
 
-Die Aufgabestellung besteht aus drei Teilen:
+Die Aufgabenstellung besteht aus drei Teilen:
+
 1. Die Studierenden sollen mit der Microsoft HoloLens Erfahrungen sammeln und ihre Erkenntnisse dokumentieren.
-2. Sie sollen die Möglichkeiten und Grenzen anhand von bestehenden Demos und einer eigenen Anwendung aufzeigen.
-3. Die Anwendung soll ein eigenes im Rahmen dieser Arbeit realisiertes Framework verwenden.
-4. Die Funktionalität des Frameworks und die Anwendung sollen mit dem Auftraggeber definiert werden.
+1. Sie sollen die Möglichkeiten und Grenzen anhand von bestehenden Demos und einer eigenen Anwendung aufzeigen.
+1. Die Anwendung soll ein eigenes im Rahmen dieser Arbeit realisiertes Framework verwenden.
+1. Die Funktionalität des Frameworks und die Anwendung sollen mit dem Auftraggeber definiert werden.
 
 Im Anhang befindet sich das Dokument, in welchem die Aufgabenstellung erhalten wurde unter dem
-Namen `Aufgabenstellung PAWI Informatik 2016 Schulthess Tanner.doc`
+Namen _Aufgabenstellung PAWI Informatik 2016 Schulthess Tanner.doc_
 
 In diesem Dokument sind die Ergebnisse der Aufgabenstellung dokumentiert und wie folgt strukturiert.
 
-Ziele und erwartete Resultate enthält die Aufgabenstellung und die Erarbeitung der Anforderungen an das Framework.
-Die Kapitel Mögliche Anwendungsfälle und Mögliche Frameworks beinhalten Vorschläge, aus welchen von Herrn Weingärtner
-eines ausgewählt wurde. Darauf folgen die von den Studierenden erstellten Anforderungen an dieses Framework. Zusammen
+Das Kapitel _Ziele und erwartete Resultate_ enthält die Aufgabenstellung und die Erarbeitung der Anforderungen an das Framework.
+Die Kapitel _Mögliche Anwendungsfälle_ und _Mögliche Frameworks_ beinhalten Vorschläge, aus welchen Herrn Weingärtner
+eines ausgewählt hat. Darauf folgen die von den Studierenden erstellten Anforderungen an dieses Framework. Zusammen
 erfüllen diese Kapitel die Aufgabenstellung Nummer 4.
 
-Das Kapitel Lösungsentwicklung beginnt mit unseren Erfahrungen mit der HoloLens, den vorhandenen
+Das Kapitel _Lösungsentwicklung_ beginnt mit unseren Erfahrungen mit der HoloLens, den vorhandenen
 Demos und ihren Grenzen (Aufgabe 1 und 2). Danach kommt die Dokumentation des Frameworks (Aufgabe
 3) sowie Tipps und Stolpersteine bei der Entwicklung für die HoloLens (Fortsetzung Aufgabe 1).
 
-Schlussfolgerung und Ausblick????????????????????????
+Im Abschnitt _Schlussfolgerung und Ausblick_  werden die Grenzen des Projektes und die nächsten
+Schritte aufgezeigt. Hier wird beschrieben, welche Themen wir ausgelassen haben und wo in einem
+Folgeprojekt weitergearbeitet werden kann.
 
-Abschliessend enthält Lessons learned die persönlichen Erkenntnisse beider Studierenden über die HoloLens sowie
+Abschliessend enthält _Lessons learned_ die persönlichen Erkenntnisse beider Studierenden über die HoloLens sowie
 die Projektarbeit und deren Verlauf.
 
 ## Mögliche Anwendungsfälle
 
-Die Hololens bietet sicherlich Einsatzmöglichkeiten im Spielebereich, wie Microsoft mit Games wie
+Die HoloLens bietet sicherlich Einsatzmöglichkeiten im Spielebereich, wie Microsoft mit Games wie
 [RoboRaid](https://www.microsoft.com/microsoft-hololens/en-us/apps/roboraid) oder
 [Fragments](https://www.microsoft.com/microsoft-hololens/en-us/apps/fragments) bereits gezeigt hat.
 
@@ -170,7 +173,7 @@ Applikationen aufbauen können. Dazu haben wir uns folgende Gedanken gemacht.
 ### Virtueller Desktop
 
 Die HoloLens speichert offene Fenster im Raum für eine bestimmte Zeit. Wenn man aber den Raum
-verlässt oder die Hololens zu lange abgestellt war, verliert sie diese Informationen. Die Idee
+verlässt oder die HoloLens zu lange abgestellt war, verliert sie diese Informationen. Die Idee
 dieses Frameworks ist, Informationen zu speichern, welche Applikation wo geöffnet ist. So wäre es
 möglich, zu definieren, dass ein pdf an einer Wand, Outlook an einer anderen, OneNote und ein
 Word-Dokument auf dem Pult geöffnet sind. Nun kann man den Raum wechseln und muss nun definieren,
@@ -179,17 +182,17 @@ hergestellt.
 
 ### Geräteinformationen darstellen
 
-Die Hololens erkennt ein Gerät und holt sich Informationen zu diesem Gerät ab, das sie dann in der
+Die HoloLens erkennt ein Gerät und holt sich Informationen zu diesem Gerät ab, das sie dann in der
 Nähe des Geräts darstellt. Die Informationen können dynamisch sein, wie Füllstände,
 Geschwindigkeiten, Temperaturen, Druck, Leistung etc. oder auch statische wie Spezifikationen
 oder Anleitungen.
 
 Damit wäre es denkbar, dass ganze Vorgänge Schritt für Schritt beschrieben werden. Dabei könnte die
-Hololens auf dem Gerät die Teile hervorheben, die gerade bearbeitet werden müssen (z.B. "Um die
+HoloLens auf dem Gerät die Teile hervorheben, die gerade bearbeitet werden müssen (z.B. "Um die
 Abdeckung zu entfernen, lösen sie die beleuchteten vier Schrauben mit einem Kreuz-Schraubenzieher").
 
 Eine weitere Anwendung dieses Frameworks wäre, die Informationen, die bei einem Smartphone im
-Notification Menu vorhanden sind, mit der Hololens über dem Smartphone schweben zu lassen.
+Notification Menu vorhanden sind, mit der HoloLens über dem Smartphone schweben zu lassen.
 
 ### Automatische Positionierung von Hologrammen im Raum
 
@@ -226,7 +229,7 @@ Dies sind die Anforderungen an das Framework, die zwingend erfüllt werden müss
 * Minimalste Webschnittstelle für Geräteinformationen
     * Gibt Demoinformationen zurück
     * Wird von uns über eine DotNet WebApi Applikation in einem IIS >7 realisiert
-* Ansprechen der Webschnittstelle über die Hololens
+* Ansprechen der Webschnittstelle über die HoloLens
 * Darstellen der erhaltenen Informationen (Text) im Raum, verbunden mit dem entsprechenden Objekt
     * Die Informationen sollen regelmässig abgefragt und entsprechend aktualisiert werden
 * Darstellen eines Bildes (analog Text Information)
@@ -237,13 +240,13 @@ Dies sind die Anforderungen an das Framework, die zwingend erfüllt werden müss
 Der Hauptnutzen des Frameworks ist das Darstellen von zusätzlichen Informationen zu einzelnen Teilen
 des Geräts. Diese Informationen müssen im Raum dargestellt und eine visuelle Verbindung zwischen dem
 Text und dem Gerät erstellt werden. Der Ort der Information und wohin sie zeigt ist Teil der Daten,
-die die Hololens über die externe Datenschnittstelle erhält.
+die die HoloLens über die externe Datenschnittstelle erhält.
 
 #### Webschnittstelle für Geräteinformationen
 
-Die Zusatzinformationen, die die Hololens darstellen soll, sollen dynamisch sein können. Das heisst,
+Die Zusatzinformationen, die die HoloLens darstellen soll, sollen dynamisch sein können. Das heisst,
 dass sie über die Zeit ändern können, wie Füllstände oder Drehzahlen. Diese Informationen können
-nicht von der Hololens selber gemessen oder berechnet werden. Sie müssen vom Gerät selber oder von
+nicht von der HoloLens selber gemessen oder berechnet werden. Sie müssen vom Gerät selber oder von
 einer dritten Stelle kommen.  Wir haben uns dabei für eine Webschnittstelle entschieden, die JSON
 zurück gibt. Eine Webschnittstelle kann Informationen zurückgeben, die statisch oder das
 Ergebnis von komplexen Berechnungen sind; die Schnittstelle kann lokal (vom Gerät selber oder im
@@ -261,7 +264,7 @@ Dazu soll für jedes Device Informationen über mehrerer Bestandteile zurückgeg
 die Schnittstelle soll eine Liste mit Datensätzen generieren und nicht nur einen einzelnen.
 
 
-#### Ansprechen der Webschnittstelle über die Hololens
+#### Ansprechen der Webschnittstelle über die HoloLens
 
 Das Framework soll diese Schnittstelle ansprechen und dabei für jedes Gerät eine andere URL (in der
 Demoapplikation ist nur das letzte Segment unterschiedlich) aufrufen. Die erhaltenen Daten sollen
@@ -279,7 +282,7 @@ QR-Code gespeichert. Darin sind folgende Informationen untergebracht.
 > **Gerätetyp**
 
 > **Geräte ID** Eine Identifikationsnummer, mit welcher das Modell in der Applikation hinterlegt
-  ist. Damit weiss die Hololens, welches Hologramm (Prefab) sie darstellen muss.
+  ist. Damit weiss die HoloLens, welches Hologramm (Prefab) sie darstellen muss.
 
 > **Verbindungsinformationen** Hier wird die URL angegeben, wo die Informationen abgeholt werden
   können, die zum Gerät dargestellt werden sollen.
@@ -296,7 +299,7 @@ Ein Beispiel:
 
 ![Beispiel eines QR-Codes](pics/qr_code.jpg)
 
-Dieser Code muss von der Hololens erkannt und gelesen werden können.
+Dieser Code muss von der HoloLens erkannt und gelesen werden können.
 
 #### Darstellen eines 3-D-Modells
 
@@ -315,8 +318,6 @@ reicht oder der Aufwand nicht gross ist.
 * Es kann entschieden werden, ob die Informationen am realen Gerät oder am Hologramm dargestellt
   werden
 
-
-
 \pagebreak
 
 # Lösungsentwicklung
@@ -325,7 +326,7 @@ Hier werden die Erfahrungen und die Schritte beschrieben, die während des Proje
 
 ## Erste Schritte
 
-Die Hololens ist als Stand-alone Gerät konzipiert. Sie benötigt keine externen Geräte um zu
+Die HoloLens ist als Stand-alone Gerät konzipiert. Sie benötigt keine externen Geräte um zu
 funktionieren. Das heisst, die Applikationen werden direkt in der Brille ausgeführt und die
 Hologramme werden auch von der Brille selber gerendert.
 Die Vorteile davon sind:
@@ -341,7 +342,7 @@ untergebracht sind.
 * Die Laufzeit ist limitiert durch die Batterie.
 * Die Displays, auf welchen die Hologramme angezeigt werden können, sind sehr klein.
 
-Die ersten Schritte als Anwender mit der Hololens waren erstaunlich einfach und intuitiv. Beim
+Die ersten Schritte als Anwender mit der HoloLens waren erstaunlich einfach und intuitiv. Beim
 ersten Verwenden gibt es ein Tutorial, das dem Träger erklärt, wie mit dem neuen Interface
 interagiert wird. Als Pointer gibt es im Zentrum des Sichtfeldes einen Punkt, Gaze genannt. Mit
 diesem Pointer zielt man auf die Objekte, mit welchen man interagieren will.
@@ -361,7 +362,7 @@ Dies funktioniert sehr gut und recht intuitiv, solange man sich auf den Cursor k
 verändert sich im Aussehen, je nachdem, mit was die Blickrichtung kollidiert und ob der
 Zeigefinger für den Klick erkannt wurde.
 
-Der Cursor bewegt sich anhand der Hololens, also so wie sich auch der Kopf bewegt. Dies ist dann
+Der Cursor bewegt sich anhand der HoloLens, also so wie sich auch der Kopf bewegt. Dies ist dann
 problematisch, wenn man den Cursor etwas weiter entfernt oder sehr genau platzieren will. Jede
 kleinste Bewegung des Kopfs resultiert in einer Verschiebung des Cursors. Vor allem beim Benutzen
 der holografischen Tastatur kann dies ein Problem sein. Eine deutliche Verbesserung für eine
@@ -375,7 +376,7 @@ hier folgende Erweiterungen:
 - Die meisten Schaltflächen können auch über Sprachkommandos angesprochen werden.
 - Im Lieferumfang der HL ist ein Clicker enthalten, der den selben Event auslöst wie der Tap.
 
-Die Hauptanforderung der Hololens wurde grossartig umgesetzt, die Verschmelzung der realen und der
+Die Hauptanforderung der HoloLens wurde grossartig umgesetzt, die Verschmelzung der realen und der
 virtuellen Welt  ist Microsoft  sehr gut gelungen. Auch wenn sich viele Hologramme im Sichtfeld befinden
 ist die Orientierung im realen Raum immer gut. Es gibt kaum Verwechslungen zwischen der
 virtuellen und realen Welt. Die Auflösung der Hologramme ist gut, dennoch besteht nie die Gefahr,
@@ -398,15 +399,15 @@ Die kleinen Displays sind auch problematisch wenn man sich eine Übersicht versc
 Grosse Hologramme werden an den Rändern der Displays abgeschnitten und das nimmt man wahr. Der
 Benutzer muss den Kopf bewegen, wenn er mehr sehen will.
 
-Eine andere Limitation ist die Distanz zur Hololens, in welcher Hologramme projiziert werden. Sie
+Eine andere Limitation ist die Distanz zur HoloLens, in welcher Hologramme projiziert werden. Sie
 werden nur etwa eine Armlänge vor dem Gesicht noch dargestellt. Geht man näher hin, verschwinden
 sie. Dies ist deshalb problematisch weil das Hologramm genau in diesem Bereich  verschwindet, wo wir
 Menschen gewöhnt sind zu arbeiten. Wenn wir mit Objekten hantieren sind wir uns gewohnt, dies
-innerhalb eines halben Meters vor dem Kopf zu tun. Aber genau dort ist kann die Hololens nichts
+innerhalb eines halben Meters vor dem Kopf zu tun. Aber genau dort ist kann die HoloLens nichts
 darstellen. Dies zwingt den Benutzer dazu, mit den Hologrammen in einer grösseren Distanz zu
 interagieren, was mindestens gewöhnungsbedürftig ist.
 
-Die Hololens wurde für den Gebrauch in Gebäuden entwickelt und eignet sich nicht, um sich damit
+Die HoloLens wurde für den Gebrauch in Gebäuden entwickelt und eignet sich nicht, um sich damit
 draussen zu bewegen. Sie ist mit über 500 Gramm ziemlich schwer und schränkt damit die
 Bewegungsfreiheit etwas ein. Aber lang nicht so stark wie man es vermuten könnte, wenn man die
 Dimensionen sieht. Sie ist nicht so starr wie sie auf den ersten Blick wirkt und schmiegt sich
@@ -416,7 +417,7 @@ Bewegungen mit dem Kopf möglich sind.
 ### Demoapplikationen
 
 Um eine Applikation starten zu können, geht man, wie unter Windows üblich, ins Startmenü. In der
-Hololens öffnet  man es mittels der Bloom-Geste. Es gibt z.B. den unter Windows 8 eingeführten
+HoloLens öffnet  man es mittels der Bloom-Geste. Es gibt z.B. den unter Windows 8 eingeführten
 App-Store den Webbrowser Edge, die Systemsteuerungen, eine Bibliothek für Hologramme.
 Dies sind alles Applikationen, die in einem Fenster laufen und nicht die ganze Umgebung einnehmen.
 
@@ -425,13 +426,13 @@ Der Benutzer kann nun diese Fenster irgendwo im Raum platzieren. Dazu greift er 
 mittels der Press-Geste und kann es nun im Raum verschieben und zwar in allen drei Richtungen des
 Raums. Er muss nur darauf achten, dass die Hand nicht aus dem Wahrnehmungsbereich der HL kommt.
 
-Die Hololens versucht dabei das Fenster an den realen Begebenheiten auszurichten. Mit anderen Worten,
+Die HoloLens versucht dabei das Fenster an den realen Begebenheiten auszurichten. Mit anderen Worten,
 wenn das Fenster in die Nähe einer Wand kommt, richtet es sich automatisch so aus, dass
 es wie ein Bild an der Wand hängt.
 
 #### Hologramme
 
-Auf der Hololens gibt es eine Bibliothek mit vorgefertigten Hologrammen, die der Benutzer im Raum
+Auf der HoloLens gibt es eine Bibliothek mit vorgefertigten Hologrammen, die der Benutzer im Raum
 platzieren kann. Dies ist ein guter Einstiegspunkt, um das Konzept der Hologramme und deren
 Platzierung im Raum kennen zu lernen.
 
@@ -443,7 +444,7 @@ RoboRaid ist ein Spiel, bei welchem der Spieler Angriffe von Robotern abwehren m
 Zimmer, in welchem sich der Spieler befindet.
 
 Bevor das Spiel zum ersten Mal startet wird der Spieler aufgefordert, seine Umgebung, sprich den
-Raum, in welchem er sich befindet, zu scannen. Dazu muss er mit der Hololens die Wände anschauen,
+Raum, in welchem er sich befindet, zu scannen. Dazu muss er mit der HoloLens die Wände anschauen,
 bis der Applikation klar ist, wo sie sich befinden. Danach kann das Spiel auch schon beginnen.
 
 Als Erstes wird der Spieler von einem schwebenden Roboter informiert, dass man Angriffe von
@@ -481,7 +482,7 @@ Spiels gibt es immer mehr Roboter, die gleichzeitig auf den Spieler schiessen. D
 Spieler durch die Ausweichmanöver auch mal ausser Atem geraten.
 
 Hier zeigen sich jedoch die Probleme, die sich ergeben, da der Fokus an die Blickrichtung der
-Hololens und nicht die der Augen gebunden ist. In der Hitze des Gefechts und mit vielen Robotern und
+HoloLens und nicht die der Augen gebunden ist. In der Hitze des Gefechts und mit vielen Robotern und
 Schüssen im Blickfeld verliert man den Cursor oft aus den Augen. Und der zielt dann am Roboter
 vorbei.
 
@@ -498,16 +499,16 @@ ein Turm mit quadratischer Grundfläche entsteht. Die einzelnen Schichten besteh
 Blöcken, die kreuzweise geschichtet werden. Ziel ist es, einzelne Blöcke aus dem Turm zu nehmen und
 sie oben auf den Turm zu legen, ohne dass dieser einstürzt.
 
-Jenga wurde für die Hololens adaptiert und kann über den Windows Store installiert werden.
+Jenga wurde für die HoloLens adaptiert und kann über den Windows Store installiert werden.
 
-Dieses Spiel ist ein gutes Beispiel, wo die Limitationen der Hololens und ihrer Hologramme liegen.
+Dieses Spiel ist ein gutes Beispiel, wo die Limitationen der HoloLens und ihrer Hologramme liegen.
 Man kann die Blöcke relativ einfach fassen und bewegen, aber es gibt kein haptisches Feedback. Bei
 der realen Version gibt es bei den Blöcken  minimale Abweichungen in den Dimensionen, so dass der
 Spieler testen kann, ob sich ein Block einfach bewegen lässt oder nicht. Er merkt auch, wenn er den
 Block schräg bewegt, da sich der Block verkantet und deshalb schwerer zu bewegen ist. Zudem kann der
 Spieler auch zwei Hände benutzen, was vor allem beim Zurücklegen auf den Turm hilft.
 
-All dies funktioniert  bei der Hololens nicht. Man kann den Block nicht antippen, um zu sehen, ob er sich
+All dies funktioniert  bei der HoloLens nicht. Man kann den Block nicht antippen, um zu sehen, ob er sich
 bewegt. Wenn man versucht,  ihn schräg aus dem Turm zu ziehen, merkt man es meist erst, wenn der
 Turm schon gefährlich wackelt. Und es ist oft nicht ersichtlich, in welche Richtung man korrigieren
 muss. Es ist grundsätzlich gewöhnungsbedürftig, Hologramme festzuhalten und zu verschieben wegen der
@@ -515,9 +516,9 @@ fehlenden Haptik.
 
 #### Fragments
 
-Fragments ist ein Mystery Game für die Hololens. Man schlüpft in die Rolle eines Detektivs, der
+Fragments ist ein Mystery Game für die HoloLens. Man schlüpft in die Rolle eines Detektivs, der
 Hinweise sammeln muss um einem Kindsentführer auf die Schliche zu kommen. Die Entwickler haben hier
-sämtliche Möglichkeiten der Hololens ausgelotet, die möglich sind:
+sämtliche Möglichkeiten der HoloLens ausgelotet, die möglich sind:
 
 - Interaktion mit holografischen Personen
     - adaptieren ihr Verhalten anhand der Ausrichtung des Spielers im Raum
@@ -563,13 +564,13 @@ sehr schwer sieht. Es kann vorkommen, dass die Lampe im Raum blendet oder das Ho
 Verhältnisse zu hell und deshalb zu transparent dargestellt wird.
 
 Wenn der Raum zu verwinkelt ist oder die Wände keine regelmässigen Oberflächen haben, hat auch die
-Hololens Mühe mit der Raumaufteilung. Ein Teil des Spielfelds war mal teilweise in einem Schrank und
+HoloLens Mühe mit der Raumaufteilung. Ein Teil des Spielfelds war mal teilweise in einem Schrank und
 in der Wand, so dass die Interaktion mit den Hologrammen sehr schwierig war.
 
 
 #### HoloTube
 
-HoloTube ist eine inoffizielle YouTube-App für die Hololens. Man kann damit auf YouTube Videos
+HoloTube ist eine inoffizielle YouTube-App für die HoloLens. Man kann damit auf YouTube Videos
 suchen und abspielen.  Sie unterstützt auch die so genannten spherical videos oder 360°-Videos.
 Die Auflösung dieser Videos ist aber sehr schlecht. Dazu kommt, dass sich hier der Umstand, dass man die
 reale Umgebung sieht, nachteilig auswirkt. Gerade bei Videos möchte man ja von der Umwelt nichts
@@ -585,22 +586,22 @@ bewegt.
 ### Tutorials
 
 Microsoft stellt viele [Tutorials](https://developer.microsoft.com/en-us/windows/holographic/academy)
-zur Verfügung, die es dem Entwickler erleichtern sollen, den Einstieg in die neue Denke der Hololens
+zur Verfügung, die es dem Entwickler erleichtern sollen, den Einstieg in die neue Denke der HoloLens
 zu erleichtern. Obwohl es Microsoft offen gelassen hat, wie die Hologramme erstellt werden, so
 haben sie sich bei den Tutorials auf [Unity](https://unity3d.com/) konzentriert.
 
-Man kann die Applikationen entweder auf eine Hololens installieren oder man lässt sie in einem
+Man kann die Applikationen entweder auf eine HoloLens installieren oder man lässt sie in einem
 Emulator laufen. Dazu muss aber die Virtualisierung vom Prozessor unterstützt werden.
 
 Als Einsteiger gilt es, sich mit folgenden Themen auseinander zu setzen:
 
-* **Blickrichtung:** Damit wird der Cursor in der Hololens bewegt
+* **Blickrichtung:** Damit wird der Cursor in der HoloLens bewegt
 * **Gesten:** Das Erkennen von Bewegungen mit der Hand und darauf reagieren
-* **Stimme:** Man kann der Hololens die Befehle auch mittels Stimme übergeben
-* **Raumklang:** Die Hololens hat zwei kleine Lautsprecher, die sich über den Ohren befinden. Dank
+* **Stimme:** Man kann der HoloLens die Befehle auch mittels Stimme übergeben
+* **Raumklang:** Die HoloLens hat zwei kleine Lautsprecher, die sich über den Ohren befinden. Dank
 geschickter Modulation der Töne kann der Eindruck erzeugt werden, dass die Geräusche von irgendwo
 im Raum her kommen.
-* **Raumerkennung:** Die Hololens kann den Raum, in welchem sie sich befindet, wahrnehmen und auch
+* **Raumerkennung:** Die HoloLens kann den Raum, in welchem sie sich befindet, wahrnehmen und auch
 die Tiefe erkennen. Dieses Scannen geschieht automatisch, jedoch kann der Entwickler mit diesen
 Informationen arbeiten und darauf reagieren.
 
@@ -610,7 +611,7 @@ Die [^universalWindowsPlatform]:[Universal Windows Platform]
 (https://developer.microsoft.com/en-us/windows/apps/getstarted) ist die generische Plattform um
 Applikationen auf verschiedensten Geräten zu entwickeln. Darunter fallen Desktop, Server, Web,
 Game, IoT sowie HoloLens Applikationen für Windows 10. Alle UWP Applikationen können auf die
-Hololens portiert werden. Diese werden jedoch in 2D Fenster als "normale" Apps gestartet. Die
+HoloLens portiert werden. Diese werden jedoch in 2D Fenster als "normale" Apps gestartet. Die
 [^windowsHolographicApis]:[Windows Holographic APIs](https://developer.microsoft.com/en-us/windows/holographic/documentation) ermöglichen es holografische Apps zu erstellen. Microsoft empfiehlt es, mit Unity und VisualStudio zu
 arbeiten. Es ist auch möglich, eigene Engines mit [^directx]:[DirectX](https://developer.microsoft.com/en-us/windows/holographic/directx_development_overview) und C++/C# zu erstellen.
 
@@ -674,13 +675,13 @@ Webschnittstelle und QR-Code erhalten werden.
 
 ### Workflow
 
-Ein Gerät, das sich einmalig mit zusätzlichen Informationen bei der Hololens anmelden muss. Dies
-geschieht über einen QR-Code, der mit der Applikation auf der Hololens gescannt werden muss. Mit den
-Informationen konfiguriert die Hololens das Gerät, indem es sich merkt, wo es steht und wo es die
+Ein Gerät, das sich einmalig mit zusätzlichen Informationen bei der HoloLens anmelden muss. Dies
+geschieht über einen QR-Code, der mit der Applikation auf der HoloLens gescannt werden muss. Mit den
+Informationen konfiguriert die HoloLens das Gerät, indem es sich merkt, wo es steht und wo es die
 zusätzlichen Daten abholen kann.
 
 Wenn sich die Daten dynamisch ändern können (wie Füllstand oder Temperatur oder Ähnliches),
-holt sich die Hololens periodisch die aktualisierten Daten und stellt sie erneut dar. Wenn es sich
+holt sich die HoloLens periodisch die aktualisierten Daten und stellt sie erneut dar. Wenn es sich
 um statische Daten handelt, fällt dies natürlich weg.
 
 ### Aufbau des Frameworks
@@ -810,7 +811,7 @@ Um die Spracherkennung zu nutzen, wurde ein `HoloToolkit/Input/Scripts/KeywordMa
 Das Property `KeywordsAndResponses` beinhaltet gesprochene Worte (Keyword) und den dazugehörigen
 Methodenaufruf auf ein Gameobjekt. Als Beispiel wird bei "remove all" die Methode `RemoveDevices()`
 auf dem `DeviceManager` Script ausgeführt. Das Keyword sollte aus mehr als einem Wort bestehen und
-anderen Keywords nicht zu sehr gleichen. Dies erhöht die Chance, dass die Hololens den richtigen
+anderen Keywords nicht zu sehr gleichen. Dies erhöht die Chance, dass die HoloLens den richtigen
 Befehl erkennt.
 
 **EventSystem**
@@ -826,7 +827,7 @@ automatisch positioniert.
 
 **DirectionalLight**
 Das `DirectionalLight` von Unity ist nicht nötig, lässt die Hologramme aber natürlicher aussehen. Es
-können auch andere Lichtquellen benutzt werden, da jedoch die Umgebung, in welcher die Hololens
+können auch andere Lichtquellen benutzt werden, da jedoch die Umgebung, in welcher die HoloLens
 eingesetzt wird, nicht bekannt ist, empfehlen wir eine weit entfernte Lichtquelle.
 
 **SpacialMapping**
@@ -875,14 +876,14 @@ abholen kann.
 Diese Informationen würden dann verwendet, um das entsprechende Hologramm im Raum zu platzieren und
 die Informationen an das Objekt zu heften und regelmässig zu aktualisieren.
 
-Um Bilder mit der Kamera der  Hololens aufzunehmen, gibt es das `PhotoCapture` Objekt im Namespace
+Um Bilder mit der Kamera der  HoloLens aufzunehmen, gibt es das `PhotoCapture` Objekt im Namespace
 `UnityEngine.VR.WSA.WebCam`.
 
 Für die Erkennung und das Decodieren des QR-Codes haben wir uns für die
 ZXing [^zxing-library] Bibliothek entschieden. Sie unterstützt sehr viele Formate und es gibt sie
 für viele Plattformen.
 
-Der Prozess um mit der Hololens Kamera ein Bild aufzunehmen ist ein vierstufiger, der bei den
+Der Prozess um mit der HoloLens Kamera ein Bild aufzunehmen ist ein vierstufiger, der bei den
 einzelnen Schritten jeweils mit Callback-Functions arbeitet.
 
 ```cs
@@ -963,7 +964,7 @@ späteren Schritt lösen.
 So versuchten wir eine Applikation zu entwickeln, die komplett ohne Unity auskommt und nur Bilder
 von der Kamera vom  QR-Framework verarbeiten lässt. Das dies möglich sein sollte, entnahmen wir der
 Tatsache, dass es im Visual Studio 2015 ein Projekttemplate für holografische Applikationen gibt.
-Diese Applikation wurde aber nie lauffähig auf der Hololens.
+Diese Applikation wurde aber nie lauffähig auf der HoloLens.
 
 <!--TODO: Pasci weiss vielleicht wieso-->
 
@@ -1055,7 +1056,7 @@ Die Problematik mit dem QR-Code wurde oben detailliert erläutert.  Mehrere 3D-M
 können dargestellt und platziert werden. ???wie plaziert????????????????????????????????
 Textinformationen werden von einer Webschnittstelle periodisch gelesen und dargestellt. Bildinformationen,
 welche sich lokal in der Applikation befinden, werden dargestellt. Alle Informationen richten sich zur
-Hololens aus und sind im Raum verschiebbar. Das Sprachkommando `Remove All` entfernt alle dargestellten
+HoloLens aus und sind im Raum verschiebbar. Das Sprachkommando `Remove All` entfernt alle dargestellten
 Geräte.
 
 Von den zusätzlichen Anforderungen wurde nur eine Implementiert. Einzelne Informationen können mit einem
@@ -1063,7 +1064,7 @@ Menü aktiviert und deaktiviert werden. Das Menü enthält Buttons für alle dea
 Ein AirTap auf das Gerät selbst de/aktiviert das Menü, ansonsten deaktiviert sich das Menü selbst, sobald
 alle Informationen deaktiviert sind.
 
-Das Darstellen eines PDF-Benutzerhandbuchs konnte nicht implementiert werden. Die Hololens erlaubt es nicht,
+Das Darstellen eines PDF-Benutzerhandbuchs konnte nicht implementiert werden. Die HoloLens erlaubt es nicht,
 andere Apps in einer holografischen App darzustellen. Dadurch wäre eine eigene PDF Viewer Implementation
 notwendig. Das Benutzerhandbuch könnte als Workaround in einzelne Bilder aufgeteilt werden. Diese Bilder
 könnten als Bildinformation dargestellt werden. Durch das Selektionsmenü wäre es möglich, nur einzelne
@@ -1108,38 +1109,38 @@ zusammen mit den allfälligen Lösungen auflisten.
 
 ### Setup der Entwicklungsumgebung
 
-Um für die Hololens zu entwickeln wird ein Windows 10 Pro, Enterprise oder Education Computer mit
+Um für die HoloLens zu entwickeln wird ein Windows 10 Pro, Enterprise oder Education Computer mit
 aktiviertem Hyper-V benötigt. Das SDK unterstützt offiziell auch die Betriebssysteme ab Windows 7,
 jedoch nicht alle benötigten Tools.
 
 [Installationsanleitung](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools)
 
-### Einschränkungen des Hololens Betriebssystems
+### Einschränkungen des HoloLens Betriebssystems
 
-Obwohl die Hololens selbst ein Computer ist, bietet das WindowsHolographic nicht die gewohnten
+Obwohl die HoloLens selbst ein Computer ist, bietet das WindowsHolographic nicht die gewohnten
 Funktionalitäten. Es gibt keine CommandLine, keinen TaskManager und auch keinen Windows Explorer.
 Apps,  welche man auf dem Desktop (genannt Shell) platziert hat, sind gestartet. Um den Prozess zu beenden,
 muss das Icon, welches 2D oder 3D sein kann, entfernt werden.
 
-### Hololens auf sich Anpassen
+### HoloLens auf sich Anpassen
 
-Mit einem Gewicht von immerhin 579 Gramm ist die Hololens nicht gerade leicht. Wenn man sich aber
-etwas Zeit nimmt, um die Hololens an den eigenen Kopf anzupassen, ist dennoch ein grosser
+Mit einem Gewicht von immerhin 579 Gramm ist die HoloLens nicht gerade leicht. Wenn man sich aber
+etwas Zeit nimmt, um die HoloLens an den eigenen Kopf anzupassen, ist dennoch ein grosser
 Tragekomfort gewährleistet. Dazu gehört die Wahl des geeigneteren der beiden Stegstützen, auf
-welchen die Hololens auf der Nase getragen wird und der Verwendung des Overhead Straps.
+welchen die HoloLens auf der Nase getragen wird und der Verwendung des Overhead Straps.
 
-### Einrichten der Hololens für die Entwicklung
+### Einrichten der HoloLens für die Entwicklung
 
-Um mit den Entwicklungstools auf die Hololens zugreifen zu können, muss der Debug Mode aktiviert
+Um mit den Entwicklungstools auf die HoloLens zugreifen zu können, muss der Debug Mode aktiviert
 werden. Microsoft hat die Anleitung dazu auf der Seite
 [Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/Using_Visual_Studio.html#enabling_developer_mode)
-versteckt. Die IP-Adresse der Hololens kann man über `Settings->Network&Internet->Advanced options` auslesen.
+versteckt. Die IP-Adresse der HoloLens kann man über `Settings->Network&Internet->Advanced options` auslesen.
 
 ### Konfiguration eines neuen Projektes
 
-Ein Projekt mit Unity muss spezifisch für die Hololens angepasst werden. Das Tutorial
+Ein Projekt mit Unity muss spezifisch für die HoloLens angepasst werden. Das Tutorial
 [Microsoft Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100)
-enthält die nötigen Konfigurationen. Der Unity Editor ermöglicht es, vieles ausserhalb der Hololens
+enthält die nötigen Konfigurationen. Der Unity Editor ermöglicht es, vieles ausserhalb der HoloLens
 und dessen Emulators zu testen. Viele der Skripte wie `ManualCameraControl`, `GestureManager` und
 `KeywordManager` bieten die Möglichkeit, einen alternativen Input per Tastatur zu definieren.
 
@@ -1150,9 +1151,9 @@ In neun Tutorials werden die wichtigsten Elemente für die Entwicklung beigebrac
 
 ### Weiss und Schwarz
 
-Die Farben Weiss und Schwarz haben jeweils ihre eigenen Probleme. Da die Hololens nur additiv RGB
+Die Farben Weiss und Schwarz haben jeweils ihre eigenen Probleme. Da die HoloLens nur additiv RGB
 Farben darstellen kann, ist Schwarz transparent. Dadurch kann man nicht beeinflussen, was der Benutzer
-sieht. Im Gegensatz dazu hat Weiss das Problem, dass die Hololens RGB in 3 separaten Schichten darstellt
+sieht. Im Gegensatz dazu hat Weiss das Problem, dass die HoloLens RGB in 3 separaten Schichten darstellt
 und diese nicht immer perfekt übereinander liegen und teilweise schwache Farbverläufe entstehen.
 Dadurch sieht man z.B. bei einem weit entfernten weissen Punkt stattdessen drei leicht versetzte
 Punkte in rot, grün und blau.
@@ -1347,11 +1348,11 @@ Konvertierung an das proprietäre Programm übergeben. Somit ist von der Kaffema
 ohne Farben in der Demo des Frameworks. Die einzelnen Materialien müssten manuell eingefärbt werden
 oder jemand mit einem 3D-Studio Max konvertiert da .max in ein .fbx.
 
-### Shader auf der Hololens
+### Shader auf der HoloLens
 
 Jedes Material benötigt einen Shader, welcher spezifiziert, wie die Oberfläche in verschiedenen
 Situationen berechnet wird.
-Damit ein Shader auch auf der Hololens funktioniert, muss er in Unity unter
+Damit ein Shader auch auf der HoloLens funktioniert, muss er in Unity unter
 `Edit/Project Settings/Graphics/Always Included Shaders` aufgeführt werden. Nicht funktionierende
 Shader werden Pink dargestellt.
 
@@ -1463,14 +1464,14 @@ einiges, das wir ausgespart haben.
 
 ## Sicherheit
 
-Die Informationen, die die Hololens über die Geräte darstellt, sind potentiell kritisch und dürfen
+Die Informationen, die die HoloLens über die Geräte darstellt, sind potentiell kritisch und dürfen
 nicht in jedem Fall frei verfügbar sein. In unserem Szenario haben wir diesen Aspekt vollständig
-ausgeklammert. Aber grundsätzlich muss es möglich sein, dass sich die Hololens an der Datenquelle
+ausgeklammert. Aber grundsätzlich muss es möglich sein, dass sich die HoloLens an der Datenquelle
 identifizieren muss, bevor sie Daten erhält. Hier sind folgende Szenarien möglich:
 
 - Es können die Credentials im QR-Code selber untergebracht werden. Damit hat aber jeder, der Zugang
 zum QR-Code hat, automatisch Zugang zu den Daten.
-- Die Hololens wird bei der Datenquelle registriert und die Credentials auf der Hololens selber
+- Die HoloLens wird bei der Datenquelle registriert und die Credentials auf der HoloLens selber
 installiert (z.B. Username/Password oder Zertifikat).
 - Fixes Pairing bei Bluetooth.
 
@@ -1499,7 +1500,7 @@ welche zwar noch einige Schwächen hat, jedoch in ein paar Generationen überzeu
 genügend gross ist, ist meiner Meinung nach die grösste Schwäche gelöst.
 
 Das Spiel RoboRaid hat mich und einige Freunde von der Technologie überzeugt. Ich persönlich bin
-anfällig auf Motion Sickness bei VR Brillen, hatte jedoch nie auch nur ein Anzeichen davon mit der Hololens.
+anfällig auf Motion Sickness bei VR Brillen, hatte jedoch nie auch nur ein Anzeichen davon mit der HoloLens.
 Dass die Brille bequem sitzt ist fast eine Kunst für sich selbst, ist aber möglich dank der vielen
 Einstellungsmöglichkeiten.
 
@@ -1531,7 +1532,7 @@ mich dort dank diesem Projekt schnell einarbeiten können.
 
 ## Rückblick Lukas Tanner
 
-Microsoft hat mit der Hololens eine neue Technologie geschaffen, die hält was sie verspricht. Vor
+Microsoft hat mit der HoloLens eine neue Technologie geschaffen, die hält was sie verspricht. Vor
 allem wenn man bedenkt, dass es sich dabei um die erste Generation einer AR-Brille handelt, die auch
 praktikabel ist.
 
