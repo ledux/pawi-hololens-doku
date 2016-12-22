@@ -1018,6 +1018,11 @@ Je nach Version ist die Kapazität auf einem QR-Code sehr limitiert[^qr-capacity
 
 Leider sind wir an der Umsetzung dieses Features gescheitert.
 
+Die Informationen, die wir über den QR-Code erhalten hätten, haben wir nun direkt in den Prefabs der
+einzelnen Geräte untergebracht. Das hat den Nachteil, dass bei Änderungen die Applikation neu
+kompiliert und auf die HoloLens installiert werden muss und nicht nur ein neuer QR-Code erstellt und
+ausgedruckt werden kann.
+
 
 #### Gründe für das Scheitern
 
