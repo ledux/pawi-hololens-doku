@@ -1000,7 +1000,16 @@ public class QrCam : MonoBehaviour
     {
         PhotoCapture.CreateAsync(false, OnPhotoCaptureCreated);
     }
+```
 
+Zuerst wird die Kamera asynchron initialisiert und den Callback mitgeben, der aufgerufen wird,
+sobald sie bereit ist.
+
+Da wird die Auflösung festgelegt und für die 4 Farbkanäle Blau, Grün, Rot und alpha je 8 Bit
+reserviert. Danach wird die Kamera im Modus gestartet, die es erlaubt, Einzelbilder aufzunehmen.
+Auch hier wird ein Callback mitgegeben.
+
+```cs
     private void OnPhotoCaptureCreated(PhotoCapture captureobject)
     {
         _photoCapture = captureobject;
@@ -1021,12 +1030,22 @@ public class QrCam : MonoBehaviour
 
         captureobject.StartPhotoModeAsync(parameters, false, OnPhotoModeStarted);
     }
+```
 
+Sobald die Kamera bereit ist, wird eine Bild aufgenommen, das dann einem weiteren Callback übergeben
+wird.
+
+```cs
     private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
     {
         _photoCapture.TakePhotoAsync(OnCapturedToMemory);
     }
+```
 
+Dieses Bild wird dann in ein Byte-Array umgewandelt und der QR Library übergeben, um  den QR-Code zu
+decodieren.
+
+```cs
     private void OnCapturedToMemory(PhotoCapture.PhotoCaptureResult result,
             PhotoCaptureFrame photocaptureframe)
     {
@@ -1164,7 +1183,7 @@ Geräte.
 
 Von den zusätzlichen Anforderungen wurde nur eine Implementiert. Einzelne Informationen können mit einem
 Menü aktiviert und deaktiviert werden. Das Menü enthält Buttons für alle deaktivierten Informationen.
-Ein AirTap auf das Gerät selbst de/aktiviert das Menü, ansonsten deaktiviert sich das Menü selbst, sobald
+Ein Tap auf das Gerät selbst de/aktiviert das Menü, ansonsten deaktiviert sich das Menü selbst, sobald
 alle Informationen deaktiviert sind.
 
 Das Darstellen eines PDF-Benutzerhandbuchs konnte nicht implementiert werden. Die HoloLens erlaubt es nicht,
