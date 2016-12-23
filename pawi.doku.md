@@ -179,15 +179,25 @@ mit welcher mehrere Personen am selben 3D-Modell arbeiten können.
 
 Wir haben folgende Ideen von Anwendungsfällen und möglichen Applikationen
 
-*Brettspiel Simulation
-	* Brettspiele haben die Schwächen dass sie sehr statisch sind und sich die Personen an einem Ort treffen müssen. Obwohl es bereits Software Frameworks gibt welche Brettspiele simulieren, ist es nicht optimal mit Maus und Tastatur zu spielen un das Spielbrett auf einem Monitor zu sehen. Die Hololens würde es ermöglichen Brettspiele sehr gut zu simulieren.
+* Brettspiel Simulation
+    * Brettspiele haben die Schwächen dass sie sehr statisch sind und sich die Personen an einem 
+    Ort treffen müssen. Obwohl es bereits Software Frameworks gibt welche Brettspiele simulieren, 
+    ist es nicht optimal mit Maus und Tastatur zu spielen un das Spielbrett auf einem Monitor zu 
+    sehen. Die Hololens würde es ermöglichen Brettspiele sehr gut zu simulieren.
 * Zusatzinformationen zu realen Objekten darstellen
-	* Viele technische Geräte haben Statuswerte welche nur über einen Computer ausgelesen werden können. Die Hololens kann es ermöglichen diese Werte zu sehen. Beispielsweise wäre es für Servicetechniker nützlich zu wissen welche Flüssigkeitsbehälter eines Gerätes leer sind und wo sich dieser Behälter am Gerät befindet.
-	Das darstellen von Zusatzinformationen ist jedoch nicht auf technische Geräte beschränkt und könnte auch in Museen verwendet werden.
+    * Viele technische Geräte haben Statuswerte welche nur über einen Computer ausgelesen werden 
+    können. Die Hololens kann es ermöglichen diese Werte zu sehen. Beispielsweise wäre es für 
+    Servicetechniker nützlich zu wissen welche Flüssigkeitsbehälter eines Gerätes leer sind und wo 
+    sich dieser Behälter am Gerät befindet.
+    Das Darstellen von Zusatzinformationen ist jedoch nicht auf technische Geräte beschränkt und 
+    könnte auch in Museen verwendet werden.
 * Mit einem Smartphone koppeln
-    * Da die Hololens bereits über ein Mikrofon und Lautsprecher verfügt, wäre es nützlich Anrufe anzunehmen und benachrichtigungen als Hologramme zu sehen.
+    * Da die Hololens bereits über ein Mikrofon und Lautsprecher verfügt, wäre es nützlich Anrufe 
+    anzunehmen und benachrichtigungen als Hologramme zu sehen.
 * Virtueller Desktop
-	* Die Startumgebung (Shell) der Hololens ermöglicht es mehrere 2D Applikation zu starten und plazieren. Jedoch fehlen viele Komfortfunktionen welche wir uns von PC Desktops gewohnt sind. So können Applikationen nicht minimiert werden und es gibt kein Equivalent zur Taskbar.
+    * Die Startumgebung (Shell) der Hololens ermöglicht es mehrere 2D Applikation zu starten und 
+    plazieren. Jedoch fehlen viele Komfortfunktionen welche wir uns von PC Desktops gewohnt sind. 
+    So können Applikationen nicht minimiert werden und es gibt kein Equivalent zur Taskbar.
 
 ## Mögliche Frameworks
 
