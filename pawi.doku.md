@@ -175,21 +175,14 @@ umzusetzen.
 Ein weiteres Ziel des Projektes ist die Entwicklung eines Frameworks, auf welchem andere
 Applikationen aufbauen können. Dazu haben wir uns folgende Gedanken gemacht.
 
-### Virtueller Desktop
-
-Die HoloLens speichert offene Fenster im Raum für eine bestimmte Zeit. Wenn man aber den Raum
-verlässt oder die HoloLens zu lange abgestellt war, verliert sie diese Informationen. Die Idee
-dieses Frameworks ist, Informationen zu speichern, welche Applikation wo geöffnet ist. So wäre es
-möglich, zu definieren, dass ein pdf an einer Wand, Outlook an einer anderen, OneNote und ein
-Word-Dokument auf dem Pult geöffnet sind. Nun kann man den Raum wechseln und muss nun definieren,
-welches Wand 1, Wand 2 und Pult ist und die entsprechenden Applikationen werden dort wieder
-hergestellt.
-
 ### Geräteinformationen darstellen
 
+Technische Geräte zeigen Informationen über ihren Zustand, wie Füllstände,
+Geschwindigkeiten, Temperaturen, Druck, Leistung etc. oft über Displays, LEDs oder Webinterfaces an.
+Meist sind diese Informationen
+
 Die HoloLens erkennt ein Gerät und holt sich Informationen zu diesem Gerät ab, das sie dann in der
-Nähe des Geräts darstellt. Die Informationen können dynamisch sein, wie Füllstände,
-Geschwindigkeiten, Temperaturen, Druck, Leistung etc. oder auch statische wie Spezifikationen
+Nähe des Geräts darstellt. Die Informationen können dynamisch sein, wie  oder auch statische wie Spezifikationen
 oder Anleitungen.
 
 Damit wäre es denkbar, dass ganze Vorgänge Schritt für Schritt beschrieben werden. Dabei könnte die
@@ -322,6 +315,38 @@ reicht oder der Aufwand nicht gross ist.
 * Ein-/Ausblenden von Informationen mittels holografischem Menu
 * Es kann entschieden werden, ob die Informationen am realen Gerät oder am Hologramm dargestellt
   werden
+
+#### Benutzerhandbuch darstellen
+
+Neben kurzen dynamischen Informationen ist es oft auch nützlich, längere Texte darstellen können.
+Dabei kann es sich um Beschreibungen von Bauteilen handeln, um Anleitungen, wie mit einer Maschine
+umgegangen werden soll oder wie einzelne Werte interpretiert und darauf reagiert werden soll.
+
+Dazu soll die Applikation ein Dokument darstellen können. Da dieses Dokument auch länger als ein
+Duzend Zeilen sein kann, muss gescrollt werden können. Aus Einfachheit wird das pdf lokal auf der
+HoloLens abgelegt.
+
+#### Informationen ein- und ausblenden
+
+Wenn zuviele Informationen über ein Gerät dargestellt werden, kann man den Überblick verlieren und
+die wichtigen Daten übersehen. Dazu kommt, dass nicht in jeder Situation die selben Informationen
+wichtig sind. So sind im Normalbetrieb möglicherweise die Füllstände interessant, unter Volllast
+eher die Drehzahlen und Temperaturen.
+
+Daher ist es praktisch, wenn der Benutzer entscheiden kann, welche Informationen er zu sehen bekommt
+und welche er nicht benötigt.
+
+Dazu soll es ein Menu geben, das eine Liste der möglichen Informationen darstellt. Daraus kann
+der Benutzer diejenigen Einträge auswählen, die er dargestellt haben möchte. Sobald ein Eintrag aus
+dem Menu ausgewählt wird, soll er aus der List verschwinden.  So hat der Benutzer immer die
+Übersicht, welche Zusatzinformationen noch nicht dargestellt werden.
+Wenn die Liste leer wird (also alle verfügbaren Informationen dargestellt werden), soll das Menu
+verschwinden.
+
+Es muss auch möglich sein, dargestellte Informationsfenster wieder zu schliesse. Sollte das Menu
+zu diesem Zeitpunkt leer sein, muss es natürlich wieder dargestellt werden. Jedes Fenster, das
+geschlossen wird, muss wieder im Menu auftauchen.
+
 
 \pagebreak
 
@@ -866,7 +891,7 @@ Kamera. Um im Unity Editor die Kamera zu steuern, gibt es das Script
 **Managers**
 Das mittels `CreateEmpty` erstellte Gameobjekt wird benutzt, um generelle Manager Skripte anzuhängen.
 Der `HoloToolkit/Input/Scripts/GazeManager.cs` steuert die Gaze Gestik, welche zum Fokussieren von
-Objekten benutzt wird. Mit `StabilizationPlane` und `GazeStabilization` wird der Gaze, equivalent zur
+Objekten benutzt wird. Mit `StabilizationPlane` und `GazeStabilization` wird der Gaze, äquivalent zur
 Maus auf einem PC, stabilisiert. Dies ist nützlich, da eine Maus auf dem Tisch stabiler ist als
 die Kopfbewegungen eines Menschen.
 Mittels des `HoloToolkit/Input/Scripts/GestureManagers.cs` werden die Meldungen `OnSelect`, `OnPressed`
@@ -919,8 +944,13 @@ Mit dem `DeviceBehavior` Script werden alle nötigen Funktionalitäten dem Model
 Geräte sind die Prefabs `Textinformation`, `ImageInformation`, `InformationSelection` sowie die Materialien
 `ConnectionMaterial` und `ConnectionWhenSelected` nötig. Spezifisch für das Modell sind der Name, die URL,
 von welcher die `TextInformationen` kommen, die Abfragerate sowie die `ImageInformationen`. Statt über die
-Webschnittstelle werden die Bilder im Unity konfiguriert. Nebst dem Bild als Textur werden equivalente
+Webschnittstelle werden die Bilder im Unity konfiguriert. Nebst dem Bild als Textur werden äquivalente
 Informationen wie bei `TextInformation` benötigt.
+
+Um das Modell am realen Objekt ausrichten zu können, müssen zwei Punkte zur Kalibrierung definiert
+werden. Die Koordinaten dieser Punkte müssen beim `DeviceBehavior` als `Top Right Calibration` und
+`Bottom Left Calibration` erfasst werden. Um dem Benutzer die Kalibrierung zu erleichtern, ist es
+ratsam, die entsprechenden Punkte auf dem realen Gerät auch zu markieren.
 
 Das sich nun in der Hierarchy befindende GameObject muss als Prefab gespeichert werden. Im Project
 Fenster unter den Assets Ordner führe Rechtsklick > Create > Prefab aus. Das GameObject muss als
@@ -928,7 +958,8 @@ Nächstes auf das neu erstellte Prefab gezogen werden. Das GameObject im Hierarc
 mehr benötigt.
 
 Der `DeviceManager` benötigt dieses Prefab und ein Name um es zu instanzieren. Der `KeywordManager` kann
-mit einem neuen Keyword ergänzt werden, welches `DeviceManager.CreateDevice` mit dem Namen aufruft.
+mit einem neuen Keyword ergänzt werden, welches `DeviceManager.CreateDevice(string name)` mit dem
+entsprechenden Namen aufruft.
 
 Dies sind alle benötigten Schritte in Unity, um ein neues Gerät hinzuzufügen. Was noch fehlt ist die
 Konfiguration oder Implementation einer Webschnittstelle und der Textinformationen. Das Kapitel Datenquelle
@@ -1566,6 +1597,11 @@ _--> Notizen TODO: ausformulieren_
 
 - Update interval im QR-Code
 - Ob statisch oder dynamische Daten im QR-Code
+- pdf über schnittstelle zur verfügung stellen, statt lokal
+- Zustand speichern
+- Speichern welche daten dargestellt werdden und welche nicht
+- Automatisches Ausrichten der Datenfenster, nicht mehr statisch
+    - evtl. durch benutzer verschiebbar
 
 # Lessons learned
 
