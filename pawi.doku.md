@@ -1032,7 +1032,7 @@ Auch hier wird ein Callback mitgegeben.
     }
 ```
 
-Sobald die Kamera bereit ist, wird eine Bild aufgenommen, das dann einem weiteren Callback übergeben
+Sobald die Kamera bereit ist, wird ein Bild aufgenommen, das dann einem weiteren Callback übergeben
 wird.
 
 ```cs
@@ -1073,6 +1073,9 @@ einzelnen Geräte untergebracht. Das hat den Nachteil, dass bei Änderungen die 
 kompiliert und auf die HoloLens installiert werden muss und nicht nur ein neuer QR-Code erstellt und
 ausgedruckt werden kann.
 
+Wir denken nicht, dass es grundsätzlich unmöglich ist, dieses Feature zu implementieren. Eventuell
+muss man die Library selber kompilieren oder sogar den benötigten Source Code in das Projekt
+kopieren. Im nächsten Kapitel wird beschrieben, wieso wir es dennoch nicht geschafft haben.
 
 #### Gründe für das Scheitern
 
@@ -1109,7 +1112,7 @@ Schritte sein könnten, dieses Problem dennoch zu lösen. Einer ist ein weiteres
 Unity geeignet sein könnte, ein anderer den Source Code direkt in das Projekt zu nehmen statt
 ein  kompiliertes Assembly.
 [Das Assembly ist hier ](https://zxingnet.codeplex.com/downloads/get/824665) zu finden,
-[der Source Code hier](https://zxingnet.codeplex.com/downloads/get/824668)
+[den Source Code hier](https://zxingnet.codeplex.com/downloads/get/824668)
 
 
 
