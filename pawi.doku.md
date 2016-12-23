@@ -13,11 +13,11 @@ die angegebenen Hilfsmittel verwendet habe. Sämtliche verwendeten Textausschnit
 Inhalte anderer Verfasser wurden ausdrücklich als solche gekennzeichnet.
 
 
-Pascal Schulthess
+Pascal Schulthess (pascal.schulthess@stud.hslu.ch)
 
 ---
 
-Lukas Tanner
+Lukas Tanner (lukas.tanner@stud.hslu.ch)
 
 ---
 
@@ -138,7 +138,7 @@ befindet, mit zusätzlichen virtuellen Elementen ergänzt.
 Dank Kameras und Sensoren kann die Brille die Umgebung wahrnehmen und Objekte darin erkennen. Somit
 können die virtuellen Elemente auf echte Objekte gesetzt werden und damit interagieren.
 
-Die Aufgabenstellung besteht aus drei Teilen:
+Die Aufgabenstellung besteht aus vier Teilen:
 
 1. Die Studierenden sollen mit der Microsoft HoloLens Erfahrungen sammeln und ihre Erkenntnisse dokumentieren.
 1. Sie sollen die Möglichkeiten und Grenzen anhand von bestehenden Demos und einer eigenen Anwendung aufzeigen.
@@ -216,7 +216,7 @@ Mögliche Anwendungsfälle wären eine Virtuelle Desktopumgebung und Spiele.
 
 Technische Geräte zeigen Informationen über ihren Zustand, wie Füllstände,
 Geschwindigkeiten, Temperaturen, Druck, Leistung etc. oft über Displays, LEDs oder Webinterfaces an.
-Meist sind diese Informationen
+Oft werden diese Informationen nicht dort dargestellt, wo sie herkommen. Hier kann
 
 Die HoloLens erkennt ein Gerät und holt sich Informationen zu diesem Gerät ab, das sie dann in der
 Nähe des Geräts darstellt. Die Informationen können dynamisch sein, wie  oder auch statische wie Spezifikationen
@@ -293,7 +293,7 @@ Datenänderungen zu simulieren. Es wird auch sichergestellt, dass verschiedene G
 unterschiedliche Daten erhalten. Dies wird über unterschiedliche Werte im letzten Segment
 (`deviceId`) der URL erreicht.
 
-(`http://localhost/HoloApi/api/{int:deviceId}`)
+`http://localhost/HoloApi/api/{int:deviceId}`
 
 Dazu soll für jedes Device Informationen über mehrerer Bestandteile zurückgegeben werden. Das heisst,
 die Schnittstelle soll eine Liste mit Datensätzen generieren und nicht nur einen einzelnen.
@@ -311,7 +311,7 @@ Die Schnittstelle soll regelmässig aufgerufen werden und die Daten im Hologramm
 
 #### Erkennen und Lesen QR-Code
 
-Die Informationen, die initial benötigt werden, um ein neues Gerät zu instantiieren, wird in einem
+Die Informationen, die initial benötigt werden, um ein neues Gerät zu instanziieren, wird in einem
 QR-Code gespeichert. Darin sind folgende Informationen untergebracht.
 
 > **Gerätetyp**
@@ -1761,4 +1761,31 @@ mich dort dank diesem Projekt schnell einarbeiten können.
 Microsoft hat mit der HoloLens eine neue Technologie geschaffen, die hält was sie verspricht. Vor
 allem wenn man bedenkt, dass es sich dabei um die erste Generation einer AR-Brille handelt, die auch
 praktikabel ist.
+
+Vom Standpunkt des Benutzers hat mich die HoloLens sehr überzeugt. Die Verwendung ist sehr
+intuitiv und die Hologramme fügen sich natürlich in die Umgebung ein. Da es sich um eine neue
+Technologie und Plattform handelt, gibt es noch nicht  sehr viele Applikationen. Diejenigen die
+ich jedoch ausprobieren konnte, haben mich meist überzeugt. Einzig die spherical videos waren
+enttäuschend.
+
+Raum für Verbesserung gibt es bei raschen Bewegungen mit dem Kopf/HoloLens und im Bereich, in
+welchem Hologramme dargestellt werden können. Einerseits sind die Displays eher zu klein,
+andererseits verschwinden sie zu früh, wenn man sich ihnen nähert.
+
+Aus der Sicht des Entwicklers hatte ich bedeutend mehr Mühe. Ich konnte mich lange nicht in die
+Welt von Unity eindenken und versuchte, ohne die Game Engine auszukommen. Dies erwies sich natürlich
+als illusorisch. Ich kam schlussendlich nicht darum herum, mich in mit Vektorenberechnungen,
+Quaternionen und Problemen wie dem Gimbal Lock herumzuschlagen.
+
+Auch schlug ich mich zu lange mit den Problemen mit dem ZXing Bibliotheken herum. Hier hätte ich
+nach Alternativen umschauen sollen, statt auf dem eingeschlagenen Weg zu bleiben. Diese Alternativen
+könnten andere Libraries oder auch alternative Methoden, um ein Gerät zu erkenne, sein.
+
+
+# Quellenverzeichnis
+
+Für diese Arbeit haben wir nur Online Quellen verwendet.
+
+
+
 
