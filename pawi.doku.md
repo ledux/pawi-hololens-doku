@@ -1218,20 +1218,20 @@ und eine [Kaffemaschine](https://www.cgtrader.com/3d-models/furniture/kitchen/co
 Der Laptop stellt die folgenden Informationen dar: ?????????????????????????????????
 
 * Textinformation
-	* Einschaltknopf
-	* CPU Auslastung
-	* IP
-	* Zeit
+    * Einschaltknopf
+    * CPU Auslastung
+    * IP
+    * Zeit
 * Bildinformation
-	* Manual??????????????????
+    * Manual??????????????????
 
 Die Kaffemaschine ??????????????????????
 * TextInformation
-	* Einschaltknopf
-	* Füllstand
+    * Einschaltknopf
+    * Füllstand
 * Bildinformation
-	* Logo
-	* ?????????
+    * Logo
+    * ?????????
 
 ## Tipps und Stolpersteine bei der Entwicklung
 
@@ -1628,8 +1628,8 @@ möglicherweise aus, Füllstände alle paar Minuten abzufragen, während sich Dr
 Sekunden ändern. Es sind auch Situationen denkbar, wo sich die die Intervalle ändern können. Wenn
 sich die Werte einer kritischen Grösse nähern, ist es sinnvoll, wenn öfters aktualisiert wird.
 
-Dazu kann man das Update Intervall als optionales Property dem Informationsobjekt anhängen. Ein
-einzelnes Objekt, das alle 2 Sekunden aktualisiert werden soll, könnte so aussehen.
+Dazu kann man das Update Intervall als optionales Property `nextUpdate` dem Informationsobjekt
+anhängen. Ein einzelnes Objekt, das alle 2 Sekunden aktualisiert werden soll, könnte so aussehen.
 
 ```json
 {
@@ -1649,14 +1649,24 @@ einzelnes Objekt, das alle 2 Sekunden aktualisiert werden soll, könnte so ausse
 }
 ```
 
+## Zustand speichern
+
+Das Framework bietet keine Möglichkeit an, erstellte und platzierte Hologramme zu speichern. Das
+heisst, jedes Mal wenn die Applikation gestartet wird, müssen die gewünschten Geräte instanziiert und
+platziert werden. Das kann sehr aufwändig und mühsam werden. Es müsste also eine Möglichkeit
+geschaffen werden, um den momentanen Zustand im Raum speichern zu können. Dazu gehört mindestens
+
+* Welche Geräte wurden instanziiert
+* Wo stehen die Geräte
+* Welche Daten werden auf den Geräten dargestellt und welche sind verborgen
+
+
+
+
 
 _--> Notizen TODO: ausformulieren_
 
-- Update interval im QR-Code
-- Ob statisch oder dynamische Daten im QR-Code
 - pdf über schnittstelle zur verfügung stellen, statt lokal
-- Zustand speichern
-- Speichern welche daten dargestellt werdden und welche nicht
 - Automatisches Ausrichten der Datenfenster, nicht mehr statisch
     - evtl. durch benutzer verschiebbar
 
