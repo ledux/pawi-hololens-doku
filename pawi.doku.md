@@ -1125,7 +1125,7 @@ ein  kompiliertes Assembly.
 ### Datenquelle
 
 Als dynamische Datenquelle haben wir uns für eine ReST-Schnittstelle entschieden[^source]. Sie liefert für
-vier verschiedene Geräte unterschiedliche Daten, die so aufgebaut sind.
+drei verschiedene Geräte unterschiedliche Daten, die so aufgebaut sind.
 
 ```json
 {
@@ -1605,10 +1605,10 @@ nicht in jedem Fall frei verfügbar sein. In unserem Szenario haben wir diesen A
 ausgeklammert. Aber grundsätzlich muss es möglich sein, dass sich die HoloLens an der Datenquelle
 identifizieren muss, bevor sie Daten erhält. Hier sind folgende Szenarien möglich:
 
-- Es können die Credentials im QR-Code selber untergebracht werden. Damit hat aber jeder, der Zugang
+- Es können die Zugangsdaten im QR-Code selber untergebracht werden. Damit hat aber jeder, der Zugang
 zum QR-Code hat, automatisch Zugang zu den Daten.
-- Die HoloLens wird bei der Datenquelle registriert und die Credentials auf der HoloLens selber
-installiert (z.B. Username/Password oder Zertifikat).
+- Die HoloLens wird bei der Datenquelle registriert und die Zugangsdaten auf der HoloLens selber
+installiert (z.B. Benutzername/Passwort oder Zertifikat).
 - Fixes Pairing bei Bluetooth.
 
 ## Art der Datenquelle
@@ -1620,6 +1620,35 @@ Bluetooth auf der Hand.
 
 Diese Art und Weise, wie die Applikation zu den Daten kommt, müsste auch noch im QR-Code
 untergebracht werden.
+
+## Update Intervall
+
+Nicht alle dynamischen Informationen müssen gleich oft aktualisiert werden. So reicht es
+möglicherweise aus, Füllstände alle paar Minuten abzufragen, während sich Drehzahlen alle paar
+Sekunden ändern. Es sind auch Situationen denkbar, wo sich die die Intervalle ändern können. Wenn
+sich die Werte einer kritischen Grösse nähern, ist es sinnvoll, wenn öfters aktualisiert wird.
+
+Dazu kann man das Update Intervall als optionales Property dem Informationsobjekt anhängen. Ein
+einzelnes Objekt, das alle 2 Sekunden aktualisiert werden soll, könnte so aussehen.
+
+```json
+{
+    "description":"Static description of the device",
+    "text":"Dynamic data about the device",
+    "nextUpdate":2
+    "anchor":{
+        "x":0.5,
+        "y":0.4,
+        "z":0
+    },
+    "target":{
+        "x":0.9,
+        "y":1,
+        "z":0.5
+    },
+}
+```
+
 
 _--> Notizen TODO: ausformulieren_
 
