@@ -506,6 +506,12 @@ Dimensionen sieht. Sie ist nicht so starr wie sie auf den ersten Blick wirkt und
 erstaunlich bequem an den Kopf und sitzt so stabil, dass auch schnelle und ruckartige horizontale
 Bewegungen mit dem Kopf möglich sind.
 
+Auch das Rendering der Farben bei Bewegungen ist noch verbesserungswürdig. Bei schnellen Bewegungen
+mit dem Kopf werden nicht alle Farben gleich schnell aktualisiert und die drei Schichten werden
+leicht verschoben angezeigt. Dies lässt sich am besten demonstrieren, wenn man den weissen Default
+Cursor anschaut und sich dabei um die eigene Y-Achse dreht. Der weisse Cursor teilt sich dabei in
+drei Punkte (Blau, Grün, Rot), die in einer horizontalen Linie sichtbar werden.
+
 ### Demoapplikationen
 
 Um eine Applikation starten zu können, geht man, wie unter Windows üblich, ins Startmenü. In der
