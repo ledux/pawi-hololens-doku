@@ -169,15 +169,24 @@ die Projektarbeit und deren Verlauf.
 ## Mögliche Anwendungsfälle
 
 Die HoloLens bietet sicherlich Einsatzmöglichkeiten im Spielebereich, wie Microsoft mit Games wie
-[RoboRaid](https://www.microsoft.com/microsoft-hololens/en-us/apps/roboraid) oder
-[Fragments](https://www.microsoft.com/microsoft-hololens/en-us/apps/fragments) bereits gezeigt hat.
+[RoboRaid](https://www.microsoft.com/microsoft-hololens/en-us/apps/roboraid) [^roboraid] oder
+[Fragments](https://www.microsoft.com/microsoft-hololens/en-us/apps/fragments) [^fragments] 
+bereits gezeigt hat.
+
+
+[^roboraid]:https://www.microsoft.com/microsoft-hololens/en-us/apps/roboraid
+[^fragments]:https://www.microsoft.com/microsoft-hololens/en-us/apps/fragments
+
 
 Aber sie wurde für Geschäftslösungen entwickelt und dort will sie Microsoft auch positionieren.
 Dazu gibt es bereits eine
-[Sketchup Adaption](https://www.microsoft.com/en-us/store/p/sketchup-viewer/9nblggh4338q#),
+[Sketchup Adaption](https://www.microsoft.com/en-us/store/p/sketchup-viewer/9nblggh4338q#)
+[^scetchup]
 mit welcher mehrere Personen am selben 3D-Modell arbeiten können.
 
-Wir haben folgende Ideen von Anwendungsfällen und möglichen Applikationen
+[^scetchup]:https://www.microsoft.com/en-us/store/p/sketchup-viewer/9nblggh4338q#
+
+Wir haben folgende Ideen von Anwendungsfälle und möglichen Applikationen
 
 * Brettspiel Simulation
     * Brettspiele haben die Schwächen dass sie sehr statisch sind und sich die Personen an einem 
@@ -192,10 +201,10 @@ Wir haben folgende Ideen von Anwendungsfällen und möglichen Applikationen
     Das Darstellen von Zusatzinformationen ist jedoch nicht auf technische Geräte beschränkt und 
     könnte auch in Museen verwendet werden.
 * Mit einem Smartphone koppeln
-    * Da die Hololens bereits über ein Mikrofon und Lautsprecher verfügt, wäre es nützlich Anrufe 
+    * Da die HoloLens bereits über ein Mikrofon und Lautsprecher verfügt, wäre es nützlich Anrufe 
     anzunehmen und benachrichtigungen als Hologramme zu sehen.
 * Virtueller Desktop
-    * Die Startumgebung (Shell) der Hololens ermöglicht es mehrere 2D Applikation zu starten und 
+    * Die Startumgebung (Shell) der HoloLens ermöglicht es mehrere 2D Applikation zu starten und 
     plazieren. Jedoch fehlen viele Komfortfunktionen welche wir uns von PC Desktops gewohnt sind. 
     So können Applikationen nicht minimiert werden und es gibt kein Equivalent zur Taskbar.
 
@@ -204,7 +213,7 @@ Wir haben folgende Ideen von Anwendungsfällen und möglichen Applikationen
 Ein weiteres Ziel des Projektes ist die Entwicklung eines Frameworks, auf welchem andere
 Applikationen aufbauen können. Dazu haben wir uns folgende Gedanken gemacht.
 
-### Raumunabhängiges speichern
+### Raumunabhängiges Speichern
 
 Falls eine Applikation einen Status hat, welcher abgespeichert werden soll, hat dies bei 
 holografischen Apps zusätzliche Schwierigkeiten im Vergleich zu klassischen Softwareapplikationen.
@@ -215,7 +224,7 @@ Das Framework würde es erlauben für eine Applikation bestimmte Bereiche zu def
 Benutzer im Raum gesetzt werden. So befindet sich z.B. im ersten Raum der Hauptarbeitsbereich auf einem 
 Pult und in einem zweiten Raum an einer Wand. Die gesetzten Bereiche könnten gespeichert werden und das 
 Framework würde den aktuellen Raum beim Start scannen und falls dieser Wiedererkannt wird die Bereiche 
-plazieren.
+platzieren.
 
 Das Konzept der Bereiche würde es erlauben dass zwei Personen in unterschiedlichen Räumen zusammen arbeiten 
 können, falls die Inhalte der Bereiche über das Internet synchronisiert werden.
@@ -730,10 +739,15 @@ bewegt.
 
 ### Tutorials
 
-Microsoft stellt viele [Tutorials](https://developer.microsoft.com/en-us/windows/holographic/academy)
+Microsoft stellt viele 
+[Tutorials](https://developer.microsoft.com/en-us/windows/holographic/academy) [^tutorials]
 zur Verfügung, die es dem Entwickler erleichtern sollen, den Einstieg in die neue Denke der HoloLens
 zu erleichtern. Obwohl es Microsoft offen gelassen hat, wie die Hologramme erstellt werden, so
-haben sie sich bei den Tutorials auf [Unity](https://unity3d.com/) konzentriert.
+haben sie sich bei den Tutorials auf [Unity](https://unity3d.com/) [^unity] konzentriert.
+
+
+[^tutorials]:https://developer.microsoft.com/en-us/windows/holographic/academy
+[^unity]:https://unity3d.com/
 
 Man kann die Applikationen entweder auf eine HoloLens installieren oder man lässt sie in einem
 Emulator laufen. Dazu muss aber die Virtualisierung vom Prozessor unterstützt werden.
@@ -752,16 +766,22 @@ Informationen arbeiten und darauf reagieren.
 
 ## Entwicklung für die HoloLens
 
-Die [Universal Windows Platform]
-(https://developer.microsoft.com/en-us/windows/apps/getstarted) ist die generische Plattform um
+Die 
+[Universal Windows Platform] (https://developer.microsoft.com/en-us/windows/apps/getstarted) [^uwp]
+ist die generische Plattform um
 Applikationen auf verschiedensten Geräten zu entwickeln. Darunter fallen Desktop, Server, Web,
 Game, IoT sowie HoloLens Applikationen für Windows 10. Alle UWP Applikationen können auf die
 HoloLens portiert werden. Diese werden jedoch in 2D Fenster als "normale" Apps gestartet. Die
-[Windows Holographic APIs](https://developer.microsoft.com/en-us/windows/holographic/documentation) 
+[Windows Holographic APIs](https://developer.microsoft.com/en-us/windows/holographic/documentation) [^whapi]
 ermöglichen es holografische Apps zu erstellen. Microsoft empfiehlt es, mit Unity und VisualStudio zu
 arbeiten. Es ist auch möglich, eigene Engines mit 
-[DirectX](https://developer.microsoft.com/en-us/windows/holographic/directx_development_overview) 
+[DirectX](https://developer.microsoft.com/en-us/windows/holographic/directx_development_overview) [^directx]
 und C++/C# zu erstellen.
+
+
+[^uwp]:https://developer.microsoft.com/en-us/windows/apps/getstarted
+[^whapi]:https://developer.microsoft.com/en-us/windows/holographic/documentation
+[^directx]:https://developer.microsoft.com/en-us/windows/holographic/directx_development_overview
 
 ### Unity
 Unity 3D wurde bekannt als eine Engine für die Spiele-Entwicklung. Mit dem Aufkommen von Applikationen für
@@ -835,9 +855,11 @@ um statische Daten handelt, fällt dies natürlich weg.
 ### Aufbau des Frameworks
 Das Framework besteht aus einem UnityPackage und einer Anleitung, wie die einzelnen Komponenten
 genutzt werden sollen. Zusätzlich wird das Microsoft HoloToolkit UnityPackage benötigt. Dieses ist
-[auf GitHub verfügbar](https://github.com/Microsoft/HoloToolkit-Unity) und enthält ein Readme
+[auf GitHub verfügbar](https://github.com/Microsoft/HoloToolkit-Unity) [^holotoolkit]
+und enthält ein Readme
 mit der Installationsanleitung.
 
+[^holotoolkit]:https://github.com/Microsoft/HoloToolkit-Unity
 
 #### Die Assets
 
@@ -1158,10 +1180,18 @@ Damit konnte man das Projekt nicht mehr kompilieren.
 Damit der  Unity Editor fremde Assemblies findet und sie in den Build-Pfad aufnimmt, müssen sie im
 `Assets`-Ordner sein. Leider haben wir keine Version gefunden, die so kompiliert wurde, dass sie mit
 Unity kompatibel wäre. Dies obwohl auf ihrer Seite
-[die Unterstützung von Unity 3d](https://zxingnet.codeplex.com/) aufgelistet ist.
+[die Unterstützung von Unity 3d](https://zxingnet.codeplex.com/) [^zxingnet]
+aufgelistet ist.
 
-Wir haben alle [verfügbaren Libraries](https://zxingnet.codeplex.com/downloads/get/824664) versucht,
+Wir haben alle 
+[verfügbaren Libraries](https://zxingnet.codeplex.com/downloads/get/824664) [^zxingdownload]
+versucht,
 aber keine gefunden, bei welcher Unity keinen Fehler beim Kompilieren geworfen hätte.[^next-steps]
+
+
+
+[^zxingnet]:https://zxingnet.codeplex.com/
+[^zxingdownload]:https://zxingnet.codeplex.com/downloads/get/824664
 
 [^next-steps]:Beim Erstellen dieses Dokuments haben wir Informationen gefunden, die die nächsten
 Schritte sein könnten, dieses Problem dennoch zu lösen. Einer ist ein weiteres Assembly, das für
@@ -1227,7 +1257,7 @@ Positionen gibt es eine logische Verbindung, die visuell dargestellt wird.
 Die Positionen sind relativ zum Eckpunkt rechts hinten unten in Meter. X ist die Distanz nach
 rechts, Y nach oben und Z nach vorne.
 
-[^source]:[Source on GitHub](https://github.com/ledux/pawi-hololens-dummyapi.git)
+[^source]:https://github.com/ledux/pawi-hololens-dummyapi.git
 
 ### Funktionsumfang und Abgleich zu den Anforderungen
 
@@ -1263,9 +1293,16 @@ Die Informationen positionieren sich relativ dazu.
 
 **Demo**
 
-Die Demo hat zwei Geräte konfiguriert, einen [Laptop](http://tf3dm.com/search/?q=electronics+laptop+umbrella&search=Search)
-und eine [Kaffemaschine](https://www.cgtrader.com/3d-models/furniture/kitchen/coffee-maker-nespresso-aguila).
-Der Laptop stellt die folgenden Informationen dar: ?????????????????????????????????
+Die Demo hat zwei Geräte konfiguriert, einen 
+[Laptop](http://tf3dm.com/search/?q=electronics+laptop+umbrella&search=Search) [^laptopmodel]
+und eine 
+[Kaffemaschine](https://www.cgtrader.com/3d-models/furniture/kitchen/coffee-maker-nespresso-aguila).  [^coffeemodel]
+
+[^laptopmodel]:http://tf3dm.com/search/?q=electronics+laptop+umbrella&search=Search
+[^coffeemodel]:https://www.cgtrader.com/3d-models/furniture/kitchen/coffee-maker-nespresso-aguila
+
+
+Der Laptop stellt die folgenden Informationen dar: 
 
 * Textinformation
     * Einschaltknopf
@@ -1294,7 +1331,9 @@ Um für die HoloLens zu entwickeln wird ein Windows 10 Pro, Enterprise oder Educ
 aktiviertem Hyper-V benötigt. Das SDK unterstützt offiziell auch die Betriebssysteme ab Windows 7,
 jedoch nicht alle benötigten Tools.
 
-[Installationsanleitung](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools)
+[Installationsanleitung](https://developer.microsoft.com/en-us/windows/holographic/install_the_tools) [^install]
+
+[^install]:https://developer.microsoft.com/en-us/windows/holographic/install_the_tools
 
 ### Einschränkungen des HoloLens Betriebssystems
 
@@ -1314,21 +1353,30 @@ welchen die HoloLens auf der Nase getragen wird und der Verwendung des Overhead 
 
 Um mit den Entwicklungstools auf die HoloLens zugreifen zu können, muss der Debug Mode aktiviert
 werden. Microsoft hat die Anleitung dazu auf der Seite
-[Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/Using_Visual_Studio.html#enabling_developer_mode)
+[Using Visual Studio](https://developer.microsoft.com/en-us/windows/holographic/Using_Visual_Studio.html#enabling_developer_mode) [^usingVS]
 versteckt. Die IP-Adresse der HoloLens kann man über `Settings->Network&Internet->Advanced options` auslesen.
+
+[^usingVS]:https://developer.microsoft.com/en-us/windows/holographic/Using_Visual_Studio.html#enabling_developer_mode
+
 
 ### Konfiguration eines neuen Projektes
 
 Ein Projekt mit Unity muss spezifisch für die HoloLens angepasst werden. Das Tutorial
-[Microsoft Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100)
+[Microsoft Holograms 100](https://developer.microsoft.com/en-us/windows/holographic/holograms_100) [^holo100]
 enthält die nötigen Konfigurationen. Der Unity Editor ermöglicht es, vieles ausserhalb der HoloLens
 und dessen Emulators zu testen. Viele der Skripte wie `ManualCameraControl`, `GestureManager` und
 `KeywordManager` bieten die Möglichkeit, einen alternativen Input per Tastatur zu definieren.
 
+[^holo100]:https://developer.microsoft.com/en-us/windows/holographic/holograms_100
+
+
 ### Holographic Academy
 
 In neun Tutorials werden die wichtigsten Elemente für die Entwicklung beigebracht.
-[Microsoft Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy)
+[Microsoft Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy) [^academy]
+
+[^academy]:https://developer.microsoft.com/en-us/windows/holographic/academy
+
 
 ### Weiss und Schwarz
 
@@ -1378,7 +1426,9 @@ dieser muss nicht null sein. Der Status aller Variablen der Methode wird beibeha
 nächsten Aufruf wird die Ausführung nach dem zuletzt genutzten yield return fortgesetzt. Es können
 mehrere yield return Statements verwendet werden.
 Weitere Informationen zum Beispiel findet man in der
-[Unity Dokumentation](https://docs.unity3d.com/Manual/Coroutines.html).
+[Unity Dokumentation](https://docs.unity3d.com/Manual/Coroutines.html). [^coroutine]
+
+[^coroutine]:https://docs.unity3d.com/Manual/Coroutines.html
 
 Eine Coroutine wurde auch im Script `DeviceBehavior` für den asynchronen HTTP Request benutzt.
 Der Aufruf `www.Send();` liefert eine `AsyncOperation` zurück, was es dem StartCoroutine
@@ -1458,9 +1508,13 @@ var input = JsonUtility.FromJson<JsonInput>(jsonString);
 
 ### Dynamisch Formen erstellen
 
-Es gibt vordefinierte [primitive Formen](https://docs.unity3d.com/Manual/PrimitiveObjects.html)
+Es gibt vordefinierte 
+[primitive Formen](https://docs.unity3d.com/Manual/PrimitiveObjects.html) [^primitives]
 wie Würfel und Kugel welche einfach erstellt werden können. Im erstellten Framework bestehen die
 Verbindungen aus langen  schmalen Zylindern.
+
+[^primitives]:https://docs.unity3d.com/Manual/PrimitiveObjects.html
+
 
 ```cs
 // Erstellung des GameObjects
@@ -1511,11 +1565,13 @@ Cylinder.transform.LookAt(connectionSource.transform.position, Vector3.up);
 Unity kann folgende Formate nativ importieren: `.fbx, .dae, .3ds, .dxf` und `.obj` [^3d-formats].
 Maschinenbauer in der Industrie nutzen jedoch andere Dateiformate wie `.step` und `.stl`, da die
 exakte Form in ihrem Bereich eine grössere Bedeutung hat als die Texturen und Animationen. Mittels
-Konverter, wie dem [Spin 3D Converter Software](http://www.nchsoftware.com/3dconverter/),
+Konverter, wie dem 
+[Spin 3D Converter Software](http://www.nchsoftware.com/3dconverter/), [^spinconverter]
 können `.stl` in `.obj` konvertiert werden. Das Problem an `.stl` ist jedoch, dass es keine
 Materialinformationen beinhaltet.
 
 [^3d-formats]:[Unity 3D Formate](https://docs.unity3d.com/Manual/3D-formats.html)
+[^spinconverter]:http://www.nchsoftware.com/3dconverter/
 
 Selbst Modelle welche nicht für die Industrie erstellt wurden, können Probleme bereiten. Ein
 Demoobjekt, eine Kaffemaschine, wurde vom Dozenten zur Verfügung gestellt. Die 2 Formate .obj und
@@ -1562,9 +1618,14 @@ lineRenderer.SetPositions(linePoints);
 ### Spline Bewegung
 
 Falls ein Objekt einer stetigen Linie folgen soll, gibt es ein Spline Controller Skript von
-der [Unity Community](http://wiki.unity3d.com/index.php/Main_Page). Dieses Skript wurde
+der 
+[Unity Community](http://wiki.unity3d.com/index.php/Main_Page). [^unitywiki]
+Dieses Skript wurde
 ausprobiert, wird jedoch im Framework und in der Demo App nicht verwendet. Kind Objekte eines
 GameObjects geben die Fixpunkte an, welche besucht werden.
+
+[^unitywiki]:http://wiki.unity3d.com/index.php/Main_Page
+
 
 ### Raycast
 
