@@ -1016,7 +1016,7 @@ Das Hauptobjekt muss alle Skalierungs- und Rotationswerte auf 0 gesetzt haben. F
 Prefab angepasst werden.
 
 Das Hauptobjekt benötigt einen `BoxCollider`, welcher das gesamte Objekt umfasst. Der Eckpunkt mit den
-kleinsten X; Y- und Z-Werten bildet den Ursprung für die Koordinaten der Informationen.
+kleinsten X, Y- und Z-Werten bildet den Ursprung für die Koordinaten der Informationen.
 
 Mit dem `DeviceBehavior` Script werden alle nötigen Funktionalitäten dem Modell hinzugefügt. Für alle
 Geräte sind die Prefabs `Textinformation`, `ImageInformation`, `InformationSelection` sowie die Materialien
@@ -1041,7 +1041,28 @@ entsprechenden Namen aufruft.
 
 Dies sind alle benötigten Schritte in Unity, um ein neues Gerät hinzuzufügen. Was noch fehlt ist die
 Konfiguration oder Implementation einer Webschnittstelle und der Textinformationen. Das Kapitel Datenquelle
- beschreibt die Daten und ihre Struktur.
+beschreibt die Daten und ihre Struktur.
+
+#### Verwendung 
+
+Um eine neue Instanz eines konfigurierten Geräts zu erstellen, muss man zuerst den Ort definieren,
+wo das reale Objekt steht. Dazu liest man die beiden Kalibrierungspunkte ein, indem man den Cursor
+auf den Top Right-Punkt platziert und den Sprachbefehl `"Top Right"` sagt. Danach setzt man den
+Cursor auf den Bottom Left-Punkt und sagt den Sprachbefehl `"Bottom Left"`. Es spielt keine Rolle,
+in welcher Reihenfolge die beiden Punkte gesetzt werden.
+
+Ob die Punkte korrekt
+erkannt wurden, sieht man anhand den beiden Kugeln, die erscheinen. Sind die Kugeln nicht korrekt
+gesetzt, kann man sie mit neu setzen, indem die Befehle wiederholt werden. Die Kugel am alten Ort
+verschwindet und eine neue erscheint am neuen Ort. Erscheint keine Kugel wurde der Befehl nicht
+erkannt und muss deutlicher wiederholt werden.
+
+Wenn die beiden Kalibrierungspunkte korrekt gesetzt wurden, kann das Hologramm instanziiert werden.
+Dies geschieht über den Sprachbefehl `"Create <device name>"`. Der Wert von `device name` entspricht
+dem Wert, der im `KeywordManager` definiert wurde. Wenn der Befehl korrekt erkannt wurde, friert der
+Cursor für ungefähr zwei Sekunden ein und bleibt am selben Ort. Danach erscheint das Hologramm an
+der Stelle wo das reale Objekt steht.
+
 
 ### QR-Code
 
@@ -1264,7 +1285,7 @@ rechts, Y nach oben und Z nach vorne.
 **Framework**
 Das Geräteinformation Framework implementiert die Pflichtanforderungen mit der Ausnahme des QR-Codes.
 Die Problematik mit dem QR-Code wurde oben detailliert erläutert.  Mehrere 3D-Modelle von Geräten
-können dargestellt und platziert werden. ???wie plaziert????????????????????????????????
+können dargestellt und platziert werden.
 Textinformationen werden von einer Webschnittstelle periodisch gelesen und dargestellt. Bildinformationen,
 welche sich lokal in der Applikation befinden, werden dargestellt. Alle Informationen richten sich zur
 HoloLens aus und sind im Raum verschiebbar. Das Sprachkommando `Remove All` entfernt alle dargestellten
@@ -1289,7 +1310,7 @@ Komplikationen verbunden und wurde erst sehr spät umgesetzt. Die Infrastruktur 
 zu grossen Teilen vorhanden. Der `BoxCollider` des Geräte Objektes muss zum realen Gerät verschoben werden.
 Die Informationen positionieren sich relativ dazu.
 
-??????????????????webschnittstelle: framework oder demo????????????????????????????
+<!--??????????????????webschnittstelle: framework oder demo????????????????????????????-->
 
 **Demo**
 
@@ -1310,15 +1331,13 @@ Der Laptop stellt die folgenden Informationen dar:
     * IP
     * Zeit
 * Bildinformation
-    * Manual??????????????????
 
-Die Kaffemaschine ??????????????????????
+Die Kaffemaschine 
 * TextInformation
     * Einschaltknopf
     * Füllstand
 * Bildinformation
     * Logo
-    * ?????????
 
 ## Tipps und Stolpersteine bei der Entwicklung
 
