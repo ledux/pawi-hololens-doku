@@ -1925,6 +1925,34 @@ Für diese Arbeit haben wir nur Online Quellen verwendet.
   http://wiki.unity3d.com/index.php/Main_Page
 
 
+# Abbildungsverzeichnis
+
+----------------------------------------------------------------------------------------------------
+Seite   Bezeichnung                                 Quelle
+-----   -----------                                 ------------------------------------------------
+13      Beispiel eines QR-Codes                     Selber erstellt
+
+15      Motherboard mit der HPU                     [https://developer.microsoft.com/en-us/windows/holographic/hardware_details](https://developer.microsoft.com/en-us/windows/holographic/hardware_details)
+
+16      Transparente Displays                       [https://developer.microsoft.com/en-us/windows/holographic/hardware_details](https://developer.microsoft.com/en-us/windows/holographic/hardware_details)
+
+17      Sensoren der HoloLens                       [https://developer.microsoft.com/en-us/windows/holographic/hardware_details](https://developer.microsoft.com/en-us/windows/holographic/hardware_details)
+
+21      Hologramm im Raum                           Selber erstellt
+
+22      RoboRaid                                    [https://i.ytimg.com/vi/Hf9qkURqtbM/hqdefault.jpg](https://i.ytimg.com/vi/Hf9qkURqtbM/hqdefault.jpg)
+
+24      Fragments                                   [https://www.microsoft.com/microsoft-hololens/en-us/apps/Fragments](https://www.microsoft.com/microsoft-hololens/en-us/apps/Fragments)
+
+26      Unity Entwicklungsumgebung                  Selber erstellt
+
+29      Textinformationen                           Selber erstellt
+
+30      Bildinformation Prefab                      Selber erstellt
+
+31      InformationSelection Prefab                 Selber erstellt
+
+----------------------------------------------------------------------------------------------------
 
 
 
