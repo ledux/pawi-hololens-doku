@@ -742,13 +742,16 @@ Informationen arbeiten und darauf reagieren.
 
 ## Entwicklung für die HoloLens
 
-Die [^universalWindowsPlatform]:[Universal Windows Platform]
+Die [Universal Windows Platform]
 (https://developer.microsoft.com/en-us/windows/apps/getstarted) ist die generische Plattform um
 Applikationen auf verschiedensten Geräten zu entwickeln. Darunter fallen Desktop, Server, Web,
 Game, IoT sowie HoloLens Applikationen für Windows 10. Alle UWP Applikationen können auf die
 HoloLens portiert werden. Diese werden jedoch in 2D Fenster als "normale" Apps gestartet. Die
-[^windowsHolographicApis]:[Windows Holographic APIs](https://developer.microsoft.com/en-us/windows/holographic/documentation) ermöglichen es holografische Apps zu erstellen. Microsoft empfiehlt es, mit Unity und VisualStudio zu
-arbeiten. Es ist auch möglich, eigene Engines mit [^directx]:[DirectX](https://developer.microsoft.com/en-us/windows/holographic/directx_development_overview) und C++/C# zu erstellen.
+[Windows Holographic APIs](https://developer.microsoft.com/en-us/windows/holographic/documentation) 
+ermöglichen es holografische Apps zu erstellen. Microsoft empfiehlt es, mit Unity und VisualStudio zu
+arbeiten. Es ist auch möglich, eigene Engines mit 
+[DirectX](https://developer.microsoft.com/en-us/windows/holographic/directx_development_overview) 
+und C++/C# zu erstellen.
 
 ### Unity
 Unity 3D wurde bekannt als eine Engine für die Spiele-Entwicklung. Mit dem Aufkommen von Applikationen für
@@ -1785,6 +1788,52 @@ könnten andere Libraries oder auch alternative Methoden, um ein Gerät zu erken
 # Quellenverzeichnis
 
 Für diese Arbeit haben wir nur Online Quellen verwendet.
+
+- 12.11.2016 - Egoshooter für Hololens  
+  https://www.microsoft.com/microsoft-hololens/en-us/apps/roboraid
+- 12.11.2016 - Detective Game für Hololens  
+  https://www.microsoft.com/microsoft-hololens/en-us/apps/fragments
+- 12.11.2016 - Sketchup für Hololens  
+  https://www.microsoft.com/en-us/store/p/sketchup-viewer/9nblggh4338q
+- 29.09.2016 - Tutorials für Entwickler  
+  https://developer.microsoft.com/en-us/windows/holographic/academy
+- 29.09.2016 - Game Engine  Unity  
+  https://unity3d.com/
+- 11.12.2016 - Universal Windows Platform  
+  https://developer.microsoft.com/en-us/windows/apps/getstarted
+- 11.12.2016 - Windows Holographic APIs  
+  https://developer.microsoft.com/en-us/windows/holographic/documentation 
+- 11.12.2016 - DirectX Development  
+  https://developer.microsoft.com/en-us/windows/holographic/directx_development_overview
+- 11.12.2016 - Unity HoloToolkit  
+  https://github.com/Microsoft/HoloToolkit-Unity)
+- 30.11.2016 - Kapazitäten von QR-Codes  
+  http://www.qrcode.com/en/about/version.html
+- 30.11.2016 - Zebra Crossing Barcode Reader  
+  https://zxingnet.codeplex.com/
+- 21.11.2016 - Repository für Dummy API  
+  https://github.com/ledux/pawi-hololens-dummyapi.git
+- 03.11.2016 - Modell des Laptops  
+  http://tf3dm.com/search/?q=electronics+laptop+umbrella&search=Search
+- 12.12.2016 - Modell der Kaffeemaschine  
+  https://www.cgtrader.com/3d-models/furniture/kitchen/coffee-maker-nespresso-aguila
+- 13.12.2016 - Entwicklungstool für die HoloLens  
+  https://developer.microsoft.com/en-us/windows/holographic/install_the_tools
+- 13.12.2016 - Visual Studio  
+  https://developer.microsoft.com/en-us/windows/holographic/Using_Visual_Studio.html#enabling_developer_mode
+- 13.12.2016 - Konfiguration Unity für HoloLens  
+  https://developer.microsoft.com/en-us/windows/holographic/holograms_100
+- 13.12.2016 - Unity Dokumentation  
+  https://docs.unity3d.com/Manual/Coroutines.html
+- 18.12.2016 - Primitive Formen in Unity  
+  https://docs.unity3d.com/Manual/PrimitiveObjects.html
+- 18.12.2016 - Converter für Hologramme  
+  http://www.nchsoftware.com/3dconverter/
+- 18.12.2016 - Unity Formate
+  https://docs.unity3d.com/Manual/3D-formats.html
+- 20.11.2016 - Unity Wiki  
+  http://wiki.unity3d.com/index.php/Main_Page
+
 
 
 
