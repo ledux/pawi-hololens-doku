@@ -33,10 +33,12 @@ Dieses Dokument beschreibt erste Erfahrungen mit dieser neuen Technologie und di
 eines Frameworks, das es erlaubt, Informationen zu einem realen Objekt im Raum darstellen zu lassen.
 
 Es wird dargelegt, welche neuen Möglichkeiten sich damit bieten und  wo mögliche Einsatzgebiete sein
-können.
+können aber auch, wozu sie nicht gebaut wurde. Ebenso werden Schwächen aufgezeigt und die Grenzen
+der Technologie beschrieben.
 
-Dabei werden mögliche Einsatzgebiete ausgelotet und auch aufgezeigt wozu sie nicht gebaut worden ist
-und wo die Schwächen und Grenzen der Brille liegen.
+Am Beispiel einer Applikation, mit welcher man dynamische Zusatzinformationen zu realen Geräten
+darstellen kann, wird aufgezeigt, wie man zusammen mit der Game Engine Unity Applikationen für die
+HoloLens entwickelt.
 
 
 # Abstract (english)
@@ -46,6 +48,14 @@ elements and interact programmatically with the surroundings.
 
 This document describes first steps with this new technology and the developement of a framework
 with which you can display additional information to a real life object in the room.
+
+It shows the new possibilities the holographic device provides and in which fields it can be used, but
+also for what it wasn't build for. We will show the weaknesses and limitations of the technology
+too.
+
+Using the example of an application, with which you can show additional dynamic data about a real world
+object, we show how you can develop, in conjonction with the game engine Unity, a holographic
+application.
 
 
 # Abkürzungen und Definitionen
