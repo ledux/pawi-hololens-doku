@@ -1661,7 +1661,18 @@ geschaffen werden, um den momentanen Zustand im Raum speichern zu können. Dazu 
 * Welche Daten werden auf den Geräten dargestellt und welche sind verborgen
 
 
+## Automatisches Ausrichten der Datenfenster
 
+Zur Zeit ist es die Aufgabe des Programmierers, der ein neues Gerät erstellt und die
+Datenschnittstelle zur Verfügung stellt, zu definieren, wo die Daten dargestellt werden sollen. Das
+heisst, die Datenfenster sind am Hologramm ausgerichtet, egal welche und wie viel von diesen
+dargestellt werden. Das kann dazu führen, dass  die sichtbaren Datenfenster nicht gleichmässig
+verteilt dargestellt werden. Eine Erweiterung könnte dafür sorgen, dass sich die sichtbaren
+Datenfenster automatisch gegeneinander ausrichten.
+
+Da dies aber zur Folge hat, dass die Fenster an einem anderen Ort dargestellt werden können, als es
+der Benutzer erwartet und der Benutzer dadurch verwirrt werden kann, sollte dieses Feature
+ausgeschaltet werden können.
 
 
 _--> Notizen TODO: ausformulieren_
