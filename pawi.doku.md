@@ -32,6 +32,12 @@ interagieren.
 Dieses Dokument beschreibt erste Erfahrungen mit dieser neuen Technologie und die Entwicklung
 eines Frameworks, das es erlaubt, Informationen zu einem realen Objekt im Raum darstellen zu lassen.
 
+Es wird dargelegt, welche neuen Möglichkeiten sich damit bieten und  wo mögliche Einsatzgebiete sein
+können.
+
+Dabei werden mögliche Einsatzgebiete ausgelotet und auch aufgezeigt wozu sie nicht gebaut worden ist
+und wo die Schwächen und Grenzen der Brille liegen.
+
 
 # Abstract (english)
 
@@ -1678,8 +1684,6 @@ ausgeschaltet werden können.
 _--> Notizen TODO: ausformulieren_
 
 - pdf über schnittstelle zur verfügung stellen, statt lokal
-- Automatisches Ausrichten der Datenfenster, nicht mehr statisch
-    - evtl. durch benutzer verschiebbar
 
 # Lessons learned
 
